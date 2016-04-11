@@ -170,7 +170,6 @@ td,
 .align-left,
 .align-center,
 .align-right,
-.poetry-line,
 .no-hyphens {
   adobe-hyphenate: none;
   /* proprietary for Legacy RMSDK */
