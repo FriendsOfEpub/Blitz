@@ -39,8 +39,6 @@ h6 {
 }
 
 p {
-    margin: 0;
-    padding: 0;     /* RS may apply vertical padding */
     text-indent: @base-fs;
 }
 
@@ -92,7 +90,6 @@ dl {
 dt {
   margin: @base-margin 0 0 0;   
   font-weight: bold;
-  text-decoration: underline;
 }
 
 dd {
@@ -118,11 +115,16 @@ abbr {
 }
 
 code, kbd, samp, var {
-  font-family: monospace;       /* Embed a font cos Kobo doenn't provide a monospace */
+  font-family: monospace;       /* Embed a font cos Kobo doesn't provide a monospace */
 }
 
 i, cite, dfn, em {
   font-style: italic;
+}
+
+dt > dfn {
+  font-style: normal;
+  font-weight: bold;
 }
 
 /* Get back to normal when italic nested in italic */
@@ -154,7 +156,7 @@ small {
   font-size: 0.8125em;
 }
 
-/* Styling is improved to prevent them from affecting line-height */
+/* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
   line-height: 1.2;
@@ -162,7 +164,7 @@ sub {
   vertical-align: -20%;
 }
 
-/* Styling is improved to prevent them from affecting line-height */
+/* Styling is improved to prevent sup from affecting line-height */
 sup {
   font-size: 75%;
   line-height: 1.2;
@@ -170,7 +172,7 @@ sup {
   vertical-align: 33%;
 }
 
-.justified {                /* Designed as a class for body */
+.justified {                /* Designed as a class for body — We don't enforce as user setting > author */
   text-align: justify;
   .hyphenate;
 }

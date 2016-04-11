@@ -56,6 +56,7 @@ summary,
 ul {
   margin: 0;
   padding: 0;
+  /* RS may apply vertical padding to el such as p */
   font-size: 1em;
   /* Font size in pixel disable the user setting in legacy RMSDK */
   line-height: inherit;
@@ -223,9 +224,6 @@ h6 {
   /* Styles */
 }
 p {
-  margin: 0;
-  padding: 0;
-  /* RS may apply vertical padding */
   text-indent: 1em;
 }
 div,
@@ -273,7 +271,6 @@ dl {
 dt {
   margin: 1.5em 0 0 0;
   font-weight: bold;
-  text-decoration: underline;
 }
 dd {
   /* Styles */
@@ -299,13 +296,17 @@ kbd,
 samp,
 var {
   font-family: monospace;
-  /* Embed a font cos Kobo doenn't provide a monospace */
+  /* Embed a font cos Kobo doesn't provide a monospace */
 }
 i,
 cite,
 dfn,
 em {
   font-style: italic;
+}
+dt > dfn {
+  font-style: normal;
+  font-weight: bold;
 }
 /* Get back to normal when italic nested in italic */
 i i,
@@ -344,7 +345,7 @@ ins {
 small {
   font-size: 0.8125em;
 }
-/* Styling is improved to prevent them from affecting line-height */
+/* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
   line-height: 1.2;
@@ -352,7 +353,7 @@ sub {
   /* Fallback */
   vertical-align: -20%;
 }
-/* Styling is improved to prevent them from affecting line-height */
+/* Styling is improved to prevent sup from affecting line-height */
 sup {
   font-size: 75%;
   line-height: 1.2;
@@ -361,7 +362,7 @@ sup {
   vertical-align: 33%;
 }
 .justified {
-  /* Designed as a class for body */
+  /* Designed as a class for body — We don't enforce as user setting > author */
   text-align: justify;
   /* iBooks is using locale */
   -webkit-locale: en;
@@ -699,7 +700,7 @@ video {
   max-width: 100%;
   height: auto;
 }
-/* Utilitarians classes */
+/* Utilitarian classes */
 .block {
   display: block;
 }
@@ -754,6 +755,7 @@ video {
 }
 .margin-left-s {
   margin-left: 2.5%;
+  /* % won't reflow with font-size user setting */
 }
 .margin-left-m {
   margin-left: 5%;

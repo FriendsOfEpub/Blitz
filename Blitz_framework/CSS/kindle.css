@@ -1,6 +1,10 @@
-/* KINDLE */
-/* Note: if there is nothing in those two Kindle queries, ADE (and possibly a shitload of apps using legacy RMSDK) will crash. So you'd better get rid of those two motherfuckers once your EPUB file is converted to kindle mobi. */
-/* Warning: Do NOT use `text-rendering: optimizeLegibility` in Kindle's styles, it is known to screw some devices/apps up (entire text is replaced with boxes (a.k.a. "missing glyph" symbol) */
+/* Kindle */
+/* Note: if there is nothing in those two Kindle queries, 
+ADE (and possibly a ton of apps using legacy RMSDK) will crash. 
+So you'd better get rid of those two queries once your EPUB file is converted to kindle mobi. */
+/* Warning: Do NOT use `text-rendering: optimizeLegibility` in Kindle's styles,
+it is known to create issues with some devices/apps 
+(entire text is replaced with boxes (a.k.a. "missing glyph" symbol) */
 @media amzn-kf8 {
   body {
     font-weight: normal;
