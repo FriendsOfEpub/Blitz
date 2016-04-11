@@ -1,0 +1,120 @@
+/* KINDLE */
+/* Note: if there is nothing in those two Kindle queries, ADE (and possibly a shitload of apps using legacy RMSDK) will crash. So you'd better get rid of those two motherfuckers once your EPUB file is converted to kindle mobi. */
+/* Warning: Do NOT use `text-rendering: optimizeLegibility` in Kindle's styles, it is known to screw some devices/apps up (entire text is replaced with boxes (a.k.a. "missing glyph" symbol) */
+
+@import (reference) 'blitz';
+@import (reference) 'blitz-mq';
+
+@media @kf8 {
+  body {
+    font-weight: normal; 	/* numeric font weights are problematic for KindleGen, we make sure to "reset" that in case the framework's user use numeric values. */
+  }
+  b, strong, .bold {
+  	font-weight: bold; 
+  }
+  h1, h2 {
+    line-height: 1.2;     /* Minimum value Kindle supports */
+  }
+  .w-80 {
+    width: 78%;			  /* Because Kindle developers… */
+    margin: (@body-line-height + 0em) 11%;
+  }
+}
+
+@media @mobi7 {
+  body {
+    font-weight: normal;
+  }
+  h1 {
+    font-size: xx-large;    /* Keywords offer more precision for mobi 7*/
+    margin: 0 0 3em 0;      /* mobi7 doesn’t support decimal values */
+  }
+  h2 {
+    font-size: x-large;
+    margin: 2em 0 1em 0;
+  }
+  h3 {
+    font-size: large;
+    margin: 1em 0;
+  }
+  h4 {
+    font-size: medium;
+    margin: 1em 0 0 0;
+  }
+  b {
+  	font-weight: bold; 
+  }
+  strong {
+  	font-weight: bold; 
+  }
+  .bold {
+  	font-weight: bold; 
+  }
+  small {
+    font-size: small;
+  }
+  .small-caps {
+    font-size: small;
+  }
+  sub {
+    font-size: x-small;
+  }
+  sup {
+    font-size: x-small;
+  }
+  hr {
+    margin: floor(@base-margin) 0;
+  }
+  .margin-top-s {
+    margin-top: round(@base-margin / 2);    
+  }
+  .margin-top-m {
+    margin-top: round(@base-margin);
+  }
+  .margin-top-l {
+    margin-top: round(@base-margin * 2);
+  }
+  .margin-top-xl {
+    margin-top: round(@base-margin * 3);
+  }
+  .margin-top-xxl {
+    margin-top: round(@base-margin * 4);
+  }
+  .hanging-indent {
+    margin-left: 0;         /* hack for negative text-indent */
+  }
+  .footnote {
+    font-size: medium;
+  }
+  ul {
+    margin: floor(@base-margin) 0;
+  }
+  ol {
+    margin: floor(@base-margin) 0;
+  }
+  blockquote {
+    margin: floor(@base-margin) @step;
+  }
+  dl {
+    margin: floor(@base-margin) @step;
+  }
+  dt {
+    margin-top: floor(@base-margin);   
+  }
+  pre {
+    margin: floor(@base-margin) 0;
+  }
+  table {
+    margin: floor(@base-margin) 0;
+  }
+  .float-left {
+    float: none;    /* Mobi 7 doesn’t support float */
+    margin: floor(@base-margin) 0;
+    text-align: center;
+  }
+  .float-right {
+    float: none;
+    margin: floor(@base-margin) 0;
+    text-align: center;
+  }
+}

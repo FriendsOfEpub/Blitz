@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">
+  <head>
+    <meta content="XXXXXXXXXXXXXXXXX" name="dtb:uid"/>
+    <meta content="1" name="dtb:depth"/>
+    <meta content="0" name="dtb:totalPageCount"/>
+    <meta content="0" name="dtb:maxPageNumber"/>
+  </head>
+  <docTitle>
+    <text>Blitz EPUB 3 template</text>
+  </docTitle>
+  <navMap>
+  
+    <navPoint id="nav-1">
+      <navLabel>
+        <text>Title Page</text>
+      </navLabel>
+      <content src="Text/titlepage.xhtml"/>
+    </navPoint>
+    
+    <navPoint id="nav-2">
+      <navLabel>
+        <text>Chapter 1</text>
+      </navLabel>
+      <content src="Text/chapter.xhtml"/>
+      	<!-- Nest here if need be (subchapter) -->
+    </navPoint>
+    
+  </navMap>
+</ncx>

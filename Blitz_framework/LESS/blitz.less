@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+/*  blitz — CSS framework for reflowable eBooks      
+    Version 0.95 by Jiminy Panoz                      
+    Codename: Blonde Rock & Roll                              
+    License: CC BY-SA 3.0 (https://creativecommons.org/licenses/by-sa/3.0/)   */
+
+
+/* NAMESPACES */
+
+@namespace h "http://www.w3.org/1999/xhtml/";
+@namespace epub "http://www.idpg.org/2007/ops";       /* if you need to style epub:type */
+@namespace m "http://www.w3.org/1998/Math/MathML/";   /* if you need to style MathML */
+@namespace svg "http://www.w3.org/2000/svg";          /* if you need to style SVG */
+
+html {
+/* Don't use it for styling, used as selector which can take a punch if anything goes wrong above */        
+}
+
+/* Begin CSS */
+
+@import (reference) 'hyphens';
+@import (reference) 'overrides';
+@import (reference) 'mixins';
+@import 'variables';
+@import 'rhythm';
+@import 'reset';
+@import 'page';
+@import 'typo';
+@import 'lists';
+@import 'rules';
+@import 'table';
+@import 'containers';
+@import 'image';
+@import 'media';
+@import 'utilities';
+@import 'break';
+
+// @import 'kindle';   // compiled as a standalone CSS (check kindle.less). Uncomment to add in core output
+
+/* End CSS */

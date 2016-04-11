@@ -1,0 +1,45 @@
+/* Horizontal rules — Context breaks */
+
+hr {
+  .width-center(25);
+  @computed-margin: (((@body-font-size * @body-line-height) - @border-width) / @body-font-size);
+  margin-top: (@computed-margin + 0em);
+  margin-bottom: (@computed-margin + 0em);  
+  height: 0;
+  border: none;
+  border-top: (((@border-width * 2) / @body-font-size) + 0em) solid @border-color; /* currentColor = color of text (getting around night mode) */
+  opacity: 0.5;     /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
+}
+
+/* Blank-line context change */
+hr.transition {
+	width: 100%;
+    @computed-margin: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
+    margin: ((@computed-margin / 2) + 0em) 0;
+    height: (((@border-width * 2) / @body-font-size) + 0em);
+	border: none;
+	background: none;   /* Note: overridden in night mode excepted when using linear-gradient */
+}
+
+/* Could be a background-image, as seen here: http://www.idpf.org/accessibility/guidelines/content/xhtml/context.php
+Problem is support for background-size and -position is lacking.
+Another problem is night mode since images won’t necessarily be inverted… */
+hr.asterism {
+	width: 100%;
+	margin: @base-margin 0;
+	border: none;
+	background: none;
+	text-align: center;
+	opacity: 1;
+}
+
+/* You can’t rely on pseudo-elements because of legacy RMSDK */
+hr.asterism:after {
+	display: inline-block;
+	content: '* * *';
+	font-size: 1em;
+	line-height: inherit;
+	position: relative;
+	top: -(@base-margin / 3);
+	speak: none;               /* Obviously unsupported */
+}

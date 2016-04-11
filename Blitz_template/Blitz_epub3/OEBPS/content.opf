@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<package prefix="rendition: http://www.idpf.org/vocab/rendition/# schema: http://schema.org/ ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/" xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookId">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ibooks="http://apple.com/ibooks/html-extensions">
+  
+	<dc:identifier id="BookId">XXXXXXXXXXXXXXXXX</dc:identifier>
+	<!-- ISBN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist5">15</meta> -->
+	<!-- EAN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist6">02</meta> -->
+	
+	<meta property="dcterms:modified">2016-03-15T00:00:01Z</meta>
+	
+	<dc:language>en</dc:language>
+	
+	<dc:title id="t1">Blitz EPUB 3 template</dc:title>
+<!--	<meta property="title-type" refines="#t1">main | subtitle | short | collection | edition | expanded</meta>	-->
+<!--	<meta property="belongs-to-collection" id="c02">Collection</meta> -->
+<!--	<meta refines="#c02" property="collection-type">series | set</meta>	-->
+<!--	<meta refines="#c02" property="group-position">2</meta>	-->
+<!--	<meta refines="#c02" property="dcterms:identifier">urn:uuid:XXXXXXX</meta> -->
+
+	<dc:creator id="creator1">Jiminy Panoz</dc:creator>
+		<meta scheme="marc:relators" property="role" refines="#creator1">aut</meta>
+		<meta property="file-as" refines="#creator1">Panoz, Jiminy</meta>
+<!--	<meta refines="#creator1" property="display-seq">1</meta>	-->
+<!--	<meta refines="#creator1" property="alternate-script" xml:lang="ja">村上 春樹</meta>	-->
+
+	<dc:publisher>Publisher</dc:publisher>
+	
+	<dc:rights>CC-BY-NC 3.0</dc:rights>
+
+	<dc:description>A Template to kickstart your reflowable books.</dc:description>
+		<dc:subject>semantics</dc:subject>
+		<dc:subject>structure</dc:subject>
+		<dc:subject>template</dc:subject>
+
+<!-- List of marc relators : http://www.loc.gov/marc/relators/relacode.html -->
+
+	<dc:contributor id="contrib1">Jiminy Panoz</dc:contributor>
+		<meta scheme="marc:relators" property="role" refines="#contrib1">ccp</meta>
+		<meta property="file-as" refines="#contrib1">Panoz, Jiminy</meta>
+
+	<dc:contributor id="contrib2">Jiminy Panoz</dc:contributor>
+		<meta scheme="marc:relators" property="role" refines="#contrib2">mrk</meta>
+		<meta property="file-as" refines="#contrib2">Panoz, Jiminy</meta>
+
+<!-- ePub 2 cover -->
+	<meta name="cover" content="cover.png" />
+
+<!-- Rendition Metadata
+	<meta property="rendition:layout">reflowable</meta>
+	<meta property="rendition:flow">auto | scrolled-doc | scrolled-continuous | paginated</meta>
+	<meta property="rendition:orientation">auto | portrait | landscape</meta>
+	<meta property="rendition:spread">none | landscape | portrait | both | auto</meta>
+-->		
+
+<!-- iBooks' Metadata -->
+	<meta property="ibooks:version">1.0</meta>
+	<meta property="ibooks:specified-fonts">false</meta>
+
+<!-- Accessibility Metadata -->
+
+ <!-- Please get rid of features you don't use in your book -->
+    <meta property="schema:accessibilityFeature">alternativeText</meta>
+    <meta property="schema:accessibilityFeature">audioDescription</meta>
+    <meta property="schema:accessibilityFeature">braille</meta>
+    <meta property="schema:accessibilityFeature">captions</meta>
+    <meta property="schema:accessibilityFeature">ChemML</meta>
+    <meta property="schema:accessibilityFeature">displayTransformability</meta>
+    <meta property="schema:accessibilityFeature">enhancedAudio</meta>
+    <meta property="schema:accessibilityFeature">highContrast</meta>
+    <meta property="schema:accessibilityFeature">largePrint</meta>
+    <meta property="schema:accessibilityFeature">latex</meta>
+    <meta property="schema:accessibilityFeature">longDescription</meta>
+    <meta property="schema:accessibilityFeature">MathML</meta>
+    <meta property="schema:accessibilityFeature">resizeText</meta>
+    <meta property="schema:accessibilityFeature">structuralNavigation</meta>
+    <meta property="schema:accessibilityFeature">tactileGraphic</meta>
+    <meta property="schema:accessibilityFeature">tactileObject</meta>
+    <meta property="schema:accessibilityFeature">transcript</meta>
+    
+ <!-- Hazard, just get rid of "no" when need be --> 
+    <meta property="schema:accessibilityHazard">noFlashing</meta>
+    <meta property="schema:accessibilityHazard">noSound</meta>
+    <meta property="schema:accessibilityHazard">noMotionSimulation</meta>
+    
+ <!-- Control = input methods that can be used -->
+    <meta property="schema:accessibilityControl">fullAudioControl</meta>
+    <meta property="schema:accessibilityControl">fullKeyboardControl</meta>
+    <meta property="schema:accessibilityControl">fullMouseControl</meta>
+    <meta property="schema:accessibilityControl">fullTouchControl</meta>
+    <meta property="schema:accessibilityControl">fullVideoControl</meta>
+    <meta property="schema:accessibilityControl">timing</meta>
+    
+ <!-- API = compatible with the following -->
+    <meta property="schema:accessibilityAPI">AndroidAccessibility</meta>
+    <meta property="schema:accessibilityAPI">ARIA</meta>
+    <meta property="schema:accessibilityAPI">ATK</meta>
+    <meta property="schema:accessibilityAPI">AT-SPI</meta>
+    <meta property="schema:accessibilityAPI">BlackberryAccessibility</meta>
+    <meta property="schema:accessibilityAPI">iAccessible2</meta>
+    <meta property="schema:accessibilityAPI">iOSAccessibility</meta>
+    <meta property="schema:accessibilityAPI">JavaAccessibility</meta>
+    <meta property="schema:accessibilityAPI">MacOSXAccessibility</meta>
+    <meta property="schema:accessibilityAPI">MSAA</meta>
+    <meta property="schema:accessibilityAPI">UIAutomation</meta>
+    
+  </metadata>
+  
+  <manifest>
+	<item href="Text/acknowledgments.xhtml" id="acknowledgments.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/afterword.xhtml" id="afterword.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/appendix.xhtml" id="appendix.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/bibliography.xhtml" id="bibliography.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/chapter-subchapter.xhtml" id="chapter-subchapter.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/chapter.xhtml" id="chapter.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/colophon.xhtml" id="colophon.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/conclusion.xhtml" id="conclusion.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/cover.xhtml" id="cover.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/credits.xhtml" id="credits.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/dedication.xhtml" id="dedication.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/division.xhtml" id="division.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/epigraph.xhtml" id="epigraph.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/epilogue.xhtml" id="epilogue.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/foreword.xhtml" id="foreword.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/glossary.xhtml" id="glossary.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/index.xhtml" id="index.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/introduction.xhtml" id="introduction.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/part.xhtml" id="part.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/preamble.xhtml" id="preamble.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/preface.xhtml" id="preface.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/prologue.xhtml" id="prologue.xhtml" media-type="application/xhtml+xml"/>
+	<item href="Text/titlepage.xhtml" id="titlepage.xhtml" media-type="application/xhtml+xml"/>
+	<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+	<item href="Text/nav.xhtml" id="navid" media-type="application/xhtml+xml" properties="nav"/>
+	<item href="Styles/blitz.css" id="blitz.css" media-type="text/css"/>
+	<item href="Styles/blitz-mq.css" id="blitz-mq.css" media-type="text/css"/>
+	<item href="Styles/kindle.css" id="kindle.css" media-type="text/css"/>
+	<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image" />
+  </manifest>
+
+  <spine toc="ncx">
+	<itemref idref="cover.xhtml" />
+	<itemref idref="titlepage.xhtml" />
+	<itemref idref="colophon.xhtml" />
+	<itemref idref="dedication.xhtml" />
+	<itemref idref="epigraph.xhtml" />
+	<itemref idref="navid" />
+	<itemref idref="foreword.xhtml" />
+	<itemref idref="preface.xhtml" />
+	<itemref idref="acknowledgments.xhtml" />
+	<itemref idref="introduction.xhtml" />
+	<itemref idref="prologue.xhtml" />
+	<itemref idref="preamble.xhtml" />
+	<itemref idref="part.xhtml" />
+	<itemref idref="division.xhtml" />
+	<itemref idref="chapter.xhtml" />
+	<itemref idref="chapter-subchapter.xhtml" />
+	<itemref idref="epilogue.xhtml" />
+	<itemref idref="afterword.xhtml" />
+	<itemref idref="conclusion.xhtml" />
+	<itemref idref="appendix.xhtml" />
+	<itemref idref="glossary.xhtml" />
+	<itemref idref="bibliography.xhtml" />
+	<itemref idref="index.xhtml" />
+	<itemref idref="credits.xhtml" />
+  </spine>
+</package>

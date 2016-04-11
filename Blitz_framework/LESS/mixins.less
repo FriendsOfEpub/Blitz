@@ -1,0 +1,73 @@
+// Mixins
+
+// Centering an element based on its width
+
+.width-center(@elWidth) {
+    width: @elWidth + 0%;
+    margin-left: ((100 - @elWidth) / 2) + 0%;
+}
+
+// Border radius for boxes 
+
+.border-radius(@radius: 5px) {
+	border-radius: @radius;
+}
+
+// Linear-gradient to color and back to origin
+
+.linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b) {
+	background-color: @stop;    /* fallback if linear-gradient is not supported */
+    background-image: -webkit-linear-gradient(@origin, @start, @stop, @start);
+    background-image: linear-gradient(@origin, @start, @stop, @start); 
+}
+
+// Subtle Color Palette
+// Usage: .generate-subtle-palette(#537F84); in custom
+
+.generate-subtle-palette(@baseColor) {
+    .subtle-1 {
+        color: lighten(spin(@baseColor, 10), 20%);
+    }
+    .subtle-2 {
+        color: lighten(spin(@baseColor, 5), 10%);
+    }
+    .subtle-3 {
+        color: @baseColor;
+    }
+    .subtle-4 {
+        color: darken(spin(@baseColor, -5), 10%);
+    }
+    .subtle-5 {
+        color: darken(spin(@baseColor, -10), 20%);
+    }
+}
+
+// Complementary Color Palette
+// Usage: .generate-comp-palette(#537F84); in custom
+
+.generate-comp-palette(@baseColor) {
+    .comp-1 {
+        color: lighten(@baseColor, 30%);
+    }
+    .comp-2 {
+        color: lighten(@baseColor, 15%);;
+    }
+    .comp-3 {
+        color: @baseColor;
+    }
+    .comp-4 {
+        color: spin(@baseColor, 180);
+    }
+    .comp-5 {
+        color: darken(spin(@baseColor, 180), 5%);
+    }
+}
+
+// Creating cols
+
+.generate-columns(@n, @i: 1) when (@i =< @n) {      // Useful for image grids
+    .col-@{i} {
+        width: (@i * 100% / @n);   
+    }
+    .generate-columns(@n, (@i + 1));
+}
