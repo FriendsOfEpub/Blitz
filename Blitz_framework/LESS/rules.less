@@ -21,9 +21,9 @@ hr.transition {
 	background: none;   /* Note: overridden in night mode excepted when using linear-gradient */
 }
 
-/* Over-engineered asterism with an SVG background as base64 
-which is legacy RMSDK-compliant, reflows with text and is 
-night-mode compatible (black asterisk + white border) */
+/* Over-engineered asterism with an SVG background 
+which is legacy RMSDK-compliant, reflows with text and 
+is night-mode compatible (black asterisk + white border) */
 hr.asterism {
 	width: auto;
 	border: none;
@@ -31,7 +31,7 @@ hr.asterism {
 	height: @base-margin;
 	text-indent: 0;
 	text-align: center;
-	background: transparent url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDQ4IDI0IiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJ4TWlkWU1pZCBtZWV0IiB2ZXJzaW9uPSIxLjEiPjxwb2x5Z29uIHBvaW50cz0iOC4xIDE0LjIgNS43IDE3LjMgMy44IDE1LjcgNi4zIDEyLjkgMi43IDExLjYgMy42IDkuNCA3IDEwLjggNyA3LjEgOS4zIDcuMSA5LjIgMTAuOCAxMi43IDkuNCAxMy41IDExLjYgOS45IDEzIDEyLjQgMTUuNyAxMC42IDE3LjMgIi8+PHBhdGggZD0iTTguOCA3LjZ2NGwzLjctMS41IDAuNSAxLjIgLTMuOCAxLjUgMi42IDIuOSAtMS4xIDAuOSAtMi41LTMuMSAtMi41IDMuMSAtMS4xLTAuOSAyLjYtMi45IC0zLjgtMS41IDAuNS0xLjIgMy43IDEuNXYtNEg4LjhNOS44IDYuNmgtMUg3LjVoLTF2MSAyLjVMNC4yIDkuMiAzLjMgOC44IDIuOSA5LjdsLTAuNSAxLjJMMiAxMS44bDEgMC40IDIuNCAwLjlMMy44IDE1bC0wLjcgMC44IDAuOCAwLjdMNSAxNy4zIDUuOCAxOGwwLjYtMC44TDguMSAxNWwxLjggMi4yIDAuNiAwLjggMC44LTAuNyAxLjEtMC45IDAuOC0wLjdMMTIuNSAxNWwtMS43LTEuOCAyLjQtMC45IDAuOS0wLjRMMTMuNyAxMWwtMC41LTEuMiAtMC4yLTEgLTEgMC40IC0yLjMgMC45VjcuNkw5LjggNi42IDkuOCA2LjZ6IiBmaWxsPSIjRkZGIi8+PHBvbHlnb24gcG9pbnRzPSIyNC4xIDE0LjIgMjEuNiAxNy4zIDE5LjggMTUuNyAyMi4yIDEyLjkgMTguNyAxMS42IDE5LjUgOS40IDIzIDEwLjggMjIuOSA3LjEgMjUuMiA3LjEgMjUuMiAxMC44IDI4LjYgOS40IDI5LjUgMTEuNiAyNS45IDEzIDI4LjQgMTUuNyAyNi41IDE3LjMgIi8+PHBhdGggZD0iTTI0LjcgNy42djRsMy43LTEuNSAwLjUgMS4yTDI1IDEyLjdsMi42IDIuOSAtMS4xIDAuOUwyNCAxMy40bC0yLjUgMy4xIC0xLjEtMC45IDIuNi0yLjkgLTMuNy0xLjUgMC41LTEuMiAzLjcgMS41di00aDEuMk0yNS43IDYuNmgtMSAtMS4zIC0xdjEgMi41bC0yLjMtMC45IC0wLjktMC40IC0wLjQgMC45IC0wLjUgMS4yIC0wLjQgMC45IDAuOSAwLjQgMi40IDAuOUwxOS43IDE1IDE5IDE1LjhsMC44IDAuNyAxLjEgMC45IDAuOCAwLjYgMC42LTAuOEwyNCAxNWwxLjcgMi4yIDAuNiAwLjggMC44LTAuNyAxLjEtMC45IDAuOC0wLjdMMjguNCAxNWwtMS43LTEuOCAyLjQtMC45IDAuOS0wLjRMMjkuNiAxMWwtMC41LTEuMiAtMC40LTAuOUwyOCA5LjJsLTIuMyAwLjlWNy42IDYuNkwyNS43IDYuNnoiIGZpbGw9IiNGRkYiLz48cG9seWdvbiBwb2ludHM9IjQwIDE0LjIgMzcuNiAxNy4zIDM1LjcgMTUuNyAzOC4yIDEyLjkgMzQuNyAxMS42IDM1LjUgOS40IDM4LjkgMTAuOCAzOC45IDcuMSA0MS4yIDcuMSA0MS4xIDEwLjggNDQuNiA5LjQgNDUuNCAxMS42IDQxLjkgMTMgNDQuMyAxNS43IDQyLjUgMTcuMyAiLz48cGF0aCBkPSJNNDAuNyA3LjZ2NGwzLjctMS41IDAuNSAxLjJMNDEgMTIuN2wyLjYgMi45IC0xLjEgMC45TDQwIDEzLjRsLTIuNSAzLjEgLTEuMS0wLjkgMi42LTIuOSAtMy43LTEuNSAwLjUtMS4yIDMuNyAxLjV2LTRoMS4yTTQxLjcgNi42aC0xIC0xLjMgLTF2MSAyLjVsLTIuMy0wLjkgLTAuOS0wLjQgLTAuNCAwLjkgLTAuNSAxLjJMMzQgMTEuOGwwLjkgMC40IDIuNCAwLjlMMzUuNyAxNSAzNSAxNS44bDAuOCAwLjcgMS4xIDAuOSAwLjggMC42IDAuNi0wLjhMNDAgMTVsMS43IDIuMiAwLjYgMC44IDAuOC0wLjcgMS4xLTAuOSAwLjgtMC43TDQ0LjQgMTVsLTEuNy0xLjggMi40LTAuOSAwLjktMC40TDQ1LjYgMTFsLTAuNS0xLjIgLTAuNC0wLjkgLTAuOSAwLjQgLTIuMyAwLjlWNy43TDQxLjcgNi42IDQxLjcgNi42eiIgZmlsbD0iI0ZGRiIvPjwvc3ZnPg==") no-repeat center;
+	background: transparent url("asterism.svg") no-repeat center;   /* Change url if you put asterism in a folder */
 	background-size: 2.5em 1.25em;      /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
 	overflow: hidden;                   /* Fixes legacy RMSDK bug when contents before hr are invisible */
 	opacity: 0.85;                      /* Better border color match in night mode */
