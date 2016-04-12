@@ -22,3 +22,7 @@ An eBook framework (CSS + template).
 - Kindle (mobi7 + KF8)
 - Google Play Books
 - RMSDK (a.k.a. eBooks’ IE 6)
+
+### Licence 
+
+Pre-release under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz. May or may not change for v.1 stable.
