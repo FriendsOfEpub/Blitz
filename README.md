@@ -73,6 +73,10 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - Google Play Books
 - RMSDK (a.k.a. eBooks’ IE 6)
 
-### Licence 
+## Licence 
 
-Pre-release under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz. May or may not change for v.1 stable—alternative options are currently being reviewed.
+V.1 “Rock the Casbah” will probably be published under Apache License v.2 ([link](http://www.apache.org/licenses/LICENSE-2.0)) to encourage share alike (Creative Commons doesn’t fit for software). Not sure about that yet, alternatives currently under review.
+
+## Branch’s updates & improvements
+
+- Since we could not rely on `:after`, `hr.asterism` is now an SVG-dependency which works in legacy RMSDK, will reflow with user’s `font-size` when `background-size` is supported, and is compliant with night-modes.
