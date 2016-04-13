@@ -462,14 +462,14 @@ hr.asterism {
   height: 1.5em;
   text-indent: 0;
   text-align: center;
-  background: transparent url("../Images/asterism.svg") no-repeat center;
+  background: transparent url("asterism.svg") no-repeat center;
   /* Change url if you put asterism in a folder */
   background-size: 2.5em 1.25em;
   /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
   overflow: hidden;
   /* Fixes legacy RMSDK bug when contents before hr are invisible */
-  opacity: 0.85;
-  /* Better border color match in night mode */
+  opacity: 0.7;
+  /* Better border color match in night mode (less disruptive) */
 }
 /* Tables */
 table {
