@@ -10,7 +10,7 @@ An eBook framework (CSS + template) which mantra is to “find simple solutions 
 
 ### For Kindle
 
-Either uncomment `@import 'kindle';` in `less.css` or, if you want to compile a specific kindle stylesheet:
+Either uncomment `@import 'kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
 
 `lessc kindle.less kindle.css`
 
