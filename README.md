@@ -81,3 +81,16 @@ V.1 “Rock the Casbah” will probably be published under Apache License v.2 ([
 
 - Since we could not rely on `:after`, `hr.asterism` is now an SVG-dependency which works in legacy RMSDK, will reflow with user’s `font-size` when `background-size` is supported, and is compliant with night-modes.
 - Slight improvement to `hyphenate-limit-lines` (default is now `2` in case an hyphenated word happens to be displayed at the end of the line (2 + 1 = 3).
+
+## Ideas
+
+The following items might be added to Blitz at some point. We are not sure about it yet. 
+
+### Text-to-speech enhancements 
+
+Add punctuation to headings, `dt`, `th` and `td` using `::after` pseudo-element.
+
+- Inspiration: [Aesthetics of the invisible](https://francescoschwarz.de/en/blog/aesthetics-of-the-invisible/)
+- Pros: huge & automatic improvement regarding flow (screen readers e.g. won’t make a pause between heading and text)
+- Cons: ideally, this should be in content and not added using pseudo-elements which we’re not supposed to rely upon… but very few people will do it so maybe this is a compromise we can make.
+- Status: Still thinking about it. In any case, it will probably be implemented in v.2.
