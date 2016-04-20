@@ -375,12 +375,12 @@ sup {
   -epub-hyphens: auto;
   hyphens: auto;
   /* before and after not in spec but iBooks support all three (-webkit-) */
-  -ms-hyphenate-limit-lines: 3;
-  -moz-hyphenate-limit-lines: 3;
-  -webkit-hyphenate-limit-lines: 3;
+  -ms-hyphenate-limit-lines: 2;
+  -moz-hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
   -webkit-hyphenate-limit-before: 2;
   -webkit-hyphenate-limit-after: 2;
-  hyphenate-limit-lines: 3;
+  hyphenate-limit-lines: 2;
   /* No support except Trident (Windows) */
   -ms-hyphenate-limit-chars: 6 3 2;
   -moz-hyphenate-limit-chars: 6 3 2;
