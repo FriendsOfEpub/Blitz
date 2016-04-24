@@ -81,6 +81,7 @@ V.1 “Rock the Casbah” will probably be published under Apache License v.2 ([
 
 - Since we could not rely on `::after`, `hr.asterism` is now an SVG-dependency which works in legacy RMSDK, will reflow with user’s `font-size` when `background-size` is supported, and is compliant with night-modes.
 - Slight improvement to `hyphenate-limit-lines` – default is now `2` in case an hyphenated word happens to be displayed at the end of the line (2 + 1 = 3).
+- You can now override defaults’ `list-style-type` for `ul` and `ol` (sort of a CSS hack relying on `:nth-child` and `:before` to disable `list-style-type` then re-implement a custom one in EPUB3. The default for the mixin’s argument is “em dash”).
 
 ## Ideas
 
