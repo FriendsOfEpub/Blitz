@@ -52,3 +52,9 @@ a, abbr, b, bdi, bdo, cite, code, data, del, dfn, em, i, ins, kbd, mark, q, rp, 
 q {
   quotes: none;  
 }
+
+/* Trying to prevent blank page if element with margin-bottom at the end of xhtml */
+body > :last-child, 
+body > section > :last-child {
+  margin-bottom: 0;   
+}
