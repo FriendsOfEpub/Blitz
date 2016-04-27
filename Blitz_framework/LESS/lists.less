@@ -34,7 +34,7 @@
 	list-style-type: none;
   }
   ol li:nth-child(n+1):before {
-	content: counter(increment-list, @ol-type);
+	content: counter(increment-list, @ol-type) " ";
 	counter-increment: increment-list;
 	position: relative;
 	left: -0.35em;
