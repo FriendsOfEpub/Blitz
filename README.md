@@ -64,6 +64,11 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - LESS/SASS Plugins
 - Launch v.2 following EPUB 3.1 rec (we’ll drop support for legacy RMSDK and Mobi 7 at this point, v.1 will be kept available if support for these two is needed)
 
+### TODO ASAP
+
+- epub test suite for RS **[urgent]**
+- LESS -> SASS (anyone willing to take on it?)
+
 ## Support
 
 - Readium
