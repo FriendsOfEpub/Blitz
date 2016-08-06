@@ -166,7 +166,7 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.bold`
 - `.italic`
 - `.bold-italic` 
-- `small-caps`
+- `.small-caps`
 - `.break-before`
 - `.break-after`
 - `.break-inside`
