@@ -20,8 +20,10 @@ By default, it imports every other part of the framework—excepted Kindle and m
 @import 'page';
 @import 'typo';
 @import 'lists';
+@import 'def-lists';
 @import 'rules';
 @import 'table';
+@import 'code';
 @import 'containers';
 @import 'image';
 @import 'media';
@@ -114,20 +116,14 @@ Blitz provides parametric mixins to enforce vertical rhythm, achieve top-notch h
 
 - `.generate-subtle-palette(@baseColor)`
 - `.generate-comp-palette(@baseColor)`
-- `.generate-columns(@n, @i: 1) when (@i =< @n)`
+- `.generate-columns(@n)` (loop)
 
 ### Static mixins
 
 Blitz offers a large amount of mixins which can be used in various places. Since it adopted the concept of functional CSS, those mixins are output as classes by default but they can also be used as shortcuts to style elements.
 
-#### Typography 
+#### Typography
 
-- `.justified`
-- `.sans`
-- `.serif`
-- `.monospace`
-- `.humanist`
-- `.oldstyle`
 - `.disable-hyphens`
 - `.manual-hyphens`
 - `.hyphenate`
@@ -150,9 +146,16 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.margin-left-l`
 - `.margin-left-xl`
 - `.margin-left-xxl`
+- `.sans`
+- `.serif`
+- `.monospace`
+- `.humanist`
+- `.oldstyle`
+- `.justified`
 - `.align-left`
 - `.align-center`
 - `.align-right`
+- `.indent`
 - `.no-indent`
 - `.hanging-indent`
 - `.fs-xxs`
@@ -176,7 +179,7 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 
 #### Layout
 
-The `.wrap` and `.float-[alignment]` classes specify both with and margins.
+The `.wrap` and `.float-[alignment]` classes specify both width and margins.
 
 The `w-[number]` classes specify a width, the `h-[number]` specify an height.
 
@@ -215,7 +218,7 @@ The `w-[number]` classes specify a width, the `h-[number]` specify an height.
 
 ### eBook-specific elements
 
-Blitz provides you with bookish stuff that works well. Need an asterism? Got you covered! 
+Blitz ships with bookish stuff that works well. Need an asterism? Got you covered! 
 
 - `hr.transition` (i.e. blank line context change)
 - `hr.asterism` (i.e. “* * *”)
@@ -349,6 +352,10 @@ This file contains specific variables to specify list style types (first and sec
 
 The resulting output specifies `list-style-type` and `list-style-position` for `ul` and `ol` (+ nested).
 
+### Def lists
+
+This file contains styles for `dl`, `dt` and `dd`. If your book contains a glossary, you’ll need to import it.
+
 ### Rules
 
 This file provides several horizontal rules: 
@@ -363,9 +370,13 @@ Styles and classes for `table` are specified in this file.
 
 An experimental namespace, `#responsive-table` is also provided in case tables should be layout for smartphones.
 
+### Code
+
+Need preformatted text and/or code? Check this file.
+
 ### Containers
 
-This file provides width, height and float classes for containers.
+This file provides width (+ margins), height and float classes for containers.
 
 ### Image
 
@@ -387,10 +398,10 @@ Those classes are mixins which are output by default but can eventually be used 
 - clear: `.clear`, `.clear-left` and `.clear-right`
 - `.boxed`, which applies a border to an element
 - margins for top and left, computed based on `@base-margin` (vertical rhythm) and `@step` (horizontal grid)
-- alignment: `.align-left`, `.align-center` and `.align-right`
-- indents: `.no-indent` and `.hanging-indent`
+- alignment: `.justify`, `.align-left`, `.align-center` and `.align-right`
+- indents: `.indent`, `.no-indent` and `.hanging-indent`
+- font-stacks
 - font-sizes, which are computed based on the scale specified in variables
-- styles for `.footnote` and `.caption`
 - character styles: `.bold`, `.italic`, `.bold-italic` and `small-caps`
 
 ### Break
