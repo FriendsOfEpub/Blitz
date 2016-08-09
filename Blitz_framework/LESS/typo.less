@@ -5,6 +5,7 @@ blockquote p cite,
 dt, pre, address,
 table, caption, th, td,
 .align-left, .align-center, .align-right,
+.caption,
 .no-hyphens {
   .disable-hyphens;
 }
@@ -42,19 +43,13 @@ p {
     text-indent: @base-fs;
 }
 
-div,
-ul,
-ol,
-blockquote,
-dl,
-pre,
-table {
-    margin: @base-margin 0;
+.footnote {
+  .fs-s;
+  text-indent: 0;
 }
 
 blockquote {
-  margin-left: @step;
-  margin-right: @step;
+    margin: @base-margin @step;
 }
 
 blockquote p {
@@ -66,34 +61,6 @@ blockquote p i,
 blockquote p em,
 blockquote p cite {
   .override-italic;
-}
-
-ol, ul {
-  padding-left: @step;     /* Since em will reflow with font-size user setting, we’re using % */
-}
-
-li {
-  /* Styles */
-}
-
-pre {
-  margin-left: @step;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  .override-tab-size(3); 
-}
-
-dl {
-  margin-left: @step;   
-}
-
-dt {
-  margin: @base-margin 0 0 0;   
-  font-weight: bold;
-}
-
-dd {
-  /* Styles */
 }
 
 address {
@@ -114,17 +81,8 @@ abbr {
 /* Note: Kindle doesn't support that */
 }
 
-code, kbd, samp, var {
-  font-family: monospace;       /* Embed a font cos Kobo doesn't provide a monospace */
-}
-
 i, cite, dfn, em {
   font-style: italic;
-}
-
-dt > dfn {
-  font-style: normal;
-  font-weight: bold;
 }
 
 /* Get back to normal when italic nested in italic */
@@ -170,31 +128,4 @@ sup {
   line-height: 1.2;
   vertical-align: super;      /* Fallback */
   vertical-align: 33%;
-}
-
-.justified {                /* Designed as a class for body — We don't enforce as user setting > author */
-  text-align: justify;
-  .hyphenate;
-}
-
-.sans {                     /* Typical usage: headings */
-  font-family: sans-serif;
-}
-
-.serif {
-  font-family: serif;
-}
-
-.monospace {
-  font-family: monospace;
-}
-
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
-.humanist {
-  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
-}
-
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
-.oldstyle {
-  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
 }

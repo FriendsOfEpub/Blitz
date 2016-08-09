@@ -1,5 +1,7 @@
 /* Utilitarian classes */
 
+    /* Display */
+
 .block {
   display: block;
 }
@@ -22,6 +24,8 @@
 }   
 */
 
+    /* Clearings */
+    
 .clear {              /* may be useful if an element is floating in a container */
   clear: both;
 }
@@ -34,11 +38,15 @@
   clear: right;   
 }
 
+    /* Bordered content */
+
 .boxed {
   border: ((@border-width / @body-font-size) + 0em) @border-style @border-color; /* Current color = color of text (inverted in night mode) */
   @computed-padding: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
   padding: ((@computed-padding / 2) + 0em);
 }
+
+    /* Margins */
 
 .no-margin {
   margin: 0;
@@ -84,6 +92,37 @@
   margin-left: (@step * 3);   
 }
 
+    /* Font-stacks */
+
+.sans {                     /* Typical usage: headings */
+  font-family: sans-serif;
+}
+
+.serif {
+  font-family: serif;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.humanist {
+  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.oldstyle {
+  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+}
+
+    /* Text align */
+    
+.justified {                /* Designed as a class for body — We don't enforce as user setting > author */
+  text-align: justify;
+  .hyphenate;
+}
+
 .align-left {
   text-align: left;
 }
@@ -98,6 +137,12 @@
   text-align: right;
 }
 
+    /* Indents */
+    
+.indent {
+    text-indent: @base-fs;  
+}
+    
 .no-indent {
   text-indent: 0;
 }
@@ -107,6 +152,8 @@
   margin-left: @step;      /* Since em will reflow with font-size user setting, we’re using % */
 }
 
+    /* Font sizes */
+    
 .fs-xxs {
   @new-font-size: ((@body-font-size * 0.8125) / @body-font-size);
   font-size: @new-font-size + 0em;
@@ -146,13 +193,7 @@
   .fs(4);
 }
 
-.footnote,
-.caption {
-  @new-font-size: ((@body-font-size * 0.9375) / @body-font-size);
-  font-size: @new-font-size + 0em;
-  line-height: (@body-line-height / @new-font-size);
-  text-indent: 0;
-}
+    /* Font styles */
 
 .bold {               /* Don't use that with span if b or strong can be used */
   font-weight: bold;
