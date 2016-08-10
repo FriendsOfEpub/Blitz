@@ -1,4 +1,4 @@
-/* Reset */
+/* RESET */
 
 /* So here's the trick, we must reset to manage a number of problems once and for all: 
 - HTML5 backwards compatibility (EPUB 3 file in EPUB 2 app); 
@@ -30,13 +30,13 @@ h1, h2, h3, h4, h5, h6, dt, pre {
 }
 
 /* Following EPUB 3 spec by the letter (applies to RS but let’s make sure it is respected because we never know) */
-nav[epub|type~='toc'] ol {
+nav[epub|type~="toc"] ol {
     list-style: none !important;
 }
 
 /* [Opinionated] Default to prevent bloat in case linear="no" is rendered as linear="yes" */
-nav[epub|type~='landmarks'],
-nav[epub|type~='page-list'] {
+nav[epub|type~="landmarks"],
+nav[epub|type~="page-list"] {
     display: none;   
 }
 
