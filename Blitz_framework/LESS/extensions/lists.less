@@ -1,37 +1,5 @@
 /* LISTS */
 
-
-// Mixins
-
-.override-ul-type(@override-ul-type: ~"\2014") {    // ISO value between quotes please, because Google Play Books
-  ul li:nth-child(n+1) {
-	list-style-type: none;      /* won’t disable in RS which don’t support :nth-child */
-  }
-  ul li:nth-child(n+1):before {
-    /* Extra-cautious selector in case some epub2 RS supports :before but not :nth-child */
-	content: "@{override-ul-type}";
-	position: relative;
-	left: -0.35em;
-  }   
-}
-
-.override-ol-type() {           // Can be useful if you want to style numbers
-  ol {
-    counter-reset: increment-list;   
-  }
-  ol li:nth-child(n+1) {
-	list-style-type: none;
-  }
-  ol li:nth-child(n+1):before {
-	content: counter(increment-list, @ol-type);
-	counter-increment: increment-list;
-	position: relative;
-	left: -0.35em;
-  }   
-}
-
-// CSS output
-
 ul,
 ol {
     margin: @base-margin 0;
@@ -57,3 +25,4 @@ ol ol {
 }
 
 // .override-ul-type;
+// .override-ol-type;

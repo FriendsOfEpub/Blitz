@@ -4,6 +4,95 @@
 
 Blitz is leveraging the concept of inheritance. Values `inherit` and `currentColor` are being used extensively to make the framework compatible with Reading Systems’ default stylesheets, reading modes (`color`) and user settings (`font-size`, `font-family`, `line-height`, etc.).
 
+Defaults and a reset do the heavy lifting so it’s just about building on top of this base. Please note Blitz is taking care of defaults RS aren’t necessarily (HTML5 block elements, hyphens and pagebreaks for selected elements, etc.).
+
+Finally, although we try to rely on RS’ typefaces, typography has been fine tuned (scale, vertical rhythm, hyphens, etc.).
+
+## Blitz’ Architecture
+
+The various parts of Blitz have been organized using a folders structure. There are 6 folders named after their function:
+
+1. core;
+2. reference;
+3. base;
+4. extensions;
+5. utils;
+6. plugins.
+
+### Core
+
+Think of this folder as Blitz’ engine. It contains two files: 
+
+1. `variables`;
+2. `rhythm`.
+
+Variables is like a config file in which you can customize settings.
+
+Rhythm is the file which allows you to compute the typographic scale and vertical rhythm via functions using variables.
+
+### Reference
+
+The reference folder contains files you don’t want to be compiled to CSS. Those files provide mixins which are used to typeset your eBooks though.
+
+By default, you’ll find 3 files in this folder: 
+
+1. `hyphens` (parametric and static mixins for hyphenations);
+2. `mixins` (stuff we don’t use but which could be of use e.g. generators)
+3. `overrides` (both self-contained and RS’ overrides)
+
+Should you not want to output utilities and pagebreaks, this is the folder in which you want to put those two files.
+
+### Base
+
+Base is to be considered the backbone of the CSS output. It consists of
+
+1. reset;
+2. page layout (`@page` and `body`);
+3. typography for common elements;
+3. `figure` and `img` styles.
+
+This base should cover the needs of most eBooks (i.e. novels).
+
+### Extensions
+
+Extensions are parts you might not need at all.
+
+All extensions are optional which means that you could delete those files, the CSS will be compiled anyway.
+
+In this folder you’ll find files for:
+
+- code; 
+- lists;
+- definition lists;
+- medias (SVG, canvas, audio and video);
+- rules i.e. `hr`;
+- tables.
+
+Those files are specific and serves one function so, for instance, you could add one for asides, another one for indexes, etc.
+
+### Utils
+
+Utils consists of functional classes you might not want to output in your CSS. Basically, you could put all of these into the “reference” folder. 
+
+By default, we have decided to compile them.
+
+In this folder you’ll find: 
+
+- break (page-breaks);
+- containers (wraps, width and height classes for `div`, `section`, `figure`, etc.);
+- utilities i.e. classes with a single purpose (display, text align, margins, etc.).
+
+Bear in mind they are used to style elements across the whole system though so you can’t delete those files and expect your CSS to compile.
+
+### Plugins
+
+Plugins are additional standalone parts you might not want to compile in the “core CSS”.
+
+We’ve got two plugins right now: 
+
+1. `blitz-mq` (media queries)
+2. `kindle` (Kindle styles using media queries)
+
 ## Blitz.less
 
 This file is meant to output your CSS. It’s basically a list of imports you can customize.
@@ -11,24 +100,34 @@ This file is meant to output your CSS. It’s basically a list of imports you ca
 By default, it imports every other part of the framework—excepted Kindle and media queries. 
 
 ```
-@import (reference) 'hyphens';
-@import (reference) 'overrides';
-@import (reference) 'mixins';
-@import 'variables';
-@import 'rhythm';
-@import 'reset';
-@import 'page';
-@import 'typo';
-@import 'lists';
-@import 'def-lists';
-@import 'rules';
-@import 'table';
-@import 'code';
-@import 'containers';
-@import 'image';
-@import 'media';
-@import 'utilities';
-@import 'break';
+// Reference > won’t be output, utils can be imported as reference if you want
+@import (reference) 'reference/hyphens';
+@import (reference) 'reference/overrides';
+@import (reference) 'reference/mixins';
+
+// That's the stuff running Blitz
+@import 'core/variables';
+@import 'core/rhythm';
+
+// Base is the foundation = styles you'll use in every book
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typo';
+@import 'base/image';
+
+// Optional extensions for lists, rules, tables, code and media (svg, canvas, etc.)
+@import (optional) 'extensions/lists';
+@import (optional) 'extensions/def-lists';
+@import (optional) 'extensions/rules';
+@import (optional) 'extensions/table';
+@import (optional) 'extensions/code';
+@import (optional) 'extensions/media';
+
+// Utilities you may not want to export
+// The last two are needed (like reference) but output by default
+@import (optional) 'utils/containers';
+@import 'utils/utilities';
+@import 'utils/break';
 ```
 
 Please also note it specifies an UTF-8 charset and namespaces for XHTML, EPUB, MathML and SVG.
@@ -64,6 +163,11 @@ Blitz ships with a handful of global variables which allows for the creation of 
 - `@base-fs` (`@body-font-size` computed in em)
 - `@body-line-height` (ratio)
 - `@base-margin` (`@body-line-height` computed in em)
+- `@scale-factor` (typographic scale)
+
+#### Horizontal margins (grid)
+
+- `@step`
 
 #### Colors
 
@@ -75,10 +179,6 @@ Blitz ships with a handful of global variables which allows for the creation of 
 - `@border-width`
 - `@border-style`
 - `@border-color`
-
-#### Horizontal margins (grid)
-
-- `@step`
 
 #### Lists
 
@@ -97,20 +197,22 @@ Blitz provides parametric mixins to enforce vertical rhythm, achieve top-notch h
 
 - `.rhythm(@font-scale, @margin-top, @margin-bottom)`
 - `.fs(@font-scale)`
-- `.hyphens-auto(@hyphens-lang: en)`
-- `.hyphens-char(@hyphens-char: auto)`
-- `.hyphens-lines(@hyphens-lines: 2, @hyphens-lines-before: 2, @hyphens-lines-after: 2)`
-- `.hyphens-division(@hyphens-chars-min: 6, @hyphens-chars-before: 3, @hyphens-chars-after: 2)`
-- `.hyphens-zone(@hyphens-zone: 10%)`
-- `.hyphens-limit(@hyphens-last: always)`
-- `.override-iBooks-links(@overrideColor: inherit)`
-- `.override-tab-size(@tabs: 4)`
+- `.hyphens-auto(@hyphens-lang)`
+- `.hyphens-char(@hyphens-char)`
+- `.hyphens-lines(@hyphens-lines, @hyphens-lines-before, @hyphens-lines-after)`
+- `.hyphens-division(@hyphens-chars-min, @hyphens-chars-before, @hyphens-chars-after)`
+- `.hyphens-zone(@hyphens-zone)`
+- `.hyphens-limit(@hyphens-last)`
+- `.override-iBooks-links(@overrideColor)`
+- `.override-tab-size(@tabs)`
+- `.override-ul-type(@ulType)`
+- `.override-ol-type()`
 
 #### Layout
 
 - `.width-center(@elWidth)`
-- `.border-radius(@radius: 5px)`
-- `.linear-gradient(@origin: left, @start: #f0f0f0, @stop: #8c8b8b)`
+- `.border-radius(@radius)`
+- `.linear-gradient(@origin, @start, @stop)`
 
 #### Generators 
 
