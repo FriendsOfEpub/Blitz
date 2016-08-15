@@ -159,7 +159,7 @@
 
 ## Namespaces (packages)
 
-- `#img-vh;`
+- `#img-vh`
 - `#height-vh`
 - `#responsive-table`
 
