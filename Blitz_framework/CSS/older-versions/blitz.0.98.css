@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 0.99 by Jiminy Panoz                      
-    Codename: Fujiyama Mama                                 
+    Version 0.98 by Jiminy Panoz                      
+    Codename: House of the Ju Ju Queen                              
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -340,7 +340,6 @@ img {
   max-width: 100%;
   /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
   height: auto;
-  object-fit: contain;
 }
 /* Note: portrait image styling + figcaption is a nightmare */
 /* See https://github.com/jstallent/ImagesSingleFile for the css hack */
@@ -476,8 +475,6 @@ table {
   max-width: 100%;
   margin: 1.5em auto;
   /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
-  font-feature-settings: "tnum" 1;
-  font-variant-numeric: tabular-nums;
 }
 caption {
   caption-side: top;

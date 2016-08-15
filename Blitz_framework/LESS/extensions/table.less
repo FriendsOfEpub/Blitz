@@ -7,6 +7,8 @@ table {
   border-spacing: 0;
   max-width: 100%;
   margin: @base-margin auto;           /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
 }
 
 caption {
