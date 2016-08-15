@@ -140,7 +140,7 @@ This charset may come in handy when using the `content` property since you can s
 
 ```
 @namespace h "http://www.w3.org/1999/xhtml/";
-@namespace epub "http://www.idpg.org/2007/ops";
+@namespace epub "http://www.idpf.org/2007/ops";
 @namespace m "http://www.w3.org/1998/Math/MathML/";
 @namespace svg "http://www.w3.org/2000/svg";
 ```

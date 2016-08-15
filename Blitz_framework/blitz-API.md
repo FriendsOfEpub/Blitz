@@ -1,4 +1,4 @@
-# Blitz doc as an API
+# Blitz doc as an API reference
 
 ## Variables
 
@@ -114,7 +114,7 @@
 
 - `.width-center(@elWidth)`
 - `.border-radius(@radius)`
-- `.linear-gradient(@origin:, @start, @stop)`
+- `.linear-gradient(@origin, @start, @stop)`
 
 #### Static
 
@@ -160,7 +160,7 @@
 ## Namespaces (packages)
 
 - `#img-vh;`
-- `#height-vh`;
+- `#height-vh`
 - `#responsive-table`
 
 ## Keywords for media queries (variables)
