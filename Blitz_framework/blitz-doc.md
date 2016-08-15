@@ -125,7 +125,7 @@ By default, it imports every other part of the framework—excepted Kindle and m
 
 // Utilities you may not want to export
 // The last two are needed (like reference) but output by default
-@import (optional) 'utils/containers';
+@import 'utils/containers';
 @import 'utils/utilities';
 @import 'utils/break';
 ```
