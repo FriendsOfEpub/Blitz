@@ -52,6 +52,22 @@
   margin: 0;
 }
 
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
 .margin-top-s {
   margin-top: (@base-margin / 2);    
 }
@@ -72,6 +88,26 @@
   margin-top: (@base-margin * 4);
 }
 
+.margin-bottom-s {
+  margin-bottom: (@base-margin / 2);    
+}
+
+.margin-bottom-m {
+  margin-bottom: @base-margin;
+}
+
+.margin-bottom-l {
+  margin-bottom: (@base-margin * 2);
+}
+
+.margin-bottom-xl {
+  margin-bottom: (@base-margin * 3);
+}
+
+.margin-bottom-xxl {
+  margin-bottom: (@base-margin * 4);
+}
+
 .margin-left-s {
   margin-left: (@step / 2);   /* % won't reflow with font-size user setting */
 }
@@ -90,6 +126,26 @@
 
 .margin-left-xxl {
   margin-left: (@step * 3);   
+}
+
+.margin-right-s {
+  margin-right: (@step / 2);   /* % won't reflow with font-size user setting */
+}
+
+.margin-right-m {
+  margin-right: @step;   
+}
+
+.margin-right-l {
+  margin-right: (@step * 1.5);   
+}
+
+.margin-right-xl {
+  margin-right: (@step * 2);   
+}
+
+.margin-right-xxl {
+  margin-right: (@step * 3);   
 }
 
     /* Font-stacks */
@@ -155,21 +211,15 @@
     /* Font sizes */
     
 .fs-xxs {
-  @new-font-size: ((@body-font-size * 0.8125) / @body-font-size);
-  font-size: @new-font-size + 0em;
-  line-height: (@body-line-height / @new-font-size);
+  .fs(-2);
 }
 
 .fs-xs {
-  @new-font-size: ((@body-font-size * 0.875) / @body-font-size);
-  font-size: @new-font-size + 0em;
-  line-height: (@body-line-height / @new-font-size);
+  .fs(-1.5);
 }
 
 .fs-s {
-  @new-font-size: ((@body-font-size * 0.9375) / @body-font-size);
-  font-size: @new-font-size + 0em;
-  line-height: (@body-line-height / @new-font-size);
+  .fs(-1);
 }
 
 .fs-m {
@@ -213,4 +263,8 @@
   font-variant: small-caps;
   letter-spacing: ((1 / @body-font-size) + 0em);
   /* The two previous props are not supported in legacy RMSDK */
+}
+
+.underline {
+  text-decoration: underline;   
 }
