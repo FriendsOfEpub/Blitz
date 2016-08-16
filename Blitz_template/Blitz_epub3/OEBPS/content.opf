@@ -135,6 +135,7 @@
 	<item href="Styles/blitz-mq.css" id="blitz-mq.css" media-type="text/css"/>
 	<item href="Styles/kindle.css" id="kindle.css" media-type="text/css"/>
 	<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image" />
+	<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml" />
   </manifest>
 
   <spine toc="ncx">

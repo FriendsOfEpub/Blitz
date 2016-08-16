@@ -1,21 +1,27 @@
 @charset "UTF-8";
+
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 0.95 by Jiminy Panoz                      
-    Codename: Blonde Rock & Roll                              
+    Version 0.99 by Jiminy Panoz                      
+    Codename: Fujiyama Mama                                 
     License: MIT (https://opensource.org/licenses/MIT)   */
+    
 /* NAMESPACES */
+
 @namespace h "http://www.w3.org/1999/xhtml/";
-@namespace epub "http://www.idpg.org/2007/ops";
+@namespace epub "http://www.idpf.org/2007/ops";
 /* if you need to style epub:type */
 @namespace m "http://www.w3.org/1998/Math/MathML/";
 /* if you need to style MathML */
 @namespace svg "http://www.w3.org/2000/svg";
 /* if you need to style SVG */
+
 html {
   /* Don't use it for styling, used as selector which can take a punch if anything goes wrong above */
 }
+
 /* Begin CSS */
-/* Reset */
+
+/* RESET */
 /* So here's the trick, we must reset to manage a number of problems once and for all: 
 - HTML5 backwards compatibility (EPUB 3 file in EPUB 2 app); 
 - user settings (e.g. line-height on Kobo and Kindle); 
@@ -24,6 +30,7 @@ html {
 - etc.
 It all started as a normalize and became a reset given the magnitude of the task.                                                          
 */
+
 article,
 address,
 aside,
@@ -65,6 +72,7 @@ ul {
   font-style: normal;
   font-weight: normal;
 }
+
 /* This is absolutely necessary for backwards compatibility */
 article,
 aside,
@@ -77,6 +85,7 @@ nav,
 section {
   display: block;
 }
+
 /* [Opinionated] Default to prevent RS from justifying all of these! */
 h1,
 h2,
@@ -88,15 +97,18 @@ dt,
 pre {
   text-align: left;
 }
+
 /* Following EPUB 3 spec by the letter (applies to RS but let’s make sure it is respected because we never know) */
-nav[epub|type~='toc'] ol {
+nav[epub|type~="toc"] ol {
   list-style: none !important;
 }
+
 /* [Opinionated] Default to prevent bloat in case linear="no" is rendered as linear="yes" */
-nav[epub|type~='landmarks'],
-nav[epub|type~='page-list'] {
+nav[epub|type~="landmarks"],
+nav[epub|type~="page-list"] {
   display: none;
 }
+
 a,
 abbr,
 b,
@@ -133,16 +145,25 @@ var {
   color: inherit;
   text-decoration: none;
 }
+
 q {
   quotes: none;
 }
-/* Page Layout */
+
+/* Trying to prevent blank page if element with margin-bottom at the end of xhtml */
+body > :last-child,
+body > section > :last-child {
+  margin-bottom: 0;
+}
+
+/* PAGE LAYOUT */
+
 @page {
   margin: 30px 30px 20px 30px;
-  padding: 0;
-  
   /* Recommended by Barnes & Noble in this old spec: https://simg1.imagesbn.com/pimages/pubit/support/pubit_epub_formatting_guide.pdf */
+  padding: 0;
 }
+
 body {
   font-size: 100%;
   line-height: 1.5;
@@ -153,7 +174,9 @@ body {
   /* iBooks and Kobo support widows and orphans */
   orphans: 2;
 }
+
 /* TYPOGRAPHY */
+
 h1,
 h2,
 h3,
@@ -171,6 +194,7 @@ td,
 .align-left,
 .align-center,
 .align-right,
+.caption,
 .no-hyphens {
   adobe-hyphenate: none;
   /* proprietary for Legacy RMSDK */
@@ -180,6 +204,7 @@ td,
   -epub-hyphens: none;
   hyphens: none;
 }
+
 h1,
 h2,
 h3,
@@ -193,92 +218,74 @@ hr {
   page-break-after: avoid;
   break-after: avoid;
 }
+
 h1 {
   font-size: 1.4375em;
   line-height: 1.04347826;
   margin-top: 0em;
   margin-bottom: 2.08695652em;
 }
+
 h2 {
   font-size: 1.3125em;
   line-height: 1.14285714;
   margin-top: 2.28571429em;
   margin-bottom: 1.14285714em;
 }
+
 h3 {
   font-size: 1.125em;
   line-height: 1.33333333;
   margin-top: 1.33333333em;
   margin-bottom: 1.33333333em;
 }
+
 h4 {
   font-size: 1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0em;
 }
+
 h5 {
   /* Styles */
 }
+
 h6 {
   /* Styles */
 }
+
 p {
   text-indent: 1em;
 }
-div,
-ul,
-ol,
-blockquote,
-dl,
-pre,
-table {
-  margin: 1.5em 0;
+
+.footnote {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-indent: 0;
 }
+
 blockquote {
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 1.5em 5%;
 }
+
 blockquote p {
   text-indent: 0;
   font-style: italic;
 }
+
 blockquote p i,
 blockquote p em,
 blockquote p cite {
   font-style: normal;
 }
-ol,
-ul {
-  padding-left: 5%;
-  /* Since em will reflow with font-size user setting, we’re using % */
-}
-li {
-  /* Styles */
-}
-pre {
-  margin-left: 5%;
-  word-wrap: break-word;
-  white-space: pre-wrap;
-  -ms-tab-size: 3;
-  -moz-tab-size: 3;
-  -webkit-tab-size: 3;
-  tab-size: 3;
-}
-dl {
-  margin-left: 5%;
-}
-dt {
-  margin: 1.5em 0 0 0;
-  font-weight: bold;
-}
-dd {
-  /* Styles */
-}
+
 address {
   /* Styles */
 }
+
 /* MICRO TYPOGRAPHY */
+
 a {
   text-decoration: underline;
   /* Note: KF8 will force this value unless you use "el.class a" */
@@ -288,27 +295,20 @@ a {
   /* iBooks override (iOS 9 + El Capitan in night mode) */
   /* inherit = text color */
 }
+
 abbr {
   /* Note: Kindle doesn't support that */
 }
-code,
-kbd,
-samp,
-var {
-  font-family: monospace;
-  /* Embed a font cos Kobo doesn't provide a monospace */
-}
+
 i,
 cite,
 dfn,
 em {
   font-style: italic;
 }
-dt > dfn {
-  font-style: normal;
-  font-weight: bold;
-}
+
 /* Get back to normal when italic nested in italic */
+
 i i,
 i cite,
 i dfn,
@@ -327,24 +327,30 @@ em dfn,
 em em {
   font-style: normal;
 }
+
 b,
 strong {
   font-weight: bold;
 }
+
 del,
 s {
   text-decoration: line-through;
 }
+
 mark {
   background-color: yellow;
   color: inherit;
 }
+
 ins {
   /* Styles */
 }
+
 small {
   font-size: 0.8125em;
 }
+
 /* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
@@ -353,6 +359,7 @@ sub {
   /* Fallback */
   vertical-align: -20%;
 }
+
 /* Styling is improved to prevent sup from affecting line-height */
 sup {
   font-size: 75%;
@@ -361,6 +368,640 @@ sup {
   /* Fallback */
   vertical-align: 33%;
 }
+
+/* FIGURES + IMAGES  */
+
+figure {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: 1.5em 0;
+}
+
+figcaption,
+.caption {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-indent: 0;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Note: portrait image styling + figcaption is a nightmare */
+/* See https://github.com/jstallent/ImagesSingleFile for the css hack */
+img.portrait {
+  width: auto;
+  max-width: 100%;
+  /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
+  height: 100%;
+  /* We try to prevent blank page after */
+  max-height: 95%;
+  /* Max value iBooks enforces */
+}
+
+.float-left img,
+.float-right img {
+  width: 100%;
+  /* If it’s auto, image in floating container will overflow on Kobo iOS + Kindle */
+}
+
+@supports (height: 100vh) {
+  .vh-100 {
+    height: 99vh;
+    /* Trying to avoid blank page after */
+  }
+  .vh-90 {
+    height: 90vh;
+  }
+  .vh-80 {
+    height: 80vh;
+  }
+  .vh-70 {
+    height: 70vh;
+  }
+  .vh-60 {
+    height: 60vh;
+  }
+  .vh-50 {
+    height: 50vh;
+  }
+  .vh-40 {
+    height: 40vh;
+  }
+  .vh-30 {
+    height: 30vh;
+  }
+  .vh-20 {
+    height: 20vh;
+  }
+  .vh-10 {
+    height: 10vh;
+  }
+}
+
+/* LISTS */
+
+ul,
+ol {
+  margin: 1.5em 0;
+  padding-left: 5%;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+ul ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+ol ol {
+  list-style-type: lower-roman;
+}
+
+/* DEFINITION LISTS */
+
+dl {
+  margin: 1.5em 0 1.5em 5%;
+}
+
+dt {
+  margin: 1.5em 0 0 0;
+  font-weight: bold;
+}
+
+dd {
+  /* Styles */
+}
+
+dt > dfn {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* HORIZONTAL RULES — CONTEXT BREAKS */
+
+hr {
+  width: 25%;
+  margin-left: 37.5%;
+  margin-top: 1.4375em;
+  margin-bottom: 1.4375em;
+  height: 0;
+  border: none;
+  border-top: 0.125em solid currentColor;
+  /* currentColor = color of text (getting around night mode) */
+  opacity: 0.5;
+  /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
+}
+
+/* Blank-line context change */
+hr.transition {
+  width: 100%;
+  margin: 0.6875em 0;
+  height: 0.125em;
+  border: none;
+  background: none;
+  /* Note: overridden in night mode excepted when using linear-gradient */
+}
+
+/* Over-engineered asterism with an SVG background 
+which is legacy RMSDK-compliant, reflows with text and 
+is night-mode compatible (black asterisk + white border) */
+hr.asterism {
+  width: auto;
+  border: none;
+  margin: 1.5em 0;
+  height: 1.5em;
+  text-indent: 0;
+  text-align: center;
+  background: transparent url("../Images/asterism.svg") no-repeat center;
+  /* Change url if you put asterism in a folder */
+  background-size: 2.5em 1.25em;
+  /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
+  overflow: hidden;
+  /* Fixes legacy RMSDK bug when contents before hr are invisible */
+  opacity: 0.7;
+  /* Better border color match in night mode (less disruptive) */
+}
+
+/* TABLES */
+
+table {
+  display: table;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  margin: 1.5em auto;
+  /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  /* Note: only value legacy RMSDK supports */
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody {
+  /* Styles */
+}
+
+thead {
+  /* Styles */
+}
+
+tfoot {
+  /* Styles */
+}
+
+tr {
+  /* Styles */
+}
+
+th {
+  empty-cells: show;
+  border-bottom: 0.125em solid currentColor;
+  /* Current color = color of text (inverted in night mode) */
+  padding: 0.6875em 2% 0.6875em 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  empty-cells: show;
+  border-bottom: 0.0625em solid currentColor;
+  /* Current color = color of text (inverted in night mode) */
+  padding: 0.75em 2% 0.6875em 0;
+  text-align: left;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+/* CODE */
+
+pre {
+  margin: 1.5em 0 1.5em 5%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  -ms-tab-size: 3;
+  -moz-tab-size: 3;
+  -webkit-tab-size: 3;
+  tab-size: 3;
+}
+
+code,
+kbd,
+samp,
+var {
+  font-family: monospace;
+  /* Embed a font cos Kobo doesn't provide a monospace */
+}
+
+/* MEDIAS */
+
+audio {
+  /* Styles */
+}
+
+video {
+  /* Styles */
+}
+
+canvas,
+iframe,
+svg,
+video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* CONTAINERS — WRAPPERS */
+
+.wrap-100 {
+  width: auto;
+  /* defaults to 100% but takes borders into account = big win since we can’t rely on box-sizing */
+  margin: 1.5em 0;
+}
+
+.wrap-90 {
+  width: 90%;
+  margin: 1.5em 5%;
+  /* Since we can’t use auto (0 in legacy RMSDK), we must center using % */
+}
+
+.wrap-80 {
+  width: 80%;
+  /* width: 80% -> KF8 bug, see amzn-kf8 query for fix */
+  margin: 1.5em 10%;
+}
+
+.wrap-70 {
+  width: 70%;
+  margin: 1.5em 15%;
+}
+
+.wrap-60 {
+  width: 60%;
+  margin: 1.5em 20%;
+}
+
+.wrap-50 {
+  width: 50%;
+  margin: 1.5em 25%;
+}
+
+.wrap-40 {
+  width: 40%;
+  margin: 1.5em 30%;
+}
+
+.wrap-30 {
+  width: 30%;
+  margin: 1.5em 35%;
+}
+
+.wrap-20 {
+  width: 20%;
+  margin: 1.5em 40%;
+}
+
+.wrap-10 {
+  width: 10%;
+  margin: 1.5em 45%;
+}
+
+/* Widths */
+
+.w-100 {
+  width: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+/* Heights */
+
+.h-100 {
+  height: 99%;
+  /* 99.8% cos’ legacy RMSDK applies blank page after if 100% */
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-70 {
+  height: 70%;
+}
+
+.h-60 {
+  height: 60%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-10 {
+  height: 10%;
+}
+
+@supports (height: 100vh) {
+  .h-100 {
+    height: 99vh;
+    /* Trying to avoid blank page after */
+  }
+  .h-90 {
+    height: 90vh;
+  }
+  .h-80 {
+    height: 80vh;
+  }
+  .h-70 {
+    height: 70vh;
+  }
+  .h-60 {
+    height: 60vh;
+  }
+  .h-50 {
+    height: 50vh;
+  }
+  .h-40 {
+    height: 40vh;
+  }
+  .h-30 {
+    height: 30vh;
+  }
+  .h-20 {
+    height: 20vh;
+  }
+  .h-10 {
+    height: 10vh;
+  }
+}
+
+/* Floats */
+/* If there are too many floating elements in a XHTML file, 
+performance of legacy RMSDK takes a huge hit (± 4 seconds to 
+render page on eInk devices)                                    */
+
+.float-left {
+  float: left;
+  margin: 0 1.5% 0 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 0 1.5%;
+}
+
+/* UTILITIES */
+
+/* Display */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  /* Typical usage: EPUB 3 landmarks inline TOC */
+  display: none;
+}
+
+/* May be useful for EPUB 3.1, warning .absolute in ePubCheck in EPUB 3.0.1
+.relative {
+  position: relative;   
+}
+
+.absolute {
+  position: absolute;   
+}   
+*/
+
+/* Clearings */
+
+.clear {
+  /* may be useful if an element is floating in a container */
+  clear: both;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+/* Bordered content */
+
+.boxed {
+  border: 0.0625em solid currentColor;
+  /* Current color = color of text (inverted in night mode) */
+  padding: 0.6875em;
+}
+
+/* Margins */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.margin-top-s {
+  margin-top: 0.75em;
+}
+
+.margin-top-m {
+  margin-top: 1.5em;
+}
+
+.margin-top-l {
+  margin-top: 3em;
+}
+
+.margin-top-xl {
+  margin-top: 4.5em;
+}
+
+.margin-top-xxl {
+  margin-top: 6em;
+}
+
+.margin-bottom-s {
+  margin-bottom: 0.75em;
+}
+
+.margin-bottom-m {
+  margin-bottom: 1.5em;
+}
+
+.margin-bottom-l {
+  margin-bottom: 3em;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 4.5em;
+}
+
+.margin-bottom-xxl {
+  margin-bottom: 6em;
+}
+
+.margin-left-s {
+  margin-left: 2.5%;
+  /* % won't reflow with font-size user setting */
+}
+
+.margin-left-m {
+  margin-left: 5%;
+}
+
+.margin-left-l {
+  margin-left: 7.5%;
+}
+
+.margin-left-xl {
+  margin-left: 10%;
+}
+
+.margin-left-xxl {
+  margin-left: 15%;
+}
+
+.margin-right-s {
+  margin-right: 2.5%;
+  /* % won't reflow with font-size user setting */
+}
+
+.margin-right-m {
+  margin-right: 5%;
+}
+
+.margin-right-l {
+  margin-right: 7.5%;
+}
+
+.margin-right-xl {
+  margin-right: 10%;
+}
+
+.margin-right-xxl {
+  margin-right: 15%;
+}
+
+/* Font-stacks */
+
+.sans {
+  /* Typical usage: headings */
+  font-family: sans-serif;
+}
+
+.serif {
+  font-family: serif;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.humanist {
+  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.oldstyle {
+  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+}
+
+/* Text align */
+
 .justified {
   /* Designed as a class for body — We don't enforce as user setting > author */
   text-align: justify;
@@ -375,12 +1016,12 @@ sup {
   -epub-hyphens: auto;
   hyphens: auto;
   /* before and after not in spec but iBooks support all three (-webkit-) */
-  -ms-hyphenate-limit-lines: 2;
-  -moz-hyphenate-limit-lines: 2;
-  -webkit-hyphenate-limit-lines: 2;
+  -ms-hyphenate-limit-lines: 3;
+  -moz-hyphenate-limit-lines: 3;
+  -webkit-hyphenate-limit-lines: 3;
   -webkit-hyphenate-limit-before: 2;
   -webkit-hyphenate-limit-after: 2;
-  hyphenate-limit-lines: 2;
+  hyphenate-limit-lines: 3;
   /* No support except Trident (Windows) */
   -ms-hyphenate-limit-chars: 6 3 2;
   -moz-hyphenate-limit-chars: 6 3 2;
@@ -397,446 +1038,98 @@ sup {
   -webkit-hyphenate-limit-last: always;
   hyphenate-limit-last: always;
 }
-.sans {
-  /* Typical usage: headings */
-  font-family: sans-serif;
-}
-.serif {
-  font-family: serif;
-}
-.monospace {
-  font-family: monospace;
-}
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
-.humanist {
-  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
-}
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
-.oldstyle {
-  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
-}
-/* Lists */
-ul {
-  list-style-type: disc;
-  list-style-position: outside;
-}
-ul ul {
-  list-style-type: square;
-}
-ol {
-  list-style-type: decimal;
-  list-style-position: outside;
-}
-ol ol {
-  list-style-type: lower-roman;
-}
-/* Horizontal rules — Context breaks */
-hr {
-  width: 25%;
-  margin-left: 37.5%;
-  margin-top: 1.4375em;
-  margin-bottom: 1.4375em;
-  height: 0;
-  border: none;
-  border-top: 0.125em solid currentColor;
-  /* currentColor = color of text (getting around night mode) */
-  opacity: 0.5;
-  /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
-}
-/* Blank-line context change */
-hr.transition {
-  width: 100%;
-  margin: 0.6875em 0;
-  height: 0.125em;
-  border: none;
-  background: none;
-  /* Note: overridden in night mode excepted when using linear-gradient */
-}
-/* Over-engineered asterism with an SVG background 
-which is legacy RMSDK-compliant, reflows with text and 
-is night-mode compatible (black asterisk + white border) */
-hr.asterism {
-  width: auto;
-  border: none;
-  margin: 1.5em 0;
-  height: 1.5em;
-  text-indent: 0;
-  text-align: center;
-  background: transparent url("asterism.svg") no-repeat center;
-  /* Change url if you put asterism in a folder */
-  background-size: 2.5em 1.25em;
-  /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
-  overflow: hidden;
-  /* Fixes legacy RMSDK bug when contents before hr are invisible */
-  opacity: 0.7;
-  /* Better border color match in night mode (less disruptive) */
-}
-/* Tables */
-table {
-  display: table;
-  table-layout: auto;
-  border-collapse: collapse;
-  border-spacing: 0;
-  max-width: 100%;
-  margin: 1.5em auto;
-  /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
-}
-caption {
-  caption-side: top;
-  /* Note: only value legacy RMSDK supports */
-  text-align: center;
-  font-weight: bold;
-}
-tbody {
-  /* Styles */
-}
-thead {
-  /* Styles */
-}
-tfoot {
-  /* Styles */
-}
-tr {
-  /* Styles */
-}
-th {
-  empty-cells: show;
-  border-bottom: 0.125em solid currentColor;
-  /* Current color = color of text (inverted in night mode) */
-  padding: 0.6875em 2% 0.6875em 0;
-  text-align: left;
-  font-weight: bold;
-}
-td {
-  empty-cells: show;
-  border-bottom: 0.0625em solid currentColor;
-  /* Current color = color of text (inverted in night mode) */
-  padding: 0.75em 2% 0.6875em 0;
-  text-align: left;
-}
-.table-fixed {
-  table-layout: fixed;
-}
-/* Containers — Wrappers */
-.wrap-100 {
-  width: auto;
-  /* defaults to 100% but takes borders into account = big win since we can’t rely on box-sizing */
-  margin: 1.5em 0;
-}
-.wrap-90 {
-  width: 90%;
-  margin: 1.5em 5%;
-  /* Since we can’t use auto (0 in legacy RMSDK), we must center using % */
-}
-.wrap-80 {
-  width: 80%;
-  /* width: 80% -> KF8 bug, see amzn-kf8 query for fix */
-  margin: 1.5em 10%;
-}
-.wrap-70 {
-  width: 70%;
-  margin: 1.5em 15%;
-}
-.wrap-60 {
-  width: 60%;
-  margin: 1.5em 20%;
-}
-.wrap-50 {
-  width: 50%;
-  margin: 1.5em 25%;
-}
-.wrap-40 {
-  width: 40%;
-  margin: 1.5em 30%;
-}
-.wrap-30 {
-  width: 30%;
-  margin: 1.5em 35%;
-}
-.wrap-20 {
-  width: 20%;
-  margin: 1.5em 40%;
-}
-.wrap-10 {
-  width: 10%;
-  margin: 1.5em 45%;
-}
-/* Widths */
-.w-100 {
-  width: 100%;
-}
-.w-90 {
-  width: 90%;
-}
-.w-80 {
-  width: 80%;
-}
-.w-70 {
-  width: 70%;
-}
-.w-60 {
-  width: 60%;
-}
-.w-50 {
-  width: 50%;
-}
-.w-40 {
-  width: 40%;
-}
-.w-30 {
-  width: 30%;
-}
-.w-20 {
-  width: 20%;
-}
-.w-10 {
-  width: 10%;
-}
-/* Heights */
-.h-100 {
-  height: 99.8%;
-  /* 99.8% cos’ legacy RMSDK applies blank page after if 100% */
-  max-height: 99vh;
-  /* iBooks sets 95vh for img */
-}
-.h-90 {
-  height: 90%;
-  max-height: 90vh;
-  /* We are using max-height so that legacy RMSDK takes % height into account. It won’t fallback to % if height in vh */
-}
-.h-80 {
-  height: 80%;
-  max-height: 80vh;
-}
-.h-70 {
-  height: 70%;
-  max-height: 70vh;
-}
-.h-60 {
-  height: 60%;
-  max-height: 60vh;
-}
-.h-50 {
-  height: 50%;
-  max-height: 50vh;
-}
-.h-40 {
-  height: 40%;
-  max-height: 40vh;
-}
-.h-30 {
-  height: 30%;
-  max-height: 30vh;
-}
-.h-20 {
-  height: 20%;
-  max-height: 20vh;
-}
-.h-10 {
-  height: 10%;
-  max-height: 10vh;
-}
-/* Floats */
-/* If there are too many floating elements in a XHTML file, 
-performance of legacy RMSDK takes a huge hit (± 4 seconds to 
-render page on eInk devices)                                    */
-.float-left {
-  float: left;
-  margin: 0 1.5% 0 0;
-}
-.float-right {
-  float: right;
-  margin: 0 0 0 1.5%;
-}
-/* Figures — Images  */
-figure {
-  page-break-inside: avoid;
-  break-inside: avoid;
-  margin: 1.5em 0;
-}
-figcaption,
-.caption {
-  font-size: 0.9375em;
-  line-height: 1.6;
-  text-indent: 0;
-}
-img {
-  width: auto;
-  max-width: 100%;
-  /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
-  height: auto;
-}
-/* Note: portrait image styling + figcaption is a nightmare */
-/* See https://github.com/jstallent/ImagesSingleFile for the css hack */
-img.portrait {
-  width: auto;
-  max-width: 100%;
-  /* Note: KF8 doesn't support max-width hence "width: auto;" as fallback */
-  height: 95%;
-  /* We try to prevent blank page after */
-  max-height: 95vh;
-  /* Max value iBooks enforce */
-}
-.float-left img,
-.float-right img {
-  width: 100%;
-  /* If it’s auto, image in floating container will overflow on Kobo iOS + Kindle */
-}
-/* Medias */
-audio {
-  /* Styles */
-}
-video {
-  /* Styles */
-}
-canvas,
-iframe,
-svg,
-video {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-}
-/* Utilitarian classes */
-.block {
-  display: block;
-}
-.inline-block {
-  display: inline-block;
-}
-.hidden {
-  /* Typical usage: EPUB 3 landmarks inline TOC */
-  display: none;
-}
-/* May be useful for EPUB 3.1, warning .absolute in ePubCheck in EPUB 3.0.1
-.relative {
-  position: relative;   
-}
 
-.absolute {
-  position: absolute;   
-}   
-*/
-.clear {
-  /* may be useful if an element is floating in a container */
-  clear: both;
-}
-.clear-left {
-  clear: left;
-}
-.clear-right {
-  clear: right;
-}
-.boxed {
-  border: 0.0625em solid currentColor;
-  /* Current color = color of text (inverted in night mode) */
-  padding: 0.6875em;
-}
-.no-margin {
-  margin: 0;
-}
-.margin-top-s {
-  margin-top: 0.75em;
-}
-.margin-top-m {
-  margin-top: 1.5em;
-}
-.margin-top-l {
-  margin-top: 3em;
-}
-.margin-top-xl {
-  margin-top: 4.5em;
-}
-.margin-top-xxl {
-  margin-top: 6em;
-}
-.margin-left-s {
-  margin-left: 2.5%;
-  /* % won't reflow with font-size user setting */
-}
-.margin-left-m {
-  margin-left: 5%;
-}
-.margin-left-l {
-  margin-left: 7.5%;
-}
-.margin-left-xl {
-  margin-left: 10%;
-}
-.margin-left-xxl {
-  margin-left: 15%;
-}
 .align-left {
   text-align: left;
 }
+
 .align-center {
   text-indent: 0;
   /* Necessary as RS may define text-indent for p */
   text-align: center;
 }
+
 .align-right {
   text-indent: 0;
   /* Necessary as RS may define text-indent for p */
   text-align: right;
 }
+
+/* Indents */
+
+.indent {
+  text-indent: 1em;
+}
+
 .no-indent {
   text-indent: 0;
 }
+
 .hanging-indent {
   text-indent: -5%;
   margin-left: 5%;
   /* Since em will reflow with font-size user setting, we’re using % */
 }
+
+/* Font sizes */
+
 .fs-xxs {
   font-size: 0.8125em;
   line-height: 1.84615385;
 }
+
 .fs-xs {
   font-size: 0.875em;
   line-height: 1.71428571;
 }
+
 .fs-s {
   font-size: 0.9375em;
   line-height: 1.6;
 }
+
 .fs-m {
   font-size: 1em;
   line-height: inherit;
 }
+
 .fs-l {
   font-size: 1.125em;
   line-height: 1.33333333;
 }
+
 .fs-xl {
   font-size: 1.3125em;
   line-height: 1.14285714;
 }
+
 .fs-xxl {
   font-size: 1.4375em;
   line-height: 1.04347826;
 }
+
 .fs-jumbo {
   font-size: 1.625em;
   line-height: 0.92307692;
 }
-.footnote,
-.caption {
-  font-size: 0.9375em;
-  line-height: 1.6;
-  text-indent: 0;
-}
+
+/* Font styles */
+
 .bold {
   /* Don't use that with span if b or strong can be used */
   font-weight: bold;
 }
+
 .italic {
   /* Don't use that with span if i, cite, dfn or em can be used */
   font-style: italic;
 }
+
 .bold-italic {
   font-weight: bold;
   font-style: italic;
 }
+
 .small-caps {
   text-transform: lowercase;
   /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
@@ -844,31 +1137,42 @@ video {
   letter-spacing: 0.0625em;
   /* The two previous props are not supported in legacy RMSDK */
 }
-/* Page breaks */
+
+.underline {
+  text-decoration: underline;
+}
+
+/* PAGE BREAKS */
+
 .break-before {
   page-break-before: always;
   break-before: always;
   /* Future according to https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before */
 }
+
 /* For some reason, after has better support than before (Google, Kobo, etc.) */
 .break-after {
   page-break-after: always;
   break-after: always;
 }
+
 .break-inside {
-  page-break-inside: always;
-  break-inside: always;
+  page-break-inside: auto;
+  break-inside: auto;
 }
+
 /* Let’s pretend it is supported (legacy RMSDK does, others not so much) */
 .no-break-before {
   page-break-before: avoid;
   break-before: avoid;
 }
+
 /* Let’s pretend it is supported (legacy RMSDK does, others not so much) */
 .no-break-after {
   page-break-after: avoid;
   break-after: avoid;
 }
+
 /* This one works in iBooks, useful for figure or to keep 2 elements together */
 .no-break-inside {
   page-break-inside: avoid;
