@@ -436,6 +436,54 @@ Reset was designed to… reset all elements.
 
 It also makes sure HTML5 block elements are displayed as blocks in EPUB 2 reading systems.
 
+Moreover, it’s a sanitized foundation we build upon. The benefits are manifold: 
+
+- we avoid useless repetitions (DRY i.e. Don’t Repeat Yourself);
+- we enforce backwards compatibility for HTML5 bloc elements;
+- we make sure we don’t disable user settings;
+- we fix some very specific bugs (e.g. text-align in Kobo iOS);
+- etc. 
+
+Here are the defaults.
+
+```
+block-elements {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: inherit;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+html5-block-elements {
+  display: block;
+}
+
+headings {
+  text-align: left;
+}
+
+epub3-toc-list {
+  list-style: none !important;
+}
+
+epub3-landmarks-pagelist {
+  display: none;
+}
+
+inline-elements {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-decoration: none;
+}
+```
+
+
 ### Page
 
 This is where we specify the “global layout” for `@page` and `body`.
