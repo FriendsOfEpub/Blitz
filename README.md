@@ -2,7 +2,13 @@
 
 An eBook framework (CSS + template) which mantra is to “find simple solutions to complex issues.”
 
-## Compile
+## Licence 
+
+Blitz is released under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz.
+
+## Compile LESS
+
+Either use the [GUI](http://lesscss.org/usage/#guis-for-less) or, if you’re one of the old-school type…
 
 ### For core
 
@@ -27,13 +33,20 @@ Blitz was designed to deal with the significant obstacles a newcomer or even an 
 1. to be simple and robust enough;
 2. to offer a sensible default;
 3. to manage backwards compatibility (ePub 2.0.1 + mobi 7);
-4. to provide useful tools (LESS/SASS);
+4. to provide useful tools (LESS);
 5. to get around reading modes (night, sepia, etc.);
 6. to **not** disable user settings.
 
-We have chosen a functional approach (FCSS) but LESS/SASS “plugins” are planned to provide meaningful class names depending on eBook’s type (poetry, plays, etc.).
+We have chosen a functional approach (FCSS) but LESS presets are planned to provide meaningful class names depending on eBook’s type (poetry, plays, etc.).
 
-## Principles
+## The 4 principles of blitz
+
+1. **Espouse [inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)**, the 2 fundamental principles of CSS. eBooks are documents, CSS was designed for documents… It’s a match! 
+2. **Build and refine**, don’t style and undo. Don’t override your own styles, create reusable components—the reset should help you do that.
+3. **Don’t fight, skirt.** Be smart, it’s not worth fighting RS’ default stylesheets (their selectors and !importants are too much hassle), *trompe le monde.*
+4. **Have fun!** We’ve done our utmost to help you avoid common pitfalls. You don’t have to deal with the crappiest parts of eBook CSS authoring, sit back and relax.
+
+## Useful details
 
 Blitz is leveraging the concept of inheritance. Values `inherit` and `currentColor` are being used extensively to make the framework compatible with Reading Systems’ default stylesheets, reading modes (`color`) and user settings (`font-size`, `font-family`, `line-height`, etc.).
 
@@ -42,9 +55,9 @@ Defaults and a reset do the heavy lifting so it’s just about building on top o
 Finally, although we try to rely on RS’ typefaces, typography has been fine tuned.
 
 - The default scale has been chosen to handle various situations well enough (screen/container size, user increasing `font-size`, typeface used, etc.)
-- Vertical rhythm (`line-height` + `margin` and `padding`) is automatically computed in LESS/SASS to enforce consistency. By taking care of vertical rhythm, we’re also achieving horizontal harmony when the eBook is rendered on a (fake) spread: “everything text” lines up on the same baseline grid, which makes for a more comfortable reading experience.
+- Vertical rhythm (`line-height` + `margin` and `padding`) is automatically computed in LESS to enforce consistency. By taking care of vertical rhythm, we’re also achieving horizontal harmony when the eBook is rendered on a (fake) spread: “everything text” lines up on the same baseline grid, which makes for a more comfortable reading experience.
 - `sup` and `sub` styling is improved to prevent them from affecting line-height.
-- The whole [§8. Breaking Within Words](https://drafts.csswg.org/css-text-4/) is implemented in LESS/SASS.
+- The whole [§8. Breaking Within Words](https://drafts.csswg.org/css-text-4/) is implemented in LESS.
 
 To sum up, we’ve tried to find a balance and feel like Blitz defaults can help producers get around a lot of possible issues: we don’t need hacks, we don’t have to change values in specific situations using complex media queries.
 
@@ -55,14 +68,15 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - Media Queries [#685](https://github.com/IDPF/epub-revision/issues/685)
 - Possible spec language for reading system CSS handling [#693](https://github.com/IDPF/epub-revision/issues/693)
 
-## Roadmap
+## To do
 
-- Pre-release (v.0.95) + debug
-- Convert LESS to SASS
 - Create Web Page
-- Launch v.1 (codename “Rock the Casbah”)
-- LESS/SASS Plugins
-- Launch v.2 following EPUB 3.1 rec (we’ll drop support for legacy RMSDK and Mobi 7 at this point, v.1 will be kept available if support for these two is needed)
+- Improve docs
+- LESS Presets
+- Web App
+- Test suite (in the form of EPUB + Kindle files)
+- Init JS Framework (I’m not kidding)
+- Blitz a11y (i.e. implement debug mode for accessibility as a plugin)
 
 ## Support
 
@@ -73,26 +87,16 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - Google Play Books
 - RMSDK (a.k.a. eBooks’ IE 6)
 
-## Licence 
+## Log
 
-V.1 “Rock the Casbah” will probably be published under Apache License v.2 ([link](http://www.apache.org/licenses/LICENSE-2.0)) to encourage share alike (Creative Commons doesn’t fit for software). Not sure about that yet, alternatives currently under review.
+### 0.95 (Pre-release) -> 1.0 (stable)
 
-## Branch’s updates & improvements
-
-- Since we could not rely on `::after`, `hr.asterism` is now an SVG-dependency which works in legacy RMSDK, will reflow with user’s `font-size` when `background-size` is supported, and is compliant with night-modes.
-- Slight improvement to `hyphenate-limit-lines` – default is now `2` in case an hyphenated word happens to be displayed at the end of the line (2 + 1 = 3).
-- You can now override defaults’ `list-style-type` for `ul` and `ol` (sort of a CSS hack relying on `:nth-child` and `:before` to disable `list-style-type` then re-implement a custom one in EPUB3. The default for the mixin’s argument is “em dash”).
-- We are trying to prevent blank pages with a declaration for body’s `:last-child` in the reset (`margin-bottom: 0`). Targets both the last child for `body` (`section`, `article`, `div`, etc.) and the last child in `section`. **Not tested yet.**
-
-## Ideas
-
-The following items might be added to Blitz at some point. We are not sure about it yet. 
-
-### Text-to-speech enhancements 
-
-Add punctuation to headings, `dt`, `th` and `td` using `::after` pseudo-element.
-
-- Inspiration: [Aesthetics of the invisible](https://francescoschwarz.de/en/blog/aesthetics-of-the-invisible/)
-- Pros: huge & automatic improvement regarding flow (screen readers won’t make a pause between heading and text)
-- Cons: ideally, this should be in content and not added using pseudo-elements which we’re not supposed to rely upon… but very few people will do it so maybe this is a compromise we can make.
-- Status: Still thinking about it. In any case, it will probably be implemented in v.2.
+- refacto making the framework much easier to handle and customize (typo is now barebones)
+- asterism is now an SVG background (beware! it’s an external dependency)
+- CSS has been fine-tuned (e.g. `limit-lines`, tabular numerals, `object-fit`, etc.)
+- added mixins to override and customize `list-style-type`
+- prevented blank page at the end of xhtml in reset
+- initialized docs (vanilla docs + API flavored reference)
+- containers’ and images’ classes in `vh` are now available
+- corrected epub namespace
+- completed utilities (margins, underline, etc.)
