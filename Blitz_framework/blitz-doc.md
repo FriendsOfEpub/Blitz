@@ -491,8 +491,8 @@ epub3-landmarks-pagelist {
 inline-elements {
   font-size: inherit;
   vertical-align: baseline;
-  font-style: normal;
-  font-weight: normal;
+  font-style: inherit;
+  font-weight: inherit;
   color: inherit;
   text-decoration: none;
 }
