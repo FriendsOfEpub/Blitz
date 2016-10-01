@@ -43,8 +43,8 @@ nav[epub|type~="page-list"] {
 a, abbr, b, bdi, bdo, cite, code, data, del, dfn, em, i, ins, kbd, mark, q, rp, rt, rtc, ruby, s, samp, small, span, strong, sub, sup, time, var {
   font-size: inherit;
   vertical-align: baseline;
-  font-style: normal;
-  font-weight: normal;
+  font-style: inherit;      /* Taking nesting of inline elements into account (e.g. sup nested in em) */
+  font-weight: inherit;     /* Taking nestiog of inline elements into account (e.g. em nested in strong) */
   color: inherit;
   text-decoration: none;
 }
