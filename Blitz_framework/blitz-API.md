@@ -174,11 +174,12 @@
 
 ## Namespaces (packages)
 
-- `#img-vh`
 - `#height-vh`
 - `#responsive-table`
 
 ## Keywords for media queries (variables)
+
+**⚠️ We strongly discourage using them in production because of [this note in the EPUB 3.1 spec](http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-css-content-conf).**
 
 ### Global 
 

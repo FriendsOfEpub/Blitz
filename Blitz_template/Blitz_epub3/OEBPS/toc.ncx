@@ -23,7 +23,7 @@
         <text>Chapter 1</text>
       </navLabel>
       <content src="Text/chapter.xhtml"/>
-      	<!-- Nest here if need be (subchapter) -->
+      	<!-- Nest here if needed (subchapter) -->
     </navPoint>
     
   </navMap>

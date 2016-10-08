@@ -136,6 +136,8 @@
 
 #height-vh() {
   @supports (height: 100vh) {
+  /* Can be used for containers and images 
+     but Should be used in combination with .portrait if used for img */
     .h-100 {
       height: 99vh;     /* Trying to avoid blank page after */
     }

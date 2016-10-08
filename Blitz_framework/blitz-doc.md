@@ -562,7 +562,7 @@ Those classes are mixins which are output by default but can eventually be used 
 - display: `.block`, `.inline-block` and `.hidden`
 - clear: `.clear`, `.clear-left` and `.clear-right`
 - `.boxed`, which applies a border to an element
-- margins for top and left, computed based on `@base-margin` (vertical rhythm) and `@step` (horizontal grid)
+- margins (top, bottom, left, right), computed based on `@base-margin` (vertical rhythm) and `@step` (horizontal grid)
 - alignment: `.justify`, `.align-left`, `.align-center` and `.align-right`
 - indents: `.indent`, `.no-indent` and `.hanging-indent`
 - font-stacks
@@ -590,4 +590,4 @@ We’re basically taking advantage of the amazon media queries `amzn-kf8` and `a
 
 This file provides an awful number of variables since we must target devices—Reading Systems have broken media queries.
 
-It’s highly experimental and we don’t use it ourselves at the moment.
+**⚠️ We strongly discourage using them in production because of [this note in the EPUB 3.1 spec](http://www.idpf.org/epub/31/spec/epub-contentdocs.html#sec-css-content-conf).**

@@ -1,10 +1,23 @@
 # Blitz
 
-An eBook framework (CSS + template) which mantra is to “find simple solutions to complex issues.”
+An eBook framework (CSS + template) which mantra is “finding simple solutions to complex issues.”
 
 ## Licence 
 
 Blitz is released under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz.
+
+## Use CSS
+
+You can either add `blitz.css` (and `blitz-kindle.css`) or use an alternative stylesheet.
+
+`blitz.css` is commented but you’ll find an uncommented version in the `AltStylesheets` folder (which helps you save some 7kb).
+
+In this folder, you’ll also find `blitz-lite.css` and `blitz-reset.css` (normal + minified).
+
+1. `blitz-lite.css` should be enough for simple books like novels and essays (it’s 3kb);
+2. `blitz-reset.css` is just… the reset we’ve designed (it’s 1kb).
+
+Add styles on top of those two is up to you… But you’ll then miss the powerful tools we’ve built in LESS!
 
 ## Compile LESS
 
