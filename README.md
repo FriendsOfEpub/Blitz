@@ -91,11 +91,6 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - Init JS Framework (I’m not kidding)
 - Blitz a11y (i.e. implement debug mode for accessibility as a plugin)
 
-### TODO ASAP
-
-- epub test suite for RS **[urgent]**
-- LESS -> SASS (anyone willing to take on it?)
-
 ## Support
 
 - Readium
