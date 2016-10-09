@@ -1,0 +1,818 @@
+@charset "UTF-8";
+
+/*  blitz — CSS framework for reflowable eBooks      
+    Version 1 by Jiminy Panoz                      
+    Codename: Rock the Casbah                              
+    License: MIT (https://opensource.org/licenses/MIT)   */
+
+article,address,aside,blockquote,canvas,dd,details,div,dl,dt,figure,figcaption,footer,h1,h2,h3,h4,h5,h6,header,hr,li,main,nav,ol,p,pre,section,summary,ul {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: inherit;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+article,aside,figure,figcaption,footer,header,main,nav,section {
+  display: block;
+}
+
+h1,h2,h3,h4,h5,h6,dt,pre {
+  text-align: left;
+}
+
+nav[epub|type~="toc"] ol {
+  list-style: none !important;
+}
+
+nav[epub|type~="landmarks"],nav[epub|type~="page-list"] {
+  display: none;
+}
+
+a,abbr,b,bdi,bdo,cite,code,data,del,dfn,em,i,ins,kbd,mark,q,rp,rt,rtc,ruby,s,samp,small,span,strong,sub,sup,time,var {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+
+q {
+  quotes: none;
+}
+
+body > :last-child,body > section > :last-child {
+  margin-bottom: 0;
+}
+
+@page {
+  margin:30px 30px 20px 30px;
+  padding:0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  widows: 2;
+  orphans: 2;
+}
+
+h1,h2,h3,h4,h5,h6,blockquote p cite,dt,pre,address,table,caption,th,td,.align-left,.align-center,.align-right,.caption,.no-hyphens {
+  adobe-hyphenate: none;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none;
+}
+
+h1,h2,h3,h4,h5,h6,dt,hr {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h1 {
+  font-size: 1.4375em;
+  line-height: 1.04347826;
+  margin-top: 0em;
+  margin-bottom: 2.08695652em;
+}
+
+h2 {
+  font-size: 1.3125em;
+  line-height: 1.14285714;
+  margin-top: 2.28571429em;
+  margin-bottom: 1.14285714em;
+}
+
+h3 {
+  font-size: 1.125em;
+  line-height: 1.33333333;
+  margin-top: 1.33333333em;
+  margin-bottom: 1.33333333em;
+}
+
+h4 {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-top: 1.5em;
+  margin-bottom: 0em;
+}
+
+p {
+  text-indent: 1em;
+}
+
+.footnote {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-indent: 0;
+}
+
+blockquote {
+  margin: 1.5em 5%;
+}
+
+blockquote p {
+  text-indent: 0;
+  font-style: italic;
+}
+
+blockquote p i,blockquote p em,blockquote p cite {
+  font-style: normal;
+}
+
+a {
+  text-decoration: underline;
+  font-weight: bold;
+  color: inherit;
+  -webkit-text-fill-color: inherit;
+}
+
+i,cite,dfn,em {
+  font-style: italic;
+}
+
+i i,i cite,i dfn,i em,cite i,cite cite,cite dfn,cite em,dfn i,dfn cite,dfn dfn,dfn em,em i,em cite,em dfn,em em {
+  font-style: normal;
+}
+
+b,strong {
+  font-weight: bold;
+}
+
+del,s {
+  text-decoration: line-through;
+}
+
+mark {
+  background-color: yellow;
+  color: inherit;
+}
+
+small {
+  font-size: 0.8125em;
+}
+
+sub {
+  font-size: 75%;
+  line-height: 1.2;
+  vertical-align: sub;
+  vertical-align: -20%;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 1.2;
+  vertical-align: super;
+  vertical-align: 33%;
+}
+
+figure {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  margin: 1.5em 0;
+}
+
+figcaption,.caption {
+  font-size: 0.9375em;
+  line-height: 1.6;
+  text-indent: 0;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+img.portrait {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 95%;
+}
+
+.float-left img,.float-right img {
+  width: 100%;
+}
+
+@supports (height: 99vh) {
+  img.portrait {
+    height: 99vh;
+  }
+}
+
+ul,ol {
+  margin: 1.5em 0;
+  padding-left: 5%;
+}
+
+ul {
+  list-style-type: disc;
+  list-style-position: outside;
+}
+
+ul ul {
+  list-style-type: square;
+}
+
+ol {
+  list-style-type: decimal;
+  list-style-position: outside;
+}
+
+ol ol {
+  list-style-type: lower-roman;
+}
+
+dl {
+  margin: 1.5em 0 1.5em 5%;
+}
+
+dt {
+  margin: 1.5em 0 0 0;
+  font-weight: bold;
+}
+
+dt > dfn {
+  font-style: normal;
+  font-weight: bold;
+}
+
+hr {
+  width: 25%;
+  margin-left: 37.5%;
+  margin-top: 1.4375em;
+  margin-bottom: 1.4375em;
+  height: 0;
+  border: none;
+  border-top: 0.125em solid currentColor;
+  opacity: 0.5;
+}
+
+hr.transition {
+  width: 100%;
+  margin: 0.6875em 0;
+  height: 0.125em;
+  border: none;
+  background: none;
+}
+
+hr.asterism {
+  width: auto;
+  border: none;
+  margin: 1.5em 0;
+  height: 1.5em;
+  text-indent: 0;
+  text-align: center;
+  background: transparent url("asterism.svg") no-repeat center;
+  background-size: 2.5em 1.25em;
+  overflow: hidden;
+  opacity: 0.7;
+}
+
+table {
+  display: table;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  margin: 1.5em auto;
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;
+  text-align: center;
+  font-weight: bold;
+}
+
+th {
+  empty-cells: show;
+  border-bottom: 0.125em solid currentColor;
+  padding: 0.6875em 2% 0.6875em 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  empty-cells: show;
+  border-bottom: 0.0625em solid currentColor;
+  padding: 0.75em 2% 0.6875em 0;
+  text-align: left;
+}
+
+.table-fixed {
+  table-layout: fixed;
+}
+
+pre {
+  margin: 1.5em 0 1.5em 5%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  -ms-tab-size: 3;
+  -moz-tab-size: 3;
+  -webkit-tab-size: 3;
+  tab-size: 3;
+}
+
+code,kbd,samp,var {
+  font-family: monospace;
+}
+
+canvas,iframe,svg,video {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap-100 {
+  width: auto;
+  margin: 1.5em 0;
+}
+
+.wrap-90 {
+  width: 90%;
+  margin: 1.5em 5%;
+}
+
+.wrap-80 {
+  width: 80%;
+  margin: 1.5em 10%;
+}
+
+.wrap-70 {
+  width: 70%;
+  margin: 1.5em 15%;
+}
+
+.wrap-60 {
+  width: 60%;
+  margin: 1.5em 20%;
+}
+
+.wrap-50 {
+  width: 50%;
+  margin: 1.5em 25%;
+}
+
+.wrap-40 {
+  width: 40%;
+  margin: 1.5em 30%;
+}
+
+.wrap-30 {
+  width: 30%;
+  margin: 1.5em 35%;
+}
+
+.wrap-20 {
+  width: 20%;
+  margin: 1.5em 40%;
+}
+
+.wrap-10 {
+  width: 10%;
+  margin: 1.5em 45%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.w-60 {
+  width: 60%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.w-40 {
+  width: 40%;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.h-100 {
+  height: 99%;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.h-80 {
+  height: 80%;
+}
+
+.h-70 {
+  height: 70%;
+}
+
+.h-60 {
+  height: 60%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.h-40 {
+  height: 40%;
+}
+
+.h-30 {
+  height: 30%;
+}
+
+.h-20 {
+  height: 20%;
+}
+
+.h-10 {
+  height: 10%;
+}
+
+@supports (height: 100vh) {
+  .h-100 {
+    height: 99vh;
+  }
+
+  .h-90 {
+    height: 90vh;
+  }
+
+  .h-80 {
+    height: 80vh;
+  }
+
+  .h-70 {
+    height: 70vh;
+  }
+
+  .h-60 {
+    height: 60vh;
+  }
+
+  .h-50 {
+    height: 50vh;
+  }
+
+  .h-40 {
+    height: 40vh;
+  }
+
+  .h-30 {
+    height: 30vh;
+  }
+
+  .h-20 {
+    height: 20vh;
+  }
+
+  .h-10 {
+    height: 10vh;
+  }
+}
+
+.float-left {
+  float: left;
+  margin: 0 1.5% 0 0;
+}
+
+.float-right {
+  float: right;
+  margin: 0 0 0 1.5%;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden {
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+
+.clear-left {
+  clear: left;
+}
+
+.clear-right {
+  clear: right;
+}
+
+.boxed {
+  border: 0.0625em solid currentColor;
+  padding: 0.6875em;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.margin-top-s {
+  margin-top: 0.75em;
+}
+
+.margin-top-m {
+  margin-top: 1.5em;
+}
+
+.margin-top-l {
+  margin-top: 3em;
+}
+
+.margin-top-xl {
+  margin-top: 4.5em;
+}
+
+.margin-top-xxl {
+  margin-top: 6em;
+}
+
+.margin-bottom-s {
+  margin-bottom: 0.75em;
+}
+
+.margin-bottom-m {
+  margin-bottom: 1.5em;
+}
+
+.margin-bottom-l {
+  margin-bottom: 3em;
+}
+
+.margin-bottom-xl {
+  margin-bottom: 4.5em;
+}
+
+.margin-bottom-xxl {
+  margin-bottom: 6em;
+}
+
+.margin-left-s {
+  margin-left: 2.5%;
+}
+
+.margin-left-m {
+  margin-left: 5%;
+}
+
+.margin-left-l {
+  margin-left: 7.5%;
+}
+
+.margin-left-xl {
+  margin-left: 10%;
+}
+
+.margin-left-xxl {
+  margin-left: 15%;
+}
+
+.margin-right-s {
+  margin-right: 2.5%;
+}
+
+.margin-right-m {
+  margin-right: 5%;
+}
+
+.margin-right-l {
+  margin-right: 7.5%;
+}
+
+.margin-right-xl {
+  margin-right: 10%;
+}
+
+.margin-right-xxl {
+  margin-right: 15%;
+}
+
+.sans {
+  font-family: sans-serif;
+}
+
+.serif {
+  font-family: serif;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.humanist {
+  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+}
+
+.oldstyle {
+  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+}
+
+.justified {
+  text-align: justify;
+  -webkit-locale: en;
+  locale: en;
+  adobe-hyphenate: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  hyphens: auto;
+  -ms-hyphenate-limit-lines: 3;
+  -moz-hyphenate-limit-lines: 3;
+  -webkit-hyphenate-limit-lines: 3;
+  -webkit-hyphenate-limit-before: 2;
+  -webkit-hyphenate-limit-after: 2;
+  hyphenate-limit-lines: 3;
+  -ms-hyphenate-limit-chars: 6 3 2;
+  -moz-hyphenate-limit-chars: 6 3 2;
+  -webkit-hyphenate-limit-chars: 6 3 2;
+  hyphenate-limit-chars: 6 3 2;
+  -ms-hyphenate-limit-zone: 10%;
+  -moz-hyphenate-limit-zone: 10%;
+  -webkit-hyphenate-limit-zone: 10%;
+  hyphenate-limit-zone: 10%;
+  -ms-hyphenate-limit-last: always;
+  -moz-hyphenate-limit-last: always;
+  -webkit-hyphenate-limit-last: always;
+  hyphenate-limit-last: always;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-indent: 0;
+  text-align: center;
+}
+
+.align-right {
+  text-indent: 0;
+  text-align: right;
+}
+
+.indent {
+  text-indent: 1em;
+}
+
+.no-indent {
+  text-indent: 0;
+}
+
+.hanging-indent {
+  text-indent: -5%;
+  margin-left: 5%;
+}
+
+.fs-xxs {
+  font-size: 0.8125em;
+  line-height: 1.84615385;
+}
+
+.fs-xs {
+  font-size: 0.875em;
+  line-height: 1.71428571;
+}
+
+.fs-s {
+  font-size: 0.9375em;
+  line-height: 1.6;
+}
+
+.fs-m {
+  font-size: 1em;
+  line-height: inherit;
+}
+
+.fs-l {
+  font-size: 1.125em;
+  line-height: 1.33333333;
+}
+
+.fs-xl {
+  font-size: 1.3125em;
+  line-height: 1.14285714;
+}
+
+.fs-xxl {
+  font-size: 1.4375em;
+  line-height: 1.04347826;
+}
+
+.fs-jumbo {
+  font-size: 1.625em;
+  line-height: 0.92307692;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.small-caps {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: 0.0625em;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.break-before {
+  page-break-before: always;
+  break-before: always;
+}
+
+.break-after {
+  page-break-after: always;
+  break-after: always;
+}
+
+.break-inside {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+.no-break-before {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+.no-break-after {
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+.no-break-inside {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}

@@ -1,0 +1,15 @@
+/* PAGE LAYOUT */
+
+@page {
+  margin: 30px 30px 20px 30px;  /* Recommended by Barnes & Noble in this old spec: https://simg1.imagesbn.com/pimages/pubit/support/pubit_epub_formatting_guide.pdf */
+  padding: 0;
+}
+
+body {
+  font-size: ((@body-font-size / 16) * 100) + 0%;
+  line-height: @body-line-height;
+  margin: 0;    /* RS will override margins anyways */
+  padding: 0;
+  widows: 2;    /* iBooks and Kobo support widows and orphans */
+  orphans: 2;
+}

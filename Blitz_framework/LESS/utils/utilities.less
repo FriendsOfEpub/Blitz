@@ -1,0 +1,270 @@
+/* UTILITIES */
+
+    /* Display */
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hidden { 			  /* Typical usage: EPUB 3 landmarks inline TOC */
+  display: none;
+}
+
+/* May be useful for EPUB 3.1, warning .absolute in ePubCheck in EPUB 3.0.1
+.relative {
+  position: relative;   
+}
+
+.absolute {
+  position: absolute;   
+}   
+*/
+
+    /* Clearings */
+    
+.clear {              /* may be useful if an element is floating in a container */
+  clear: both;
+}
+
+.clear-left {
+  clear: left;   
+}
+
+.clear-right {
+  clear: right;   
+}
+
+    /* Bordered content */
+
+.boxed {
+  border: ((@border-width / @body-font-size) + 0em) @border-style @border-color; /* Current color = color of text (inverted in night mode) */
+  @computed-padding: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
+  padding: ((@computed-padding / 2) + 0em);
+}
+
+    /* Margins */
+
+.no-margin {
+  margin: 0;
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.no-margin-bottom {
+  margin-bottom: 0;
+}
+
+.no-margin-left {
+  margin-left: 0;
+}
+
+.no-margin-right {
+  margin-right: 0;
+}
+
+.margin-top-s {
+  margin-top: (@base-margin / 2);    
+}
+
+.margin-top-m {
+  margin-top: @base-margin;
+}
+
+.margin-top-l {
+  margin-top: (@base-margin * 2);
+}
+
+.margin-top-xl {
+  margin-top: (@base-margin * 3);
+}
+
+.margin-top-xxl {
+  margin-top: (@base-margin * 4);
+}
+
+.margin-bottom-s {
+  margin-bottom: (@base-margin / 2);    
+}
+
+.margin-bottom-m {
+  margin-bottom: @base-margin;
+}
+
+.margin-bottom-l {
+  margin-bottom: (@base-margin * 2);
+}
+
+.margin-bottom-xl {
+  margin-bottom: (@base-margin * 3);
+}
+
+.margin-bottom-xxl {
+  margin-bottom: (@base-margin * 4);
+}
+
+.margin-left-s {
+  margin-left: (@step / 2);   /* % won't reflow with font-size user setting */
+}
+
+.margin-left-m {
+  margin-left: @step;   
+}
+
+.margin-left-l {
+  margin-left: (@step * 1.5);   
+}
+
+.margin-left-xl {
+  margin-left: (@step * 2);   
+}
+
+.margin-left-xxl {
+  margin-left: (@step * 3);   
+}
+
+.margin-right-s {
+  margin-right: (@step / 2);   /* % won't reflow with font-size user setting */
+}
+
+.margin-right-m {
+  margin-right: @step;   
+}
+
+.margin-right-l {
+  margin-right: (@step * 1.5);   
+}
+
+.margin-right-xl {
+  margin-right: (@step * 2);   
+}
+
+.margin-right-xxl {
+  margin-right: (@step * 3);   
+}
+
+    /* Font-stacks */
+
+.sans {                     /* Typical usage: headings */
+  font-family: sans-serif;
+}
+
+.serif {
+  font-family: serif;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.humanist {
+  font-family: "Myriad Pro", Seravek, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+}
+
+/* We try to rely on RS’ typefaces, hence the huge font-stack */
+.oldstyle {
+  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+}
+
+    /* Text align */
+    
+.justified {                /* Designed as a class for body — We don't enforce as user setting > author */
+  text-align: justify;
+  .hyphenate;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-indent: 0;       /* Necessary as RS may define text-indent for p */
+  text-align: center;
+}
+
+.align-right {
+  text-indent: 0;       /* Necessary as RS may define text-indent for p */
+  text-align: right;
+}
+
+    /* Indents */
+    
+.indent {
+    text-indent: @base-fs;  
+}
+    
+.no-indent {
+  text-indent: 0;
+}
+
+.hanging-indent {
+  text-indent: -@step;
+  margin-left: @step;      /* Since em will reflow with font-size user setting, we’re using % */
+}
+
+    /* Font sizes */
+    
+.fs-xxs {
+  .fs(-2);
+}
+
+.fs-xs {
+  .fs(-1.5);
+}
+
+.fs-s {
+  .fs(-1);
+}
+
+.fs-m {
+  font-size: @base-fs;
+  line-height: inherit;    
+}
+
+.fs-l {
+  .fs(1);
+}
+
+.fs-xl {
+  .fs(2);   
+}
+
+.fs-xxl {
+  .fs(3);
+}
+
+.fs-jumbo {
+  .fs(4);
+}
+
+    /* Font styles */
+
+.bold {               /* Don't use that with span if b or strong can be used */
+  font-weight: bold;
+}
+
+.italic {             /* Don't use that with span if i, cite, dfn or em can be used */
+  font-style: italic;
+}
+
+.bold-italic {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.small-caps {
+  text-transform: lowercase;    /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
+  font-variant: small-caps;
+  letter-spacing: ((1 / @body-font-size) + 0em);
+  /* The two previous props are not supported in legacy RMSDK */
+}
+
+.underline {
+  text-decoration: underline;   
+}

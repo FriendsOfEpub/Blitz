@@ -1,0 +1,35 @@
+/* PAGE BREAKS */
+
+.break-before {
+  page-break-before: always;
+  break-before: always;     /* Future according to https://developer.mozilla.org/en-US/docs/Web/CSS/page-break-before */
+}
+
+/* For some reason, after has better support than before (Google, Kobo, etc.) */
+.break-after {
+  page-break-after: always;
+  break-after: always;
+}
+
+.break-inside {
+  page-break-inside: auto;
+  break-inside: auto;
+}
+
+/* Let’s pretend it is supported (legacy RMSDK does, others not so much) */
+.no-break-before {
+  page-break-before: avoid;
+  break-before: avoid;
+}
+
+/* Let’s pretend it is supported (legacy RMSDK does, others not so much) */
+.no-break-after {
+  page-break-after: avoid;
+  break-after: avoid; 
+}
+
+/* This one works in iBooks, useful for figure or to keep 2 elements together */
+.no-break-inside {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}

@@ -1,0 +1,71 @@
+/* TABLES */
+
+table {
+  display: table;
+  table-layout: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  margin: @base-margin auto;           /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
+  font-feature-settings: "tnum" 1;
+  font-variant-numeric: tabular-nums;
+}
+
+caption {
+  caption-side: top;            /* Note: only value legacy RMSDK supports */
+  text-align: center;
+  font-weight: bold;
+}
+
+tbody {
+/* Styles */    
+}
+
+thead {
+/* Styles */  
+}
+
+tfoot {
+/* Styles */      
+}
+
+tr {
+/* Styles */      
+}
+
+th {
+  empty-cells: show;
+  border-bottom: (((@border-width *2) / @body-font-size) + 0em) @border-style @border-color; /* Current color = color of text (inverted in night mode) */
+  @computed-padding: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
+  padding: ((@computed-padding / 2) + 0em) 2% ((@computed-padding / 2) + 0em) 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+td {
+  empty-cells: show;
+  border-bottom: ((@border-width / @body-font-size) + 0em) @border-style @border-color; /* Current color = color of text (inverted in night mode) */
+  @computed-padding: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
+  padding: (@base-margin / 2) 2% ((@computed-padding / 2) + 0em) 0;
+  text-align: left;
+}
+
+.table-fixed {
+    table-layout: fixed;   
+}
+
+// Responsive tables !experimental
+#responsive-table() {
+table td, table tr {
+  display: block;
+}
+table th {
+  display: none;
+}
+table td::before {
+  content: attr(data-th)":";    /* Attribute data-th must be used in markup */
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.25em;
+}
+}

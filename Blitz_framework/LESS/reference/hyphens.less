@@ -1,0 +1,93 @@
+// Hyphens
+// Customise hyphens
+// Ref -> https://drafts.csswg.org/css-text-4/
+
+// MIXINS
+
+.hyphens-auto(@hyphens-lang: en) {
+  -webkit-locale: @hyphens-lang;
+  locale: @hyphens-lang;
+  adobe-hyphenate: auto;            /* proprietary for Legacy RMSDK */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  -epub-hyphens: auto;
+  hyphens: auto; 
+}
+.hyphens-char(@hyphens-char: auto) {
+    -ms-hyphenate-character: @hyphens-char;
+    -moz-hyphenate-character: @hyphens-char;
+    -webkit-hyphenate-character: @hyphens-char;
+    hyphenate-character: @hyphens-char;
+}
+
+/* Before and after not in spec but iBooks support all three */
+/* 2 is the default for hyphenate-lines in case an hyphenated word
+happens to be displayed at the end of the line (2 + 1 = 3) */
+.hyphens-lines(@hyphens-lines: 2, @hyphens-lines-before: 2, @hyphens-lines-after: 2) {
+    -ms-hyphenate-limit-lines: @hyphens-lines;
+    -moz-hyphenate-limit-lines: @hyphens-lines;
+    -webkit-hyphenate-limit-lines: @hyphens-lines;
+    -webkit-hyphenate-limit-before: @hyphens-lines-before;
+    -webkit-hyphenate-limit-after: @hyphens-lines-after;
+    hyphenate-limit-lines: @hyphens-lines;
+}
+
+/* No support except Trident (Windows) */
+.hyphens-division(@hyphens-chars-min: 6, @hyphens-chars-before: 3, @hyphens-chars-after: 2) {
+    -ms-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
+    -moz-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
+    -webkit-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
+    hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after; 
+}
+
+/* No support except Trident (Windows) */
+.hyphens-zone(@hyphens-zone: 10%) {
+    -ms-hyphenate-limit-zone: @hyphens-zone;
+    -moz-hyphenate-limit-zone: @hyphens-zone;
+    -webkit-hyphenate-limit-zone: @hyphens-zone;
+    hyphenate-limit-zone: @hyphens-zone;  
+}
+
+.hyphens-limit(@hyphens-last: always) {
+    -ms-hyphenate-limit-last: @hyphens-last;
+    -moz-hyphenate-limit-last: @hyphens-last;
+    -webkit-hyphenate-limit-last: @hyphens-last;
+    hyphenate-limit-last: @hyphens-last;
+}
+
+// CSS Output
+
+/* Hyphens are almost never disabled for headings */
+.disable-hyphens {
+  adobe-hyphenate: none;    /* proprietary for Legacy RMSDK */
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none; 
+}
+
+/* To use in combination with &#173; (soft-hyphen) */
+.manual-hyphens {
+  adobe-hyphenate: explicit;
+  -ms-hyphens: manual;
+  -moz-hyphens: manual;
+  -webkit-hyphens: manual;
+  -epub-hyphens: manual;
+  hyphens: manual; 
+}
+
+.hyphenate {
+/* iBooks is using locale */
+  .hyphens-auto(en);
+//  .hyphens-char(auto);
+/* before and after not in spec but iBooks support all three (-webkit-) */
+  .hyphens-lines(3, 2, 2);
+/* No support except Trident (Windows) */
+  .hyphens-division(6, 3, 2);
+/* No support except Trident (Windows) */
+  .hyphens-zone(10%);
+/* No support */
+  .hyphens-limit(always);
+}

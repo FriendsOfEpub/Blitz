@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 0.95 by Jiminy Panoz                      
-    Codename: Blonde Rock & Roll                              
+    Version 1 by Jiminy Panoz                      
+    Codename: Rock the Casbah                              
     License: MIT (https://opensource.org/licenses/MIT)   */
 
 
 /* NAMESPACES */
 
 @namespace h "http://www.w3.org/1999/xhtml/";
-@namespace epub "http://www.idpg.org/2007/ops";       /* if you need to style epub:type */
+@namespace epub "http://www.idpf.org/2007/ops";       /* if you need to style epub:type */
 @namespace m "http://www.w3.org/1998/Math/MathML/";   /* if you need to style MathML */
 @namespace svg "http://www.w3.org/2000/svg";          /* if you need to style SVG */
 
@@ -19,23 +19,35 @@ html {
 
 /* Begin CSS */
 
-@import (reference) 'hyphens';
-@import (reference) 'overrides';
-@import (reference) 'mixins';
-@import 'variables';
-@import 'rhythm';
-@import 'reset';
-@import 'page';
-@import 'typo';
-@import 'lists';
-@import 'rules';
-@import 'table';
-@import 'containers';
-@import 'image';
-@import 'media';
-@import 'utilities';
-@import 'break';
+// Reference > won’t be output, utils can be imported as reference if you want
+@import (reference) 'reference/hyphens';
+@import (reference) 'reference/overrides';
+@import (reference) 'reference/mixins';
 
-// @import 'kindle';   // compiled as a standalone CSS (check kindle.less). Uncomment to add in core output
+// That's the stuff running Blitz
+@import 'core/variables';
+@import 'core/rhythm';
+
+// Base is the foundation = styles you'll use in every book
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typo';
+@import 'base/image';
+
+// Optional extensions for lists, rules, tables, code and media (svg, canvas, etc.)
+@import (optional) 'extensions/lists';
+@import (optional) 'extensions/def-lists';
+@import (optional) 'extensions/rules';
+@import (optional) 'extensions/table';
+@import (optional) 'extensions/code';
+@import (optional) 'extensions/media';
+
+// Utilities you may not want to export
+// The last two are needed (like reference) but output by default
+@import 'utils/containers';
+@import 'utils/utilities';
+@import 'utils/break';
+
+// @import 'plugins/blitz-kindle';   // compiled as a standalone CSS (check kindle.less). Uncomment to add in core output
 
 /* End CSS */
