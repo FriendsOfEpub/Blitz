@@ -119,9 +119,11 @@ First and foremost, check if those enhancements have already been suggested (che
 
 Unsure where to begin contributing to the blitz framework? You can start by looking through the `help-wanted` issues or the [Roadmap section](#roadmap).
 
+Then fork the repo and implement your modifications.
+
 If needed, do not hesitate to ask questions. We’re here to help.
 
-We’ll then review your pull request to check if everything is OK.
+We’ll finally review your pull request to check if everything is OK.
 
 ### Pull requests
 
