@@ -8,7 +8,7 @@ Blitz is released under MIT Licence (https://opensource.org/licenses/MIT) © 201
 
 ## Use CSS
 
-You can either add `blitz.css` (and `blitz-kindle.css`) or use an alternative stylesheet.
+You can either add `blitz.css` (and `blitz-kindle.css`) in your EPUB file or an alternative stylesheet.
 
 `blitz.css` is commented but you’ll find an uncommented version in the `AltStylesheets` folder (which helps you save some 7kb).
 
@@ -29,9 +29,9 @@ Either use the [GUI](http://lesscss.org/usage/#guis-for-less) or, if you’re on
 
 ### For Kindle
 
-Either uncomment `@import 'kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
+Either uncomment `@import 'blitz-kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
 
-`lessc kindle.less kindle.css`
+`lessc blitz-kindle.less blitz-kindle.css`
 
 ### For Media Queries
 
@@ -54,7 +54,7 @@ We have chosen a functional approach (FCSS) but LESS presets are planned to prov
 
 ## The 4 principles of blitz
 
-1. **Espouse [inheritance and cascade](https://www.w3.org/wiki/Inheritance_and_cascade)**, the 2 fundamental principles of CSS. eBooks are documents, CSS was designed for documents… It’s a match! 
+1. **Espouse [inheritance and the cascade](https://www.w3.org/wiki/Inheritance_and_cascade)**, the 2 fundamental principles of CSS. eBooks are documents, CSS was designed for documents… It’s a match! 
 2. **Build and refine**, don’t style and undo. Don’t override your own styles, create reusable components—the reset should help you do that.
 3. **Don’t fight, skirt.** Be smart, it’s not worth fighting RS’ default stylesheets (their selectors and !importants are too much hassle), *trompe le monde.*
 4. **Have fun!** We’ve done our utmost to help you avoid common pitfalls. You don’t have to deal with the crappiest parts of eBook CSS authoring, sit back and relax.
