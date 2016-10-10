@@ -91,7 +91,7 @@ Plugins are additional standalone parts you might not want to compile in the “
 We’ve got two plugins right now: 
 
 1. `blitz-mq` (media queries)
-2. `kindle` (Kindle styles using media queries)
+2. `blitz-kindle` (Kindle styles using media queries)
 
 ## Blitz.less
 
@@ -293,6 +293,8 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
+
+Yes, it does feel like we’ve mixinifying CSS but it’s up to you to use them.
 
 #### Layout
 
@@ -511,6 +513,10 @@ Typographic variables and mixins are used extensively for typesetting a maximum 
 
 Also, humanist and old style font stacks based on Myriad Pro and Minion Pro are made available trough mixins and CSS classes.
 
+### Image
+
+`figure`, `figcaption` and `img` styles are specified in this file.
+
 ### Lists
 
 This file contains specific variables to specify list style types (first and second level) as well as type position.
@@ -543,10 +549,6 @@ Need preformatted text and/or code? Check this file.
 
 This file provides width (+ margins), height and float classes for containers.
 
-### Image
-
-`figure`, `figcaption` and `img` styles are specified in this file.
-
 ### Media
 
 Use this file in case you must specify styles for `audio` and `video`.
@@ -571,7 +573,7 @@ Those classes are mixins which are output by default but can eventually be used 
 
 ### Break
 
-This files contains mixins for page-breaks. Those mixins are output as classes by default.
+This file contains mixins for page-breaks. Those mixins are output as classes by default.
 
 - `.break-before`
 - `.break-after`
@@ -580,7 +582,7 @@ This files contains mixins for page-breaks. Those mixins are output as classes b
 - `.no-break-after`
 - `.no-break-inside`
 
-## Kindle
+## Kindle (blitz-kindle)
 
 This file is meant for Kindle and can either by imported in `blitz.less` or output as a standalone stylesheet. 
 
