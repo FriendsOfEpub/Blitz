@@ -22,7 +22,7 @@ Please feel free to challenge every design decision we’ve made. Nothing is per
 
 ### Reporting Bugs
 
-First and foremost, check if your issue has not been already reported (don’t forget to check closed issues too). If it has, add a comment to the existing issue instead of opening a new one.
+First and foremost, check if your issue has already been reported (don’t forget to check closed issues too). If it has, add a comment to the existing issue instead of opening a new one.
 
 #### Submitting a good bug report
 
@@ -117,7 +117,7 @@ First and foremost, check if those enhancements have already been suggested (che
 
 ### Your first code contribution
 
-Unsure where to begin contributing to the blitz framework? You can start by looking through the `help-wanted` issues or the Planning/Roadmap section.
+Unsure where to begin contributing to the blitz framework? You can start by looking through the `help-wanted` issues or the [Roadmap section](#roadmap).
 
 If needed, do not hesitate to ask questions. We’re here to help.
 
