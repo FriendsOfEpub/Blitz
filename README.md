@@ -1,4 +1,6 @@
-# Blitz
+![Blitz logo](https://github.com/FriendsOfEpub/Blitz/blob/master/assets/icons/PNG/blitz-2048.png)
+
+# Blitz eBook Framework
 
 An eBook framework (CSS + template) which mantra is “finding simple solutions to complex issues.”
 
