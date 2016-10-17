@@ -42,19 +42,20 @@
 
 - `.rhythm(@font-scale, @margin-top, @margin-bottom)`
 - `.fs(@font-scale)`
-- `.hyphens-auto(@hyphens-lang)`
 - `.hyphens-char(@hyphens-char)`
 - `.hyphens-lines(@hyphens-lines, @hyphens-lines-before, @hyphens-lines-after)`
 - `.hyphens-division(@hyphens-chars-min, @hyphens-chars-before, @hyphens-chars-after)`
 - `.hyphens-zone(@hyphens-zone)`
 - `.hyphens-limit(@hyphens-last)`
 - `.override-iBooks-links(@overrideColor)`
+- `.override-iBooks-locale(@lang)`
 - `.override-tab-size(@tabs)`
 - `.override-ul-type(@ulType)`
 - `.override-ol-type()`
 
 #### Static
 
+- `.hyphens-auto`
 - `.disable-hyphens`
 - `.manual-hyphens`
 - `.hyphenate`

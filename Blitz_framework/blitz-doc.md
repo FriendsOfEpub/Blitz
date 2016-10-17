@@ -197,13 +197,13 @@ Blitz provides parametric mixins to enforce vertical rhythm, achieve top-notch h
 
 - `.rhythm(@font-scale, @margin-top, @margin-bottom)`
 - `.fs(@font-scale)`
-- `.hyphens-auto(@hyphens-lang)`
 - `.hyphens-char(@hyphens-char)`
 - `.hyphens-lines(@hyphens-lines, @hyphens-lines-before, @hyphens-lines-after)`
 - `.hyphens-division(@hyphens-chars-min, @hyphens-chars-before, @hyphens-chars-after)`
 - `.hyphens-zone(@hyphens-zone)`
 - `.hyphens-limit(@hyphens-last)`
 - `.override-iBooks-links(@overrideColor)`
+- `.override-iBooks-locale(@lang)`
 - `.override-tab-size(@tabs)`
 - `.override-ul-type(@ulType)`
 - `.override-ol-type()`
@@ -226,6 +226,7 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 
 #### Typography
 
+- `.hyphens-auto`
 - `.disable-hyphens`
 - `.manual-hyphens`
 - `.hyphenate`
@@ -415,7 +416,7 @@ The whole [§8. Breaking Within Words](https://drafts.csswg.org/css-text-4/) is 
 
 Please note this file is imported as a reference and mixins won’t be output in the CSS; they should be used in `typo.less`.
 
-- `.hyphens-auto(@hyphens-lang: en)` enables hyphens and specify the language in which the book is written
+- `.hyphens-auto` enables hyphens
 - `.hyphens-char(@hyphens-char: auto)` specifies the character which must be used
 - `.hyphens-lines(@hyphens-lines: 2, @hyphens-lines-before: 2, @hyphens-lines-after: 2)` specifies the max number of consecutive lines, the number of lines before and after applying hyphenation
 - `.hyphens-division(@hyphens-chars-min: 6, @hyphens-chars-before: 3, @hyphens-chars-after: 2)` specifies the minimum amount of characters for which a word might be hyphenated, the minimum number of characters before and after the hyphen
@@ -430,10 +431,11 @@ In addition, three mixins are made available:
 
 ### Overrides
 
-Three mixins are provided: 
+Four mixins are provided: 
 
 - `.override-italic`, which may come in handy for italic nested in italic;
 - `.override-iBooks-links(@overrideColor: inherit)` to enforce a color in iBooks, even in night mode;
+- `.override-iBooks-locale(@lang)` to override `-webkit-locale` in case `xml:lang` can’t be added to markup;
 - `.override-tab-size(@tabs: 4)` for `pre`.
 
 ### Mixins
