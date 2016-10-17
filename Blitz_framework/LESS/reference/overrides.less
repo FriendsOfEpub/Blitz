@@ -9,6 +9,15 @@
     -webkit-text-fill-color: @overrideColor;   /* iBooks override (iOS 9 + El Capitan in night mode) */
 }
 
+// Ideally, you should not use that 
+// since it’s something webkit does automatically 
+// when finding an xml:lang or lang attribute in the markup
+// See https://bugs.webkit.org/show_bug.cgi?id=67586&quot;&gt;bug
+// But could be a last resort if needed…
+.override-iBooks-locale(@lang) {  
+  -webkit-locale: @lang;
+}
+
 .override-tab-size(@tabs: 4) {
   -ms-tab-size: @tabs;
   -moz-tab-size: @tabs;

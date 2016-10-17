@@ -4,9 +4,7 @@
 
 // MIXINS
 
-.hyphens-auto(@hyphens-lang: en) {
-  -webkit-locale: @hyphens-lang;
-  locale: @hyphens-lang;
+.hyphens-auto {
   adobe-hyphenate: auto;            /* proprietary for Legacy RMSDK */
   -ms-hyphens: auto;
   -moz-hyphens: auto;
@@ -14,6 +12,7 @@
   -epub-hyphens: auto;
   hyphens: auto; 
 }
+
 .hyphens-char(@hyphens-char: auto) {
     -ms-hyphenate-character: @hyphens-char;
     -moz-hyphenate-character: @hyphens-char;
@@ -79,8 +78,7 @@ happens to be displayed at the end of the line (2 + 1 = 3) */
 }
 
 .hyphenate {
-/* iBooks is using locale */
-  .hyphens-auto(en);
+  .hyphens-auto;
 //  .hyphens-char(auto);
 /* before and after not in spec but iBooks support all three (-webkit-) */
   .hyphens-lines(3, 2, 2);
