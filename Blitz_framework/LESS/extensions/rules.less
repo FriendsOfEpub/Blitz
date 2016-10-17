@@ -14,9 +14,8 @@ hr {
 /* Blank-line context change */
 hr.transition {
 	width: 100%;
-    @computed-margin: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
-    margin: ((@computed-margin / 2) + 0em) 0;
-    height: (((@border-width * 2) / @body-font-size) + 0em);
+    margin: 0;
+    height: @base-margin;
 	border: none;
 	background: none;   /* Note: overridden in night mode excepted when using linear-gradient */
 }

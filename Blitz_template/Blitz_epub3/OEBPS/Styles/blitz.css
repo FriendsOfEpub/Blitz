@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 1 by Jiminy Panoz                      
+    Version 1.0.1 by Jiminy Panoz                      
     Codename: Rock the Casbah                              
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
@@ -416,8 +416,8 @@ hr {
 /* Blank-line context change */
 hr.transition {
   width: 100%;
-  margin: 0.6875em 0;
-  height: 0.125em;
+  margin: 0;
+  height: 1.5em;
   border: none;
   background: none;
   /* Note: overridden in night mode excepted when using linear-gradient */
@@ -432,7 +432,7 @@ hr.asterism {
   height: 1.5em;
   text-indent: 0;
   text-align: center;
-  background: transparent url("../Images/asterism.svg") no-repeat center;
+  background: transparent url("asterism.svg") no-repeat center;
   /* Change url if you put asterism in a folder */
   background-size: 2.5em 1.25em;
   /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
@@ -814,9 +814,6 @@ render page on eInk devices)                                    */
 .justified {
   /* Designed as a class for body — We don't enforce as user setting > author */
   text-align: justify;
-  /* iBooks is using locale */
-  -webkit-locale: en;
-  locale: en;
   adobe-hyphenate: auto;
   /* proprietary for Legacy RMSDK */
   -ms-hyphens: auto;
