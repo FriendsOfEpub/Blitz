@@ -104,6 +104,11 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.0.1
+
+- improved `hr.transition` (won’t screw up vertical rhythm because margins any longer);
+- `-webkit-locale` now an override (issue #9).
+
 ### 0.95 (Pre-release) -> 1.0 (stable)
 
 - refacto making the framework much easier to handle and customize (typo is now barebones)
