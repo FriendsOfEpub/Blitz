@@ -1,0 +1,323 @@
+@charset "UTF-8";
+
+/*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
+
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+header,
+main,
+section,
+footer {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+a {
+  background-color: transparent; 
+  -webkit-text-decoration-skip: objects;
+}
+
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: none;
+  cursor: help;
+}
+
+b,
+strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+
+code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+img {
+  border-style: none;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+[hidden] {
+  display: none;
+}
+
+/* Custom
+	 ========================================================================== */
+	 
+html {
+	font-size: 62.5%;
+	background-color: #FDFDFD;
+}
+	 
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  font-size: 18px;
+  font-size: 1.8rem;
+  line-height: 1.65;
+  margin: 0 auto 36px auto;
+  margin: 0 auto 3.6rem auto;
+}
+
+header {
+  max-width: 42em;
+  min-height: 100vh;
+	margin: 0 auto;
+  padding: 54px 20px;
+  padding: 5.4rem 2rem;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+section {
+	padding: 48px 0;
+	padding: 4.8rem 0;
+	margin: 0;
+}
+
+.wrapper {
+  max-width: 42em;
+  margin: 0 auto;
+  padding: 0 20px;
+  padding: 0 2rem;
+}
+
+#apps {
+	background-color: #FDFDFD;
+	color: #333;
+}
+
+#framework, #more {
+	background-color: #EFEFEF;
+	color: #000;
+}
+
+footer {
+  max-width: 42em;
+	margin: 72px auto 0 auto;
+	margin: 7.2rem auto 0 auto;
+	text-align: center;
+  padding: 0 20px;
+  padding: 0 2rem;
+}
+
+.menu {
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 24px 10px;
+  padding: 2.4rem 1rem;
+  box-sizing: border-box;
+}
+
+.menu ol {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+}
+
+.menu li {
+  margin: 0 0.5em;
+}
+
+.menu li:first-child {
+  margin-right: auto;
+  line-height: 1;
+}
+
+.menu a {
+  color: #111;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+h1 {
+	font-size: 0;
+	line-height: 0;
+	text-align: center;
+	font-weight: 800;
+	margin: 0 0 36px 0;
+	margin: 0 0 3.6rem 0;
+}
+
+h2 {
+	font-size: 28px;
+	font-size: 2.8rem;
+	line-height: 1;
+	text-align: center;
+	margin: 0 0 48px 0;
+	margin: 0 0 4.8rem 0;
+}
+
+#more h3 {
+  margin-top: 2em;
+}
+
+p {}
+
+.lead {
+	font-size: 21px;
+	font-size: 2.1rem;
+	line-height: 1.4;
+	text-align: center;
+	font-weight: 500;
+}
+
+.lead-section {
+	text-align: center;
+	font-weight: 500;
+}
+
+.secondary {
+	font-size: 16px;
+	font-size: 1.6rem;
+	margin: 0;
+}
+
+.flex, .buttons {
+  display: -webkit-flex;
+  display: flex;
+  list-style: none !important;
+  padding: 0;
+  margin: 0;
+}
+
+.flex {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex li {
+  -webkit-flex: 1 0 20rem;
+  flex: 1 0 20rem;
+  text-align: center;
+  margin: 27px 10px;
+}
+
+.flex li img {
+  box-shadow: 0 1px 5px #999;
+}
+
+.buttons {
+  justify-content: center;
+  margin: 54px 0 0 0;
+  margin: 5.4rem 0 0 0;
+}
+
+.button {
+	margin: 0 10px;
+	color: inherit;
+	border: 2px solid currentColor;
+	border: 0.2rem solid currentColor;
+  border-radius: 3px;
+  border-radius: 0.3rem;
+  padding: 10px 15px;
+  padding: 1rem 1.5rem;
+	transition: all 350ms;
+	cursor: pointer;
+	font-weight: 700;
+  text-decoration: none;
+  transition: color 500ms;
+}
+
+.button:hover {
+  color: #DF0101;
+  transition: color 500ms;
+}
+
+.plus-content {
+	text-align: left;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.plus-content li {
+	margin-left: 1.25em;
+	text-indent: -0.65em;
+}
+
+.plus-content li:before {
+	content: "+";
+	position: relative;
+	left: -0.5em;
+}
+
+a {
+	color: #DF0101;
+	font-weight: 600;
+}
+
+@-ms-viewport { 
+	width: device-width; 
+}
+
+@media screen and (max-width: 560px) {
+	html {
+		font-size: 50%;
+	}
+}
