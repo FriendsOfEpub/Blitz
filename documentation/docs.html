@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+	<title>Blitz eBook Framework — Documentation</title>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+	<!-- Google -->
+  <meta name="theme-color" content="#DF0101">
+</head>
+<body>
+<nav class="menu">
+  <ol>
+    <li><a href="#" title="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M9 7l.986-6L4 9h3l-1 6 6-8"/></svg></a></li>
+    <li><a href="https://friendsofepub.github.io/Blitz/">Home</a></li>
+    <li><a href="#css-doc">CSS</a></li>
+    <li><a href="#less-doc">LESS</a></li>
+  </ol>
+</nav>
+
+<main class="docs">
+<h1>Blitz’ documentation</h1>
+
+<section class="category" id="css-doc">
+<div class="cat-header">
+<h2>CSS</h2>
+</div>
+
+<div class="wrapper">
+<p>A functional CSS approach has been chosen for the blitz’ style sheet. Think of classes as tools describing how elements should be laid out and typeset.</p>
+
+<p>While following this functional approach is perfectly fine, we encourage you to use and extend the LESS’ meta-language to build your own templates, especially if you want to enforce semantic styling.</p>
+</div>
+
+<section class="sub-category" id="reset">
+<div class="wrapper">
+<h3>Reset</h3>
+
+<p>The blitz’ framework is built upon an eBook-specific reset. </p>
+
+<p>It’s a sanitized fundation providing CSS authors with many benefits, including backwards-compatibility for HTML5 block elements, fixes for very specific bugs in some Reading Systems and making sure user settings are not accidentally disabled.</p>
+
+<pre><code>block-elements {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: inherit;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+html5-block-elements {
+  display: block;
+}
+
+headings {
+  text-align: left;
+}
+
+epub3-toc-list {
+  list-style: none !important;
+}
+
+epub3-landmarks-pagelist {
+  display: none;
+}
+
+inline-elements {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+</code></pre>
+</div>
+</section>
+
+<section class="sub-category" id="default">
+<div class="wrapper">
+<h3>Default template</h3>
+
+<p>Blitz’ stylesheet ships with a sensible default you can customize. It takes care of macro- and microtypography, figures and images, lists, context breaks, tables, code and medias.</p>
+</div>
+</section>
+
+<section class="sub-category" id="typesetting">
+<div class="wrapper">
+<h3>Typesetting</h3>
+
+<dl>
+<dt><dfn>.sans</dfn></dt>
+
+<dd>
+<p>Defines the Reading System’s default sans-serif typeface should be used for the element.</p>
+</dd>
+
+<dt><dfn>.serif</dfn></dt>
+
+<dd>
+<p>Defines the Reading System’s default serif typeface should be used for the element.</p>
+</dd>
+
+<dt><dfn>.monospace</dfn></dt>
+
+<dd>
+<p>Defines the Reading System’s default monospace typeface should be used for the element.</p>
+</dd>
+
+<dt><dfn>.humanist</dfn></dt>
+
+<dd>
+<p>Defines a humanist font-stack based on Myriad Pro for the element.</p>
+</dd>
+
+<dt><dfn>.oldstyle</dfn></dt>
+
+<dd>
+<p>Defines an oldstyle font-stack based on Minion Pro for the element.</p>
+</dd>
+
+<dt><dfn>.justified</dfn></dt>
+
+<dd>
+<p>Applies full justification to the element and enables automatic hyphenation.</p>
+</dd>
+
+<dt><dfn>.align-[left|center|right]</dfn></dt>
+
+<dd>
+<p>Applies <code>text-align</code> to the element. </p>
+
+<p>You must pick <code>left</code>, <code>center</code> or <code>right</code> alignment. Please note <code>text-indent</code> is reset for <code>center</code> and <code>right</code>.</p>
+</dd>
+
+<dt><dfn>.no-indent</dfn></dt>
+
+<dd>
+<p>Resets <code>text-indent</code> for the element.</p>
+</dd>
+
+<dt><dfn>.indent</dfn></dt>
+
+<dd>
+<p>Applies a <code>text-indent</code> of <code>1em</code> to the element.</p>
+</dd>
+
+<dt><dfn>.hanging-indent</dfn></dt>
+
+<dd>
+<p>Applies an hanging indent to the element. </p>
+
+<p>A left margin compensates for the negative indent.</p>
+</dd>
+
+<dt><dfn>.fs-[xxs|xs|s|m|l|xl|xxl|jumbo]</dfn></dt>
+
+<dd>
+<p>Applies a font size to the element. Line heights are also defined in order to keep vertical rhythm.</p>
+
+<p>You must pick the size from <code>xxs</code> to <code>jumbo</code>.</p>
+</dd>
+
+<dt><dfn>.bold</dfn></dt>
+
+<dd>
+<p>Applies bold to the element.</p>
+
+<p>It should not be used in replacement of semantic tags.</p>
+</dd>
+
+<dt><dfn>.italic</dfn></dt>
+
+<dd>
+<p>Applies italic to the element.</p>
+
+<p>It should not be used in replacement of semantic tags.</p>
+</dd>
+
+<dt><dfn>.bold-italic</dfn></dt>
+
+<dd>
+<p>Applies bold and italic to the element.</p>
+</dd>
+
+<dt><dfn>.small-caps</dfn></dt>
+
+<dd>
+<p>Applies <code>text-transform: lowercase</code> to the element then sets it to small capitals.</p>
+</dd>
+
+<dt><dfn>.underline</dfn></dt>
+
+<dd>
+<p>Applies an underline decoration to the element.</p>
+</dd>
+</dl>
+</div>
+
+</section>
+
+<section class="sub-category" id="layout">
+<div class="wrapper">
+<h3>Layout</h3>
+
+<dl>
+<dt><dfn>.block</dfn></dt>
+
+<dd>
+<p>Sets the element to <code>display:block</code>. </p>
+</dd>
+
+<dt><dfn>.inline-block</dfn></dt>
+
+<dd>
+<p>Sets the element to <code>display:inline-block</code> (a block element sitting on a line).</p>
+</dd>
+
+<dt><dfn>.hidden</dfn></dt>
+
+<dd>
+<p>Sets the element to <code>display:none</code> (an hidden element which dimensions are ignored).</p>
+</dd>
+
+<dt><dfn>.clear(-[left|right])</dfn></dt>
+
+<dd>
+<p>Allows to clear floats, which can be useful when floating several elements on the same page (e.g. book covers in a catalogue at the end of your eBook) or floating an element in a wrapper with a border.</p>
+
+<p>By default, it clears both sides but it can be suffixed with <code>left</code> and <code>right</code> if needed.</p>
+</dd>
+
+<dt><dfn>.boxed</dfn></dt>
+
+<dd>
+<p>Applies a <code>border</code> and <code>padding</code> to an element.</p>
+</dd>
+
+<dt><dfn>.no-margin(-[top|bottom|left|right])</dfn></dt>
+
+<dd>
+<p>Resets the element’s margin to <code>0</code>. </p>
+
+<p>By default, it resets all margins but it can be suffixed with <code>top</code>, <code>bottom</code>, <code>left</code> or <code>right</code> if needed.</p>
+</dd>
+
+<dt><dfn>.margin-top-[s|m|l|xl|xxl]</dfn></dt>
+
+<dd>
+<p>Applies a top margin to the element. </p>
+
+<p>You must pick a size for the margin, from <code>s</code> (half the line-height) to <code>xxl</code> (4 times the line-height).</p>
+</dd>
+
+<dt><dfn>.margin-bottom-[s|m|l|xl|xxl]</dfn></dt>
+
+<dd>
+<p>Applies a bottom margin to the element. </p>
+
+<p>You must pick a size for the margin, from <code>s</code> (half the line-height) to <code>xxl</code> (4 times the line-height).</p>
+</dd>
+
+<dt><dfn>.margin-left-[s|m|l|xl|xxl]</dfn></dt>
+
+<dd>
+<p>Applies a left margin to the element. </p>
+
+<p>You must pick a size for the margin, from <code>s</code> (half the default margin) to <code>xxl</code> (3 times the default margin).</p>
+</dd>
+
+<dt><dfn>.margin-right-[s|m|l|xl|xxl]</dfn></dt>
+
+<dd>
+<p>Applies a right margin to the element. </p>
+
+<p>You must pick a size for the margin, from <code>s</code> (half the default margin) to <code>xxl</code> (3 times the default margin).</p>
+</dd>
+
+<dt><dfn>.w-[10 → 100]</dfn></dt>
+
+<dd>
+<p>Applies a width (<code>%</code>) to the element.</p>
+
+<p>You must pick the width, which values are counted in tens.</p>
+</dd>
+
+<dt><dfn>.h-[10 → 100]</dfn></dt>
+
+<dd>
+<p>Applies an height (<code>%</code>) to the element.</p>
+
+<p>You must pick the height, which values are counted in tens.</p>
+</dd>
+
+<dt><dfn>.wrap-[10 → 100]</dfn></dt>
+
+<dd>
+<p>Applies a width (<code>%</code>), centers the element and applies vertical margins (1 line-height) to the element. </p>
+
+<p>You must pick the width, which values are counted in tens.</p>
+</dd>
+
+<dt><dfn>.float-[left|right]</dfn></dt>
+
+<dd>
+<p>Floats the element and applies a small margin on the opposite side of the float. </p>
+
+<p>You must pick the side of the float, either <code>left</code> or <code>right</code>. </p>
+</dd>
+
+<dt><dfn>.break-[before|after|inside]</dfn></dt>
+
+<dd>
+<p>Applies a page break.</p>
+
+<p>You must declare whether this page break should occur <code>before</code>, <code>after</code> or <code>inside</code> the element.</p>
+</dd>
+
+<dt><dfn>.no-break-[before|after|inside]</dfn></dt>
+
+<dd>
+<p>Prevents a page break.</p>
+
+<p>You must declare whether this page break should be avoided <code>before</code>, <code>after</code> or <code>inside</code> the element.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+<section class="sub-category" id="scoped">
+<div class="wrapper">
+<h3>Scoped classes</h3>
+
+<dl>
+<dt><dfn>table.table-fixed</dfn></dt>
+
+<dd>
+<p>Sets <code>table-layout:fixed</code> to the table.</p>
+
+<p>You must then define a width for each cell in the first row of the table or else it won’t work as you may expect.</p>
+</dd>
+
+<dt><dfn>img.portrait</dfn></dt>
+
+<dd>
+<p>Sizes the image based on its height e.g. for inline cover images.</p>
+
+<p>The default value is <code>100%</code>.</p>
+</dd>
+
+<dt><dfn>hr.transition</dfn></dt>
+
+<dd>
+<p>Turns the horizontal rule into a blank line (context change).</p>
+</dd>
+
+<dt><dfn>hr.asterism</dfn></dt>
+
+<dd>
+<p>Turns the horizontal rule into an asterism (context change).</p>
+
+<p>The file <code>asterism.svg</code> should be embedded in your EPUB file in order for this class to work as expected.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+
+<section class="category" id="less-doc">
+<div class="cat-header">
+<h2>LESS CSS</h2>
+</div>
+
+<div class="wrapper">
+<p>The LESS part of the Blitz framework has been designed as a meta-language for laying out and typesetting eBooks. If needed, <a href="https://medium.com/@jiminypan/blitzintrotutorial-270da9f853c0#.z86w24njs">an introductory tutorial is available on Medium</a>.</p>
+
+<p>All CSS classes, excepted the scoped ones, can be used as mixins in the LESS meta-language.</p>
+
+<p>Please note there are extra mixins you can use in LESS.</p>
+</div>
+
+<section class="sub-category" id="customize">
+<div class="wrapper">
+<h3>How to customize</h3>
+
+<ol>
+<li>Configure the output in <code>blitz.less</code>.</li>
+<li>Change variables in <code>core/variables.less</code>.</li>
+<li>Typeset your eBook in <code>base/typo.less</code>.</li>
+<li>Customize files in <code>base</code>, <code>extensions</code> and <code>plugins</code> if needed.</li>
+</ol>
+</div>
+</section>
+
+<section class="sub-category" id="variables">
+<div class="wrapper">
+<h3>Variables</h3>
+
+<p>Variables can be found in <code>core/variables.less</code>. They allow you to customize your template.</p>
+
+<dl>
+<dt><dfn>@body-font-size</dfn></dt>
+
+<dd>
+<p>The <code>font-size</code>, in pixels, which will be used as a reference for the typographic scale.</p>
+
+<p>Default is <code>16</code>.</p>
+</dd>
+
+<dt><dfn>@body-line-height</dfn></dt>
+
+<dd>
+<p>The <code>line-height</code>, as a ratio, which will be used as a reference for vertical rhythm.</p>
+
+<p>Default is <code>1.5</code>.</p>
+</dd>
+
+<dt><dfn>@scale-factor</dfn></dt>
+
+<dd>
+<p>The typographic scale which will be used for computing font sizes.</p>
+
+<p>Five presets have been carefully chosen for eBooks: <code>@unison</code>, <code>@minor-second</code>, <code>@major-second</code> (default), <code>@minor-third</code> and <code>@major-second</code>.</p>
+</dd>
+
+<dt><dfn>@step</dfn></dt>
+
+<dd>
+<p>The margin, as a percentage, which will be used as a reference for the horizontal grid.</p>
+</dd>
+
+<dt><dfn>@primary-color</dfn></dt>
+
+<dd>
+<p>The first accentuation color. </p>
+
+<p>By default, it is used for links.</p>
+</dd>
+
+<dt><dfn>@secondary-color</dfn></dt>
+
+<dd>
+<p>The second accentuation color.</p>
+
+<p>By default, it is not used.</p>
+</dd>
+
+<dt><dfn>@border-width</dfn></dt>
+
+<dd>
+<p>The width, in pixels, which will be used as a reference for borders (e.g. table and boxed content).</p>
+
+<p>Default is <code>1</code>.</p>
+</dd>
+
+<dt><dfn>@border-style</dfn></dt>
+
+<dd>
+<p>The style which will be used for borders.</p>
+
+<p>Default is <code>solid</code>.</p>
+</dd>
+
+<dt><dfn>@border-color</dfn></dt>
+
+<dd>
+<p>The color which will be used for borders.</p>
+
+<p>Default is <code>currentColor</code> i.e. the color of the element.</p>
+</dd>
+
+<dt><dfn>@ul-type</dfn></dt>
+
+<dd>
+<p>The <code>list-style-type</code> which will be used for unorganized lists.</p>
+
+<p>Default is <code>disc</code>.</p>
+</dd>
+
+<dt><dfn>@ul-type-nested</dfn></dt>
+
+<dd>
+<p>The <code>list-style-type</code> which will be used for nested unorganized lists.</p>
+
+<p>Default is <code>square</code>.</p>
+</dd>
+
+<dt><dfn>@ul-type-position</dfn></dt>
+
+<dd>
+<p>The <code>list-style-position</code> which will be used for unorganized lists.</p>
+
+<p>Default is <code>outside</code>.</p>
+</dd>
+
+<dt><dfn>@ol-type</dfn></dt>
+
+<dd>
+<p>The <code>list-style-type</code> which will be used for organized lists.</p>
+
+<p>Default is <code>decimal</code>.</p>
+</dd>
+
+<dt><dfn>@ol-type-nested</dfn></dt>
+
+<dd>
+<p>The <code>list-style-type</code> which will be used for nested organized lists.</p>
+
+<p>Default is <code>lower-roman</code>.</p>
+</dd>
+
+<dt><dfn>@ol-type-position</dfn></dt>
+
+<dd>
+<p>The <code>list-style-position</code> which will be used for organized lists.</p>
+
+<p>Default is <code>outside</code>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+<section class="sub-category" id="typo-mixins">
+<div class="wrapper">
+<h3>Typography Mixins</h3>
+
+<dl>
+<dt><dfn>.fs(@font-scale)</dfn></dt>
+
+<dd>
+<p>Computes a <code>font-size</code> and a <code>line-height</code> for the element. </p>
+
+<p>The <code>@font-scale</code> argument must be an integer (zero, positive or negative) telling which step in the typographic scale the element should use.</p>
+</dd>
+
+<dt><dfn>.rhythm(@font-scale, @margin-top, @margin-bottom)</dfn></dt>
+
+<dd>
+<p>Computes a <code>font-size</code>, a <code>line-height</code> and vertical margins for the element. Unlike <code>.fs(@font-scale)</code>, it enforces vertical rhythm.</p>
+
+<p>The <code>@font-scale</code> argument must be an integer (zero, positive or negative) telling which step in the typographic scale the element should use.</p>
+
+<p>The <code>@margin-top</code> and <code>@margin-bottom</code> arguments must be an integer (zero or positive) telling the number of lines which should be used for those margins. </p>
+</dd>
+
+<dt><dfn>.disable-hyphens</dfn></dt>
+
+<dd>
+<p>Disables hyphenation. It may come in handy for headings, centered elements, etc.</p>
+</dd>
+
+<dt><dfn>.manual-hyphens</dfn></dt>
+
+<dd>
+<p>Enables hyphenation and set the value to <code>manual</code>. Reading Systems which support this will hyphenate text according to the soft hyphens (a.k.a. <code>&amp;shy;</code> or <code>&amp;#173;</code>) you added in HTML files.</p>
+</dd>
+
+<dt><dfn>.hyphens-auto</dfn></dt>
+
+<dd>
+<p>Enables hyphenation and set the value to <code>auto</code> so that Reading Systems which support hyphenation automatically deal with it.</p>
+</dd>
+
+<dt><dfn>.hyphenate</dfn></dt>
+
+<dd>
+<p>Basically, this is <code>.hyphens-auto</code> on steroids. </p>
+
+<p>It enables automatic hyphenation and defines the consecutive numbers of lines, the minimum number of characters, the limit zone and how the last line should behave. </p>
+
+<p>Parametric mixins are available in <code>reference/hyphens.less</code> for all those extra declarations.</p>
+</dd>
+
+<dt><dfn>.override-italic</dfn></dt>
+
+<dd>
+<p>Resets <code>font-style</code> to <code>normal</code>.</p>
+
+<p>It should be used for italics nested in italics.</p>
+</dd>
+
+<dt><dfn>.override-iBooks-links(@overrideColor)</dfn></dt>
+
+<dd>
+<p>Enforces iBooks won’t override your links’ color in night modes.</p>
+
+<p>Please note it is almost impossible to find a color which will provide good contrast in all modes.</p>
+</dd>
+
+<dt><dfn>.override-iBooks-locale(@lang)</dfn></dt>
+
+<dd>
+<p>This declaration can help with a font fallback and <code>text-transform</code> when the element is in another language.</p>
+
+<p>The <code>@lang</code> argument should conform to ISO 639-1.</p>
+
+<p>Please note iBooks and Reading Systems based on WebKit will automatically map this CSS property to the <code>xml:lang</code> or <code>lang</code> attributes it finds in your HTML files. You should not use it in replacement of those attributes.</p>
+</dd>
+
+<dt><dfn>.override-tab-size(@tabs)</dfn></dt>
+
+<dd>
+<p>Defines the number of spaces a tab should be in preformatted text.</p>
+
+<p>Default is <code>4</code>.</p>
+</dd>
+
+<dt><dfn>.override-ul-type(@ulType)</dfn></dt>
+
+<dd>
+<p>Removes <code>list-style-type</code> and reimplements a custom type for unorganized lists using a <code>:before</code> pseudo-element.</p>
+
+<p>The <code>@ulType</code> argument should be the HEX value of the character.</p>
+</dd>
+
+<dt><dfn>.override-ol-type()</dfn></dt>
+
+<dd>
+<p>Removes <code>list-style-type</code> and reimplements increments for organized lists using a <code>:before</code> pseudo-element.</p>
+
+<p>Please note you should customize the value for <code>content</code>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+<section class="sub-category" id="layout-mixins">
+<div class="wrapper">
+<h3>Layout mixins</h3>
+
+<dl>
+<dt><dfn>.width-center(@elWidth)</dfn></dt>
+
+<dd>
+<p>Computes left and right margins to center an element based on the declared width.</p>
+
+<p>The <code>@elWidth</code> argument should be a percentage.</p>
+</dd>
+
+<dt><dfn>.border-radius(@radius)</dfn></dt>
+
+<dd>
+<p>Applies <code>border-radius</code> to the element.</p>
+
+<p>Default is <code>5px</code>.</p>
+</dd>
+
+<dt><dfn>.linear-gradient(@origin, @start, @stop)</dfn></dt>
+
+<dd>
+<p>Applies a linear gradient background with a background-color fallback.</p>
+
+<p>Since linear gradients are treated as background images, they won’t be overridden in night modes.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+<section class="sub-category" id="generators">
+<div class="wrapper">
+<h3>Generators</h3>
+
+<dl>
+<dt><dfn>.generate-subtle-palette(@baseColor)</dfn></dt>
+
+<dd>
+<p>Generates a subtle color palette (5 classes) based on the argument.</p>
+</dd>
+
+<dt><dfn>.generate-comp-palette(@baseColor)</dfn></dt>
+
+<dd>
+<p>Generates a complementary color palette (5 classes) based on the argument.</p>
+</dd>
+
+<dt><dfn>.generate-columns(@n)</dfn></dt>
+
+<dd>
+<p>Generates functional <code>col-[number]</code> classes from the argument.</p>
+
+<p>The argument <code>@n</code> should be a positive integer since it will be used as a divisor for <code>100%</code>.</p>
+</dd>
+</dl>
+</div>
+</section>
+
+<section class="sub-category" id="namespaces">
+<div class="wrapper">
+<h3>Namespaces (packages)</h3>
+
+<dl>
+<dt><dfn>#height-vh</dfn></dt>
+
+<dd>
+<p>This package outputs functional <code>.h[10 → 100]</code> classes with a <code>vh</code> value instead of <code>%</code>. </p>
+
+<p>It is “protected” in a CSS feature query (<code>@supports</code>) so that it doesn’t break CSS parsing in some ePub2 Reading Systems.</p>
+</dd>
+
+<dt><dfn>#responsive-table</dfn></dt>
+
+<dd>
+<p>An experimental package leveraging a <code>data-th</code> attribute to make tables responsive.</p>
+
+<p>Since media queries are untrustworthy in Reading Systems at the moment, you should probably not use this package.</p>
+</dd>
+</dl>
+</div>
+</section>
+</section>
+</main>
+
+<footer>
+  <p class="secondary">© 2017, Jiminy Panoz.</p>
+
+  <p class="secondary">Blitz Framework is released under the MIT&nbsp;License.</p>
+</footer>
+</body>
+</html>

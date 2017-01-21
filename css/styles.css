@@ -47,7 +47,7 @@ strong {
   font-weight: bolder;
 }
 
-code {
+pre, code {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -196,10 +196,18 @@ footer {
 }
 
 h1 {
-	font-size: 0;
-	line-height: 0;
+	font-size: 36px;
+	font-size: 3.6rem;
+	line-height: 1.2;
 	text-align: center;
 	font-weight: 800;
+	margin: 128px 0 72px 0;
+	margin: 12.8rem 0 7.2rem 0;
+}
+
+.logo {
+	font-size: 0;
+	line-height: 0;
 	margin: 0 0 36px 0;
 	margin: 0 0 3.6rem 0;
 }
@@ -314,6 +322,102 @@ a {
 
 @-ms-viewport { 
 	width: device-width; 
+}
+
+/* Docs */
+
+.docs {
+  margin: 0;
+  padding: 0;
+}
+
+.docs:after {
+  display: block;
+  content: '';
+	background-color: #111111;
+	height: 96px;
+	height: 9.6rem;
+	width: 100%;
+}
+
+.category {
+  padding: 0;
+  margin: 0;
+}
+
+.cat-header {
+	background-color: #111111;
+	color: #FAFAFA;
+	padding: 48px 0;
+	padding: 4.8rem 0;
+	margin: 0 0 48px 0;
+	margin: 0 0 4.8rem 0;
+}
+
+.cat-header h2 {
+  margin: 0;
+}
+
+.sub-category {
+	padding: 48px 0;
+	padding: 4.8rem 0;
+}
+
+.cat-header + .wrapper + .sub-category {
+  margin-top: 48px;
+  margin-top: 4.8rem;
+}
+
+.sub-category:nth-child(even) {
+	background-color: #FDFDFD;
+	color: #333;
+}
+
+.sub-category:nth-child(odd) {
+	background-color: #EFEFEF;
+	color: #000;
+}
+
+.sub-category h3 {
+  margin-top: 0;
+}
+
+dl {
+  margin: 48px 0 0 0;
+  margin: 4.8rem 0 0 0;
+}
+
+dt {
+  font-size: 18px;
+  font-size: 1.8rem;
+  margin-top: 48px;
+  margin-top: 4.8rem;
+}
+
+dfn {
+  font-family: "Andale Mono", Menlo, Consolas, monospace;
+  font-style: normal;
+  font-weight: bold;
+}
+
+dd {
+  font-size: 16px;
+  font-size: 1.6rem;
+}
+
+pre {
+  margin: 36px 0;
+  margin: 3.6rem 0;
+  overflow-x: auto;
+/*  overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;  */
+  border: 1px solid currentColor;
+  padding: 12px;
+  padding: 1.2rem;
+}
+
+code {
+  font-family: "Andale Mono", Menlo, Consolas, monospace;
 }
 
 @media screen and (max-width: 560px) {
