@@ -350,7 +350,7 @@ inline-elements {
 <dt><dfn>img.portrait</dfn></dt>
 
 <dd>
-<p>Sizes the image based on its height e.g. for inline cover images.</p>
+<p>Sizes the image based on its height e.g. inline cover images.</p>
 
 <p>The default value is <code>100%</code>.</p>
 </dd>
@@ -364,7 +364,7 @@ inline-elements {
 <dt><dfn>hr.asterism</dfn></dt>
 
 <dd>
-<p>Turns the horizontal rule into an asterism (context change).</p>
+<p>Turns the horizontal rule into an asterism (thematic break).</p>
 
 <p>The file <code>asterism.svg</code> should be embedded in your EPUB file in order for this class to work as expected.</p>
 </dd>
@@ -547,7 +547,7 @@ inline-elements {
 
 <p>The <code>@font-scale</code> argument must be an integer (zero, positive or negative) telling which step in the typographic scale the element should use.</p>
 
-<p>The <code>@margin-top</code> and <code>@margin-bottom</code> arguments must be an integer (zero or positive) telling the number of lines which should be used for those margins. </p>
+<p>The <code>@margin-top</code> and <code>@margin-bottom</code> arguments can be an integer or a decimal (zero or positive) telling the number of lines which should be used for those margins. </p>
 </dd>
 
 <dt><dfn>.disable-hyphens</dfn></dt>
@@ -559,13 +559,13 @@ inline-elements {
 <dt><dfn>.manual-hyphens</dfn></dt>
 
 <dd>
-<p>Enables hyphenation and set the value to <code>manual</code>. Reading Systems which support this will hyphenate text according to the soft hyphens (a.k.a. <code>&amp;shy;</code> or <code>&amp;#173;</code>) you added in HTML files.</p>
+<p>Enables hyphenation and sets the value to <code>manual</code>. Reading Systems which support this will hyphenate text according to the soft hyphens (a.k.a. <code>&amp;shy;</code> or <code>&amp;#173;</code>) you added in HTML files.</p>
 </dd>
 
 <dt><dfn>.hyphens-auto</dfn></dt>
 
 <dd>
-<p>Enables hyphenation and set the value to <code>auto</code> so that Reading Systems which support hyphenation automatically deal with it.</p>
+<p>Enables hyphenation and sets the value to <code>auto</code> so that Reading Systems which support hyphenation automatically deal with it.</p>
 </dd>
 
 <dt><dfn>.hyphenate</dfn></dt>
@@ -699,7 +699,7 @@ inline-elements {
 <dt><dfn>#height-vh</dfn></dt>
 
 <dd>
-<p>This package outputs functional <code>.h[10 → 100]</code> classes with a <code>vh</code> value instead of <code>%</code>. </p>
+<p>This package outputs functional <code>.h[10→100]</code> classes with a <code>vh</code> value instead of <code>%</code>. </p>
 
 <p>It is “protected” in a CSS feature query (<code>@supports</code>) so that it doesn’t break CSS parsing in some ePub2 Reading Systems.</p>
 </dd>
