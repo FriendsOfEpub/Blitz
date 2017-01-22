@@ -163,6 +163,7 @@ footer {
   padding: 24px 10px;
   padding: 2.4rem 1rem;
   box-sizing: border-box;
+  z-index: 10;
 }
 
 .menu ol {
