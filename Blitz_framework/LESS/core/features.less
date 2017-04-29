@@ -1,0 +1,43 @@
+// Feature Queries
+
+// Layout
+
+@drop-cap: ~"((-webkit-initial-letter: 2 2) or (initial-letter: 2 2))";
+@flexbox: ~"((display: -webkit-flex) or (display: flex))";
+@calc-width: ~"((width: -webkit-calc(30em + 5%)) or (width: calc(30em + 5%)))";
+@calc-height: ~"((height: -webkit-calc(100vh - 4.5em)) or (height: calc(100vh - 4.5em)))";
+
+
+// Units
+
+@ch: ~"(max-width: 60ch)";
+@vh: ~"(height: 95vh)";
+
+
+// OTF
+// Source: https://github.com/kennethormandy/utility-opentype/blob/master/css/utility-opentype.css
+
+@kern: ~"(font-kerning: normal)";
+@clig: ~"((-ms-font-feature-settings: 'liga') or (-webkit-font-variant-ligatures: common-ligatures) or (font-variant-ligatures: common-ligatures))";
+@dlig: ~"((-ms-font-feature-settings: 'dlig') or (-webkit-font-variant-ligatures: discretionary-ligatures) or (font-variant-ligatures: discretionary-ligatures))";
+@true-sc: ~"(font-variant-caps: small-caps)";
+@c2sc: ~"(font-variant-caps: all-small-caps)";
+@case: ~"((-webkit-font-feature-settings: 'case') or (font-feature-settings: 'case'))";
+@titl: ~"((-ms-font-feature-settings: 'titl') or (font-variant-caps: titling-caps))";
+@calt: ~"((-ms-font-feature-settings: 'calt') or (-webkit-font-variant-ligatures: contextual) or (font-variant-ligatures: contextual))";
+@salt: ~"((-webkit-font-feature-settings: 'salt' 1) or (font-feature-settings: 'salt' 1))";
+@swsh: ~"((-webkit-font-feature-settings: 'swsh' 1) or (font-feature-settings: 'swsh' 1))";
+@ss01: ~"((-webkit-font-feature-settings: 'ss01') or (font-feature-settings: 'ss01'))";
+@ss02: ~"((-webkit-font-feature-settings: 'ss02') or (font-feature-settings: 'ss02'))";
+@ss03: ~"((-webkit-font-feature-settings: 'ss03') or (font-feature-settings: 'ss03'))";
+@hist: ~"((-ms-font-feature-settings: 'hist') or (font-variant-alternates: historical-forms))";
+@lnum: ~"(font-variant-numeric: lining-nums)";
+@pnum: ~"(font-variant-numeric: proportional-nums)";
+@onum: ~"(font-variant-numeric: oldstyle-nums)";
+@tnum: ~"(font-variant-numeric: tabular-nums)";
+@slash: ~"(font-variant-numeric: slashed-zero)";
+@frac: ~"((-ms-font-feature-settings: 'frac') or (font-variant-numeric: diagonal-fractions))";
+@afrc: ~"((-ms-font-feature-settings: 'afrc') or (font-variant-numeric: stacked-fractions))";
+@ordn: ~"((-ms-font-feature-settings: 'ordn') or (font-variant-numeric: ordinal))";
+@subs: ~"(font-variant-position: sub)";
+@sups: ~"(font-variant-position: super)";
