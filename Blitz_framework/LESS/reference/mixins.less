@@ -75,51 +75,15 @@
 // Progressive enhancements
 
   // Layout
-
-.drop-cap(@size : 3, @sink : 3) {
-    margin: 1em 0.25em 0 0; /* iOS 9 fix */
+  
+.initial-letter(@size : 3, @sink : 3) {
     -webkit-initial-letter: @size @sink;
-    initial-letter: @size @sink; 
+    initial-letter: @size @sink;    
 }
 
-.valign-center {
-    min-height: 95vh;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: center;
-    justify-content: center;
-}
-
-.valign-bottom {
-    min-height: 95vh;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: flex-end;
-    justify-content: flex-end;
-}
-
-.valign-between {
-    min-height: 95vh;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-between;
-    justify-content: space-between;
-}
-
-.valign-around {
-    min-height: 95vh;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-around;
-    justify-content: space-around; 
+.flex-base(@grow, @shrink, @basis) {
+    -webkit-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
 }
 
 .reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px) {
@@ -129,57 +93,7 @@
     max-height: @max;
 }
 
-  // OTF
-  
-.kern {
-    font-kerning: normal;
-}
-
-.no-kern {
-    font-kerning: none;
-}
-
-.clig {
-    -ms-font-feature-settings: "liga";
-    -webkit-font-variant-ligatures: common-ligatures;
-    font-variant-ligatures: common-ligatures;
-}
-
-.dlig {
-    -ms-font-feature-settings: "dlig";
-    -webkit-font-variant-ligatures: discretionary-ligatures;
-    font-variant-ligatures: discretionary-ligatures;
-}
-
-.no-ligatures {
-    -ms-font-feature-settings: "liga" 0, "clig" 0;
-    -webkit-font-variant-ligatures: no-common-ligatures;
-    font-variant-ligatures: no-common-ligatures;
-}
-
-.true-sc {
-    font-variant-caps: small-caps;
-}
-
-.c2sc {
-    font-variant-caps: all-small-caps;
-}
-
-.case {
-    -webkit-font-feature-settings: "case";
-    font-feature-settings: "case";
-}
-
-.titling {
-    -ms-font-feature-settings: "titl";
-    font-variant-caps: titling-caps;
-}
-
-.calt {
-    -ms-font-feature-settings: "calt";
-    -webkit-font-variant-ligatures: contextual;
-    font-variant-ligatures: contextual;
-}
+    // OTF
 
 .salt(@alt : 1) {
     -webkit-font-feature-settings: "salt" @alt;
@@ -194,52 +108,4 @@
 .ss(@alt : "01") {
     -webkit-font-feature-settings: ~'"ss@{alt}"';
     font-feature-settings: ~'"ss@{alt}"';
-}
-
-.hist {
-    -ms-font-feature-settings: "hist";
-    font-variant-alternates: historical-forms;
-}
-
-.lnum {
-    font-variant-numeric: lining-nums;
-}
-
-.pnum {
-    font-variant-numeric: proportional-nums;
-}
-
-.onum {
-    font-variant-numeric: oldstyle-nums;
-}
-
-.tnum {
-    font-variant-numeric: tabular-nums;
-}
-
-.slash {
-    font-variant-numeric: slashed-zero;
-}
-
-.frac {
-    -ms-font-feature-settings: "frac";
-    font-variant-numeric: diagonal-fractions;
-}
-
-.stacked {
-    -ms-font-feature-settings: "afrc";
-    font-variant-numeric: stacked-fractions;
-}
-
-.ordinal {
-    -ms-font-feature-settings: "ordn";
-    font-variant-numeric: ordinal;
-}
-
-.sups {
-    font-variant-position: super;
-}
-
-.subs {
-    font-variant-position: sub;
 }
