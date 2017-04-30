@@ -79,15 +79,12 @@
   // Layout
 
 .drop-cap(@size : 3, @sink : 3) {
-  @supports ((-webkit-initial-letter: 3 3) or (initial-letter: 3 3)) {
     margin: 1em 0.25em 0 0; /* iOS 9 fix */
     -webkit-initial-letter: @size @sink;
     initial-letter: @size @sink; 
-  }
 }
 
 .valign-center {
-  @supports ((display: -webkit-flex) or (display: flex)) {
     min-height: 95vh;
     display: -webkit-flex;
     display: flex;
@@ -95,11 +92,9 @@
     flex-direction: column;
     -webkit-justify-content: center;
     justify-content: center;
-  }
 }
 
 .valign-bottom {
-  @supports ((display: -webkit-flex) or (display: flex)) {
     min-height: 95vh;
     display: -webkit-flex;
     display: flex;
@@ -107,11 +102,9 @@
     flex-direction: column;
     -webkit-justify-content: flex-end;
     justify-content: flex-end;
-  }
 }
 
 .valign-between {
-  @supports ((display: -webkit-flex) or (display: flex)) {
     min-height: 95vh;
     display: -webkit-flex;
     display: flex;
@@ -119,11 +112,9 @@
     flex-direction: column;
     -webkit-justify-content: space-between;
     justify-content: space-between;
-  }
 }
 
 .valign-around {
-  @supports ((display: -webkit-flex) or (display: flex)) {
     min-height: 95vh;
     display: -webkit-flex;
     display: flex;
@@ -131,177 +122,126 @@
     flex-direction: column;
     -webkit-justify-content: space-around;
     justify-content: space-around; 
-  }
 }
 
 .reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px) {
-  @supports ((height: -webkit-calc(98vh - 3em)) or (height: calc(98vh - 3em))) {
     min-height: @min;
     height: -webkit-calc(~"@{img} - @{caption}");
     height: calc(~"@{img} - @{caption}");
     max-height: @max;
-  }
 }
 
   // OTF
   
 .kern {
-  @supports (font-kerning: normal) {
     font-kerning: normal;
-  }
 }
 
 .no-kern {
-  @supports (font-kerning: none) {
     font-kerning: none;
-  }
 }
 
 .clig {
-  @supports ((-ms-font-feature-settings: "liga") or (-webkit-font-variant-ligatures: common-ligatures) or (font-variant-ligatures: common-ligatures)) {
     -ms-font-feature-settings: "liga";
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
-  }
 }
 
-.dlig {
   @supports ((-ms-font-feature-settings: "dlig") or (-webkit-font-variant-ligatures: discretionary-ligatures) or (font-variant-ligatures: discretionary-ligatures)) {
     -ms-font-feature-settings: "dlig";
     -webkit-font-variant-ligatures: discretionary-ligatures;
     font-variant-ligatures: discretionary-ligatures;
-  }
 }
 
-.nolig {
 @supports ((-ms-font-feature-settings: "liga" 0) or (-webkit-font-variant-ligatures: no-common-ligatures) or (font-variant-ligatures: no-common-ligatures)) {
     -ms-font-feature-settings: "liga" 0, "clig" 0;
     -webkit-font-variant-ligatures: no-common-ligatures;
     font-variant-ligatures: no-common-ligatures;
-  }
 }
 
 .true-sc {
-  @supports (font-variant-caps: small-caps) {
     font-variant-caps: small-caps;
-  }
 }
 
 .c2sc {
-  @supports (font-variant-caps: all-small-caps) {
     font-variant-caps: all-small-caps;
-  }
 }
 
 .case {
-  @supports ((-webkit-font-feature-settings: "case") or (font-feature-settings: "case")) {
     -webkit-font-feature-settings: "case";
     font-feature-settings: "case";
-  }
 }
 
-.titl {
-  @supports ((-ms-font-feature-settings: "titl") or (font-variant-caps: titling-caps)) {
+.titling {
     -ms-font-feature-settings: "titl";
     font-variant-caps: titling-caps;
-  }
 }
 
 .calt {
-  @supports ((-ms-font-feature-settings: "calt") or (-webkit-font-variant-ligatures: contextual) or (font-variant-ligatures: contextual)) {
     -ms-font-feature-settings: "calt";
     -webkit-font-variant-ligatures: contextual;
     font-variant-ligatures: contextual;
-  }
 }
 
-.salt(@alt) {
-  @supports ((-webkit-font-feature-settings: "salt") or (font-feature-settings: "salt")) {
+.salt(@alt : 1) {
     -webkit-font-feature-settings: "salt" @alt;
     font-feature-settings: "salt" @alt;
-  }
 }
 
-.swsh(@alt) {
-  @supports ((-webkit-font-feature-settings: "swsh") or (font-feature-settings: "swsh")) {
+.swsh(@alt : 1) {
     -webkit-font-feature-settings: "swsh" @alt;
     font-feature-settings: "swsh" @alt;
-  }
 }
 
-.ss(@alt) {
-  @supports ((-webkit-font-feature-settings: "ss01") or (font-feature-settings: "ss01")) {
+.ss(@alt : "01") {
     -webkit-font-feature-settings: ~'"ss@{alt}"';
     font-feature-settings: ~'"ss@{alt}"';
-  }
 }
 
 .hist {
-  @supports ((-ms-font-feature-settings: "hist") or (font-variant-alternates: historical-forms)) {
     -ms-font-feature-settings: "hist";
     font-variant-alternates: historical-forms;
-  }
 }
 
 .lnum {
-  @supports (font-variant-numeric: lining-nums) {
     font-variant-numeric: lining-nums;
-  }
 }
 
 .pnum {
-  @supports (font-variant-numeric: proportional-nums) {
     font-variant-numeric: proportional-nums;
-  }
 }
 
 .onum {
-  @supports (font-variant-numeric: oldstyle-nums) {
     font-variant-numeric: oldstyle-nums;
-  }
 }
 
 .tnum {
-  @supports (font-variant-numeric: tabular-nums) {
     font-variant-numeric: tabular-nums;
-  }
 }
 
 .slash {
-  @supports (font-variant-numeric: slashed-zero) {
     font-variant-numeric: slashed-zero;
-  }
 }
 
 .frac {
-  @supports ((-ms-font-feature-settings: "frac") or (font-variant-numeric: diagonal-fractions)) {
     -ms-font-feature-settings: "frac";
     font-variant-numeric: diagonal-fractions;
-  }
 }
 
-.afrc {
-  @supports ((-ms-font-feature-settings: "afrc") or (font-variant-numeric: stacked-fractions)) {
+.stacked {
     -ms-font-feature-settings: "afrc";
     font-variant-numeric: stacked-fractions;
-  }
 }
 
-.ordn {
-  @supports ((-ms-font-feature-settings: "ordn") or (font-variant-numeric: ordinal)) {
+.ordinal {
     -ms-font-feature-settings: "ordn";
     font-variant-numeric: ordinal;
-  }
 }
 
 .sups {
-  @supports (font-variant-position: super) {
     font-variant-position: super;
-  }
 }
 
 .subs {
-  @supports (font-variant-position: sub) {
     font-variant-position: sub;
-  }
 }
