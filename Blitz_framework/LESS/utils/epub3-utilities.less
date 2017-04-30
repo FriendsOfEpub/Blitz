@@ -2,12 +2,11 @@
 
 
     /* Layout */
-  
+
 .drop-cap {
-    .supports-drop-cap({
-        margin: 1em 0.25em 0 0; /* iOS 9 fix */
-        .initial-letter();
-    });
+/* Can’t be used as a class, you must use :first-letter */
+    margin: 1em 0.25em 0 0; /* iOS 9 fix */
+    .initial-letter();
 }
 
 .flex {
@@ -18,6 +17,11 @@
 .flex-col {
     -webkit-flex-direction: column;
     flex-direction: column;
+}
+
+.flex-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .flex-start {
