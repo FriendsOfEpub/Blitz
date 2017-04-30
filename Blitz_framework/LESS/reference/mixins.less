@@ -145,13 +145,13 @@
     font-variant-ligatures: common-ligatures;
 }
 
-  @supports ((-ms-font-feature-settings: "dlig") or (-webkit-font-variant-ligatures: discretionary-ligatures) or (font-variant-ligatures: discretionary-ligatures)) {
+.dlig {
     -ms-font-feature-settings: "dlig";
     -webkit-font-variant-ligatures: discretionary-ligatures;
     font-variant-ligatures: discretionary-ligatures;
 }
 
-@supports ((-ms-font-feature-settings: "liga" 0) or (-webkit-font-variant-ligatures: no-common-ligatures) or (font-variant-ligatures: no-common-ligatures)) {
+.no-ligatures {
     -ms-font-feature-settings: "liga" 0, "clig" 0;
     -webkit-font-variant-ligatures: no-common-ligatures;
     font-variant-ligatures: no-common-ligatures;
