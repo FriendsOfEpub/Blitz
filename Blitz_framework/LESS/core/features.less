@@ -13,11 +13,11 @@
     @supports not ((-webkit-initial-letter: 2 2) and (initial-letter: 2 2)) { @rules(); };
 }
 
-.supports-flexbox(@rules) {
+.supports-flex(@rules) {
     @supports ((display: -webkit-flex) or (display: flex)) { @rules(); };
 }
 
-.supports-not-flexbox(@rules) {
+.supports-not-flex(@rules) {
     @supports not ((display: -webkit-flex) and (display: flex)) { @rules(); };
 }
 
@@ -95,6 +95,14 @@
 
 .supports-not-dlig(@rules) {
     @supports not ((-ms-font-feature-settings: "dlig") and (-webkit-font-variant-ligatures: discretionary-ligatures) and (font-variant-ligatures: discretionary-ligatures)) { @rules(); };
+}
+
+.supports-no-liga(@rules) {
+    @supports ((-ms-font-feature-settings: "liga" 0, "clig" 0) or (-webkit-font-variant-ligatures: no-common-ligatures) or (font-variant-ligatures: no-common-ligatures)) { @rules(); };
+}
+
+.supports-not-no-liga(@rules) {
+    @supports not ((-ms-font-feature-settings: "liga" 0, "clig" 0) and (-webkit-font-variant-ligatures: no-common-ligatures) and (font-variant-ligatures: no-common-ligatures)) { @rules(); };
 }
 
 .supports-true-sc(@rules) {
