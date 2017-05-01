@@ -14,7 +14,7 @@ Feedback at [Issue #12](https://github.com/FriendsOfEpub/Blitz/issues/12).
 
 ## Details
 
-### Feature queries (`features.less`)
+### Feature queries
 
 You’re likely to encounter a steep learning curve if you're not familiar with passing rulesets in a mixin because that’s definitely a new layer of abstraction I could not bypass—due to preprocessors’ limitations regarding `@supports`.
 
@@ -50,13 +50,13 @@ What differentiates those mixins from others is the javascriptesque `({ … })` 
 
 Now, enhancements absolutely need this or else you’ll have issues all over the place in Reading Systems using Adobe’s ePub2 RMSDK.
 
-### Mixins (`mixins.less` from line 75)
+### Mixins
 
 There’s a bunch of new mixins you might want to use for initial-letter, reflowable images with a caption, etc.
 
 To make things clearer, defaults have been set for some arguments—and yep, you do have to pass some arguments as strings so I’m not sure at all it’s worth it.
 
-### EPUB 3 Utilities (`enhancements.less`)
+### EPUB 3 Utilities
 
 They’ve been designed as a reference so that they are not output in the CSS. The assumption is that if they were output by default, people could maybe use them without feature queries (`@supports`).
 
