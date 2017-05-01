@@ -105,6 +105,11 @@
     text-align-last: @align;   
 }
 
+.calc(@prop, @val1, @operator : "+", @val2) {
+    @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
+    @{prop}: calc(~"@{val1} @{operator} @{val2}");
+};
+
     // OTF
 
 .salt(@alt : 1) {
