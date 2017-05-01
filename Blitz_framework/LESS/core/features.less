@@ -9,26 +9,66 @@
     @supports ((-webkit-initial-letter: 2 2) or (initial-letter: 2 2)) { @rules(); };
 }
 
+.supports-not-drop-cap(@rules) {
+    @supports not ((-webkit-initial-letter: 2 2) and (initial-letter: 2 2)) { @rules(); };
+}
+
 .supports-flexbox(@rules) {
     @supports ((display: -webkit-flex) or (display: flex)) { @rules(); };
+}
+
+.supports-not-flexbox(@rules) {
+    @supports not ((display: -webkit-flex) and (display: flex)) { @rules(); };
 }
 
 .supports-calc-width(@rules) {
     @supports ((width: -webkit-calc(30em + 5%)) or (width: calc(30em + 5%))) { @rules(); };
 }
 
+.supports-not-calc-width(@rules) {
+    @supports not ((width: -webkit-calc(30em + 5%)) and (width: calc(30em + 5%))) { @rules(); };
+}
+
 .supports-calc-height(@rules) {
-    @supports ((height: -webkit-calc(100vh - 4.5em)) or (height: calc(100vh - 4.5em))) { @rules(); };
+    @supports ((height: -webkit-calc(98vh - 4.5em)) or (height: calc(98vh - 4.5em))) { @rules(); };
+}
+
+.supports-not-calc-height(@rules) {
+    @supports not ((height: -webkit-calc(98vh - 4.5em)) and (height: calc(98vh - 4.5em))) { @rules(); };
 }
 
     // Units
+
+.supports-ex(@rules) {
+    @supports (vertical-align: 0.5ex) { @rules(); };    
+}
+
+.supports-not-ex(@rules) {
+    @supports not (vertical-align: 0.5ex) { @rules(); };    
+}
 
 .supports-ch(@rules) {
     @supports (max-width: 60ch) { @rules(); };
 }
 
+.supports-not-ch(@rules) {
+    @supports not (max-width: 60ch) { @rules(); };
+}
+
 .supports-vh(@rules) {
     @supports (height: 95vh) { @rules(); }; 
+}
+
+.supports-not-vh(@rules) {
+    @supports not (height: 95vh) { @rules(); }; 
+}
+
+.supports-vmin(@rules) {
+    @supports (font-size: 1vmin) { @rules(); };
+}
+
+.supports-not-vmin(@rules) {
+    @supports not (font-size: 1vmin) { @rules(); };
 }
 
     // OTF
@@ -37,94 +77,190 @@
     @supports (font-kerning: normal) { @rules(); };
 }
 
+.supports-not-kern(@rules) {
+    @supports not (font-kerning: normal) { @rules(); };
+}
+
 .supports-clig(@rules) {
     @supports ((-ms-font-feature-settings: "liga") or (-webkit-font-variant-ligatures: common-ligatures) or (font-variant-ligatures: common-ligatures)) { @rules(); };
+}
+
+.supports-not-clig(@rules) {
+    @supports not ((-ms-font-feature-settings: "liga") and (-webkit-font-variant-ligatures: common-ligatures) and (font-variant-ligatures: common-ligatures)) { @rules(); };
 }
 
 .supports-dlig(@rules) {
     @supports ((-ms-font-feature-settings: "dlig") or (-webkit-font-variant-ligatures: discretionary-ligatures) or (font-variant-ligatures: discretionary-ligatures)) { @rules(); };
 }
 
+.supports-not-dlig(@rules) {
+    @supports not ((-ms-font-feature-settings: "dlig") and (-webkit-font-variant-ligatures: discretionary-ligatures) and (font-variant-ligatures: discretionary-ligatures)) { @rules(); };
+}
+
 .supports-true-sc(@rules) {
     @supports (font-variant-caps: small-caps) { @rules(); };
+}
+
+.supports-not-true-sc(@rules) {
+    @supports not (font-variant-caps: small-caps) { @rules(); };
 }
 
 .supports-c2sc(@rules) {
     @supports (font-variant-caps: all-small-caps) { @rules(); };
 }
 
+.supports-not-c2sc(@rules) {
+    @supports not (font-variant-caps: all-small-caps) { @rules(); };
+}
+
 .supports-case(@rules) {
     @supports ((-webkit-font-feature-settings: "case") or (font-feature-settings: "case")) { @rules(); };
+}
+
+.supports-not-case(@rules) {
+    @supports not ((-webkit-font-feature-settings: "case") and (font-feature-settings: "case")) { @rules(); };
 }
 
 .supports-titling(@rules) {
     @supports ((-ms-font-feature-settings: "titl") or (font-variant-caps: titling-caps)) { @rules(); };
 }
 
+.supports-not-titling(@rules) {
+    @supports not ((-ms-font-feature-settings: "titl") and (font-variant-caps: titling-caps)) { @rules(); };
+}
+
 .supports-calt(@rules) {
     @supports ((-ms-font-feature-settings: "calt") or (-webkit-font-variant-ligatures: contextual) or (font-variant-ligatures: contextual)) { @rules(); };
+}
+
+.supports-not-calt(@rules) {
+    @supports not ((-ms-font-feature-settings: "calt") and (-webkit-font-variant-ligatures: contextual) and (font-variant-ligatures: contextual)) { @rules(); };
 }
 
 .supports-salt(@rules) {
     @supports ((-webkit-font-feature-settings: "salt") or (font-feature-settings: "salt")) { @rules(); };
 }
 
+.supports-not-salt(@rules) {
+    @supports not ((-webkit-font-feature-settings: "salt") and (font-feature-settings: "salt")) { @rules(); };
+}
+
 .supports-swash(@rules) {
     @supports ((-webkit-font-feature-settings: "swsh") or (font-feature-settings: "swsh")) { @rules(); };
+}
+
+.supports-not-swash(@rules) {
+    @supports not ((-webkit-font-feature-settings: "swsh") and (font-feature-settings: "swsh")) { @rules(); };
 }
 
 .supports-ss01(@rules) {
     @supports ((-webkit-font-feature-settings: "ss01") or (font-feature-settings: "ss01")) { @rules(); };
 }
 
+.supports-not-ss01(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss01") and (font-feature-settings: "ss01")) { @rules(); };
+}
+
 .supports-ss02(@rules) {
     @supports ((-webkit-font-feature-settings: "ss02") or (font-feature-settings: "ss02")) { @rules(); };
+}
+
+.supports-not-ss02(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss02") and (font-feature-settings: "ss02")) { @rules(); };
 }
 
 .supports-ss03(@rules) {
     @supports ((-webkit-font-feature-settings: "ss03") or (font-feature-settings: "ss03")) { @rules(); };
 }
 
+.supports-not-ss03(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss03") and (font-feature-settings: "ss03")) { @rules(); };
+}
+
 .supports-hist(@rules) {
     @supports ((-ms-font-feature-settings: "hist") or (font-variant-alternates: historical-forms)) { @rules(); };
+}
+
+.supports-not-hist(@rules) {
+    @supports not ((-ms-font-feature-settings: "hist") and (font-variant-alternates: historical-forms)) { @rules(); };
 }
 
 .supports-lnum(@rules) {
     @supports (font-variant-numeric: lining-nums) { @rules(); };
 }
 
+.supports-not-lnum(@rules) {
+    @supports not (font-variant-numeric: lining-nums) { @rules(); };
+}
+
 .supports-pnum(@rules) {
     @supports (font-variant-numeric: proportional-nums) { @rules(); };
+}
+
+.supports-not-pnum(@rules) {
+    @supports not (font-variant-numeric: proportional-nums) { @rules(); };
 }
 
 .supports-onum(@rules) {
     @supports (font-variant-numeric: oldstyle-nums) { @rules(); };
 }
 
+.supports-not-onum(@rules) {
+    @supports not (font-variant-numeric: oldstyle-nums) { @rules(); };
+}
+
 .supports-tnum(@rules) {
     @supports (font-variant-numeric: tabular-nums) { @rules(); };
+}
+
+.supports-not-tnum(@rules) {
+    @supports not (font-variant-numeric: tabular-nums) { @rules(); };
 }
 
 .supports-slash(@rules) {
     @supports (font-variant-numeric: slashed-zero) { @rules(); };
 }
 
+.supports-not-slash(@rules) {
+    @supports not (font-variant-numeric: slashed-zero) { @rules(); };
+}
+
 .supports-frac(@rules) {
     @supports ((-ms-font-feature-settings: "frac") or (font-variant-numeric: diagonal-fractions)) { @rules(); };
+}
+
+.supports-not-frac(@rules) {
+    @supports not ((-ms-font-feature-settings: "frac") and (font-variant-numeric: diagonal-fractions)) { @rules(); };
 }
 
 .supports-stacked(@rules) {
     @supports ((-ms-font-feature-settings: "afrc") or (font-variant-numeric: stacked-fractions)) { @rules(); };
 }
 
+.supports-not-stacked(@rules) {
+    @supports not ((-ms-font-feature-settings: "afrc") and (font-variant-numeric: stacked-fractions)) { @rules(); };
+}
+
 .supports-ordinal(@rules) {
     @supports ((-ms-font-feature-settings: "ordn") or (font-variant-numeric: ordinal)) { @rules(); };
+}
+
+.supports-not-ordinal(@rules) {
+    @supports not ((-ms-font-feature-settings: "ordn") and (font-variant-numeric: ordinal)) { @rules(); };
 }
 
 .supports-sups(@rules) {
     @supports (font-variant-position: super) { @rules(); };
 }
 
+.supports-not-sups(@rules) {
+    @supports not (font-variant-position: super) { @rules(); };
+}
+
 .supports-subs(@rules) {
     @supports (font-variant-position: sub) { @rules(); };
+}
+
+.supports-not-subs(@rules) {
+    @supports not (font-variant-position: sub) { @rules(); };
 }
