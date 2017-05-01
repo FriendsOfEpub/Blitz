@@ -104,6 +104,10 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.1
+
+- Added plugin for progressive enhancements.
+
 ### 1.0.1
 
 - improved `hr.transition` (won’t screw up vertical rhythm because margins any longer);
