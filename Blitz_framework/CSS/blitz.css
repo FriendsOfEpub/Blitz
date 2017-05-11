@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 1.0.1 by Jiminy Panoz                      
-    Codename: Rock the Casbah                              
+    Version 1.1.1 by Jiminy Panoz                      
+    Codename: I fought the law                              
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -76,6 +76,9 @@ main,
 nav,
 section {
   display: block;
+}
+[hidden] {
+  display: none;
 }
 /* [Opinionated] Default to prevent RS from justifying all of these! */
 h1,
@@ -924,6 +927,11 @@ render page on eInk devices)                                    */
 }
 .underline {
   text-decoration: underline;
+}
+/* Misc */
+.no-list-type {
+  /* Typical usage: hiding numbers in toc */
+  list-style-type: none;
 }
 /* PAGE BREAKS */
 .break-before {
