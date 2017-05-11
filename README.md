@@ -104,6 +104,12 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.1.1
+
+- added reset styles for `hidden` attribute to improve backwards compatibility;
+- added a utility for `list-style-type: none`;
+- an experimental plugin for progressive enhancements is now available ([check docs](https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/plugins/blitz_progressive-docs.md)). 
+
 ### 1.1
 
 - Added plugin for progressive enhancements.
