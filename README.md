@@ -104,6 +104,10 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.1.2
+
+- Fixed hyphenation (limit chars)
+
 ### 1.1.1
 
 - added reset styles for `hidden` attribute to improve backwards compatibility;

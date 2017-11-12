@@ -828,13 +828,12 @@ render page on eInk devices)                                    */
   -ms-hyphenate-limit-lines: 3;
   -moz-hyphenate-limit-lines: 3;
   -webkit-hyphenate-limit-lines: 3;
-  -webkit-hyphenate-limit-before: 2;
-  -webkit-hyphenate-limit-after: 2;
   hyphenate-limit-lines: 3;
-  /* No support except Trident (Windows) */
+  /* No support except Trident (Windows) and Webkit (old deprecated syntax) */
   -ms-hyphenate-limit-chars: 6 3 2;
   -moz-hyphenate-limit-chars: 6 3 2;
-  -webkit-hyphenate-limit-chars: 6 3 2;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 2;
   hyphenate-limit-chars: 6 3 2;
   /* No support except Trident (Windows) */
   -ms-hyphenate-limit-zone: 10%;
