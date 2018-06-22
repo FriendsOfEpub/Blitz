@@ -6,7 +6,7 @@ An eBook framework (CSS + template) which mantra is “finding simple solutions 
 
 ## Licence 
 
-Blitz is released under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz.
+Blitz is released under MIT Licence (https://github.com/FriendsOfEpub/Blitz/blob/master/LICENSE) © 2016, Jiminy Panoz.
 
 ## Use CSS
 
