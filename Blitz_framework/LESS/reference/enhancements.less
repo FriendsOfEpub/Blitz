@@ -1,7 +1,7 @@
-/* EPUB3 UTILITIES */
+// EPUB3 Utilities
 
 
-    /* Layout */
+    // Layout
 
 .drop-cap {
 /* Can’t be used as a class, you must use :first-letter */
@@ -49,7 +49,7 @@
     justify-content: space-around;   
 }
 
-    /* Vertical align */
+    // Vertical align
     
 .valign-center {
     min-height: 95vh;
@@ -79,7 +79,7 @@
     .flex-around;
 }
 
-    /* Object sizing */
+    // Object sizing
     
 .fit-contain {
   object-fit: contain;   
@@ -109,7 +109,7 @@
   background-size: cover;
 }
 
-    /* OTF */
+    // OTF
   
 .kern {
     font-kerning: normal;
@@ -120,19 +120,16 @@
 }
 
 .clig {
-    -ms-font-feature-settings: "liga";
     -webkit-font-variant-ligatures: common-ligatures;
     font-variant-ligatures: common-ligatures;
 }
 
 .dlig {
-    -ms-font-feature-settings: "dlig";
     -webkit-font-variant-ligatures: discretionary-ligatures;
     font-variant-ligatures: discretionary-ligatures;
 }
 
 .no-liga {
-    -ms-font-feature-settings: "liga" 0, "clig" 0;
     -webkit-font-variant-ligatures: no-common-ligatures;
     font-variant-ligatures: no-common-ligatures;
 }
@@ -145,61 +142,13 @@
     font-variant-caps: all-small-caps;
 }
 
-.case {
-    -webkit-font-feature-settings: "case";
-    font-feature-settings: "case";
-}
-
 .titling {
-    -ms-font-feature-settings: "titl";
     font-variant-caps: titling-caps;
 }
 
 .calt {
-    -ms-font-feature-settings: "calt";
     -webkit-font-variant-ligatures: contextual;
     font-variant-ligatures: contextual;
-}
-
-.salt-1 {
-    .salt(1);
-}
-
-.salt-2 {
-    .salt(2);
-}
-
-.salt-3 {
-    .salt(3);
-}
-
-.swsh-1 {
-    .swsh(1);
-}
-
-.swsh-2 {
-    .swsh(2);
-}
-
-.swsh-3 {
-    .swsh(3);
-}
-
-.ss01 {
-    .ss("01");
-}
-
-.ss02 {
-    .ss("02");
-}
-
-.ss03 {
-    .ss("03");
-}
-
-.hist {
-    -ms-font-feature-settings: "hist";
-    font-variant-alternates: historical-forms;
 }
 
 .lnum {
@@ -218,22 +167,31 @@
     font-variant-numeric: tabular-nums;
 }
 
+.lnum-tnum {
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.lnum-pnum {
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.onum-pnum {
+    font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
 .slash {
     font-variant-numeric: slashed-zero;
 }
 
 .frac {
-    -ms-font-feature-settings: "frac";
     font-variant-numeric: diagonal-fractions;
 }
 
 .stacked {
-    -ms-font-feature-settings: "afrc";
     font-variant-numeric: stacked-fractions;
 }
 
 .ordinal {
-    -ms-font-feature-settings: "ordn";
     font-variant-numeric: ordinal;
 }
 

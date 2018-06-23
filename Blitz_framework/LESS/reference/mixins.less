@@ -90,11 +90,11 @@
     min-height: @min;
     height: -webkit-calc(~"@{img} - @{caption}");
     height: calc(~"@{img} - @{caption}");
-    max-height: @max;
+    max-height: @max !important;
 }
 
-.background-size(@x, @y) {
-    background-size: @x @y;   
+.background-size(@w, @h) {
+    background-size: @w @h;   
 }
 
 .background-position(@x, @y) {
@@ -109,20 +109,3 @@
     @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
     @{prop}: calc(~"@{val1} @{operator} @{val2}");
 };
-
-    // OTF
-
-.salt(@alt : 1) {
-    -webkit-font-feature-settings: "salt" @alt;
-    font-feature-settings: "salt" @alt;
-}
-
-.swsh(@alt : 1) {
-    -webkit-font-feature-settings: "swsh" @alt;
-    font-feature-settings: "swsh" @alt;
-}
-
-.ss(@alt : "01") {
-    -webkit-font-feature-settings: ~'"ss@{alt}"';
-    font-feature-settings: ~'"ss@{alt}"';
-}

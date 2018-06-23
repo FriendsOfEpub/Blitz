@@ -104,6 +104,13 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.2
+
+- Progressive enhancements plugin is now implemented at the core of the LESS framework:
+    - removed support for [font-variant-alternates](https://www.w3.org/TR/css-fonts-4/#font-variant-alternates-prop);
+    - removed [font-feature-settings](https://www.w3.org/TR/css-fonts-4/#font-rend-desc) properties;
+    - corrected negative (`not`) feature queries
+
 ### 1.1.2
 
 - Fixed hyphenation (limit chars)
