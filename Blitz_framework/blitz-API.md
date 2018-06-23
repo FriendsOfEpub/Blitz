@@ -173,10 +173,132 @@
 - `.generate-comp-palette(@baseColor)`
 - `.generate-columns(@n)`
 
+### Enhancements 
+
+**⚠️ Those mixins must be used in combination with feature queries.**
+
+#### Parametric
+
+- `.initial-letter(@size : 3, @sink : 3)`
+- `.flex-base(@grow, @shrink, @basis)`
+- `.reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px)`
+- `.background-size(@w, @h)`
+- `.background-position(@x, @y)`
+- `.text-align-last(@align : center)`
+- `.calc(@prop, @val1, @operator : "+", @val2)` (operator must have quotes)
+
+#### Static
+
+- `.drop-cap` (must be used with `:first-letter` or won’t work)
+- `.flex`
+- `.flex-col`
+- `.flex-wrap`
+- `.flex-start`
+- `.flex-center`
+- `.flex-end`
+- `.flex-between`
+- `.flex-around`
+- `.valign-center` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-center`)
+- `.valign-bottom` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-end`)
+- `.valign-between` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-between`)
+- `.valign-around` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-around`)
+- `.fit-contain` (alias for `object-fit`)
+- `.fit-fill` (alias for `object-fit`)
+- `.fit-cover` (alias for `object-fit`)
+- `.fit-scale` (alias for `object-fit`)
+- `.fit-none` (alias for `object-fit`)
+- `.bg-contain` (alias for `background-size`)
+- `.bg-cover` (alias for `background-size`)
+- `.kern`
+- `.no-kern`
+- `.clig`
+- `.dlig`
+- `.no-liga`
+- `.true-sc`
+- `.c2sc`
+- `.titling`
+- `.calt`
+- `.lnum`
+- `.pnum`
+- `.onum`
+- `.tnum`
+- `.lnum-tnum`
+- `.lnum-pnum`
+- `.pnum-pnum`
+- `.slash`
+- `.frac`
+- `.stacked`
+- `.ordinal`
+- `.sups`
+- `.subs`
+
 ## Namespaces (packages)
 
 - `#height-vh`
 - `#responsive-table`
+
+## Feature Queries
+
+### Layout
+
+- `.supports-initial-letter({/* CSS rules */})`
+- `.supports-not-initial-letter({/* CSS rules */})`
+- `.supports-flex({/* CSS rules */})`
+- `.supports-not-flex({/* CSS rules */})`
+- `.supports-calc-width({/* CSS rules */})`
+- `.supports-not-calc-width({/* CSS rules */})`
+- `.supports-calc-height({/* CSS rules */})`
+- `.supports-not-calc-height({/* CSS rules */})`
+
+### Units
+
+- `.supports-ex({/* CSS rules */})`
+- `.supports-not-ex({/* CSS rules */})`
+- `.supports-ch({/* CSS rules */})`
+- `.supports-not-ch({/* CSS rules */})`
+- `.supports-vh({/* CSS rules */})`
+- `.supports-not-vh({/* CSS rules */})`
+- `.supports-vmin({/* CSS rules */})`
+- `.supports-not-vmin({/* CSS rules */})`
+
+### OTF
+
+- `.supports-kern({/* CSS rules */})`
+- `.supports-not-kern({/* CSS rules */})`
+- `.supports-clig({/* CSS rules */})`
+- `.supports-not-clig({/* CSS rules */})`
+- `.supports-dlig({/* CSS rules */})`
+- `.supports-not-dlig({/* CSS rules */})`
+- `.supports-no-liga({/* CSS rules */})` (beware the syntax)
+- `.supports-not-no-liga({/* CSS rules */})` (beware the syntax)
+- `.supports-true-sc({/* CSS rules */})`
+- `.supports-not-true-sc({/* CSS rules */})`
+- `.supports-c2sc({/* CSS rules */})`
+- `.supports-not-c2sc({/* CSS rules */})`
+- `.supports-titling({/* CSS rules */})`
+- `.supports-not-titling({/* CSS rules */})`
+- `.supports-calt({/* CSS rules */})`
+- `.supports-not-calt({/* CSS rules */})`
+- `.supports-lnum({/* CSS rules */})`
+- `.supports-not-lnum({/* CSS rules */})`
+- `.supports-pnum({/* CSS rules */})`
+- `.supports-not-pnum({/* CSS rules */})`
+- `.supports-onum({/* CSS rules */})`
+- `.supports-not-onum({/* CSS rules */})`
+- `.supports-tnum({/* CSS rules */})`
+- `.supports-not-tnum({/* CSS rules */})`
+- `.supports-slash({/* CSS rules */})`
+- `.supports-not-slash({/* CSS rules */})`
+- `.supports-frac({/* CSS rules */})`
+- `.supports-not-frac({/* CSS rules */})`
+- `.supports-stacked({/* CSS rules */})`
+- `.supports-not-stacked({/* CSS rules */})`
+- `.supports-ordinal({/* CSS rules */})`
+- `.supports-not-ordinal({/* CSS rules */})`
+- `.supports-sups({/* CSS rules */})`
+- `.supports-not-sups({/* CSS rules */})`
+- `.supports-subs({/* CSS rules */})`
+- `.supports-not-subs({/* CSS rules */})`
 
 ## Keywords for media queries (variables)
 
