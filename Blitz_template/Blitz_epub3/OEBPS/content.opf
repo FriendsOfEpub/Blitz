@@ -6,7 +6,7 @@
 	<!-- ISBN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist5">15</meta> -->
 	<!-- EAN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist6">02</meta> -->
 	
-	<meta property="dcterms:modified">2016-03-15T00:00:01Z</meta>
+	<meta property="dcterms:modified">2018-06-22T00:00:01Z</meta>
 	
 	<dc:language>en</dc:language>
 	
@@ -25,12 +25,12 @@
 
 	<dc:publisher>Publisher</dc:publisher>
 	
-	<dc:rights>CC-BY-NC 3.0</dc:rights>
+	<dc:rights>MIT</dc:rights>
 
 	<dc:description>A Template to kickstart your reflowable books.</dc:description>
-		<dc:subject>semantics</dc:subject>
-		<dc:subject>structure</dc:subject>
-		<dc:subject>template</dc:subject>
+	<dc:subject>semantics</dc:subject>
+	<dc:subject>structure</dc:subject>
+	<dc:subject>template</dc:subject>
 
 <!-- List of marc relators : http://www.loc.gov/marc/relators/relacode.html -->
 
@@ -129,12 +129,12 @@
 	<item href="Text/preface.xhtml" id="preface.xhtml" media-type="application/xhtml+xml"/>
 	<item href="Text/prologue.xhtml" id="prologue.xhtml" media-type="application/xhtml+xml"/>
 	<item href="Text/titlepage.xhtml" id="titlepage.xhtml" media-type="application/xhtml+xml"/>
-	<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+	<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
 	<item href="Text/nav.xhtml" id="navid" media-type="application/xhtml+xml" properties="nav"/>
 	<item href="Styles/blitz.css" id="blitz.css" media-type="text/css"/>
 	<item href="Styles/blitz-kindle.css" id="blitz-kindle.css" media-type="text/css"/>
-	<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image" />
-	<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml" />
+	<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image"/>
+	<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml"/>
   </manifest>
 
   <spine toc="ncx">
