@@ -235,7 +235,6 @@
 ## Namespaces (packages)
 
 - `#height-vh`
-- `#responsive-table`
 
 ## Feature Queries
 

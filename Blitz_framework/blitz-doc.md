@@ -541,8 +541,6 @@ This file provides several horizontal rules:
 
 Styles and classes for `table` are specified in this file.
 
-An experimental namespace, `#responsive-table` is also provided in case tables should be layout for smartphones.
-
 ### Code
 
 Need preformatted text and/or code? Check this file.
