@@ -1,0 +1,577 @@
+// Blitz Progressive Enhancements Plugin
+
+// RULESETS
+// http://lesscss.org/features/#detached-rulesets-feature
+
+    // Layout
+
+.supports-drop-cap(@rules) {
+    @supports ((-webkit-initial-letter: 2 2) or (initial-letter: 2 2)) { @rules(); };
+}
+
+.supports-not-drop-cap(@rules) {
+    @supports not ((-webkit-initial-letter: 2 2) and (initial-letter: 2 2)) { @rules(); };
+}
+
+.supports-flex(@rules) {
+    @supports ((display: -webkit-flex) or (display: flex)) { @rules(); };
+}
+
+.supports-not-flex(@rules) {
+    @supports not ((display: -webkit-flex) and (display: flex)) { @rules(); };
+}
+
+.supports-calc-width(@rules) {
+    @supports ((width: -webkit-calc(30em + 5%)) or (width: calc(30em + 5%))) { @rules(); };
+}
+
+.supports-not-calc-width(@rules) {
+    @supports not ((width: -webkit-calc(30em + 5%)) and (width: calc(30em + 5%))) { @rules(); };
+}
+
+.supports-calc-height(@rules) {
+    @supports ((height: -webkit-calc(98vh - 4.5em)) or (height: calc(98vh - 4.5em))) { @rules(); };
+}
+
+.supports-not-calc-height(@rules) {
+    @supports not ((height: -webkit-calc(98vh - 4.5em)) and (height: calc(98vh - 4.5em))) { @rules(); };
+}
+
+    // Units
+
+.supports-ex(@rules) {
+    @supports (vertical-align: 0.5ex) { @rules(); };    
+}
+
+.supports-not-ex(@rules) {
+    @supports not (vertical-align: 0.5ex) { @rules(); };    
+}
+
+.supports-ch(@rules) {
+    @supports (max-width: 60ch) { @rules(); };
+}
+
+.supports-not-ch(@rules) {
+    @supports not (max-width: 60ch) { @rules(); };
+}
+
+.supports-vh(@rules) {
+    @supports (height: 95vh) { @rules(); }; 
+}
+
+.supports-not-vh(@rules) {
+    @supports not (height: 95vh) { @rules(); }; 
+}
+
+.supports-vmin(@rules) {
+    @supports (font-size: 1vmin) { @rules(); };
+}
+
+.supports-not-vmin(@rules) {
+    @supports not (font-size: 1vmin) { @rules(); };
+}
+
+    // OTF
+
+.supports-kern(@rules) {
+    @supports (font-kerning: normal) { @rules(); };
+}
+
+.supports-not-kern(@rules) {
+    @supports not (font-kerning: normal) { @rules(); };
+}
+
+.supports-clig(@rules) {
+    @supports ((-ms-font-feature-settings: "liga") or (-webkit-font-variant-ligatures: common-ligatures) or (font-variant-ligatures: common-ligatures)) { @rules(); };
+}
+
+.supports-not-clig(@rules) {
+    @supports not ((-ms-font-feature-settings: "liga") and (-webkit-font-variant-ligatures: common-ligatures) and (font-variant-ligatures: common-ligatures)) { @rules(); };
+}
+
+.supports-dlig(@rules) {
+    @supports ((-ms-font-feature-settings: "dlig") or (-webkit-font-variant-ligatures: discretionary-ligatures) or (font-variant-ligatures: discretionary-ligatures)) { @rules(); };
+}
+
+.supports-not-dlig(@rules) {
+    @supports not ((-ms-font-feature-settings: "dlig") and (-webkit-font-variant-ligatures: discretionary-ligatures) and (font-variant-ligatures: discretionary-ligatures)) { @rules(); };
+}
+
+.supports-no-liga(@rules) {
+    @supports ((-ms-font-feature-settings: "liga" 0, "clig" 0) or (-webkit-font-variant-ligatures: no-common-ligatures) or (font-variant-ligatures: no-common-ligatures)) { @rules(); };
+}
+
+.supports-not-no-liga(@rules) {
+    @supports not ((-ms-font-feature-settings: "liga" 0, "clig" 0) and (-webkit-font-variant-ligatures: no-common-ligatures) and (font-variant-ligatures: no-common-ligatures)) { @rules(); };
+}
+
+.supports-true-sc(@rules) {
+    @supports (font-variant-caps: small-caps) { @rules(); };
+}
+
+.supports-not-true-sc(@rules) {
+    @supports not (font-variant-caps: small-caps) { @rules(); };
+}
+
+.supports-c2sc(@rules) {
+    @supports (font-variant-caps: all-small-caps) { @rules(); };
+}
+
+.supports-not-c2sc(@rules) {
+    @supports not (font-variant-caps: all-small-caps) { @rules(); };
+}
+
+.supports-case(@rules) {
+    @supports ((-webkit-font-feature-settings: "case") or (font-feature-settings: "case")) { @rules(); };
+}
+
+.supports-not-case(@rules) {
+    @supports not ((-webkit-font-feature-settings: "case") and (font-feature-settings: "case")) { @rules(); };
+}
+
+.supports-titling(@rules) {
+    @supports ((-ms-font-feature-settings: "titl") or (font-variant-caps: titling-caps)) { @rules(); };
+}
+
+.supports-not-titling(@rules) {
+    @supports not ((-ms-font-feature-settings: "titl") and (font-variant-caps: titling-caps)) { @rules(); };
+}
+
+.supports-calt(@rules) {
+    @supports ((-ms-font-feature-settings: "calt") or (-webkit-font-variant-ligatures: contextual) or (font-variant-ligatures: contextual)) { @rules(); };
+}
+
+.supports-not-calt(@rules) {
+    @supports not ((-ms-font-feature-settings: "calt") and (-webkit-font-variant-ligatures: contextual) and (font-variant-ligatures: contextual)) { @rules(); };
+}
+
+.supports-salt(@rules) {
+    @supports ((-webkit-font-feature-settings: "salt") or (font-feature-settings: "salt")) { @rules(); };
+}
+
+.supports-not-salt(@rules) {
+    @supports not ((-webkit-font-feature-settings: "salt") and (font-feature-settings: "salt")) { @rules(); };
+}
+
+.supports-swash(@rules) {
+    @supports ((-webkit-font-feature-settings: "swsh") or (font-feature-settings: "swsh")) { @rules(); };
+}
+
+.supports-not-swash(@rules) {
+    @supports not ((-webkit-font-feature-settings: "swsh") and (font-feature-settings: "swsh")) { @rules(); };
+}
+
+.supports-ss01(@rules) {
+    @supports ((-webkit-font-feature-settings: "ss01") or (font-feature-settings: "ss01")) { @rules(); };
+}
+
+.supports-not-ss01(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss01") and (font-feature-settings: "ss01")) { @rules(); };
+}
+
+.supports-ss02(@rules) {
+    @supports ((-webkit-font-feature-settings: "ss02") or (font-feature-settings: "ss02")) { @rules(); };
+}
+
+.supports-not-ss02(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss02") and (font-feature-settings: "ss02")) { @rules(); };
+}
+
+.supports-ss03(@rules) {
+    @supports ((-webkit-font-feature-settings: "ss03") or (font-feature-settings: "ss03")) { @rules(); };
+}
+
+.supports-not-ss03(@rules) {
+    @supports not ((-webkit-font-feature-settings: "ss03") and (font-feature-settings: "ss03")) { @rules(); };
+}
+
+.supports-hist(@rules) {
+    @supports ((-ms-font-feature-settings: "hist") or (font-variant-alternates: historical-forms)) { @rules(); };
+}
+
+.supports-not-hist(@rules) {
+    @supports not ((-ms-font-feature-settings: "hist") and (font-variant-alternates: historical-forms)) { @rules(); };
+}
+
+.supports-lnum(@rules) {
+    @supports (font-variant-numeric: lining-nums) { @rules(); };
+}
+
+.supports-not-lnum(@rules) {
+    @supports not (font-variant-numeric: lining-nums) { @rules(); };
+}
+
+.supports-pnum(@rules) {
+    @supports (font-variant-numeric: proportional-nums) { @rules(); };
+}
+
+.supports-not-pnum(@rules) {
+    @supports not (font-variant-numeric: proportional-nums) { @rules(); };
+}
+
+.supports-onum(@rules) {
+    @supports (font-variant-numeric: oldstyle-nums) { @rules(); };
+}
+
+.supports-not-onum(@rules) {
+    @supports not (font-variant-numeric: oldstyle-nums) { @rules(); };
+}
+
+.supports-tnum(@rules) {
+    @supports (font-variant-numeric: tabular-nums) { @rules(); };
+}
+
+.supports-not-tnum(@rules) {
+    @supports not (font-variant-numeric: tabular-nums) { @rules(); };
+}
+
+.supports-slash(@rules) {
+    @supports (font-variant-numeric: slashed-zero) { @rules(); };
+}
+
+.supports-not-slash(@rules) {
+    @supports not (font-variant-numeric: slashed-zero) { @rules(); };
+}
+
+.supports-frac(@rules) {
+    @supports ((-ms-font-feature-settings: "frac") or (font-variant-numeric: diagonal-fractions)) { @rules(); };
+}
+
+.supports-not-frac(@rules) {
+    @supports not ((-ms-font-feature-settings: "frac") and (font-variant-numeric: diagonal-fractions)) { @rules(); };
+}
+
+.supports-stacked(@rules) {
+    @supports ((-ms-font-feature-settings: "afrc") or (font-variant-numeric: stacked-fractions)) { @rules(); };
+}
+
+.supports-not-stacked(@rules) {
+    @supports not ((-ms-font-feature-settings: "afrc") and (font-variant-numeric: stacked-fractions)) { @rules(); };
+}
+
+.supports-ordinal(@rules) {
+    @supports ((-ms-font-feature-settings: "ordn") or (font-variant-numeric: ordinal)) { @rules(); };
+}
+
+.supports-not-ordinal(@rules) {
+    @supports not ((-ms-font-feature-settings: "ordn") and (font-variant-numeric: ordinal)) { @rules(); };
+}
+
+.supports-sups(@rules) {
+    @supports (font-variant-position: super) { @rules(); };
+}
+
+.supports-not-sups(@rules) {
+    @supports not (font-variant-position: super) { @rules(); };
+}
+
+.supports-subs(@rules) {
+    @supports (font-variant-position: sub) { @rules(); };
+}
+
+.supports-not-subs(@rules) {
+    @supports not (font-variant-position: sub) { @rules(); };
+}
+
+
+// MIXINS
+    
+    // Layout
+  
+.initial-letter(@size : 3, @sink : 3) {
+    -webkit-initial-letter: @size @sink;
+    initial-letter: @size @sink;    
+}
+
+.flex-base(@grow, @shrink, @basis) {
+    -webkit-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
+}
+
+.reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px) {
+    min-height: @min;
+    height: -webkit-calc(~"@{img} - @{caption}");
+    height: calc(~"@{img} - @{caption}");
+    max-height: @max;
+}
+
+.background-size(@x, @y) {
+    background-size: @x @y;   
+}
+
+.background-position(@x, @y) {
+    background-position: @x @y;   
+}
+
+.text-align-last(@align : center) {
+    text-align-last: @align;   
+}
+
+.calc(@prop, @val1, @operator : "+", @val2) {
+    @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
+    @{prop}: calc(~"@{val1} @{operator} @{val2}");
+};
+
+    // OTF
+
+.salt(@alt : 1) {
+    -webkit-font-feature-settings: "salt" @alt;
+    font-feature-settings: "salt" @alt;
+}
+
+.swsh(@alt : 1) {
+    -webkit-font-feature-settings: "swsh" @alt;
+    font-feature-settings: "swsh" @alt;
+}
+
+.ss(@alt : "01") {
+    -webkit-font-feature-settings: ~'"ss@{alt}"';
+    font-feature-settings: ~'"ss@{alt}"';
+}
+
+
+// EPUB3 UTILITIES
+
+    // Layout
+
+.drop-cap {
+/* Can’t be used as a class, you must use :first-letter */
+    margin: 1em 0.25em 0 0; /* iOS 9 fix */
+    .initial-letter();
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-col {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start; 
+}
+
+.flex-center {
+    -webkit-justify-content: center;
+    justify-content: center; 
+}
+
+.flex-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end; 
+}
+
+.flex-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;  
+}
+
+.flex-around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;   
+}
+
+    // Vertical align
+    
+.valign-center {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-center;
+}
+
+.valign-bottom {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-end;
+}
+
+.valign-between {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-between;
+}
+
+.valign-around {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-around;
+}
+
+    // Object sizing
+    
+.fit-contain {
+  object-fit: contain;   
+}
+
+.fit-fill {
+  object-fit: fill;   
+}
+
+.fit-cover {
+  object-fit: cover;   
+}
+
+.fit-scale {
+  object-fit: scale-down;   
+}
+
+.fit-none {
+  object-fit: none;   
+}
+
+.bg-contain {
+  background-size: contain;   
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+    // OTF
+  
+.kern {
+    font-kerning: normal;
+}
+
+.no-kern {
+    font-kerning: none;
+}
+
+.clig {
+    -ms-font-feature-settings: "liga";
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+}
+
+.dlig {
+    -ms-font-feature-settings: "dlig";
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+}
+
+.no-liga {
+    -ms-font-feature-settings: "liga" 0, "clig" 0;
+    -webkit-font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+.true-sc {
+    font-variant-caps: small-caps;
+}
+
+.c2sc {
+    font-variant-caps: all-small-caps;
+}
+
+.case {
+    -webkit-font-feature-settings: "case";
+    font-feature-settings: "case";
+}
+
+.titling {
+    -ms-font-feature-settings: "titl";
+    font-variant-caps: titling-caps;
+}
+
+.calt {
+    -ms-font-feature-settings: "calt";
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+}
+
+.salt-1 {
+    .salt(1);
+}
+
+.salt-2 {
+    .salt(2);
+}
+
+.salt-3 {
+    .salt(3);
+}
+
+.swsh-1 {
+    .swsh(1);
+}
+
+.swsh-2 {
+    .swsh(2);
+}
+
+.swsh-3 {
+    .swsh(3);
+}
+
+.ss01 {
+    .ss("01");
+}
+
+.ss02 {
+    .ss("02");
+}
+
+.ss03 {
+    .ss("03");
+}
+
+.hist {
+    -ms-font-feature-settings: "hist";
+    font-variant-alternates: historical-forms;
+}
+
+.lnum {
+    font-variant-numeric: lining-nums;
+}
+
+.pnum {
+    font-variant-numeric: proportional-nums;
+}
+
+.onum {
+    font-variant-numeric: oldstyle-nums;
+}
+
+.tnum {
+    font-variant-numeric: tabular-nums;
+}
+
+.slash {
+    font-variant-numeric: slashed-zero;
+}
+
+.frac {
+    -ms-font-feature-settings: "frac";
+    font-variant-numeric: diagonal-fractions;
+}
+
+.stacked {
+    -ms-font-feature-settings: "afrc";
+    font-variant-numeric: stacked-fractions;
+}
+
+.ordinal {
+    -ms-font-feature-settings: "ordn";
+    font-variant-numeric: ordinal;
+}
+
+.sups {
+    font-variant-position: super;
+}
+
+.subs {
+    font-variant-position: sub;
+}

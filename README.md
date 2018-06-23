@@ -6,7 +6,7 @@ An eBook framework (CSS + template) which mantra is “finding simple solutions 
 
 ## Licence 
 
-Blitz is released under MIT Licence (https://opensource.org/licenses/MIT) © 2016, Jiminy Panoz.
+Blitz is released under [MIT Licence](https://github.com/FriendsOfEpub/Blitz/blob/master/LICENSE) © 2016, Jiminy Panoz.
 
 ## Use CSS
 
@@ -103,6 +103,20 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - RMSDK (a.k.a. eBooks’ IE 6)
 
 ## Log
+
+### 1.1.2
+
+- Fixed hyphenation (limit chars)
+
+### 1.1.1
+
+- added reset styles for `hidden` attribute to improve backwards compatibility;
+- added a utility for `list-style-type: none`;
+- an experimental plugin for progressive enhancements is now available ([check docs](https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/plugins/blitz_progressive-docs.md)). 
+
+### 1.1
+
+- Added plugin for progressive enhancements.
 
 ### 1.0.1
 

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 1.0.1 by Jiminy Panoz                      
-    Codename: Rock the Casbah                              
+    Version 1.1.2 by Jiminy Panoz                      
+    Codename: Idle in Kangaroo Court W1                              
     License: MIT (https://opensource.org/licenses/MIT)   */
     
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -26,6 +26,10 @@ article,address,aside,blockquote,canvas,dd,details,div,dl,dt,figure,figcaption,f
 
 article,aside,figure,figcaption,footer,header,main,nav,section {
   display: block;
+}
+
+[hidden] {
+  display: none;
 }
 
 h1,h2,h3,h4,h5,h6,dt,pre {
@@ -687,12 +691,11 @@ canvas,iframe,svg,video {
   -ms-hyphenate-limit-lines: 3;
   -moz-hyphenate-limit-lines: 3;
   -webkit-hyphenate-limit-lines: 3;
-  -webkit-hyphenate-limit-before: 2;
-  -webkit-hyphenate-limit-after: 2;
   hyphenate-limit-lines: 3;
   -ms-hyphenate-limit-chars: 6 3 2;
   -moz-hyphenate-limit-chars: 6 3 2;
-  -webkit-hyphenate-limit-chars: 6 3 2;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 2;  
   hyphenate-limit-chars: 6 3 2;
   -ms-hyphenate-limit-zone: 10%;
   -moz-hyphenate-limit-zone: 10%;
@@ -792,6 +795,10 @@ canvas,iframe,svg,video {
 
 .underline {
   text-decoration: underline;
+}
+
+.no-list-type {
+  list-style-type: none;
 }
 
 .break-before {

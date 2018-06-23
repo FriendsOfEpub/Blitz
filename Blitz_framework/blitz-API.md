@@ -43,7 +43,7 @@
 - `.rhythm(@font-scale, @margin-top, @margin-bottom)`
 - `.fs(@font-scale)`
 - `.hyphens-char(@hyphens-char)`
-- `.hyphens-lines(@hyphens-lines, @hyphens-lines-before, @hyphens-lines-after)`
+- `.hyphens-lines(@hyphens-lines)`
 - `.hyphens-division(@hyphens-chars-min, @hyphens-chars-before, @hyphens-chars-after)`
 - `.hyphens-zone(@hyphens-zone)`
 - `.hyphens-limit(@hyphens-last)`
