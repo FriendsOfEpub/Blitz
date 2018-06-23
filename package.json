@@ -1,0 +1,36 @@
+{
+  "name": "blitz-ebook",
+  "description": "A CSS Framework for ebooks",
+  "version": "1.2",
+  "homepage": "https://github.com/FriendsOfEpub/Blitz",
+  "license": "MIT",
+  "keywords": [
+    "ebook",
+    "epub",
+    "epub2",
+    "epub3",
+    "css",
+    "kindle",
+    "framework",
+    "ebook-framework"
+  ],
+  "author": {
+    "name": "Friends of EPUB",
+    "url": "https://github.com/FriendsOfEpub"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/FriendsOfEpub/Blitz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/FriendsOfEpub/Blitz/issues"
+  },
+  "main": "Blitz_framework/LESS/blitz.less",
+  "devDependencies": {
+    "less": "^3.0.4"
+  },
+  "scripts": {
+    "build": "lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css",
+    "kindle": "lessc Blitz_framework/LESS/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css"
+  }
+}
