@@ -5,6 +5,10 @@ So you'd better get rid of those two queries once your EPUB file is converted to
 /* Warning: Do NOT use `text-rendering: optimizeLegibility` in Kindle's styles,
 it is known to create issues with some devices/apps 
 (entire text is replaced with boxes (a.k.a. "missing glyph" symbol) */
+@supports (height: 100vh) {
+  /* Can be used for containers and images 
+     but Should be used in combination with .portrait if used for img */
+}
 @media amzn-kf8 {
   body {
     font-weight: normal;

@@ -27,19 +27,19 @@ Either use the [GUI](http://lesscss.org/usage/#guis-for-less) or, if you’re on
 
 ### For core
 
-`lessc blitz.less blitz.css`
+`lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css`
 
 ### For Kindle
 
 Either uncomment `@import 'blitz-kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
 
-`lessc blitz-kindle.less blitz-kindle.css`
+`lessc Blitz_framework/LESS/plugins/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css`
 
 ### For Media Queries
 
 You shouldn’t output them in `blitz.css` as legacy RMSDK (ePub 2) will ignore the entire stylesheet if there are media queries in it—excepted `amzn` queries.
 
-`lessc blitz-mq.less blitz-mq.css`
+`lessc Blitz_framework/LESS/plugins/blitz-mq.less Blitz_framework/CSS/blitz-mq.css`
 
 ## Design & Goals
 
@@ -110,6 +110,7 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
     - removed support for [font-variant-alternates](https://www.w3.org/TR/css-fonts-4/#font-variant-alternates-prop);
     - removed [font-feature-settings](https://www.w3.org/TR/css-fonts-4/#font-rend-desc) properties;
     - corrected negative (`not`) feature queries
+- Automated build with npm
 
 ### 1.1.3
 
