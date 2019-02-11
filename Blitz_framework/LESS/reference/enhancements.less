@@ -3,7 +3,7 @@
 
     // Layout
 
-.drop-cap {
+.drop-cap() {
 /* Can’t be used as a class, you must use :first-letter */
     margin: 1em 0.25em 0 0; /* iOS 9 fix */
     .initial-letter();
@@ -15,11 +15,13 @@
 }
 
 .flex-col {
+    -ms-flex-direction: column;
     -webkit-flex-direction: column;
     flex-direction: column;
 }
 
 .flex-wrap {
+    -ms-flex-wrap: wrap;
     -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 }

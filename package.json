@@ -1,7 +1,7 @@
 {
   "name": "blitz-ebook",
   "description": "A CSS Framework for ebooks",
-  "version": "1.2",
+  "version": "1.2.0",
   "homepage": "https://github.com/FriendsOfEpub/Blitz",
   "license": "MIT",
   "keywords": [
@@ -26,11 +26,21 @@
     "url": "https://github.com/FriendsOfEpub/Blitz/issues"
   },
   "main": "Blitz_framework/LESS/blitz.less",
+  "engines": {
+    "node": ">= 10.0.0"
+  },
   "devDependencies": {
-    "less": "^3.0.4"
+    "clean-css-cli": "^4.2.1",
+    "cpx": "^1.5.0",
+    "epub-zip": "0.0.1",
+    "less": "^3.9.0"
   },
   "scripts": {
-    "build": "lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css",
-    "kindle": "lessc Blitz_framework/LESS/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css"
+    "build": "npm run build:default && npm run build:lite && npm run build:reset && npm run make",
+    "build:default": "lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css && cleancss --format beautify -o Blitz_framework/CSS/AltStylesheets/blitz.uncommented.css Blitz_framework/CSS/blitz.css && cpx Blitz_framework/CSS/blitz.css Blitz_template/Blitz_epub3/OEBPS/Styles",
+    "build:lite": "lessc Blitz_framework/LESS/blitz-lite.less Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css && cleancss --format beautify -o Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css && cleancss -o Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.min.css Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css",
+    "build:reset": "lessc Blitz_framework/LESS/blitz-reset.less Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css && cleancss --format beautify -o Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css && cleancss -o Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.min.css Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css",
+    "build:kindle": "lessc Blitz_framework/LESS/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css && cpx Blitz_framework/CSS/blitz-kindle.css Blitz_template/Blitz_epub3/OEBPS/Styles/blitz-kindle.css",
+    "make": "node Blitz_template/make.js"
   }
 }
