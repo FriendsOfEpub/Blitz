@@ -111,6 +111,11 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
     - removed [font-feature-settings](https://www.w3.org/TR/css-fonts-4/#font-rend-desc) properties;
     - corrected negative (`not`) feature queries
 
+### 1.1.3
+
+- Removed gap after images
+- Added DPUB ARIA roles in template
+
 ### 1.1.2
 
 - Fixed hyphenation (limit chars)
