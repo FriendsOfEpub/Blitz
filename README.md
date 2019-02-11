@@ -21,25 +21,71 @@ In this folder, you’ll also find `blitz-lite.css` and `blitz-reset.css` (norma
 
 Add styles on top of those two is up to you… But you’ll then miss the powerful tools we’ve built in LESS!
 
-## Compile LESS
+## Install and compile with npm
+
+First go to the blitz root directory and install the dev dependencies: 
+
+```
+npm install
+```
+
+Then make your changes in LESS and run:
+
+```
+npm run build
+```
+
+This will compile the LESS src to the default, lite and reset stylesheets, and update the template.
+
+If you want to compile only one stylesheet you can run:
+
+- `build:default` for the default output (`blitz.css`) – that will update the template’s unzipped src too;
+- `build:lite` for the lite output (`blitz-lite.css`);
+- `build:reset` for the reset output (`blitz-reset.css`);
+
+All those sub-builds will generate uncommented/minified files as well.
+
+The Kindle stylesheet is not run automatically when building all. To generate this stylesheet, use `npm run build:kindle` – it will update the template’s unzipped src as well.
+
+Finally, to update the packaged EPUB file then use `npm run make`.
+
+## Compile LESS sources without npm
 
 Either use the [GUI](http://lesscss.org/usage/#guis-for-less) or, if you’re one of the old-school type…
 
 ### For core
 
-`lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css`
+```
+lessc Blitz_framework/LESS/blitz.less Blitz_framework/CSS/blitz.css
+```
+
+### For lite
+
+```
+lessc Blitz_framework/LESS/blitz-lite.less Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css
+```
+
+### For reset
+
+```
+lessc Blitz_framework/LESS/blitz-reset.less Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css
+```
 
 ### For Kindle
 
 Either uncomment `@import 'blitz-kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
 
-`lessc Blitz_framework/LESS/plugins/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css`
+```
+lessc Blitz_framework/LESS/plugins/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css
+```
 
 ### For Media Queries
 
 You shouldn’t output them in `blitz.css` as legacy RMSDK (ePub 2) will ignore the entire stylesheet if there are media queries in it—excepted `amzn` queries.
 
-`lessc Blitz_framework/LESS/plugins/blitz-mq.less Blitz_framework/CSS/blitz-mq.css`
+```
+lessc Blitz_framework/LESS/plugins/blitz-mq.less Blitz_framework/CSS/blitz-mq.css
+```
 
 ## Design & Goals
 
