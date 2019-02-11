@@ -53,19 +53,3 @@ td {
 .table-fixed {
     table-layout: fixed;   
 }
-
-// Responsive tables !experimental
-#responsive-table() {
-table td, table tr {
-  display: block;
-}
-table th {
-  display: none;
-}
-table td::before {
-  content: attr(data-th)":";    /* Attribute data-th must be used in markup */
-  display: inline-block;
-  font-weight: bold;
-  margin-right: 0.25em;
-}
-}

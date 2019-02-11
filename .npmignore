@@ -1,0 +1,12 @@
+assets/icons/PDF/*
+assets/icons/src/*
+assets/icons/SVG/*
+assets/icons/PNG/blitz-16.png
+assets/icons/PNG/blitz-32.png
+assets/icons/PNG/blitz-64.png
+assets/icons/PNG/blitz-128.png
+assets/icons/PNG/blitz-256.png
+assets/icons/PNG/blitz-512.png
+assets/icons/PNG/blitz-1024.png
+Blitz_template/*
+Blitz_framework/Blitz-debug.epub

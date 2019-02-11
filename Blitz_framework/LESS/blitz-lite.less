@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*  blitz — CSS framework for reflowable eBooks      
+    Version 1.2.0 by Jiminy Panoz                      
+    Codename: Kola Kola                             
+    License: MIT (https://opensource.org/licenses/MIT)   */
+
+
+/* NAMESPACES */
+
+@namespace h "http://www.w3.org/1999/xhtml/";
+@namespace epub "http://www.idpf.org/2007/ops";
+
+html {
+/* */        
+}
+
+// Reference > won’t be output, utils can be imported as reference if you want
+@import (reference) 'reference/hyphens';
+@import (reference) 'reference/overrides';
+@import (reference) 'reference/mixins';
+@import (reference) 'reference/enhancements';
+@import (reference) 'utils/utilities';
+@import (reference) 'utils/break';
+
+// That's the stuff running Blitz
+@import 'core/variables';
+@import 'core/rhythm';
+@import 'core/features';
+
+// Base is the foundation = styles you'll use in every book
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typo';
+@import 'base/image';

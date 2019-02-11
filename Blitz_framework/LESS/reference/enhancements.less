@@ -1,0 +1,206 @@
+// EPUB3 Utilities
+
+
+    // Layout
+
+.drop-cap() {
+/* Can’t be used as a class, you must use :first-letter */
+    margin: 1em 0.25em 0 0; /* iOS 9 fix */
+    .initial-letter();
+}
+
+.flex {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.flex-col {
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-start {
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start; 
+}
+
+.flex-center {
+    -webkit-justify-content: center;
+    justify-content: center; 
+}
+
+.flex-end {
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end; 
+}
+
+.flex-between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;  
+}
+
+.flex-around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;   
+}
+
+    // Vertical align
+    
+.valign-center {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-center;
+}
+
+.valign-bottom {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-end;
+}
+
+.valign-between {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-between;
+}
+
+.valign-around {
+    min-height: 95vh;
+    .flex;
+    .flex-col;
+    .flex-around;
+}
+
+    // Object sizing
+    
+.fit-contain {
+  object-fit: contain;   
+}
+
+.fit-fill {
+  object-fit: fill;   
+}
+
+.fit-cover {
+  object-fit: cover;   
+}
+
+.fit-scale {
+  object-fit: scale-down;   
+}
+
+.fit-none {
+  object-fit: none;   
+}
+
+.bg-contain {
+  background-size: contain;   
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+    // OTF
+  
+.kern {
+    font-kerning: normal;
+}
+
+.no-kern {
+    font-kerning: none;
+}
+
+.clig {
+    -webkit-font-variant-ligatures: common-ligatures;
+    font-variant-ligatures: common-ligatures;
+}
+
+.dlig {
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    font-variant-ligatures: discretionary-ligatures;
+}
+
+.no-liga {
+    -webkit-font-variant-ligatures: no-common-ligatures;
+    font-variant-ligatures: no-common-ligatures;
+}
+
+.true-sc {
+    font-variant-caps: small-caps;
+}
+
+.c2sc {
+    font-variant-caps: all-small-caps;
+}
+
+.titling {
+    font-variant-caps: titling-caps;
+}
+
+.calt {
+    -webkit-font-variant-ligatures: contextual;
+    font-variant-ligatures: contextual;
+}
+
+.lnum {
+    font-variant-numeric: lining-nums;
+}
+
+.pnum {
+    font-variant-numeric: proportional-nums;
+}
+
+.onum {
+    font-variant-numeric: oldstyle-nums;
+}
+
+.tnum {
+    font-variant-numeric: tabular-nums;
+}
+
+.lnum-tnum {
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.lnum-pnum {
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.onum-pnum {
+    font-variant-numeric: oldstyle-nums proportional-nums;
+}
+
+.slash {
+    font-variant-numeric: slashed-zero;
+}
+
+.frac {
+    font-variant-numeric: diagonal-fractions;
+}
+
+.stacked {
+    font-variant-numeric: stacked-fractions;
+}
+
+.ordinal {
+    font-variant-numeric: ordinal;
+}
+
+.sups {
+    font-variant-position: super;
+}
+
+.subs {
+    font-variant-position: sub;
+}

@@ -1,8 +1,8 @@
-# Blitz Progressive Enhancements Plugin
+# Blitz Progressive Enhancements
 
 ## Summary
 
-This plugin provides an “API” for progressive enhancements.
+As of version 1.2, the LESS framework provides an “API” for progressive enhancements.
 
 It ships with:
 
@@ -10,13 +10,11 @@ It ships with:
 2. Parametric mixins;
 3. static mixins.
 
-Feedback at [Issue #12](https://github.com/FriendsOfEpub/Blitz/issues/12).
-
 ## Details
 
 ### Feature queries
 
-You’re likely to encounter a steep learning curve if you're not familiar with passing rulesets in a mixin because that’s definitely a new layer of abstraction I could not bypass—due to preprocessors’ limitations regarding `@supports`.
+You’re likely to encounter a steep learning curve if you're not familiar with passing rulesets in a mixin because that’s definitely a new layer of abstraction we could not bypass—due to preprocessors’ limitations regarding `@supports`.
 
 Syntax is the same as the query: 
 
@@ -52,15 +50,15 @@ Now, enhancements absolutely need this or else you’ll have issues all over the
 
 ### Mixins
 
-There’s a bunch of new mixins you might want to use for initial-letter, reflowable images with a caption, etc.
+There’s a bunch of new mixins you might want to use for `initial-letter`, reflowable images with a caption, etc.
 
-To make things clearer, defaults have been set for some arguments—and yep, you do have to pass some arguments as strings so I’m not sure at all it’s worth it.
+To make things clearer, defaults have been set for some arguments—and yep, you do have to pass some arguments as strings.
 
 ### EPUB 3 Utilities
 
-They’ve been designed as a reference so that they are not output in the CSS. The assumption is that if they were output by default, people could maybe use them without feature queries (`@supports`).
+They’ve been designed as a reference so that they are not output in the CSS. The assumption is that if they were output by default, people could maybe use them without feature queries (`@supports`), resulting in the entire stylesheet being ignored in some Reading Apps.
 
-You’ve got mixins for flexbox, vertical-align—which relies on flexbox—, objects sizing and open type features. 
+You’ve got mixins for flexbox, vertical-align – which relies on flexbox –, objects sizing and open type features. 
 
 Mixins’ names match features’ names whenever possible.
 
@@ -89,14 +87,14 @@ h1 {
   .align-left;
   .italic;
 
-  .supports-not-ss01({
+  .supports-not-titling({
     .override-italic;
-    font-family: "embedded alternative font", serif;
+    text-transform: uppercase;
   });
 
-  .supports-SS01({
+  .supports-titling({
     .override-italic;
-    .ss01;
+    .titling;
   });
 }
 ```
@@ -137,8 +135,8 @@ If you want to gather declarations in the same feature query, especially as perf
 
 #### Layout
 
-- `.supports-drop-cap({/* CSS rules */})` (alias for `initial-letter`)
-- `.supports-not-drop-cap({/* CSS rules */})` (alias for `initial-letter`)
+- `.supports-initial-letter({/* CSS rules */})`
+- `.supports-not-initial-letter({/* CSS rules */})`
 - `.supports-flex({/* CSS rules */})`
 - `.supports-not-flex({/* CSS rules */})`
 - `.supports-calc-width({/* CSS rules */})`
@@ -171,24 +169,10 @@ If you want to gather declarations in the same feature query, especially as perf
 - `.supports-not-true-sc({/* CSS rules */})`
 - `.supports-c2sc({/* CSS rules */})`
 - `.supports-not-c2sc({/* CSS rules */})`
-- `.supports-case({/* CSS rules */})`
-- `.supports-not-case({/* CSS rules */})`
 - `.supports-titling({/* CSS rules */})`
 - `.supports-not-titling({/* CSS rules */})`
 - `.supports-calt({/* CSS rules */})`
 - `.supports-not-calt({/* CSS rules */})`
-- `.supports-salt({/* CSS rules */})`
-- `.supports-not-salt({/* CSS rules */})`
-- `.supports-swash({/* CSS rules */})`
-- `.supports-not-swash({/* CSS rules */})`
-- `.supports-ss01({/* CSS rules */})`
-- `.supports-not-ss01({/* CSS rules */})`
-- `.supports-ss02({/* CSS rules */})`
-- `.supports-not-ss02({/* CSS rules */})`
-- `.supports-ss03({/* CSS rules */})`
-- `.supports-not-ss03({/* CSS rules */})`
-- `.supports-hist({/* CSS rules */})`
-- `.supports-not-hist({/* CSS rules */})`
 - `.supports-lnum({/* CSS rules */})`
 - `.supports-not-lnum({/* CSS rules */})`
 - `.supports-pnum({/* CSS rules */})`
@@ -212,21 +196,13 @@ If you want to gather declarations in the same feature query, especially as perf
 
 ### Parametric Mixins
 
-#### Layout
-
 - `.initial-letter(@size : 3, @sink : 3)`
 - `.flex-base(@grow, @shrink, @basis)`
 - `.reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px)`
-- `.background-size(@x, @y)`
+- `.background-size(@w, @h)`
 - `.background-position(@x, @y)`
 - `.text-align-last(@align : center)`
 - `.calc(@prop, @val1, @operator : "+", @val2)` (operator must have quotes)
-
-#### OTF
-
-- `.salt(@alt : 1)`
-- `.swsh(@alt : 1)`
-- `.ss(@alt : "01")` (argument must have quotes)
 
 ### Static Mixins
 
@@ -265,23 +241,15 @@ If you want to gather declarations in the same feature query, especially as perf
 - `.no-liga`
 - `.true-sc`
 - `.c2sc`
-- `.case`
 - `.titling`
 - `.calt`
-- `.salt-1`
-- `.salt-2`
-- `.salt-3`
-- `.swsh-1`
-- `.swsh-2`
-- `.swsh-3`
-- `.ss01`
-- `.ss02`
-- `.ss03`
-- `.hist`
 - `.lnum`
 - `.pnum`
 - `.onum`
 - `.tnum`
+- `.lnum-tnum`
+- `.lnum-pnum`
+- `.pnum-pnum`
 - `.slash`
 - `.frac`
 - `.stacked`

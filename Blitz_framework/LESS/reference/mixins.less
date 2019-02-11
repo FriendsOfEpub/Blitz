@@ -71,3 +71,39 @@
     }
     .generate-columns(@n, (@i + 1));
 }
+
+// Progressive enhancements
+  
+.initial-letter(@size : 3, @sink : 3) {
+    -webkit-initial-letter: @size @sink;
+    initial-letter: @size @sink;    
+}
+
+.flex-base(@grow, @shrink, @basis) {
+    -webkit-flex: @grow @shrink @basis;
+    flex: @grow @shrink @basis;
+}
+
+.reflowable-height(@img : 98vh, @caption : 3em, @min : 300px, @max : 1400px) {
+    min-height: @min;
+    height: -webkit-calc(~"@{img} - @{caption}");
+    height: calc(~"@{img} - @{caption}");
+    max-height: @max !important;
+}
+
+.background-size(@w, @h) {
+    background-size: @w @h;   
+}
+
+.background-position(@x, @y) {
+    background-position: @x @y;   
+}
+
+.text-align-last(@align : center) {
+    text-align-last: @align;   
+}
+
+.calc(@prop, @val1, @operator : "+", @val2) {
+    @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
+    @{prop}: calc(~"@{val1} @{operator} @{val2}");
+};
