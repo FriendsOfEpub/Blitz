@@ -104,6 +104,10 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 
 ## Log
 
+### 1.1.3
+
+- Removed gap after images
+
 ### 1.1.2
 
 - Fixed hyphenation (limit chars)
