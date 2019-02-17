@@ -249,7 +249,7 @@ If you want to gather declarations in the same feature query, especially as perf
 - `.tnum`
 - `.lnum-tnum`
 - `.lnum-pnum`
-- `.pnum-pnum`
+- `.onum-pnum`
 - `.slash`
 - `.frac`
 - `.stacked`

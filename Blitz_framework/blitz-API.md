@@ -224,7 +224,7 @@
 - `.tnum`
 - `.lnum-tnum`
 - `.lnum-pnum`
-- `.pnum-pnum`
+- `.onum-pnum`
 - `.slash`
 - `.frac`
 - `.stacked`
