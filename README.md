@@ -159,11 +159,11 @@ edge >= 14
 last 4 chrome major versions
 safari >= 9.1
 ios_saf >= 9.3
-android > 4.4
+android >= 4.4
 last 2 and_chr major versions
 ```
 
-Alternatively, you can use [this CanIuse Link](https://caniuse.com/?browserset=ie%20%3E%3D%2011%2Cedge%20%3E%3D%2014%2Clast%204%20chrome%20major%20versions%2Csafari%20%3E%3D%209.1%2Cios_saf%20%3E%3D%209.3%2Candroid%20%3E%204.4%2Clast%202%20and_chr%20major%20versions).
+Alternatively, you can use [this CanIuse Link](https://caniuse.com/?browserset=ie%20%3E%3D%2011%2Cedge%20%3E%3D%2014%2Clast%204%20chrome%20major%20versions%2Csafari%20%3E%3D%209.1%2Cios_saf%20%3E%3D%209.3%2Candroid%20%3E%3D%204.4%2Clast%202%20and_chr%20major%20versions).
 
 When checking for support, you can simply click “Apply Filters” in order to display those browsers in the support table.
 
