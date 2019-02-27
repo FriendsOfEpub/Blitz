@@ -149,6 +149,32 @@ To sum up, we’ve tried to find a balance and feel like Blitz defaults can help
 - Media Queries [#685](https://github.com/IDPF/epub-revision/issues/685)
 - Possible spec language for reading system CSS handling [#693](https://github.com/IDPF/epub-revision/issues/693)
 
+### Browserlist we’re using for progressive enhancements
+
+The following is a list of browsers/rendering engines modern EPUB apps are using behind the scenes. It is using the [browserlist format](https://github.com/browserslist/browserslist) and can be imported in websites such as [CanIUse](https://caniuse.com/#browserset_select).
+
+```
+ie >= 11
+edge >= 14
+last 4 chrome major versions
+safari >= 9.1
+ios_saf >= 9.3
+android > 4.4
+last 2 and_chr major versions
+```
+
+Alternatively, you can use [this CanIuse Link](https://caniuse.com/?browserset=ie%20%3E%3D%2011%2Cedge%20%3E%3D%2014%2Clast%204%20chrome%20major%20versions%2Csafari%20%3E%3D%209.1%2Cios_saf%20%3E%3D%209.3%2Candroid%20%3E%204.4%2Clast%202%20and_chr%20major%20versions).
+
+When checking for support, you can simply click “Apply Filters” in order to display those browsers in the support table.
+
+#### Some more details
+
+- IE 11’s Trident is used by some Windows app like Adobe Digital Editions 4.5
+- Edge is aligned with the release of the eBook Reader in the Edge browser
+- Safari on MacOS is aligned with the release of iBooks on Mavericks (10.9)
+- Safari on iOS is starting at iOS 9.3
+- Android 4.4.4 is still used by some apps on Android while others are using the more modern WebView (2 last Android versions)
+
 ## Log
 
 ### 1.2.0
