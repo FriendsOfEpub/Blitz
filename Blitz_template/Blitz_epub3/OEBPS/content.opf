@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
-<package prefix="rendition: http://www.idpf.org/vocab/rendition/# schema: http://schema.org/ ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/" xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookId">
+<package prefix="rendition: http://www.idpf.org/vocab/rendition/# schema: http://schema.org/ ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ a11y: http://www.idpf.org/epub/vocab/package/a11y/#" xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookId">
   <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ibooks="http://apple.com/ibooks/html-extensions">
   
 	<dc:identifier id="BookId">XXXXXXXXXXXXXXXXX</dc:identifier>
@@ -56,52 +56,113 @@
 	<meta property="ibooks:version">1.0</meta>
 	<meta property="ibooks:specified-fonts">false</meta>
 
-<!-- Accessibility Metadata -->
+<!-- Accessibility Metadata
+(EPUB Accessibility 1.0 requirements: http://www.idpf.org/epub/a11y/accessibility.html#sec-disc-package) -->
 
- <!-- Please get rid of features you don't use in your book -->
-    <meta property="schema:accessibilityFeature">alternativeText</meta>
-    <meta property="schema:accessibilityFeature">audioDescription</meta>
-    <meta property="schema:accessibilityFeature">braille</meta>
-    <meta property="schema:accessibilityFeature">captions</meta>
-    <meta property="schema:accessibilityFeature">ChemML</meta>
-    <meta property="schema:accessibilityFeature">displayTransformability</meta>
-    <meta property="schema:accessibilityFeature">enhancedAudio</meta>
-    <meta property="schema:accessibilityFeature">highContrast</meta>
-    <meta property="schema:accessibilityFeature">largePrint</meta>
-    <meta property="schema:accessibilityFeature">latex</meta>
-    <meta property="schema:accessibilityFeature">longDescription</meta>
-    <meta property="schema:accessibilityFeature">MathML</meta>
-    <meta property="schema:accessibilityFeature">resizeText</meta>
-    <meta property="schema:accessibilityFeature">structuralNavigation</meta>
-    <meta property="schema:accessibilityFeature">tactileGraphic</meta>
-    <meta property="schema:accessibilityFeature">tactileObject</meta>
-    <meta property="schema:accessibilityFeature">transcript</meta>
-    
- <!-- Hazard, just get rid of "no" when need be --> 
-    <meta property="schema:accessibilityHazard">noFlashing</meta>
-    <meta property="schema:accessibilityHazard">noSound</meta>
-    <meta property="schema:accessibilityHazard">noMotionSimulation</meta>
-    
- <!-- Control = input methods that can be used -->
-    <meta property="schema:accessibilityControl">fullAudioControl</meta>
-    <meta property="schema:accessibilityControl">fullKeyboardControl</meta>
-    <meta property="schema:accessibilityControl">fullMouseControl</meta>
-    <meta property="schema:accessibilityControl">fullTouchControl</meta>
-    <meta property="schema:accessibilityControl">fullVideoControl</meta>
-    <meta property="schema:accessibilityControl">timing</meta>
-    
- <!-- API = compatible with the following -->
-    <meta property="schema:accessibilityAPI">AndroidAccessibility</meta>
-    <meta property="schema:accessibilityAPI">ARIA</meta>
-    <meta property="schema:accessibilityAPI">ATK</meta>
-    <meta property="schema:accessibilityAPI">AT-SPI</meta>
-    <meta property="schema:accessibilityAPI">BlackberryAccessibility</meta>
-    <meta property="schema:accessibilityAPI">iAccessible2</meta>
-    <meta property="schema:accessibilityAPI">iOSAccessibility</meta>
-    <meta property="schema:accessibilityAPI">JavaAccessibility</meta>
-    <meta property="schema:accessibilityAPI">MacOSXAccessibility</meta>
-    <meta property="schema:accessibilityAPI">MSAA</meta>
-    <meta property="schema:accessibilityAPI">UIAutomation</meta>
+	<!-- Features for transformation
+	Please get rid of features you don't use in your book.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_transformation -->
+        <meta property="schema:accessibilityFeature">highContrastAudio</meta>
+        <meta property="schema:accessibilityFeature">highContrastDisplay</meta>
+        <meta property="schema:accessibilityFeature">largePrint</meta>
+        <meta property="schema:accessibilityFeature">displayTransformability</meta>
+
+	<!-- Features for structure and navigation
+	Please get rid of features you don't use in your book.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_structure_and_navigation -->
+        <meta property="schema:accessibilityFeature">annotations</meta>
+        <meta property="schema:accessibilityFeature">bookmarks</meta>
+        <meta property="schema:accessibilityFeature">index</meta>
+        <meta property="schema:accessibilityFeature">printPageNumbers</meta>
+        <meta property="schema:accessibilityFeature">readingOrder</meta>
+        <meta property="schema:accessibilityFeature">structuralNavigation</meta>
+
+	<!-- Features for content control
+	Please get rid of features you don't use in your book.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_content_control -->
+        <meta property="schema:accessibilityFeature">synchronizedAudioText</meta>
+        <meta property="schema:accessibilityFeature">timingControl</meta>
+        <meta property="schema:accessibilityFeature">unlocked</meta>
+
+	<!-- Features for augmentation 
+	Please get rid of features you don't use in your book.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_augmentation -->
+        <meta property="schema:accessibilityFeature">alternativeText</meta>
+        <meta property="schema:accessibilityFeature">audioDescription</meta>
+        <meta property="schema:accessibilityFeature">braille</meta>
+        <meta property="schema:accessibilityFeature">captions</meta>
+        <meta property="schema:accessibilityFeature">ChemML</meta>
+        <meta property="schema:accessibilityFeature">describedMath</meta>
+        <meta property="schema:accessibilityFeature">latex</meta>
+        <meta property="schema:accessibilityFeature">MathML</meta>
+        <meta property="schema:accessibilityFeature">longDescription</meta>
+        <meta property="schema:accessibilityFeature">rubyAnnotations</meta>
+        <meta property="schema:accessibilityFeature">signLanguage</meta>
+        <meta property="schema:accessibilityFeature">tactileGraphic</meta>
+        <meta property="schema:accessibilityFeature">tactileObject</meta>
+        <meta property="schema:accessibilityFeature">transcript</meta>
+        <meta property="schema:accessibilityFeature">ttsMarkup</meta>
+
+	<!-- Hazard, just get rid of "no" when need be.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-004 -->
+        <meta property="schema:accessibilityHazard">noFlashing</meta>
+        <meta property="schema:accessibilityHazard">noSound</meta>
+        <meta property="schema:accessibilityHazard">noMotionSimulation</meta>
+
+	<!-- Primary access modes
+	Please get rid of access modes that are not needed to read your book.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-001 -->
+        <meta property="schema:accessMode">textual</meta>
+        <meta property="schema:accessMode">visual</meta>
+        <meta property="schema:accessMode">auditory</meta>
+        <meta property="schema:accessMode">tactile</meta>
+
+	<!-- Sufficient access modes
+	Please adjust which modes or sets of modes a user requires to read your book.
+	(EPUB Accessibility 1.0 requirements: RECOMMENDED)
+	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-002 -->
+        <meta property="schema:accessModeSufficient">textual,visual</meta>
+        <meta property="schema:accessModeSufficient">textual</meta>
+
+	<!-- Please include an accessibility summary.
+	(EPUB Accessibility 1.0 requirements: REQUIRED)
+	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-005 -->
+        <meta property="schema:accessibilitySummary">The summary of the accessibility of your book.</meta>
+
+	<!-- Control = input methods that can be used
+	Please get rid of input methods that are incompatibles with your book.
+	(EPUB Accessibility 1.0 requirements: OPTIONAL)
+	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-007 -->
+        <meta property="schema:accessibilityControl">fullAudioControl</meta>
+        <meta property="schema:accessibilityControl">fullKeyboardControl</meta>
+        <meta property="schema:accessibilityControl">fullMouseControl</meta>
+        <meta property="schema:accessibilityControl">fullTouchControl</meta>
+        <meta property="schema:accessibilityControl">fullVideoControl</meta>
+
+	<!-- API = compatible with the following 
+	(EPUB Accessibility 1.0 requirements: OPTIONAL) -->
+        <meta property="schema:accessibilityAPI">AndroidAccessibility</meta>
+        <meta property="schema:accessibilityAPI">ARIA</meta>
+        <meta property="schema:accessibilityAPI">ATK</meta>
+        <meta property="schema:accessibilityAPI">AT-SPI</meta>
+        <meta property="schema:accessibilityAPI">BlackberryAccessibility</meta>
+        <meta property="schema:accessibilityAPI">iAccessible2</meta>
+        <meta property="schema:accessibilityAPI">iOSAccessibility</meta>
+        <meta property="schema:accessibilityAPI">JavaAccessibility</meta>
+        <meta property="schema:accessibilityAPI">MacOSXAccessibility</meta>
+        <meta property="schema:accessibilityAPI">MSAA</meta>
+        <meta property="schema:accessibilityAPI">UIAutomation</meta>
+
+<!-- Comformance reporting of the accessibility of your book
+http://www.idpf.org/epub/a11y/accessibility.html#sec-conf-reporting -->
+        <!-- <meta property="a11y:certifiedBy">XXX</meta> -->
+        <!-- <link rel="dcterms:conformsTo" href="http://www.idpf.org/epub/a11y/accessibility-20170105.html#wcag-aa"/> -->
     
   </metadata>
   
