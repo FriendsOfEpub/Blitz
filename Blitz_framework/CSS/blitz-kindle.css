@@ -67,6 +67,9 @@ it is known to create issues with some devices/apps
   .small-caps {
     font-size: small;
   }
+  .caps-to-small-caps {
+    font-size: small;
+  }
   sub {
     font-size: x-small;
   }

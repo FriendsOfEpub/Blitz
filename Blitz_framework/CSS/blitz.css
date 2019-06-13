@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 1.2.0 by Jiminy Panoz                      
-    Codename: Kola Kola                             
+    Version 1.2.1 by Jiminy Panoz                      
+    Codename: Charlie Don't Surf                            
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -931,6 +931,11 @@ render page on eInk devices)                                    */
   font-style: italic;
 }
 .small-caps {
+  font-variant: small-caps;
+  letter-spacing: 0.0625em;
+  /* The two previous props are not supported in legacy RMSDK */
+}
+.caps-to-small-caps {
   text-transform: lowercase;
   /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
   font-variant: small-caps;

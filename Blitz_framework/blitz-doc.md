@@ -287,6 +287,7 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.italic`
 - `.bold-italic` 
 - `.small-caps`
+- `.caps-to-small-caps`
 - `.underline`
 - `.break-before`
 - `.break-after`
@@ -569,7 +570,7 @@ Those classes are mixins which are output by default but can eventually be used 
 - indents: `.indent`, `.no-indent` and `.hanging-indent`
 - font-stacks
 - font-sizes, which are computed based on the scale specified in variables
-- character styles: `.bold`, `.italic`, `.bold-italic` and `small-caps`
+- character styles: `.bold`, `.italic`, `.bold-italic`, `.small-caps`, and `.caps-to-small-caps`
 
 ### Break
 

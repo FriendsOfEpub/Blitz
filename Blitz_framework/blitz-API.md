@@ -116,6 +116,7 @@
 - `.italic`
 - `.bold-italic` 
 - `.small-caps`
+- `.caps-to-small-caps`
 - `.underline`
 - `.break-before`
 - `.break-after`

@@ -269,10 +269,14 @@
 }
 
 .small-caps {
-  text-transform: lowercase;    /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
   font-variant: small-caps;
   letter-spacing: ((1 / @body-font-size) + 0em);
   /* The two previous props are not supported in legacy RMSDK */
+}
+
+.caps-to-small-caps {
+  text-transform: lowercase;    /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
+  .small-caps;
 }
 
 .underline {
