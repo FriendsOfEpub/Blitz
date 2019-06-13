@@ -177,6 +177,10 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 ## Log
 
+### 1.2.2
+
+- Corrected Mobi7 font size for `.small-caps`
+
 ### 1.2.1
 
 - Corrected `.small-caps` and created a new `.caps-to-small-caps` util
