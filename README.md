@@ -177,6 +177,10 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 ## Log
 
+### 1.2.3
+
+- Corrected KF8’s bug where `page-break-inside: avoid` can create a blank
+
 ### 1.2.2
 
 - Corrected Mobi7 font size for `.small-caps`

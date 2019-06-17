@@ -29,6 +29,12 @@ it is known to create issues with some devices/apps
     /* Because Kindle developers… */
     margin: 1.5em 11%;
   }
+  figure,
+  .no-break-inside {
+    page-break-inside: auto;
+    break-inside: auto;
+    /* Fix blank bug because of page-break-inside: avoid… */
+  }
 }
 @media amzn-mobi {
   body {

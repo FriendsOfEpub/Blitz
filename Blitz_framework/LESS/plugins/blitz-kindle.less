@@ -25,6 +25,10 @@ it is known to create issues with some devices/apps
     width: 78%;			  /* Because Kindle developers… */
     margin: (@body-line-height + 0em) 11%;
   }
+  figure,
+  .no-break-inside {
+    .break-inside;    /* Fix blank bug because of page-break-inside: avoid… */
+  }
 }
 
 @media @mobi7 {
