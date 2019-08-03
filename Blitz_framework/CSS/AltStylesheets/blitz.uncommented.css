@@ -377,14 +377,14 @@ caption {
 th {
   empty-cells: show;
   border-bottom: .125em solid currentColor;
-  padding: .6875em 2% .6875em 0;
+  padding: .6875em 10px .6875em 0;
   text-align: left;
   font-weight: 700
 }
 td {
   empty-cells: show;
   border-bottom: .0625em solid currentColor;
-  padding: .75em 2% .6875em 0;
+  padding: .75em 10px .6875em 0;
   text-align: left
 }
 .table-fixed {
