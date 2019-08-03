@@ -46,165 +46,180 @@
 		<meta name="cover" content="cover.png" />
 
 		<!-- Rendition Metadata
-	<meta property="rendition:layout">reflowable</meta>
-	<meta property="rendition:flow">auto | scrolled-doc | scrolled-continuous | paginated</meta>
-	<meta property="rendition:orientation">auto | portrait | landscape</meta>
-	<meta property="rendition:spread">none | landscape | portrait | both | auto</meta>
--->
+		<meta property="rendition:layout">reflowable</meta>
+		<meta property="rendition:flow">auto | scrolled-doc | scrolled-continuous | paginated</meta>
+		<meta property="rendition:orientation">auto | portrait | landscape</meta>
+		<meta property="rendition:spread">none | landscape | portrait | both | auto</meta>
+		-->
 
 		<!-- iBooks' Metadata -->
 		<meta property="ibooks:version">1.0</meta>
 		<meta property="ibooks:specified-fonts">false</meta>
 
 		<!-- Accessibility Metadata
-(EPUB Accessibility 1.0 requirements: http://www.idpf.org/epub/a11y/accessibility.html#sec-disc-package) -->
+		(EPUB Accessibility 1.0 requirements: http://www.idpf.org/epub/a11y/accessibility.html#sec-disc-package -->
 
 		<!-- Features for transformation
-	Please get rid of features you don't use in your book.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_transformation -->
-		<meta property="schema:accessibilityFeature">highContrastAudio</meta>
-		<meta property="schema:accessibilityFeature">highContrastDisplay</meta>
-		<meta property="schema:accessibilityFeature">largePrint</meta>
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_transformation -->
+
+		<!-- <meta property="schema:accessibilityFeature">highContrastAudio</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">highContrastDisplay</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">largePrint</meta> -->
 		<meta property="schema:accessibilityFeature">displayTransformability</meta>
 
 		<!-- Features for structure and navigation
-	Please get rid of features you don't use in your book.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_structure_and_navigation -->
-		<meta property="schema:accessibilityFeature">annotations</meta>
-		<meta property="schema:accessibilityFeature">bookmarks</meta>
-		<meta property="schema:accessibilityFeature">index</meta>
-		<meta property="schema:accessibilityFeature">printPageNumbers</meta>
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_structure_and_navigation -->
+
+		<!-- <meta property="schema:accessibilityFeature">annotations</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">bookmarks</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">index</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">printPageNumbers</meta> -->
 		<meta property="schema:accessibilityFeature">readingOrder</meta>
 		<meta property="schema:accessibilityFeature">structuralNavigation</meta>
 
 		<!-- Features for content control
-	Please get rid of features you don't use in your book.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_content_control -->
-		<meta property="schema:accessibilityFeature">synchronizedAudioText</meta>
-		<meta property="schema:accessibilityFeature">timingControl</meta>
-		<meta property="schema:accessibilityFeature">unlocked</meta>
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_content_control -->
+
+		<!-- <meta property="schema:accessibilityFeature">synchronizedAudioText</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">timingControl</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">unlocked</meta> -->
 
 		<!-- Features for augmentation 
-	Please get rid of features you don't use in your book.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_augmentation -->
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		https://www.w3.org/wiki/WebSchemas/Accessibility#Features_for_augmentation -->
+
 		<meta property="schema:accessibilityFeature">alternativeText</meta>
-		<meta property="schema:accessibilityFeature">audioDescription</meta>
-		<meta property="schema:accessibilityFeature">braille</meta>
-		<meta property="schema:accessibilityFeature">captions</meta>
-		<meta property="schema:accessibilityFeature">ChemML</meta>
-		<meta property="schema:accessibilityFeature">describedMath</meta>
-		<meta property="schema:accessibilityFeature">latex</meta>
-		<meta property="schema:accessibilityFeature">MathML</meta>
-		<meta property="schema:accessibilityFeature">longDescription</meta>
-		<meta property="schema:accessibilityFeature">rubyAnnotations</meta>
-		<meta property="schema:accessibilityFeature">signLanguage</meta>
-		<meta property="schema:accessibilityFeature">tactileGraphic</meta>
-		<meta property="schema:accessibilityFeature">tactileObject</meta>
-		<meta property="schema:accessibilityFeature">transcript</meta>
-		<meta property="schema:accessibilityFeature">ttsMarkup</meta>
+		<!-- <meta property="schema:accessibilityFeature">audioDescription</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">braille</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">captions</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">ChemML</meta> --> 
+		<!-- <meta property="schema:accessibilityFeature">describedMath</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">latex</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">MathML</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">longDescription</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">rubyAnnotations</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">signLanguage</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">tactileGraphic</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">tactileObject</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">transcript</meta> -->
+		<!-- <meta property="schema:accessibilityFeature">ttsMarkup</meta> -->
 
 		<!-- Hazard, just get rid of "no" when need be.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-004 -->
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-004 -->
+
 		<meta property="schema:accessibilityHazard">noFlashingHazard</meta>
 		<meta property="schema:accessibilityHazard">noSoundHazard</meta>
 		<meta property="schema:accessibilityHazard">noMotionSimulationHazard</meta>
+
 		<!-- Other possible values are:
 		flashing, motionSimulation, sound, unknown, none
 		See "accessibilityHazard" at:
 		https://www.w3.org/wiki/WebSchemas/Accessibility#Accessibility_terms_.28Version_2.0.29 -->
 
 		<!-- Primary access modes
-	Please get rid of access modes that are not needed to read your book.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-001 -->
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-001 -->
+
 		<meta property="schema:accessMode">textual</meta>
 		<meta property="schema:accessMode">visual</meta>
-		<meta property="schema:accessMode">auditory</meta>
-		<meta property="schema:accessMode">tactile</meta>
+		<!-- <meta property="schema:accessMode">auditory</meta> -->
+		<!-- <meta property="schema:accessMode">tactile</meta> -->
+
 		<!-- Other possible values are:
 		chartOnVisual, chemOnVisual, colorDependent, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual
 		https://www.w3.org/wiki/WebSchemas/Accessibility#Accessibility_terms_.28Version_2.0.29 -->
 
 		<!-- Sufficient access modes
-	Please adjust which modes or sets of modes a user requires to read your book.
-	(EPUB Accessibility 1.0 requirements: RECOMMENDED)
-	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-002 -->
+		Please adjust which modes or sets of modes a user requires to read your book.
+		(EPUB Accessibility 1.0 requirements: RECOMMENDED)
+		http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-002 -->
+
 		<meta property="schema:accessModeSufficient">textual,visual</meta>
 		<meta property="schema:accessModeSufficient">textual</meta>
 
 		<!-- Please include an accessibility summary.
-	(EPUB Accessibility 1.0 requirements: REQUIRED)
-	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-005 -->
+		(EPUB Accessibility 1.0 requirements: REQUIRED)
+		http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-005 -->
+
 		<meta property="schema:accessibilitySummary">The summary of the accessibility of your book.</meta>
 
 		<!-- Control = input methods that can be used
-	Please get rid of input methods that are incompatibles with your book.
-	(EPUB Accessibility 1.0 requirements: OPTIONAL)
-	http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-007 -->
-		<meta property="schema:accessibilityControl">fullKeyboardControl</meta>
-		<meta property="schema:accessibilityControl">fullMouseControl</meta>
-		<meta property="schema:accessibilityControl">fullSwitchControl</meta>
-		<meta property="schema:accessibilityControl">fullTouchControl</meta>
-		<meta property="schema:accessibilityControl">fullVideoControl</meta>
-		<meta property="schema:accessibilityControl">fullVoiceControl</meta>
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: OPTIONAL)
+		http://www.idpf.org/epub/a11y/techniques/techniques.html#meta-007 -->
+
+		<!-- <meta property="schema:accessibilityControl">fullKeyboardControl</meta> -->
+		<!-- <meta property="schema:accessibilityControl">fullMouseControl</meta> -->
+		<!-- <meta property="schema:accessibilityControl">fullSwitchControl</meta> -->
+		<!-- <meta property="schema:accessibilityControl">fullTouchControl</meta> -->
+		<!-- <meta property="schema:accessibilityControl">fullVideoControl</meta> -->
+		<!-- <meta property="schema:accessibilityControl">fullVoiceControl</meta> -->
 
 		<!-- API = compatible with the following 
-	(EPUB Accessibility 1.0 requirements: OPTIONAL) -->
+		Please uncomment features that apply.
+		(EPUB Accessibility 1.0 requirements: OPTIONAL) -->
+
 		<meta property="schema:accessibilityAPI">ARIA</meta>
 		<!-- ACE 1.10 only accepts "ARIA" for property="schema:accessibilityAPI" -->
-		<meta property="schema:accessibilityAPI">AndroidAccessibility</meta>
-		<meta property="schema:accessibilityAPI">ATK</meta>
-		<meta property="schema:accessibilityAPI">AT-SPI</meta>
-		<meta property="schema:accessibilityAPI">BlackberryAccessibility</meta>
-		<meta property="schema:accessibilityAPI">iAccessible2</meta>
-		<meta property="schema:accessibilityAPI">iOSAccessibility</meta>
-		<meta property="schema:accessibilityAPI">JavaAccessibility</meta>
-		<meta property="schema:accessibilityAPI">MacOSXAccessibility</meta>
-		<meta property="schema:accessibilityAPI">MSAA</meta>
-		<meta property="schema:accessibilityAPI">UIAutomation</meta>
+
+		<!-- <meta property="schema:accessibilityAPI">AndroidAccessibility</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">ATK</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">AT-SPI</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">BlackberryAccessibility</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">iAccessible2</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">iOSAccessibility</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">JavaAccessibility</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">MacOSXAccessibility</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">MSAA</meta> -->
+		<!-- <meta property="schema:accessibilityAPI">UIAutomation</meta> -->
 
 		<!-- Comformance reporting of the accessibility of your book
 		http://www.idpf.org/epub/a11y/accessibility.html#sec-conf-reporting -->
+
 		<!-- <meta property="a11y:certifiedBy">XXX</meta> -->
 		<!-- <link rel="dcterms:conformsTo" href="http://www.idpf.org/epub/a11y/accessibility-20170105.html#wcag-aa"/> -->
 
 	</metadata>
 
 	<manifest>
-		<item href="Text/acknowledgments.xhtml" id="acknowledgments.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/afterword.xhtml" id="afterword.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/appendix.xhtml" id="appendix.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/bibliography.xhtml" id="bibliography.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/chapter-subchapter.xhtml" id="chapter-subchapter.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/chapter.xhtml" id="chapter.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/colophon.xhtml" id="colophon.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/conclusion.xhtml" id="conclusion.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/cover.xhtml" id="cover.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/credits.xhtml" id="credits.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/dedication.xhtml" id="dedication.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/division.xhtml" id="division.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/epigraph.xhtml" id="epigraph.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/epilogue.xhtml" id="epilogue.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/foreword.xhtml" id="foreword.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/glossary.xhtml" id="glossary.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/index.xhtml" id="index.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/introduction.xhtml" id="introduction.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/part.xhtml" id="part.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/preamble.xhtml" id="preamble.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/preface.xhtml" id="preface.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/prologue.xhtml" id="prologue.xhtml" media-type="application/xhtml+xml"/>
-		<item href="Text/titlepage.xhtml" id="titlepage.xhtml" media-type="application/xhtml+xml"/>
-		<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml"/>
-		<item href="Text/nav.xhtml" id="navid" media-type="application/xhtml+xml" properties="nav"/>
-		<item href="Styles/blitz.css" id="blitz.css" media-type="text/css"/>
-		<item href="Styles/blitz-kindle.css" id="blitz-kindle.css" media-type="text/css"/>
-		<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image"/>
-		<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml"/>
+		<item href="Text/acknowledgments.xhtml" id="acknowledgments.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/afterword.xhtml" id="afterword.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/appendix.xhtml" id="appendix.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/bibliography.xhtml" id="bibliography.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/chapter-subchapter.xhtml" id="chapter-subchapter.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/chapter.xhtml" id="chapter.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/colophon.xhtml" id="colophon.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/conclusion.xhtml" id="conclusion.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/cover.xhtml" id="cover.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/credits.xhtml" id="credits.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/dedication.xhtml" id="dedication.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/division.xhtml" id="division.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/epigraph.xhtml" id="epigraph.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/epilogue.xhtml" id="epilogue.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/foreword.xhtml" id="foreword.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/glossary.xhtml" id="glossary.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/index.xhtml" id="index.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/introduction.xhtml" id="introduction.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/part.xhtml" id="part.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/preamble.xhtml" id="preamble.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/preface.xhtml" id="preface.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/prologue.xhtml" id="prologue.xhtml" media-type="application/xhtml+xml" />
+		<item href="Text/titlepage.xhtml" id="titlepage.xhtml" media-type="application/xhtml+xml" />
+		<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
+		<item href="Text/nav.xhtml" id="navid" media-type="application/xhtml+xml" properties="nav" />
+		<item href="Styles/blitz.css" id="blitz.css" media-type="text/css" />
+		<item href="Styles/blitz-kindle.css" id="blitz-kindle.css" media-type="text/css" />
+		<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image" />
+		<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml" />
 	</manifest>
 
 	<spine toc="ncx">
