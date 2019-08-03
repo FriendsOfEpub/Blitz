@@ -2,11 +2,11 @@
 <package prefix="rendition: http://www.idpf.org/vocab/rendition/# schema: http://schema.org/ ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/ a11y: http://www.idpf.org/epub/vocab/package/a11y/#" xmlns="http://www.idpf.org/2007/opf" version="3.0" unique-identifier="BookId">
 	<metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ibooks="http://apple.com/ibooks/html-extensions">
 
-		<dc:identifier id="BookId">XXXXXXXXXXXXXXXXX</dc:identifier>
+		<dc:identifier id="BookId">urn:uuid:XXXXXXXXXXXXXXXXX</dc:identifier>
 		<!-- ISBN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist5">15</meta> -->
 		<!-- EAN	<meta refines="#BookId" property="identifier-type" scheme="onix:codelist6">02</meta> -->
 
-		<meta property="dcterms:modified">2018-06-22T00:00:01Z</meta>
+		<meta property="dcterms:modified">2019-08-03T12:40:59Z</meta>
 
 		<dc:language>en</dc:language>
 

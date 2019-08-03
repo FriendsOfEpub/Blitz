@@ -177,6 +177,11 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 ## Log
 
+### 1.2.4
+
+- Corrected tables’ `td` padding (switched back to `px` value instead of `%` as it depended on RSs’ forcing a relayout)
+- Disabled a11y metadata in an attempt to provide with a reasonable default
+
 ### 1.2.3
 
 - Corrected KF8’s bug where `page-break-inside: avoid` can create a blank
