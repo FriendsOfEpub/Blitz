@@ -2,8 +2,12 @@
 
 ul,
 ol {
-    margin: @base-margin 0;
-    padding-left: @step;
+  margin: @base-margin 0;
+  padding-left: @step;
+
+  @media @mobi7 {
+    margin: floor(@base-margin) 0;
+  }
 }
 
 ul {

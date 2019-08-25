@@ -8,7 +8,11 @@ hr {
   height: 0;
   border: none;
   border-top: (((@border-width * 2) / @body-font-size) + 0em) solid @border-color; /* currentColor = color of text (getting around night mode) */
-  opacity: 0.5;     /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
+	opacity: 0.5;     /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
+	
+	@media @mobi7 {
+		margin: floor(@base-margin) 0;
+	}
 }
 
 /* Blank-line context change */

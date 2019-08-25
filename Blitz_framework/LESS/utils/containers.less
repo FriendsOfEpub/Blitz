@@ -61,7 +61,12 @@
 }
 
 .w-80 {
-  width: 80%; 
+  width: 80%;
+
+  @media @kf8 {
+    width: 78%;			  /* Because Kindle developers… */
+    margin: (@body-line-height + 0em) 11%;
+  }
 }
 
 .w-70 {
@@ -190,9 +195,21 @@ render page on eInk devices)                                    */
 .float-left {
   float: left;
   margin: 0 1.5% 0 0;
+
+  @media @mobi7 {
+    float: none;    /* Mobi 7 doesn’t support float */
+    margin: floor(@base-margin) 0;
+    text-align: center;
+  }
 }
 
 .float-right {
   float: right;
   margin: 0 0 0 1.5%;
+
+  @media @mobi7 {
+    float: none;
+    margin: floor(@base-margin) 0;
+    text-align: center;
+  }
 }

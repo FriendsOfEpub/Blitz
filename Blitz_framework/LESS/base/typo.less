@@ -16,19 +16,47 @@ h1, h2, h3, h4, h5, h6, dt, hr {
 }
 
 h1 {
-    .rhythm(3, 0, 2);
+  .rhythm(3, 0, 2);
+
+  @media @kf8 {
+    line-height: 1.2;     /* Minimum value Kindle supports */
+  }
+
+  @media @mobi7 {
+    font-size: xx-large;    /* Keywords offer more precision for mobi 7*/
+    margin: 0 0 3em 0;      /* mobi7 doesn’t support decimal values */
+  }
 }
 
 h2 {
-    .rhythm(2, 2, 1);
+  .rhythm(2, 2, 1);
+
+  @media @kf8 {
+    line-height: 1.2;     /* Minimum value Kindle supports */
+  }
+
+  @media @mobi7 {
+    font-size: x-large;
+    margin: 2em 0 1em 0;
+  }
 }
 
 h3 {
-    .rhythm(1, 1, 1);
+  .rhythm(1, 1, 1);
+
+  @media @mobi7 {
+    font-size: large;
+    margin: 1em 0;
+  }
 }
 
 h4 {
-    .rhythm(0, 1, 0); 
+  .rhythm(0, 1, 0);
+
+  @media @mobi7 {
+    font-size: medium;
+    margin: 1em 0 0 0;
+  }
 }
 
 h5 {
@@ -46,10 +74,18 @@ p {
 .footnote {
   .fs-s;
   .no-indent;
+
+  @media @mobi7 {
+    font-size: medium;
+  }
 }
 
 blockquote {
-    margin: @base-margin @step;
+  margin: @base-margin @step;
+
+  @media @mobi7 {
+    margin: floor(@base-margin) @step;
+  }
 }
 
 blockquote p {
@@ -112,6 +148,10 @@ ins {
 
 small {
   font-size: 0.8125em;
+
+  @media @mobi7 {
+    font-size: small;
+  }
 }
 
 /* Styling is improved to prevent sub from affecting line-height */
@@ -120,6 +160,10 @@ sub {
   line-height: 1.2;
   vertical-align: sub;        /* Fallback */
   vertical-align: -20%;
+
+  @media @mobi7 {
+    font-size: x-small;
+  }
 }
 
 /* Styling is improved to prevent sup from affecting line-height */
@@ -128,4 +172,8 @@ sup {
   line-height: 1.2;
   vertical-align: super;      /* Fallback */
   vertical-align: 33%;
+
+  @media @mobi7 {
+    font-size: x-small;
+  }
 }

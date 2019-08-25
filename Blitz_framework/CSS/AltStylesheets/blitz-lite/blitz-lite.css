@@ -164,11 +164,35 @@ hr {
   page-break-after: avoid;
   break-after: avoid
 }
+@media amzn-kf8 {
+  dt,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr {
+    page-break-inside: auto;
+    break-inside: auto
+  }
+}
 h1 {
   font-size: 1.4375em;
   line-height: 1.04347826;
   margin-top: 0;
   margin-bottom: 2.08695652em
+}
+@media amzn-kf8 {
+  h1 {
+    line-height: 1.2
+  }
+}
+@media amzn-mobi {
+  h1 {
+    font-size: xx-large;
+    margin: 0 0 3em 0
+  }
 }
 h2 {
   font-size: 1.3125em;
@@ -176,17 +200,40 @@ h2 {
   margin-top: 2.28571429em;
   margin-bottom: 1.14285714em
 }
+@media amzn-kf8 {
+  h2 {
+    line-height: 1.2
+  }
+}
+@media amzn-mobi {
+  h2 {
+    font-size: x-large;
+    margin: 2em 0 1em 0
+  }
+}
 h3 {
   font-size: 1.125em;
   line-height: 1.33333333;
   margin-top: 1.33333333em;
   margin-bottom: 1.33333333em
 }
+@media amzn-mobi {
+  h3 {
+    font-size: large;
+    margin: 1em 0
+  }
+}
 h4 {
   font-size: 1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0
+}
+@media amzn-mobi {
+  h4 {
+    font-size: medium;
+    margin: 1em 0 0 0
+  }
 }
 p {
   text-indent: 1em
@@ -196,8 +243,18 @@ p {
   line-height: 1.6;
   text-indent: 0
 }
+@media amzn-mobi {
+  .footnote {
+    font-size: medium
+  }
+}
 blockquote {
   margin: 1.5em 5%
+}
+@media amzn-mobi {
+  blockquote {
+    margin: 1em 5%
+  }
 }
 blockquote p {
   text-indent: 0;
@@ -253,11 +310,21 @@ mark {
 small {
   font-size: .8125em
 }
+@media amzn-mobi {
+  small {
+    font-size: small
+  }
+}
 sub {
   font-size: 75%;
   line-height: 1.2;
   vertical-align: sub;
   vertical-align: -20%
+}
+@media amzn-mobi {
+  sub {
+    font-size: x-small
+  }
 }
 sup {
   font-size: 75%;
@@ -265,10 +332,21 @@ sup {
   vertical-align: super;
   vertical-align: 33%
 }
+@media amzn-mobi {
+  sup {
+    font-size: x-small
+  }
+}
 figure {
   page-break-inside: avoid;
   break-inside: avoid;
   margin: 1.5em 0
+}
+@media amzn-kf8 {
+  figure {
+    page-break-inside: auto;
+    break-inside: auto
+  }
 }
 .caption,
 figcaption {

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks      
-    Version 1.2.4 by Jiminy Panoz                      
-    Codename: Silicone on Sapphire                            
+    Version 1.3.0 by Jiminy Panoz                      
+    Codename: The Street Parade                           
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -203,11 +203,39 @@ hr {
   page-break-after: avoid;
   break-after: avoid;
 }
+@media amzn-kf8 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  dt,
+  hr {
+    page-break-inside: auto;
+    break-inside: auto;
+    /* Fix blank bug because of page-break-inside: avoid… */
+  }
+}
 h1 {
   font-size: 1.4375em;
   line-height: 1.04347826;
   margin-top: 0em;
   margin-bottom: 2.08695652em;
+}
+@media amzn-kf8 {
+  h1 {
+    line-height: 1.2;
+    /* Minimum value Kindle supports */
+  }
+}
+@media amzn-mobi {
+  h1 {
+    font-size: xx-large;
+    /* Keywords offer more precision for mobi 7*/
+    margin: 0 0 3em 0;
+    /* mobi7 doesn’t support decimal values */
+  }
 }
 h2 {
   font-size: 1.3125em;
@@ -215,17 +243,41 @@ h2 {
   margin-top: 2.28571429em;
   margin-bottom: 1.14285714em;
 }
+@media amzn-kf8 {
+  h2 {
+    line-height: 1.2;
+    /* Minimum value Kindle supports */
+  }
+}
+@media amzn-mobi {
+  h2 {
+    font-size: x-large;
+    margin: 2em 0 1em 0;
+  }
+}
 h3 {
   font-size: 1.125em;
   line-height: 1.33333333;
   margin-top: 1.33333333em;
   margin-bottom: 1.33333333em;
 }
+@media amzn-mobi {
+  h3 {
+    font-size: large;
+    margin: 1em 0;
+  }
+}
 h4 {
   font-size: 1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0em;
+}
+@media amzn-mobi {
+  h4 {
+    font-size: medium;
+    margin: 1em 0 0 0;
+  }
 }
 h5 {
   /* Styles */
@@ -241,8 +293,18 @@ p {
   line-height: 1.6;
   text-indent: 0;
 }
+@media amzn-mobi {
+  .footnote {
+    font-size: medium;
+  }
+}
 blockquote {
   margin: 1.5em 5%;
+}
+@media amzn-mobi {
+  blockquote {
+    margin: 1em 5%;
+  }
 }
 blockquote p {
   text-indent: 0;
@@ -312,6 +374,11 @@ ins {
 small {
   font-size: 0.8125em;
 }
+@media amzn-mobi {
+  small {
+    font-size: small;
+  }
+}
 /* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
@@ -319,6 +386,11 @@ sub {
   vertical-align: sub;
   /* Fallback */
   vertical-align: -20%;
+}
+@media amzn-mobi {
+  sub {
+    font-size: x-small;
+  }
 }
 /* Styling is improved to prevent sup from affecting line-height */
 sup {
@@ -328,11 +400,23 @@ sup {
   /* Fallback */
   vertical-align: 33%;
 }
+@media amzn-mobi {
+  sup {
+    font-size: x-small;
+  }
+}
 /* FIGURES + IMAGES  */
 figure {
   page-break-inside: avoid;
   break-inside: avoid;
   margin: 1.5em 0;
+}
+@media amzn-kf8 {
+  figure {
+    page-break-inside: auto;
+    break-inside: auto;
+    /* Fix blank bug because of page-break-inside: avoid… */
+  }
 }
 figcaption,
 .caption {
@@ -376,6 +460,12 @@ ol {
   margin: 1.5em 0;
   padding-left: 5%;
 }
+@media amzn-mobi {
+  ul,
+  ol {
+    margin: 1em 0;
+  }
+}
 ul {
   list-style-type: disc;
   list-style-position: outside;
@@ -394,9 +484,19 @@ ol ol {
 dl {
   margin: 1.5em 0 1.5em 5%;
 }
+@media amzn-mobi {
+  dl {
+    margin: 1em 5%;
+  }
+}
 dt {
   margin: 1.5em 0 0 0;
   font-weight: bold;
+}
+@media amzn-mobi {
+  dt {
+    margin-top: 1em;
+  }
 }
 dd {
   /* Styles */
@@ -417,6 +517,11 @@ hr {
   /* currentColor = color of text (getting around night mode) */
   opacity: 0.5;
   /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
+}
+@media amzn-mobi {
+  hr {
+    margin: 1em 0;
+  }
 }
 /* Blank-line context change */
 hr.transition {
@@ -457,6 +562,11 @@ table {
   /* Note: legacy RMSDK sets auto to 0, which is permitted in a footnote of the EPUB2 specs */
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums;
+}
+@media amzn-mobi {
+  table {
+    margin: 1em 0;
+  }
 }
 caption {
   caption-side: top;
@@ -499,10 +609,15 @@ pre {
   margin: 1.5em 0 1.5em 5%;
   word-wrap: break-word;
   white-space: pre-wrap;
-  -ms-tab-size: 3;
-  -moz-tab-size: 3;
-  -webkit-tab-size: 3;
-  tab-size: 3;
+  -ms-tab-size: 2;
+  -moz-tab-size: 2;
+  -webkit-tab-size: 2;
+  tab-size: 2;
+}
+@media amzn-mobi {
+  pre {
+    margin: 1em 0;
+  }
 }
 code,
 kbd,
@@ -582,6 +697,13 @@ svg {
 }
 .w-80 {
   width: 80%;
+}
+@media amzn-kf8 {
+  .w-80 {
+    width: 78%;
+    /* Because Kindle developers… */
+    margin: 1.5em 11%;
+  }
 }
 .w-70 {
   width: 70%;
@@ -679,9 +801,24 @@ render page on eInk devices)                                    */
   float: left;
   margin: 0 1.5% 0 0;
 }
+@media amzn-mobi {
+  .float-left {
+    float: none;
+    /* Mobi 7 doesn’t support float */
+    margin: 1em 0;
+    text-align: center;
+  }
+}
 .float-right {
   float: right;
   margin: 0 0 0 1.5%;
+}
+@media amzn-mobi {
+  .float-right {
+    float: none;
+    margin: 1em 0;
+    text-align: center;
+  }
 }
 /* UTILITIES */
 /* Display */
@@ -740,32 +877,82 @@ render page on eInk devices)                                    */
 .margin-top-s {
   margin-top: 0.75em;
 }
+@media amzn-mobi {
+  .margin-top-s {
+    margin-top: 1em;
+  }
+}
 .margin-top-m {
   margin-top: 1.5em;
+}
+@media amzn-mobi {
+  .margin-top-m {
+    margin-top: 2em;
+  }
 }
 .margin-top-l {
   margin-top: 3em;
 }
+@media amzn-mobi {
+  .margin-top-l {
+    margin-top: 3em;
+  }
+}
 .margin-top-xl {
   margin-top: 4.5em;
+}
+@media amzn-mobi {
+  .margin-top-xl {
+    margin-top: 5em;
+  }
 }
 .margin-top-xxl {
   margin-top: 6em;
 }
+@media amzn-mobi {
+  .margin-top-xxl {
+    margin-top: 6em;
+  }
+}
 .margin-bottom-s {
   margin-bottom: 0.75em;
+}
+@media amzn-mobi {
+  .margin-bottom-s {
+    margin-bottom: 1em;
+  }
 }
 .margin-bottom-m {
   margin-bottom: 1.5em;
 }
+@media amzn-mobi {
+  .margin-bottom-m {
+    margin-bottom: 2em;
+  }
+}
 .margin-bottom-l {
   margin-bottom: 3em;
+}
+@media amzn-mobi {
+  .margin-bottom-l {
+    margin-bottom: 3em;
+  }
 }
 .margin-bottom-xl {
   margin-bottom: 4.5em;
 }
+@media amzn-mobi {
+  .margin-bottom-xl {
+    margin-bottom: 5em;
+  }
+}
 .margin-bottom-xxl {
   margin-bottom: 6em;
+}
+@media amzn-mobi {
+  .margin-bottom-xxl {
+    margin-bottom: 6em;
+  }
 }
 .margin-left-s {
   margin-left: 2.5%;
@@ -884,6 +1071,12 @@ render page on eInk devices)                                    */
   margin-left: 5%;
   /* Since em will reflow with font-size user setting, we’re using % */
 }
+@media amzn-mobi {
+  .hanging-indent {
+    margin-left: 0;
+    /* hack for negative text-indent */
+  }
+}
 /* Font sizes */
 .fs-xxs {
   font-size: 0.8125em;
@@ -942,6 +1135,11 @@ render page on eInk devices)                                    */
   letter-spacing: 0.0625em;
   /* The two previous props are not supported in legacy RMSDK */
 }
+@media amzn-mobi {
+  .caps-to-small-caps {
+    font-size: small;
+  }
+}
 .underline {
   text-decoration: underline;
 }
@@ -979,5 +1177,12 @@ render page on eInk devices)                                    */
 .no-break-inside {
   page-break-inside: avoid;
   break-inside: avoid;
+}
+@media amzn-kf8 {
+  .no-break-inside {
+    page-break-inside: auto;
+    break-inside: auto;
+    /* Fix blank bug because of page-break-inside: avoid… */
+  }
 }
 /* End CSS */

@@ -32,4 +32,8 @@
 .no-break-inside {
   page-break-inside: avoid;
   break-inside: avoid;
+
+  @media @kf8 {
+    .break-inside;    /* Fix blank bug because of page-break-inside: avoid… */
+  }
 }
