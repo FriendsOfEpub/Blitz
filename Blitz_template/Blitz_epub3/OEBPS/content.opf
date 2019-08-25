@@ -217,7 +217,6 @@
 		<item href="toc.ncx" id="ncx" media-type="application/x-dtbncx+xml" />
 		<item href="Text/nav.xhtml" id="navid" media-type="application/xhtml+xml" properties="nav" />
 		<item href="Styles/blitz.css" id="blitz.css" media-type="text/css" />
-		<item href="Styles/blitz-kindle.css" id="blitz-kindle.css" media-type="text/css" />
 		<item href="Images/cover.png" id="cover.png" media-type="image/png" properties="cover-image" />
 		<item href="Images/asterism.svg" id="asterism.svg" media-type="image/svg+xml" />
 	</manifest>

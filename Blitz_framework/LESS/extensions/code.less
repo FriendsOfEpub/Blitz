@@ -5,7 +5,11 @@ pre {
   margin: @base-margin 0 @base-margin @step;
   word-wrap: break-word;
   white-space: pre-wrap;
-  .override-tab-size(3); 
+  .override-tab-size(2); 
+
+  @media @mobi7 {
+    margin: floor(@base-margin) 0;
+  }
 }
 
 code, kbd, samp, var {

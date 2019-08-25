@@ -58,8 +58,6 @@ If you want to compile only one stylesheet you can run:
 
 All those sub-builds will generate uncommented/minified files as well.
 
-The Kindle stylesheet is not run automatically when building all. To generate this stylesheet, use `npm run build:kindle` – it will update the template’s unzipped src as well.
-
 Finally, to update the packaged EPUB file then use `npm run make`.
 
 ### Compile LESS Sources Without npm
@@ -82,22 +80,6 @@ lessc Blitz_framework/LESS/blitz-lite.less Blitz_framework/CSS/AltStylesheets/bl
 
 ```
 lessc Blitz_framework/LESS/blitz-reset.less Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css
-```
-
-#### For Kindle
-
-Either uncomment `@import 'blitz-kindle';` in `blitz.less` or, if you want to compile a specific kindle stylesheet:
-
-```
-lessc Blitz_framework/LESS/plugins/blitz-kindle.less Blitz_framework/CSS/blitz-kindle.css
-```
-
-#### For Media Queries
-
-You shouldn’t output them in `blitz.css` as legacy RMSDK (ePub 2) will ignore the entire stylesheet if there are media queries in it—excepted `amzn` queries.
-
-```
-lessc Blitz_framework/LESS/plugins/blitz-mq.less Blitz_framework/CSS/blitz-mq.css
 ```
 
 ## Related Blitz Tools
@@ -176,6 +158,11 @@ When checking for support, you can simply click “Apply Filters” in order to 
 - Android 4.4.4 is still used by some apps on Android while others are using the more modern WebView (2 last Android versions)
 
 ## Log
+
+### 1.3.0
+
+- Moved Kindle Media Queries and styles into core
+- Removed other MQs
 
 ### 1.2.4
 

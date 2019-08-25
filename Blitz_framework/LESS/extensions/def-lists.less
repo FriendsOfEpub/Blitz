@@ -2,12 +2,20 @@
 
 
 dl {
-    margin: @base-margin 0 @base-margin @step;
+  margin: @base-margin 0 @base-margin @step;
+
+  @media @mobi7 {
+    margin: floor(@base-margin) @step;
+  }
 }
 
 dt {
   margin: @base-margin 0 0 0;   
   font-weight: bold;
+
+  @media @mobi7 {
+    margin-top: floor(@base-margin);
+  }
 }
 
 dd {

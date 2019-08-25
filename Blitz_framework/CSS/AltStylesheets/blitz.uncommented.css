@@ -166,11 +166,35 @@ hr {
   page-break-after: avoid;
   break-after: avoid
 }
+@media amzn-kf8 {
+  dt,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr {
+    page-break-inside: auto;
+    break-inside: auto
+  }
+}
 h1 {
   font-size: 1.4375em;
   line-height: 1.04347826;
   margin-top: 0;
   margin-bottom: 2.08695652em
+}
+@media amzn-kf8 {
+  h1 {
+    line-height: 1.2
+  }
+}
+@media amzn-mobi {
+  h1 {
+    font-size: xx-large;
+    margin: 0 0 3em 0
+  }
 }
 h2 {
   font-size: 1.3125em;
@@ -178,17 +202,40 @@ h2 {
   margin-top: 2.28571429em;
   margin-bottom: 1.14285714em
 }
+@media amzn-kf8 {
+  h2 {
+    line-height: 1.2
+  }
+}
+@media amzn-mobi {
+  h2 {
+    font-size: x-large;
+    margin: 2em 0 1em 0
+  }
+}
 h3 {
   font-size: 1.125em;
   line-height: 1.33333333;
   margin-top: 1.33333333em;
   margin-bottom: 1.33333333em
 }
+@media amzn-mobi {
+  h3 {
+    font-size: large;
+    margin: 1em 0
+  }
+}
 h4 {
   font-size: 1em;
   line-height: 1.5;
   margin-top: 1.5em;
   margin-bottom: 0
+}
+@media amzn-mobi {
+  h4 {
+    font-size: medium;
+    margin: 1em 0 0 0
+  }
 }
 p {
   text-indent: 1em
@@ -198,8 +245,18 @@ p {
   line-height: 1.6;
   text-indent: 0
 }
+@media amzn-mobi {
+  .footnote {
+    font-size: medium
+  }
+}
 blockquote {
   margin: 1.5em 5%
+}
+@media amzn-mobi {
+  blockquote {
+    margin: 1em 5%
+  }
 }
 blockquote p {
   text-indent: 0;
@@ -255,11 +312,21 @@ mark {
 small {
   font-size: .8125em
 }
+@media amzn-mobi {
+  small {
+    font-size: small
+  }
+}
 sub {
   font-size: 75%;
   line-height: 1.2;
   vertical-align: sub;
   vertical-align: -20%
+}
+@media amzn-mobi {
+  sub {
+    font-size: x-small
+  }
 }
 sup {
   font-size: 75%;
@@ -267,10 +334,21 @@ sup {
   vertical-align: super;
   vertical-align: 33%
 }
+@media amzn-mobi {
+  sup {
+    font-size: x-small
+  }
+}
 figure {
   page-break-inside: avoid;
   break-inside: avoid;
   margin: 1.5em 0
+}
+@media amzn-kf8 {
+  figure {
+    page-break-inside: auto;
+    break-inside: auto
+  }
 }
 .caption,
 figcaption {
@@ -305,6 +383,12 @@ ul {
   margin: 1.5em 0;
   padding-left: 5%
 }
+@media amzn-mobi {
+  ol,
+  ul {
+    margin: 1em 0
+  }
+}
 ul {
   list-style-type: disc;
   list-style-position: outside
@@ -322,9 +406,19 @@ ol ol {
 dl {
   margin: 1.5em 0 1.5em 5%
 }
+@media amzn-mobi {
+  dl {
+    margin: 1em 5%
+  }
+}
 dt {
   margin: 1.5em 0 0 0;
   font-weight: 700
+}
+@media amzn-mobi {
+  dt {
+    margin-top: 1em
+  }
 }
 dt > dfn {
   font-style: normal;
@@ -339,6 +433,11 @@ hr {
   border: none;
   border-top: .125em solid currentColor;
   opacity: .5
+}
+@media amzn-mobi {
+  hr {
+    margin: 1em 0
+  }
 }
 hr.transition {
   width: 100%;
@@ -369,6 +468,11 @@ table {
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums
 }
+@media amzn-mobi {
+  table {
+    margin: 1em 0
+  }
+}
 caption {
   caption-side: top;
   text-align: center;
@@ -394,10 +498,15 @@ pre {
   margin: 1.5em 0 1.5em 5%;
   word-wrap: break-word;
   white-space: pre-wrap;
-  -ms-tab-size: 3;
-  -moz-tab-size: 3;
-  -webkit-tab-size: 3;
-  tab-size: 3
+  -ms-tab-size: 2;
+  -moz-tab-size: 2;
+  -webkit-tab-size: 2;
+  tab-size: 2
+}
+@media amzn-mobi {
+  pre {
+    margin: 1em 0
+  }
 }
 code,
 kbd,
@@ -464,6 +573,12 @@ svg {
 }
 .w-80 {
   width: 80%
+}
+@media amzn-kf8 {
+  .w-80 {
+    width: 78%;
+    margin: 1.5em 11%
+  }
 }
 .w-70 {
   width: 70%
@@ -552,9 +667,23 @@ svg {
   float: left;
   margin: 0 1.5% 0 0
 }
+@media amzn-mobi {
+  .float-left {
+    float: none;
+    margin: 1em 0;
+    text-align: center
+  }
+}
 .float-right {
   float: right;
   margin: 0 0 0 1.5%
+}
+@media amzn-mobi {
+  .float-right {
+    float: none;
+    margin: 1em 0;
+    text-align: center
+  }
 }
 .block {
   display: block
@@ -596,32 +725,82 @@ svg {
 .margin-top-s {
   margin-top: .75em
 }
+@media amzn-mobi {
+  .margin-top-s {
+    margin-top: 1em
+  }
+}
 .margin-top-m {
   margin-top: 1.5em
+}
+@media amzn-mobi {
+  .margin-top-m {
+    margin-top: 2em
+  }
 }
 .margin-top-l {
   margin-top: 3em
 }
+@media amzn-mobi {
+  .margin-top-l {
+    margin-top: 3em
+  }
+}
 .margin-top-xl {
   margin-top: 4.5em
+}
+@media amzn-mobi {
+  .margin-top-xl {
+    margin-top: 5em
+  }
 }
 .margin-top-xxl {
   margin-top: 6em
 }
+@media amzn-mobi {
+  .margin-top-xxl {
+    margin-top: 6em
+  }
+}
 .margin-bottom-s {
   margin-bottom: .75em
+}
+@media amzn-mobi {
+  .margin-bottom-s {
+    margin-bottom: 1em
+  }
 }
 .margin-bottom-m {
   margin-bottom: 1.5em
 }
+@media amzn-mobi {
+  .margin-bottom-m {
+    margin-bottom: 2em
+  }
+}
 .margin-bottom-l {
   margin-bottom: 3em
+}
+@media amzn-mobi {
+  .margin-bottom-l {
+    margin-bottom: 3em
+  }
 }
 .margin-bottom-xl {
   margin-bottom: 4.5em
 }
+@media amzn-mobi {
+  .margin-bottom-xl {
+    margin-bottom: 5em
+  }
+}
 .margin-bottom-xxl {
   margin-bottom: 6em
+}
+@media amzn-mobi {
+  .margin-bottom-xxl {
+    margin-bottom: 6em
+  }
 }
 .margin-left-s {
   margin-left: 2.5%
@@ -721,6 +900,11 @@ svg {
   text-indent: -5%;
   margin-left: 5%
 }
+@media amzn-mobi {
+  .hanging-indent {
+    margin-left: 0
+  }
+}
 .fs-xxs {
   font-size: .8125em;
   line-height: 1.84615385
@@ -772,6 +956,11 @@ svg {
   font-variant: small-caps;
   letter-spacing: .0625em
 }
+@media amzn-mobi {
+  .caps-to-small-caps {
+    font-size: small
+  }
+}
 .underline {
   text-decoration: underline
 }
@@ -801,4 +990,10 @@ svg {
 .no-break-inside {
   page-break-inside: avoid;
   break-inside: avoid
+}
+@media amzn-kf8 {
+  .no-break-inside {
+    page-break-inside: auto;
+    break-inside: auto
+  }
 }
