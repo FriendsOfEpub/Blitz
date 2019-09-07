@@ -157,6 +157,52 @@ When checking for support, you can simply click “Apply Filters” in order to 
 - Safari on iOS is starting at iOS 9.3
 - Android 4.4.4 is still used by some apps on Android while others are using the more modern WebView (2 last Android versions)
 
+## Frequently Addressed Questions
+
+### Is This Project Still Active?
+
+Yes. 
+
+But we deemed Blitz feature-complete so it’s all about maintenance, there won’t be any new feature added to the framework.
+
+### Has Anyone Funded This Project?
+
+Nope. 
+
+It has grown organically out of the desire to learn CSS preprocessors, then improve at JavaScript and make Progressive Web Apps, etc. It just seemed that side projects sharing knowledge that would be useful to the ebook production community was the best way to achieve those goals.
+
+At some point, sponsoring was considered but quickly dismissed due to the relatively small size of the ebook production community: it was simply too much to ask.
+
+### Which Features Did Not Make It Into The Framework?
+
+Quite a lot, actually.
+
+- Building an online CSS generator in the form of a website where people would answer questions, and a stylesheet would be created based on those answers.
+- Presets for different genres of books.
+- Poor man’s Dev Tools.
+- A JavaScript library of interactive widgets.
+- Automated scripts to update ePub2 files to EPUB3, convert `epub:type` to DPUB ARIA, clean DTP outputs’ markup, etc. (would have required GUI since everyone is not comfortable with the command-line and npm).
+- A CanIUse-like service.
+- etc.
+
+But maybe *you* could successfully build a business out of that list…
+
+### Will There Be a Version 2?
+
+Probably not as we are not expecting any breaking change.
+
+A move from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
+
+### Why Was JS Abandonned?
+
+JavaScript has quite a bad reputation in publishing, especially as Kindle and eReaders relying on Adobe’s RMSDK don’t support it. So it was not worth pursuing JavaScript exploration despite [all the Research and Development that had gone into it](https://jaypanoz.github.io/ebookcraft2017).
+
+A library of custom elements almost happened after successful initial testing, but one careful review later, it was clear most authors wouldn’t even bother trying such a library. That wasn’t a hill to die on when most authors want Reading Systems to handle that out of the box.
+
+### How To Leverage The LESS Meta-Language?
+
+[Check this tutorial](https://friendsofepub.github.io/Blitz/documentation/tutorial.html).
+
 ## Log
 
 ### 1.3.0
