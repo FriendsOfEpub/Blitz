@@ -125,18 +125,55 @@
     <li>Kindle (mobi7 +&nbsp;KF8)</li>
   </ul>
 
-  <h3>Contribute</h3>
+  <h3>Frequently Addressed Questions</h3>
 
-  <p>Here is our current to-do&nbsp;list:</p>
+  <h4>Is This Project Still Active?</h4>
+
+  <p>Yes.</p>
+
+  <p>But we deemed Blitz feature-complete so it’s all about maintenance, there won’t be any new feature added to the framework.</p>
+
+  <h4>Has Anyone Funded This Project?</h4>
+
+  <p>Nope.</p>
+
+  <p>It has grown organically out of the desire to learn CSS preprocessors, then improve at JavaScript and make Progressive Web Apps, etc. It just seemed that side projects sharing knowledge that would be useful to the ebook production community was the best way to achieve those goals.</p>
+
+  <p>At some point, sponsoring was considered but quickly dismissed due to the relatively small size of the ebook production community: it was simply too much to ask.</p>
+
+  <h4>Which Features Did Not Make It Into The Framework?</h4>
+
+  <p>Quite a lot, actually.</p>
 
   <ul class="plus-content">
-    <li>Improve website and docs</li>
-    <li>Implement progressive enhancement into the meta-language (LESS&nbsp;CSS)</li>
-    <li>Build a test-case for Reading Systems</li>
-    <li>Provide specific configs for different genres (LESS&nbsp;CSS)</li>
-    <li>Build an online CSS generator leveraging the meta-language</li>
-    <li>Turn the “WillThatBeOverridden” repo into a CanIUse-like online&nbsp;reference</li>
+    <li>Building an online CSS generator in the form of a website where people would answer questions, and a stylesheet would be created based on those answers.</li>
+    <li>Presets for different genres of books.</li>
+    <li>Poor man’s Dev Tools.</li>
+    <li>A JavaScript library of interactive widgets.</li>
+    <li>Automated scripts to update ePub2 files to EPUB3, convert <code>epub:type</code> to DPUB ARIA, clean DTP outputs’ markup, etc. (would have required GUI since everyone is not comfortable with the command-line and npm).</li>
+    <li>A CanIUse-like service.</li>
+    <li>etc.</li>
   </ul>
+
+  <p>But maybe <em>you</em> could successfully build a business out of that list…</p>
+
+  <h4>Will There Be a Version 2?</h4>
+
+  <p>Probably not as we are not expecting any breaking change.</p>
+
+  <p>A move from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.</p>
+
+  <h4>Why Was JS Abandonned?</h4>
+
+  <p>JavaScript has quite a bad reputation in publishing, especially as Kindle and eReaders relying on Adobe’s RMSDK don’t support it. So it was not worth pursuing JavaScript exploration despite <a href="https://jaypanoz.github.io/ebookcraft2017">all the Research and Development that had gone into it</a>.</p>
+
+  <p>A library of custom elements almost happened after successful initial testing, but one careful review later, it was clear most authors wouldn’t even bother trying such a library. That wasn’t a hill to die on when most authors want Reading Systems to handle that out of the box.</p>
+
+  <h4>How To Leverage The LESS Meta-Language?</h4>
+
+  <p><a href="documentation/tutorial.html">Check this tutorial.</a></p>
+
+  <h4>How To Contribute?</h4>
   
   <p><a href="https://github.com/FriendsOfEpub/Blitz">Join us on Github</a> if you’re willing to&nbsp;help.</p>
 </div>

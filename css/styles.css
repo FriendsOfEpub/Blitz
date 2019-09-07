@@ -16,6 +16,7 @@ body {
 header,
 main,
 section,
+figure,
 footer {
   display: block;
 }
@@ -226,6 +227,14 @@ h2 {
   margin-top: 2em;
 }
 
+#more h4 {
+  margin-top: 3em;
+}
+
+#more h3 + h4 {
+  margin-top: 1.8em;
+}
+
 p {}
 
 .lead {
@@ -419,6 +428,17 @@ pre {
 
 code {
   font-family: "Andale Mono", Menlo, Consolas, monospace;
+}
+
+figure {
+  max-width: 100%;
+  margin: 18px 0;
+  margin: 1.8rem 0;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
 }
 
 @media screen and (max-width: 560px) {

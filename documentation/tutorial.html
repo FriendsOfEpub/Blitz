@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  <title>Blitz eBook Framework — Documentation</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <!-- Google -->
+  <meta name="theme-color" content="#DF0101">
+</head>
+<body>
+  <nav class="menu">
+    <ol>
+      <li><a href="#" title="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M9 7l.986-6L4 9h3l-1 6 6-8" /></svg></a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/">Home</a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/documentation/docs.html">Docs</a></li>
+      <li><a href="https://github.com/FriendsOfEpub/Blitz/releases/latest">Download</a></li>
+    </ol>
+  </nav>
+
+  <main class="docs">
+    <h1>The Blitz’ Introductory Tutorial</h1>
+
+    <section class="intro" id="doc-intro">
+      <div class="wrapper">
+        <p>The most useful part of Blitz is probably the <a href="https://github.com/FriendsOfEpub/Blitz/tree/master/Blitz_framework/LESS">LESS design system</a> and our goal today is to see how it indeed can be.</p>
+
+        <p>Now, you might not be familiar with LESS…. </p>
+
+        <p>So think of it as a design system you can use to create your stylesheets. You build with bricks, it’s like Lego. And it should be <strong>fun</strong>.</p>
+
+        <p>In this tutorial, we’ll see how to typeset the most common parts of a no-frills novel.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>How to edit and compile those files</h2>
+      </div>
+
+      <div class="wrapper">
+        <p><a href="http://lesscss.org">LESS can be seen as CSS on steroids</a>: it’s a bunch of text files you can open in your favorite editor (TextWrangler, Atom, Sublime Text, Notepad, etc.).</p>
+
+        <p>The Tricky part is actually compiling LESS to CSS since Reading Systems obviously don’t support LESS. You’ve got two options: </p>
+
+        <ol>
+          <li>install node.js, install the LESS package and run a command prompt (<a href="http://lesscss.org/#using-less">see Installation</a>);</li>
+          <li>use <a href="http://lesscss.org/usage/index.html#guis-for-less">dedicated apps</a> like Crunch or SimpLESS, or <a href="http://lesscss.org/usage/index.html#editors-and-plugins">install plugins</a> for you favorite text editor.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Customizing blitz.less</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>By default, Blitz outputs quite a lot of styles, which creates a <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/CSS/blitz.css">stylesheet with 1100+ lines of CSS</a>. Truth is you probably don’t need a lot of the styles in there so we’ll customize <code>blitz.less</code> a little bit.</p>
+
+        <pre><code>/* Begin CSS */
+
+// Reference &gt; won’t be output
+@import (reference) 'reference/hyphens';
+@import (reference) 'reference/overrides';
+@import (reference) 'reference/mixins';
+@import (reference) 'reference/enhancements';
+
+// We import utils as reference since we 
+// don’t want to output their contents in CSS
+@import (reference) 'utils/containers';
+@import (reference) 'utils/utilities';
+@import (reference) 'utils/break';
+
+// That's the stuff running Blitz, its engine
+@import 'core/variables';
+@import 'core/rhythm';
+@import 'core/features';
+@import 'core/kindle-queries';
+
+// Base is the foundation = styles you'll use in every book
+@import 'base/reset';
+@import 'base/page';
+@import 'base/typo';
+@import 'base/image';
+
+// We get rid of a lot of optional extensions since we 
+// don’t need them. We only keep rules because 
+// we wan’t to use the asterism.
+
+@import 'extensions/rules';
+
+/* End CSS */
+</code></pre>
+
+        <p>If you take a look at the <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/blitz.less">default file</a>, you can see we got rid of the extensions we don’t need (tables, code, lists, etc.) and moved utilities to reference. </p>
+
+        <p>When importing a file as a reference, its contents won’t actually be output in your stylesheet but will be available in LESS.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Set your variables</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>Variables are like settings, they are used all across the framework. So, basically, if you customize those values, everything will be dynamically restyled based on your settings.</p>
+
+        <p>Those settings are to be found <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/core/variables.less">in the core folder</a>.</p>
+
+        <pre><code>// ------------- //
+// Configuration //
+// ------------- //
+
+// Typo
+@body-font-size : 16;           // PX | default = 16 //
+@body-line-height : 1.5;        // Ratio //
+
+// Rhythm
+@major-third: 1.25;
+@minor-third: 1.2;
+@major-second: 1.125;
+@minor-second: 1.067;
+@unison: 1;
+@scale-factor : @major-second;
+
+// Horizontal grid
+@step : 3.75%;                 // customized
+
+// Colors
+@primary-color : inherit;
+@secondary-color : crimson;    // customized
+
+// Variables below (decorations and lists) we 
+// don’t need to customize as they won’t be used
+</code></pre>
+
+        <p>As regards the step variable, percentage won’t reflow with font size but you’re free to use the unit you want. Bear in mind <code>em</code> will reflow and <code>px</code> can be tricky.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Reset (base)</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>No need to customize this, except if you want to remove selectors you know won’t be used in your eBook.</p>
+
+        <p>To sum things up, the reset serves as a sanitizer: it forces CSS defaults for all HTML elements and we’ll build our custom stylesheet on top of it—BTW, if you just want to use our reset, <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/CSS/AltStylesheets/blitz-reset/blitz-reset.css">we’ve got you covered</a>.</p>
+
+        <p>By using this approach, we’re also trying to encourage you to not repeat yourself since you only need to change some values and add extra declarations.</p>
+
+        <p>Here are the defaults.</p>
+
+        <pre><code>block-elements {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: inherit;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+html5-block-elements {
+  display: block;
+}
+
+headings {
+  text-align: left;
+}
+
+epub3-toc-list {
+  list-style: none !important;
+}
+
+epub3-landmarks-and-page-lists {
+  display: none;
+}
+
+inline-elements {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-style: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-decoration: none;
+}
+</code></pre>
+
+        <p>As you can see, it’s now just about changing and adding some declarations for some specific elements.</p>
+
+        <p>For instance, chances are you’ll just need to change text-indent or margins for paragraphs.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Page (base)</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>Think of those declarations as your global page layout.</p>
+
+        <p>Again, no need to customize this. But since we are rebels, we’ll do it anyway.</p>
+
+        <pre><code>@page {
+  margin: 24px 3.75%; /* more consistent with our settings */
+  padding: 0;
+}
+
+body {
+  font-size: ((@body-font-size / 16) * 100) + 0%;
+  line-height: @body-line-height;
+  margin: 0;
+  padding: 0;
+  widows: 2;
+  orphans: 2;
+}
+</code></pre>
+
+        <p>We’ve changed the margins for the @page selector, which is used in legacy RMSDK for example. </p>
+
+        <p>Those margins are now more consistent with the custom settings so vertical margins are equal to the <code>line-height</code> and horizontal margins are equal to our customized step.</p>
+
+        <p>As you can see, we’re making use of the <code>font-size</code> and <code>line-height</code> variables for <code>body</code>. The idea is setting those two properties in body so that it applies to the whole document. Therefore, all elements in <code>body</code> will inherit.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Typography (base)</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>This is the file we’ll customize to typeset our novel.</p>
+
+        <p><a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/base/typo.less">By default</a>, we’ve typeset a lot of common elements but you could start from scratch. This is the file where <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/blitz-API.md">“Blitz as an API”</a> makes sense as we’ll use mixins (building blocks) to build a stylesheet.</p>
+
+        <p>Let’s start from scratch.</p>
+
+        <h3>Hyphens</h3>
+
+        <p>First, we’ll disable hyphens for selected elements. </p>
+
+        <pre><code>h1,
+.copyrights {
+  .disable-hyphens;
+}
+</code></pre>
+
+        <p>It takes one mixin to output the following CSS:</p>
+
+        <pre><code>h1,
+.copyrights {
+  adobe-hyphenate: none;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none; 
+}
+</code></pre>
+
+        <p>Here <code>.disable-hyphens</code> might well be a lot more understandable than <code>adobe-hyphenate</code>, a proprietary property for the legacy RMSDK, which you might not know since it’s undocumented.</p>
+
+        <h3>Typographic scale</h3>
+
+        <pre><code>h1 {
+  .rhythm(3, 2, 2);
+}
+
+/* p */
+.copyrights {
+  .fs-s;
+}
+</code></pre>
+
+        <p>We’re using different mixins there. Let’s clarify this a little bit. </p>
+
+        <pre><code>.rhythm(3, 2, 2);
+.rhythm(scale-step, number of lines for margin-top, number of lines for margin-bottom)
+</code></pre>
+
+        <p>For <code>h1</code>, we declare the <code>font-size</code> should be 3 steps above in the typographic scale, <code>margin-top</code> and <code>-bottom</code> should be 2 lines each.</p>
+
+        <p>Now, this is a parametric mixin: everything will be computed based on the <code>font-size</code> of the element, including <code>line-height</code>.</p>
+
+        <p>Rhythm is part of the Blitz engine, you can use it to enforce vertical rhythm. If you don’t want to output margins, there’s a another mixin you can use: </p>
+
+        <pre><code>.fs-[xs|s|m|l|xl|xxl|jumbo]
+</code></pre>
+
+        <p>The fs mixin only computes <code>font-size</code> and <code>line-height</code>.</p>
+
+        <pre><code>/* p */
+.copyrights {
+  .fs-s;
+}
+</code></pre>
+
+        <p>Here, we’re creating a class for copyright paragraphs. The mixin lives in the utilities file and it tells to output a <code>font-size</code> one step below in the typographic scale (and will compute the <code>line-height</code> to keep vertical rhythm).</p>
+
+        <p>Of course, using those mixins is up to you. You could add your own variables in the settings and use them <em>in lieu</em> of our rhythm mixins—that’s the power of fork.</p>
+
+        <h3>Typesetting</h3>
+
+        <p>That’s a good start but there’s a lot more to style.</p>
+
+        <p>Let’s say we want something with a modern twist.</p>
+
+        <pre><code>h1 {
+  .rhythm(3, 2, 2);
+  .align-right;
+  .humanist;
+  .bold;
+}
+
+p {
+  .indent;
+}
+
+/* p */
+.first-para {
+  .no-indent;
+}
+
+/* p */
+.copyrights {
+  .fs-s;
+  .no-indent;
+  .align-left;
+  .humanist;
+}
+</code></pre>
+
+        <p>To sum things up:</p>
+
+        <ol>
+          <li>we’ve aligned <code>h1</code> on the right—which removes the indent, same for <code>.align-center</code>—, picked a humanist sans-serif typeface and applied bold;</li>
+          <li>we’ve indented paragraphs (using our step setting in variables);</li>
+          <li>we’ve created another class for the first paragraph in each chapter and removed the indent;</li>
+          <li>we’ve removed the indent for copyright paragraphs, aligned them left and picked a humanist typeface.</li>
+        </ol>
+
+        <p>And it took zero line of CSS to achieve that. We’ve basically described how we wanted those elements using Blitz’ mixins.</p>
+
+        <p>And we’re finished styling our block elements.</p>
+
+        <h3>Microtypography</h3>
+
+        <p>Let’s take care of inline elements now. We need italics, superscripts and links.</p>
+
+        <p>Let’s start with italics.</p>
+
+        <pre><code>i, cite, em {
+  .italic;
+}
+
+/* Get back to normal when italic nested in italic */
+i i, i cite, i em,
+cite i, cite cite, cite em,
+em i, em cite, em em {
+  .override-italic;
+}
+</code></pre>
+
+        <p>Those are defaults in <code>typo.less</code>, but we removed <code>dfn</code> as we don’t need it. As you can see, we even took care of italics nested in italics (<code>.override-italic</code> = <code>font-style: normal</code>).</p>
+
+        <p>Let’s move to superscripts, whose default styling is notorious for breaking <code>line-height</code>…</p>
+
+        <pre><code>sup {
+  font-size: 75%;
+  line-height: 1.2;
+  vertical-align: super; /* Fallback */
+  vertical-align: 33%;
+}
+</code></pre>
+
+        <p>Pure CSS there. It shows you don’t need to use mixins for styling elements if you don’t feel comfortable using them.</p>
+
+        <p>And finally, links.</p>
+
+        <pre><code>a {
+  .bold;
+  .small-caps;
+  text-decoration: underline;
+  color: @secondary-color;
+}
+</code></pre>
+
+        <p>To sum up:</p>
+
+        <ol>
+          <li>we’ve made links bold;</li>
+          <li>we’ve made them small-caps for Reading Systems which support the <code>font-variant</code> property;</li>
+          <li>we’ve underlined them (reset removed that);</li>
+          <li>we’ve applied the crimson color using the secondary-color variable we set at the beginning.</li>
+        </ol>
+
+        <h3>Recap</h3>
+
+        <p>Our <code>typo.less</code> file should look like this.</p>
+
+        <pre><code>h1,
+.copyrights {
+  .disable-hyphens;
+}
+
+h1 {
+  .rhythm(3, 2, 2);
+  .align-right;
+  .humanist;
+  .bold;
+}
+
+p {
+  .indent;
+}
+
+/* p */
+.first-para {
+  .no-indent;
+}
+
+/* p */
+.copyrights {
+  .fs-s;
+  .no-indent;
+  .align-left;
+  .humanist;
+}
+
+i, cite, em {
+  .italic;
+}
+
+/* Get back to normal when italic nested in italic */
+i i, i cite, i em,
+cite i, cite cite, cite em,
+em i, em cite, em em {
+  .override-italic;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 1.2;
+  vertical-align: super; /* Fallback */
+  vertical-align: 33%;
+}
+
+a {
+  .bold;
+  .small-caps;
+  text-decoration: underline;
+  color: @secondary-color;
+}
+</code></pre>
+
+        <p>Once you’re getting used to Blitz’ mixins, things are likely to go more smoothly and you’ll then discover or design <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/reference/mixins.less">more powerful mixins</a> to achieve complex stuff.</p>
+
+        <p>Yes, it does feel like we’re sometimes “mixinifying” the CSS spec but, the idea of the Blitz’ meta-language is to abstract CSS declarations you’ll use over and over again, bringing consistency to your stylesheets.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Images (base)</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>Let’s imagine we need styles for a cover. We have to customize <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/base/image.less"><code>image.less</code></a> a little bit.</p>
+
+        <pre><code>.cover {
+  .h-100;
+  .align-center;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+@supports (height: 99vh) {
+  img {
+    height: 99vh;
+  }
+}
+</code></pre>
+
+        <p>We’ve removed a lot of stuff in this file but don’t worry, we just got rid off what we didn’t need.</p>
+
+        <p>To sum up:</p>
+
+        <ol>
+          <li>we’ve created a wrap, <code>.cover</code>, and declared an <code>height</code> using the mixin <code>.h-100</code> (to be found in containers);</li>
+          <li>we’ve centered the image inside this wrap (<code>.align-center</code>);</li>
+          <li>we’ve declared dimensions for the image;</li>
+          <li>we’ve added <code>object-fit: contain</code> to make sure the image keeps its aspect ratio on Reading Systems which support it;</li>
+          <li>we’ve made a feature query (<code>@supports</code>) to declare an <code>height</code> in <code>vh</code> (viewport height) for Reading Systems which support this unit. This declaration will override both the image’s (in <code>%</code>) and the wrap’s.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Rules (extensions)</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>We’re almost there. We now need to take care of the <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/LESS/extensions/rules.less">rules extension</a> since we’ll use it for context changes (blank-line + asterism).</p>
+
+        <pre><code>/* Blank-line context change */
+hr.transition {
+  width: 100%;
+  @computed-margin: (((@body-font-size * @body-line-height) - (@border-width * 2)) / @body-font-size);
+  margin: ((@computed-margin / 2) + 0em) 0;
+  height: (((@border-width * 2) / @body-font-size) + 0em);
+  border: none;
+  background: none;
+}
+
+/* Asterism */
+hr.asterism {
+  width: auto;
+  border: none;
+  margin: @base-margin 0;
+  height: @base-margin;
+  text-indent: 0;
+  text-align: center;
+  background: transparent url(&quot;asterism.svg&quot;) no-repeat center;
+  background-size: 2.5em 1.25em;
+  overflow: hidden;
+  opacity: 0.7;
+}
+</code></pre>
+
+        <p>As you can see, we’ve removed the default styles for <code>hr</code>. We don’t need them since we won’t use an old-school rule in our eBook.</p>
+
+        <p>Now, it looks like those two are very complex but they aren’t in practice since you don’t need to modify those styles at all.</p>
+
+        <p>All the obscure parts, those with the variables, are allowing us to keep vertical rhythm.</p>
+
+        <p>Now, <code>hr.transition</code> is meant as a replacement for </p>
+
+        <pre><code>&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+</code></pre>
+
+        <p>But it’s a lot more semantic, especially in EPUB3.</p>
+
+        <p>As for the asterism, you might want to change the url in</p>
+
+        <pre><code>background: transparent url(&quot;asterism.svg&quot;) no-repeat center;
+</code></pre>
+
+        <p>since we’re relying on an <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/CSS/asterism.svg">external SVG file</a>. So you’ll probably put this file in a folder and have something like this instead…</p>
+
+        <pre><code>background: transparent url(&quot;../Images/asterism.svg&quot;) no-repeat center;
+</code></pre>
+
+        <p>This asterism will reflow with text—if the reading system supports the background properties—and is night-mode compatible. Believe it or not but it took an insane amount of work to achieve that—for semantics’ sake.</p>
+
+        <p>And we’re done. We can now compile to CSS.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>The result</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>Here is the compiled CSS with the reset edited to cover our frugal needs.</p>
+
+        <pre><code>@charset &quot;UTF-8&quot;;
+
+@namespace h &quot;http://www.w3.org/1999/xhtml/&quot;;
+@namespace epub &quot;http://www.idpf.org/2007/ops&quot;;
+
+address, div, figure, footer, h1, header, hr, nav, ol, p, section {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  line-height: inherit;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+}
+
+figure, footer, header, nav, section {
+  display: block;
+}
+
+nav[epub|type~=&quot;toc&quot;] ol {
+  list-style: none !important;
+}
+
+nav[epub|type~=&quot;landmarks&quot;],
+nav[epub|type~=&quot;page-list&quot;] {
+  display: none;
+}
+
+a, cite, em, i, small, span, sup {
+  font-size: inherit;
+  vertical-align: baseline;
+  font-style: normal;
+  font-weight: normal;
+  color: inherit;
+  text-decoration: none;
+}
+
+body &gt; :last-child,
+body &gt; section &gt; :last-child {
+  margin-bottom: 0;
+}
+
+@page {
+  margin: 24px 3.75%;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  widows: 2;
+  orphans: 2;
+}
+
+h1, .copyrights {
+  adobe-hyphenate: none;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none;
+}
+
+h1 {
+  font-size: 1.4375em;
+  line-height: 1.04347826;
+  margin-top: 2.08695652em;
+  margin-bottom: 2.08695652em;
+  text-align: right;
+  font-family: &quot;Myriad Pro&quot;, Seravek, &quot;Trebuchet MS&quot;, &quot;BN Trebuchet MS&quot;, &quot;PT Sans&quot;, &quot;Frutiger Neue&quot;, Roboto, sans-serif;
+  font-weight: bold;
+}
+
+p {
+  text-indent: 1em;
+}
+
+.first-para {
+  text-indent: 0;
+}
+
+.copyrights {
+  font-size: .9375em;
+  line-height: 1.6;
+  text-indent: 0;
+  text-align: left;
+  font-family: &quot;Myriad Pro&quot;, Seravek, &quot;Trebuchet MS&quot;, &quot;BN Trebuchet MS&quot;, &quot;PT Sans&quot;, &quot;Frutiger Neue&quot;, Roboto, sans-serif;
+}
+
+i, cite, em {
+  font-style: italic;
+}
+
+i i, i cite, i em, 
+cite i, cite cite, cite em, 
+em i, em cite, em em {
+  font-style: normal;
+}
+
+sup {
+  font-size: 75%;
+  line-height: 1.2;
+  vertical-align: super;
+  vertical-align: 33%;
+}
+
+a {
+  font-weight: bold;
+  text-transform: lowercase;
+  font-variant: small-caps;
+  letter-spacing: .0625em;
+  text-decoration: underline;
+  color: crimson;
+}
+
+.cover {
+  height: 99%;
+  text-indent: 0;
+  text-align: center;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  max-height: 95%;
+  object-fit: contain;
+}
+
+@supports (height: 99vh) {
+  img {
+    height: 99vh;
+  }
+}
+
+hr.transition {
+  width: 100%;
+  margin: .6875em 0;
+  height: .125em;
+  border: none;
+  background: none;
+}
+
+hr.asterism {
+  width: auto;
+  border: none;
+  margin: 1.5em 0;
+  height: 1.5em;
+  text-indent: 0;
+  text-align: center;
+  background: transparent url(&quot;../Images/asterism.svg&quot;) no-repeat center;
+  background-size: 2.5em 1.25em;
+  overflow: hidden;
+  opacity: .7;
+}
+</code></pre>
+
+        <p>We didn’t create styles for the copyright page or the title page but it takes 157 lines of CSS to typeset the main part of your simple eBook. </p>
+
+        <p>Should you add those two, it would just take a few extra lines.</p>
+
+        <p>The reset is doing the heavy lifting and then it’s about changing and adding some styles on top of it.</p>
+
+        <p>And here is the resulting rendering (minus copyrights’ vertical align).</p>
+
+        <figure>
+          <img alt="" src="assets/result1.png" />
+        </figure>
+
+        <figure>
+          <img alt="" src="assets/result2.png" />
+        </figure>
+
+        <figure>
+          <img alt="" src="assets/result3.png" />
+        </figure>
+
+        <figure>
+          <img alt="" src="assets/result4.png" />
+        </figure>
+
+        <p>Sure, maybe you could have achieved that in fewer lines but what’s important is that the more your stylesheet grows, the more Blitz helps you save useless declarations hence optimize your CSS. In other words, Blitz was designed to scale well, in tune with inheritance and the cascade.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Conclusion</h2>
+      </div>
+
+      <div class="wrapper">
+        <p>We get it. You may feel like meeting a monster at first encounter: there’s so much in there, the default stylesheet is more than 1000 lines of CSS, utilities and reset are quite huge by your standards… </p>
+
+        <p>So we hope this tutorial has convinced you using Blitz’ meta-language is not an impossible task. We’ve designed the LESS part with customization, practicality and linguistics in mind. Think of it as a language for typesetting eBooks: describe what you want to do and Blitz will (try to) obey.</p>
+
+        <p>As a matter of fact, if you get the fundamentals of LESS, there is no reason why you can’t use it. </p>
+
+        <p>Of course you must get used to variables, mixins, arguments and import options first. But that’s not more difficult than the cascade in CSS, the <code>em</code> unit or the CSS tricks you’ve created to get around Reading Systems’ overrides.</p>
+
+        <p>So please feel free to experiment with Blitz, report issues and request features you think would be useful. It took quite a lot of effort to design this framework but our primary objective was to create a solid bedrock upon which we could build powerful features.</p>
+
+        <p>And oh, by the way, if you’re not interested in using LESS, there’s <a href="https://github.com/FriendsOfEpub/Blitz/blob/master/Blitz_framework/CSS/AltStylesheets/blitz-lite/blitz-lite.css">a lite version of Blitz available</a>; it’s 378-line long and weighs a tiny little more than 4kb.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="secondary">© 2017, Jiminy Panoz.</p>
+
+    <p class="secondary">Blitz Framework is released under the MIT&nbsp;License.</p>
+  </footer>
+</body>
+</html>
