@@ -2,7 +2,7 @@
 
 # Blitz eBook Framework
 
-An eBook framework (CSS + template) which mantra is “finding simple solutions to complex issues.”
+An eBook framework (CSS + template) whose mantra is “finding simple solutions to complex issues.”
 
 ## Licence 
 
@@ -191,7 +191,7 @@ But maybe *you* could successfully build a business out of that list…
 
 Probably not as we are not expecting any breaking change.
 
-A move from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
+A migration from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
 
 ### Why Was JS Abandonned?
 
@@ -213,7 +213,7 @@ A library of custom elements almost happened after successful initial testing, b
 ### 1.2.4
 
 - Corrected tables’ cell padding (switched back to `px` value instead of `%` as it depended on RSs’ forcing a relayout)
-- Disabled a11y metadata in an attempt to provide with a reasonable default
+- Disabled a11y metadata in an attempt to provide a reasonable default
 
 ### 1.2.3
 
