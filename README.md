@@ -193,7 +193,7 @@ Probably not as we are not expecting any breaking change.
 
 A migration from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
 
-### Why Was JS Abandonned?
+### Why Was JS Abandoned?
 
 JavaScript has quite a bad reputation in publishing, especially as Kindle and eReaders relying on Adobe’s RMSDK don’t support it. So it was not worth pursuing JavaScript exploration despite [all the Research and Development that had gone into it](https://jaypanoz.github.io/ebookcraft2017).
 
