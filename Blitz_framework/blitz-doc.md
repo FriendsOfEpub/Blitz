@@ -328,6 +328,11 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.no-break-inside`
 - `.break-word`
 - `.hanging-punc`
+- `.emphasis-sesame`
+- `.emphasis-dot`
+- `.tate-chu-yoko`
+- `.full-width-transform`
+- `.full-size-kana-transform`
 
 Yes, it does feel like we’ve mixinifying CSS but it’s up to you to use them.
 

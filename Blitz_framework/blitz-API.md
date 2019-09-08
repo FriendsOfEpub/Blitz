@@ -157,6 +157,11 @@
 - `.no-break-inside`
 - `.break-word`
 - `.hanging-punc`
+- `.emphasis-sesame`
+- `.emphasis-dot`
+- `.tate-chu-yoko`
+- `.full-width-transform`
+- `.full-size-kana-transform`
 
 ### Layout
 
