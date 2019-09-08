@@ -97,6 +97,37 @@
 - `.monospace`
 - `.humanist`
 - `.oldstyle`
+- `.am`
+- `.ar`
+- `.bn`
+- `.bo`
+- `.chr`
+- `.fa`
+- `.gu`
+- `.he`
+- `.hi`
+- `.hy`
+- `.iu`
+- `.ja`
+- `.ja-serif-horizontal`
+- `.ja-sans-serif-horizontal`
+- `.ja-serif-vertical`
+- `.ja-sans-serif-vertical`
+- `.km`
+- `.kn`
+- `.ko`
+- `.lo`
+- `.ml`
+- `.or`
+- `.pa`
+- `.si`
+- `.ta`
+- `.te`
+- `.th`
+- `.zh`
+- `.zh-Hant`
+- `.zh-TW`
+- `.zh-HK`
 - `.justified`
 - `.align-left`
 - `.align-center`
@@ -124,6 +155,8 @@
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
+- `.break-word`
+- `.hanging-punc`
 
 ### Layout
 
@@ -135,6 +168,8 @@
 
 #### Static
 
+- `.vertical-lr`
+- `.vertical-rl`
 - `.wrap-100`
 - `.wrap-90`
 - `.wrap-80`

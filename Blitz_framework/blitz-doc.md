@@ -268,6 +268,37 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.monospace`
 - `.humanist`
 - `.oldstyle`
+- `.am`
+- `.ar`
+- `.bn`
+- `.bo`
+- `.chr`
+- `.fa`
+- `.gu`
+- `.he`
+- `.hi`
+- `.hy`
+- `.iu`
+- `.ja`
+- `.ja-serif-horizontal`
+- `.ja-sans-serif-horizontal`
+- `.ja-serif-vertical`
+- `.ja-sans-serif-vertical`
+- `.km`
+- `.kn`
+- `.ko`
+- `.lo`
+- `.ml`
+- `.or`
+- `.pa`
+- `.si`
+- `.ta`
+- `.te`
+- `.th`
+- `.zh`
+- `.zh-Hant`
+- `.zh-TW`
+- `.zh-HK`
 - `.justified`
 - `.align-left`
 - `.align-center`
@@ -295,6 +326,8 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
+- `.break-word`
+- `.hanging-punc`
 
 Yes, it does feel like we’ve mixinifying CSS but it’s up to you to use them.
 
@@ -304,6 +337,8 @@ The `.wrap` and `.float-[alignment]` classes specify both width and margins.
 
 The `w-[number]` classes specify a width, the `h-[number]` specify an height.
 
+- `.vertical-lr`
+- `.vertical-rl`
 - `.wrap-100`
 - `.wrap-90`
 - `.wrap-80`
