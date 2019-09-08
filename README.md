@@ -159,13 +159,13 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 ## Frequently Addressed Questions
 
-### Is This Project Still Active?
+### Is this project still active?
 
 Yes. 
 
 But we deemed Blitz feature-complete so it’s all about maintenance, there won’t be any new feature added to the framework.
 
-### Has Anyone Funded This Project?
+### Has anyone funded this project?
 
 Nope. 
 
@@ -173,7 +173,7 @@ It has grown organically out of the desire to learn CSS preprocessors, then impr
 
 At some point, sponsoring was considered but quickly dismissed due to the relatively small size of the ebook production community: it was simply too much to ask.
 
-### Which Features Did Not Make It Into The Framework?
+### Which features did not make it into the framework?
 
 Quite a lot, actually.
 
@@ -187,19 +187,25 @@ Quite a lot, actually.
 
 But maybe *you* could successfully build a business out of that list…
 
-### Will There Be a Version 2?
+### Will there be a version 2?
 
 Probably not as we are not expecting any breaking change.
 
 A migration from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
 
-### Why Was JS Abandoned?
+### What is missing in version 1?
+
+Internationalization.
+
+By supporting 24 additonal languages, Blitz would cover the needs of 3,049,150,507 extra speakers.
+
+### Why was JS abandoned?
 
 JavaScript has quite a bad reputation in publishing, especially as Kindle and eReaders relying on Adobe’s RMSDK don’t support it. So it was not worth pursuing JavaScript exploration despite [all the Research and Development that had gone into it](https://jaypanoz.github.io/ebookcraft2017).
 
 A library of custom elements almost happened after successful initial testing, but one careful review later, it was clear most authors wouldn’t even bother trying such a library. That wasn’t a hill to die on when most authors want Reading Systems to handle that out of the box.
 
-### How To Leverage The LESS Meta-Language?
+### How to leverage the LESS meta-language?
 
 [Check this tutorial](https://friendsofepub.github.io/Blitz/documentation/tutorial.html).
 
