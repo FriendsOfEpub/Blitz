@@ -155,7 +155,13 @@
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
-- `.break-word`
+- `.line-break-auto`
+- `.line-break-loose`
+- `.line-break-normal`
+- `.line-break-strict`
+- `.word-break-normal`
+- `.word-break-all`
+- `.word-keep-all`
 - `.hanging-punc`
 - `.emphasis-sesame`
 - `.emphasis-dot`
@@ -173,8 +179,12 @@
 
 #### Static
 
+- `horizontal-tb`
 - `.vertical-lr`
 - `.vertical-rl`
+- `.text-orientation-mixed`
+- `.text-orientation-upright`
+- `.text-orientation-sideways`
 - `.wrap-100`
 - `.wrap-90`
 - `.wrap-80`
