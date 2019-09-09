@@ -5,23 +5,82 @@
 .vertical-lr {
   -ms-writing-mode: tb;
   -webkit-writing-mode: vertical-lr;
+  -epub-writing-mode: vertical-lr;
   writing-mode: vertical-lr;
 }
   
 .vertical-rl {
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
+  -epub-writing-mode: vertical-rl;
   writing-mode: vertical-rl;
 }
   
   /* Typography */
+
+.text-orientation-mixed {
+  -webkit-text-orientation: mixed;
+  -epub-text-orientation: mixed;
+  text-orientation: mixed;
+}
+
+.text-orientation-upright {
+  -webkit-text-orientation: upright;
+  -epub-text-orientation: upright;
+  text-orientation: upright;
+}
+
+.text-orientation-sideways {
+  -webkit-text-orientation: sideways;
+  -epub-text-orientation: sideways;
+  text-orientation: sideways;
+}
+
+.line-break-auto {
+  -ms-line-break: auto;
+  -webkit-line-break: auto;
+  -epub-line-break: auto;
+  line-break: auto;
+}
+
+.line-break-loose {
+  -ms-line-break: loose;
+  -webkit-line-break: loose;
+  -epub-line-break: loose;
+  line-break: loose;
+}
+
+.line-break-normal {
+  -ms-line-break: normal;
+  -webkit-line-break: normal;
+  -epub-line-break: normal;
+  line-break: normal;
+}
   
-.break-word {
+.line-break-strict {
   word-wrap: break-word;
   -ms-line-break: strict;
   -webkit-line-break: strict;
   -epub-line-break: strict;
   line-break: strict;
+}
+
+.word-break-normal {
+  -ms-word-break: normal;
+  -epub-word-break: normal;
+  word-break: normal;
+}
+
+.word-break-all {
+  -ms-word-break: break-all;
+  -epub-word-break: break-all;
+  word-break: break-all;
+}
+
+.word-keep-all {
+  -ms-word-break: keep-all;
+  -epub-word-break: keep-all;
+  word-break: keep-all;
 }
   
 .hanging-punc {
