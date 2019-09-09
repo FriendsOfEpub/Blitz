@@ -179,7 +179,7 @@
 
 #### Static
 
-- `horizontal-tb`
+- `.horizontal-tb`
 - `.vertical-lr`
 - `.vertical-rl`
 - `.text-orientation-mixed`

@@ -351,7 +351,7 @@ The `.wrap` and `.float-[alignment]` classes specify both width and margins.
 
 The `w-[number]` classes specify a width, the `h-[number]` specify an height.
 
-- `horizontal-tb`
+- `.horizontal-tb`
 - `.vertical-lr`
 - `.vertical-rl`
 - `.text-orientation-mixed`
@@ -556,7 +556,7 @@ This files provides static mixins for handling internationalization: font stacks
 
 Layout:
 
-- `horizontal-tb`
+- `.horizontal-tb`
 - `.vertical-lr`
 - `.vertical-rl`
 - `.text-orientation-mixed`
