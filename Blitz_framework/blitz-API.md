@@ -97,6 +97,37 @@
 - `.monospace`
 - `.humanist`
 - `.oldstyle`
+- `.am`
+- `.ar`
+- `.bn`
+- `.bo`
+- `.chr`
+- `.fa`
+- `.gu`
+- `.he`
+- `.hi`
+- `.hy`
+- `.iu`
+- `.ja`
+- `.ja-serif-horizontal`
+- `.ja-sans-serif-horizontal`
+- `.ja-serif-vertical`
+- `.ja-sans-serif-vertical`
+- `.km`
+- `.kn`
+- `.ko`
+- `.lo`
+- `.ml`
+- `.or`
+- `.pa`
+- `.si`
+- `.ta`
+- `.te`
+- `.th`
+- `.zh`
+- `.zh-Hant`
+- `.zh-TW`
+- `.zh-HK`
 - `.justified`
 - `.align-left`
 - `.align-center`
@@ -124,6 +155,19 @@
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
+- `.line-break-auto`
+- `.line-break-loose`
+- `.line-break-normal`
+- `.line-break-strict`
+- `.word-break-normal`
+- `.word-break-all`
+- `.word-keep-all`
+- `.hanging-punc`
+- `.emphasis-sesame`
+- `.emphasis-dot`
+- `.tate-chu-yoko`
+- `.full-width-transform`
+- `.full-size-kana-transform`
 
 ### Layout
 
@@ -135,6 +179,12 @@
 
 #### Static
 
+- `.horizontal-tb`
+- `.vertical-lr`
+- `.vertical-rl`
+- `.text-orientation-mixed`
+- `.text-orientation-upright`
+- `.text-orientation-sideways`
 - `.wrap-100`
 - `.wrap-90`
 - `.wrap-80`

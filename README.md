@@ -211,6 +211,10 @@ A library of custom elements almost happened after successful initial testing, b
 
 ## Log
 
+### 1.4.0
+
+- Added internationalization reference to the LESS framework
+
 ### 1.3.0
 
 - Moved Kindle Media Queries and styles into core

@@ -24,21 +24,29 @@ The various parts of Blitz have been organized using a folders structure. There 
 Think of this folder as Blitz’ engine. It contains two files: 
 
 1. `variables`;
-2. `rhythm`.
+2. `rhythm`;
+3. `features`;
+4. `kindle-queries`.
 
 Variables is like a config file in which you can customize settings.
 
 Rhythm is the file which allows you to compute the typographic scale and vertical rhythm via functions using variables.
 
+Features exposes feature queries in the form of rulesets (see [Progressive Enhancement doc](blitz_progressive-docs.md)).
+
+Kindle queries provides shortcuts for Amazon Kindle-specific media queries.
+
 ### Reference
 
 The reference folder contains files you don’t want to be compiled to CSS. Those files provide mixins which are used to typeset your eBooks though.
 
-By default, you’ll find 3 files in this folder: 
+By default, you’ll find 5 files in this folder: 
 
-1. `hyphens` (parametric and static mixins for hyphenations);
-2. `mixins` (stuff we don’t use but which could be of use e.g. generators)
-3. `overrides` (both self-contained and RS’ overrides)
+1. `enhancements` (static mixins for progressive enhancement);
+2. `hyphens` (parametric and static mixins for hyphenations);
+3. `i18n` (static mixins for internationalisation);
+4. `mixins` (stuff we don’t use but which could be of use e.g. generators);
+5. `overrides` (both self-contained and RS’ overrides).
 
 Should you not want to output utilities and pagebreaks, this is the folder in which you want to put those two files.
 
@@ -84,30 +92,25 @@ In this folder you’ll find:
 
 Bear in mind they are used to style elements across the whole system though so you can’t delete those files and expect your CSS to compile.
 
-### Plugins
-
-Plugins are additional standalone parts you might not want to compile in the “core CSS”.
-
-We’ve got two plugins right now: 
-
-1. `blitz-mq` (media queries)
-2. `blitz-kindle` (Kindle styles using media queries)
-
 ## Blitz.less
 
 This file is meant to output your CSS. It’s basically a list of imports you can customize.
 
-By default, it imports every other part of the framework—excepted Kindle and media queries. 
+By default, it imports every other part of the framework. 
 
 ```
 // Reference > won’t be output, utils can be imported as reference if you want
 @import (reference) 'reference/hyphens';
 @import (reference) 'reference/overrides';
 @import (reference) 'reference/mixins';
+@import (reference) 'reference/enhancements';
+@import (reference) 'reference/i18n';
 
 // That's the stuff running Blitz
 @import 'core/variables';
 @import 'core/rhythm';
+@import 'core/features';
+@import 'core/kindle-queries';
 
 // Base is the foundation = styles you'll use in every book
 @import 'base/reset';
@@ -268,6 +271,37 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.monospace`
 - `.humanist`
 - `.oldstyle`
+- `.am`
+- `.ar`
+- `.bn`
+- `.bo`
+- `.chr`
+- `.fa`
+- `.gu`
+- `.he`
+- `.hi`
+- `.hy`
+- `.iu`
+- `.ja`
+- `.ja-serif-horizontal`
+- `.ja-sans-serif-horizontal`
+- `.ja-serif-vertical`
+- `.ja-sans-serif-vertical`
+- `.km`
+- `.kn`
+- `.ko`
+- `.lo`
+- `.ml`
+- `.or`
+- `.pa`
+- `.si`
+- `.ta`
+- `.te`
+- `.th`
+- `.zh`
+- `.zh-Hant`
+- `.zh-TW`
+- `.zh-HK`
 - `.justified`
 - `.align-left`
 - `.align-center`
@@ -295,6 +329,19 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.no-break-before`
 - `.no-break-after`
 - `.no-break-inside`
+- `.line-break-auto`
+- `.line-break-loose`
+- `.line-break-normal`
+- `.line-break-strict`
+- `.word-break-normal`
+- `.word-break-all`
+- `.word-keep-all`
+- `.hanging-punc`
+- `.emphasis-sesame`
+- `.emphasis-dot`
+- `.tate-chu-yoko`
+- `.full-width-transform`
+- `.full-size-kana-transform`
 
 Yes, it does feel like we’ve mixinifying CSS but it’s up to you to use them.
 
@@ -304,6 +351,12 @@ The `.wrap` and `.float-[alignment]` classes specify both width and margins.
 
 The `w-[number]` classes specify a width, the `h-[number]` specify an height.
 
+- `.horizontal-tb`
+- `.vertical-lr`
+- `.vertical-rl`
+- `.text-orientation-mixed`
+- `.text-orientation-upright`
+- `.text-orientation-sideways`
 - `.wrap-100`
 - `.wrap-90`
 - `.wrap-80`
@@ -411,6 +464,73 @@ Those mixins enforce vertical rhythm and compute all values from the variables y
 
 All those variables and mixins are used in `typo.less` by default.
 
+### Features
+
+This file exposes feature queries in the form of rulesets (see [Progressive Enhancement doc](blitz_progressive-docs.md)).
+
+### Kindle Queries
+
+Kindle Queries provides `@mobi7` and `@kf8` shortcuts (variables) for Kindle-specific media queries.
+
+### Enhancements
+
+Enhancements provides static mixins helping you achieve progressive enhancement in your EPUB3. **These must be used in combination with feature queries.**
+
+It provides the following improvements.
+
+Typography + OTF:
+
+- `.drop-cap` (must be used with `:first-letter` or won’t work)
+- `.kern`
+- `.no-kern`
+- `.clig`
+- `.dlig`
+- `.no-liga`
+- `.true-sc`
+- `.c2sc`
+- `.titling`
+- `.calt`
+- `.lnum`
+- `.pnum`
+- `.onum`
+- `.tnum`
+- `.lnum-tnum`
+- `.lnum-pnum`
+- `.onum-pnum`
+- `.slash`
+- `.frac`
+- `.stacked`
+- `.ordinal`
+- `.sups`
+- `.subs`
+
+Flexbox:
+
+- `.flex`
+- `.flex-col`
+- `.flex-wrap`
+- `.flex-start`
+- `.flex-center`
+- `.flex-end`
+- `.flex-between`
+- `.flex-around`
+- `.valign-center` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-center`)
+- `.valign-bottom` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-end`)
+- `.valign-between` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-between`)
+- `.valign-around` (`min-height: 95vh` + `.flex` + `.flex-col` + `.flex-around`)
+
+Object/Background sizing:
+
+- `.fit-contain` (alias for `object-fit`)
+- `.fit-fill` (alias for `object-fit`)
+- `.fit-cover` (alias for `object-fit`)
+- `.fit-scale` (alias for `object-fit`)
+- `.fit-none` (alias for `object-fit`)
+- `.bg-contain` (alias for `background-size`)
+- `.bg-cover` (alias for `background-size`)
+
+See [Progressive Enhancement doc](blitz_progressive-docs.md) for further details.
+
 ### Hyphens
 
 The whole [§8. Breaking Within Words](https://drafts.csswg.org/css-text-4/) is implemented in `hyphens.less`.
@@ -429,6 +549,69 @@ In addition, three mixins are made available:
 - `.disable-hyphens` e.g. headings, tables, etc.
 - `.manual-hyphens`, which must be used in combination with soft-hyphens
 - `.hyphenate`, which is using the above parametric mixins to achieve hyphenation
+
+### i18n
+
+This files provides static mixins for handling internationalization: font stacks, vertical and mixed writing, CJK, Arabic, Hebrew, Indic, etc.
+
+Layout:
+
+- `.horizontal-tb`
+- `.vertical-lr`
+- `.vertical-rl`
+- `.text-orientation-mixed`
+- `.text-orientation-upright`
+- `.text-orientation-sideways`
+
+Typography: 
+
+- `.line-break-auto`
+- `.line-break-loose`
+- `.line-break-normal`
+- `.line-break-strict`
+- `.word-break-normal`
+- `.word-break-all`
+- `.word-keep-all`
+- `.hanging-punc`
+- `.emphasis-sesame`
+- `.emphasis-dot`
+- `.tate-chu-yoko`
+- `.full-width-transform`
+- `.full-size-kana-transform`
+
+Font stacks, where the mixin name is the code of the language:
+
+- `.am` (Amharic)
+- `.ar` (Arabic)
+- `.bn` (Bengali)
+- `.bo` (Tibetan)
+- `.chr` (Cherokee)
+- `.fa` (Persian)
+- `.gu` (Gujarati)
+- `.he` (Hebrew)
+- `.hi` (Hindi)
+- `.hy` (Armenian)
+- `.iu` (Inuktitut)
+- `.ja` (Japanese)
+- `.ja-serif-horizontal`
+- `.ja-sans-serif-horizontal`
+- `.ja-serif-vertical`
+- `.ja-sans-serif-vertical`
+- `.km` (Khmer)
+- `.kn` (Kannada)
+- `.ko` (Korean)
+- `.lo` (Lao)
+- `.ml` (Malayalam)
+- `.or` (Oriya)
+- `.pa` (Punjabi)
+- `.si` (Sinhalese)
+- `.ta` (Tamil)
+- `.te` (Telugu)
+- `.th` (Thai)
+- `.zh` (Chinese)
+- `.zh-Hant`
+- `.zh-TW`
+- `.zh-HK`
 
 ### Overrides
 
@@ -449,6 +632,7 @@ Think of these mixins as utilities.
 - `.generate-subtle-palette(@baseColor)` generates a subtle color palette based on the argument
 - `.generate-comp-palette(@baseColor)` generates a complementary color palette based on the argument
 - `.generate-columns(@n, @i: 1) when (@i =< @n)` generates an horizontal grid
+- Progressive enhancement mixins (see [Progressive Enhancement doc](blitz_progressive-docs.md) for more details)
 
 ### Reset
 
@@ -502,7 +686,6 @@ inline-elements {
   text-decoration: none;
 }
 ```
-
 
 ### Page
 
