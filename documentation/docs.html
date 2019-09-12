@@ -711,6 +711,318 @@ inline-elements {
 </div>
 </section>
 
+<section class="sub-category" id="i18n-mixins">
+  <div class="wrapper">
+  <h3>Internationalization mixins</h3>
+
+  <p>The Internationalization mixins are all static but not output by default, they are only referenced in the LESS Framework, and you must explicitly use them in a custom build.</p>
+
+  <p>Those mixins provide layout and typographic options, mainly for vertical writing, as well as tentative font-stacks for 24 additional languages. They should be considered experimental – don’t hesitate to report issues and/or help improve Blitz’ i18n.</p>
+
+  <dl>
+    <dt><dfn>.horizontal-tb</dfn></dt>
+    
+    <dd>
+    <p>Applies horizontal writing, from top to bottom and left to right, to the element.</p>
+    </dd>
+
+    <dt><dfn>.vertical-lr</dfn></dt>
+    
+    <dd>
+    <p>Applies vertical writing, from top to bottom and left to right, to the element.</p>
+    </dd>
+
+    <dt><dfn>.vertical-rl</dfn></dt>
+    
+    <dd>
+    <p>Applies vertical writing, from top to bottom and right to left, to the element.</p>
+    </dd>
+
+    <dt><dfn>.text-orientation-mixed</dfn></dt>
+    
+    <dd>
+    <p>Rotates the characters of horizontal scripts 90° clockwise. Lays out the characters of vertical scripts naturally.</p>
+    </dd>
+
+    <dt><dfn>.text-orientation-upright</dfn></dt>
+    
+    <dd>
+    <p>Lays out the characters of horizontal scripts naturally (upright), as well as the glyphs for vertical scripts.</p>
+    </dd>
+
+    <dt><dfn>.text-orientation-sideways</dfn></dt>
+    
+    <dd>
+    <p>Causes characters to be laid out as they would be horizontally, but with the whole line rotated 90° clockwise.</p>
+    </dd>
+
+    <dt><dfn>.line-break-auto</dfn></dt>
+    
+    <dd>
+    <p>Breaks text using the default line break rule.</p>
+    </dd>
+
+    <dt><dfn>.line-break-loose</dfn></dt>
+    
+    <dd>
+    <p>Breaks text using the least restrictive line break rule. Typically used for short lines, such as in newspapers.</p>
+    </dd>
+
+    <dt><dfn>.line-break-normal</dfn></dt>
+    
+    <dd>
+    <p>Breaks text using the most common line break rule.</p>
+    </dd>
+
+    <dt><dfn>.line-break-strict</dfn></dt>
+    
+    <dd>
+    <p>Breaks text using the most stringent line break rule.</p>
+    </dd>
+
+    <dt><dfn>.word-break-normal</dfn></dt>
+    
+    <dd>
+    <p>Uses the default line break rule.</p>
+    </dd>
+
+    <dt><dfn>.word-break-all</dfn></dt>
+    
+    <dd>
+    <p>Inserts word breaks between any two characters (excluding Chinese/Japanese/Korean text) to prevent overflow.</p>
+    </dd>
+
+    <dt><dfn>.word-keep-all</dfn></dt>
+    
+    <dd>
+    <p>Prevents word breaks for Chinese/Japanese/Korean (CJK) text. Sets non-CJK text to normal.</p>
+    </dd>
+
+    <dt><dfn>.hanging-punc</dfn></dt>
+    
+    <dd>
+    <p>Hangs a stop or comma at the end of a line if it does not otherwise fit prior to justification.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-sesame</dfn></dt>
+    
+    <dd>
+    <p>Uses filled sesame as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-dots</dfn></dt>
+    
+    <dd>
+    <p>Uses filled dot as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.tate-chu-yoko</dfn></dt>
+    
+    <dd>
+    <p>Attempts to typeset all consecutive characters within the box horizontally, such that they take up the space of a single character within the vertical line of the box.</p>
+    </dd>
+
+    <dt><dfn>.full-width-transform</dfn></dt>
+    
+    <dd>
+    <p>Forces the writing of a character inside a square.</p>
+    </dd>
+
+    <dt><dfn>.full-size-kana-transform</dfn></dt>
+    
+    <dd>
+    <p>Converts all small Kana characters to the equivalent full-size Kana.</p>
+    </dd>
+
+    <dt><dfn>.am</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Amharic. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ar</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Arabic. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.bn</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Bengali. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.bo</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Tibetan. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.chr</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Cherokee. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.fa</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Persian. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.gu</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Gujarati. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.he</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Hebrew. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.hi</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Hindi. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.hy</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Armenian. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.iu</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Inuktitut. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ja</dfn></dt>
+    
+    <dd>
+    <p>Tentative default/fallback font-stack for Japanese. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ja-serif-horizontal</dfn></dt>
+    
+    <dd>
+    <p>Tentative Mincho font-stack for Japanese in horizontal writing mode, with proportional characters. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ja-sans-serif-horizontal</dfn></dt>
+    
+    <dd>
+    <p>Tentative Gothic font-stack for Japanese in horizontal writing mode, with proportional characters. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ja-serif-vertical</dfn></dt>
+    
+    <dd>
+    <p>Tentative Mincho font-stack for Japanese in vertical writing mode, with fixed-width characters. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ja-sans-serif-vertical</dfn></dt>
+    
+    <dd>
+    <p>Tentative Gothic font-stack for Japanese in vertical writing mode, with fixed-width characters. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.km</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Khmer. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.kn</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Kannada. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ko</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Korean. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.lo</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Lao. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ml</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Malayalam. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.or</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Oriya. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.pa</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Punjabi. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.si</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Sinhalese. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.ta</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Tamil. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.te</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Telugu. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.th</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Thai. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.zh</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for simplified Chinese. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.zh-Hant</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Chinese in traditional script. There is no guarantee all apps and devices will support it.</p>
+    </dd>
+
+    <dt><dfn>.zh-TW</dfn></dt>
+    
+    <dd>
+    <p>Alias for <code>.zh-Hant</code>.</p>
+    </dd>
+
+    <dt><dfn>.zh-HK</dfn></dt>
+    
+    <dd>
+    <p>Tentative font-stack for Chinese in traditional script (Hong Kong). There is no guarantee all apps and devices will support it.</p>
+    </dd>
+  </dl>
+  </div>
+</section>
+
 <section class="sub-category" id="generators">
 <div class="wrapper">
 <h3>Generators</h3>
