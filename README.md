@@ -84,6 +84,7 @@ lessc Blitz_framework/LESS/blitz-reset.less Blitz_framework/CSS/AltStylesheets/b
 
 ## Related Blitz Tools
 
+- [Blitz Tasks](https://github.com/FriendsOfEpub/blitz-tasks) – a set of gulp scripts to automate (X)HTML markup changes and apply some useful optimizations
 - [blitzck-cli](https://github.com/FriendsOfEpub/blitzck-cli) – EPUB Reading Systems’ support, mimetypes, namespaces, and ARIA mappings from the command line interface
 - [The eBook Design Checklist](https://friendsofepub.github.io/eBookDesignChecklist/) – a progressive web app to help you design eBooks
 - [The eBook Performance Checklist](https://friendsofepub.github.io/eBookPerfChecklist/) – a progressive web app to help you boost eBook performance
@@ -195,9 +196,9 @@ A migration from LESS to PostCSS was considered but dismissed as it would have b
 
 ### What is missing in version 1?
 
-Internationalization.
+Better internationalization.
 
-By supporting 24 additonal languages, Blitz would cover the needs of 3,049,150,507 extra speakers.
+By improving support for the 24 additonal languages we added at some point, Blitz would better cover the needs and requirements of 3,049,150,507 speakers.
 
 ### Why was JS abandoned?
 
