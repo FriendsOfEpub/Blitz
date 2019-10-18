@@ -212,6 +212,10 @@ A library of custom elements almost happened after successful initial testing, b
 
 ## Log
 
+### 1.4.1
+
+- Fixed `padding-left` for lists (switched to relative `ems`) so that markers can’t be cropped
+
 ### 1.4.0
 
 - Added internationalization reference to the LESS framework
