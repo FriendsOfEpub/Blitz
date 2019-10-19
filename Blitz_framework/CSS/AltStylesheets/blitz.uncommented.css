@@ -389,10 +389,10 @@ ul {
     margin: 1em 0
   }
 }
-ol + ol,
-ol + ul,
-ul + ol,
-ul + ul {
+ol ol,
+ol ul,
+ul ol,
+ul ul {
   padding-left: 1em
 }
 ul {
