@@ -14,43 +14,43 @@
 }
 
 .hyphens-char(@hyphens-char: auto) {
-    -ms-hyphenate-character: @hyphens-char;
-    -moz-hyphenate-character: @hyphens-char;
-    -webkit-hyphenate-character: @hyphens-char;
-    hyphenate-character: @hyphens-char;
+  -ms-hyphenate-character: @hyphens-char;
+  -moz-hyphenate-character: @hyphens-char;
+  -webkit-hyphenate-character: @hyphens-char;
+  hyphenate-character: @hyphens-char;
 }
 
 /* 2 is the default for hyphenate-lines in case an hyphenated word
 happens to be displayed at the end of the line (2 + 1 = 3) */
 .hyphens-lines(@hyphens-lines: 2) {
-    -ms-hyphenate-limit-lines: @hyphens-lines;
-    -moz-hyphenate-limit-lines: @hyphens-lines;
-    -webkit-hyphenate-limit-lines: @hyphens-lines;
-    hyphenate-limit-lines: @hyphens-lines;
+  -ms-hyphenate-limit-lines: @hyphens-lines;
+  -moz-hyphenate-limit-lines: @hyphens-lines;
+  -webkit-hyphenate-limit-lines: @hyphens-lines;
+  hyphenate-limit-lines: @hyphens-lines;
 }
 
 /* No support except Trident (Windows) and Webkit (old deprecated syntax) */
 .hyphens-division(@hyphens-chars-min: 6, @hyphens-chars-before: 3, @hyphens-chars-after: 2) {
-    -ms-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
-    -moz-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
-    -webkit-hyphenate-limit-before: @hyphens-chars-before;
-    -webkit-hyphenate-limit-after: @hyphens-chars-after;
-    hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after; 
+  -ms-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
+  -moz-hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
+  -webkit-hyphenate-limit-before: @hyphens-chars-before;
+  -webkit-hyphenate-limit-after: @hyphens-chars-after;
+  hyphenate-limit-chars: @hyphens-chars-min @hyphens-chars-before @hyphens-chars-after;
 }
 
 /* No support except Trident (Windows) */
 .hyphens-zone(@hyphens-zone: 10%) {
-    -ms-hyphenate-limit-zone: @hyphens-zone;
-    -moz-hyphenate-limit-zone: @hyphens-zone;
-    -webkit-hyphenate-limit-zone: @hyphens-zone;
-    hyphenate-limit-zone: @hyphens-zone;  
+  -ms-hyphenate-limit-zone: @hyphens-zone;
+  -moz-hyphenate-limit-zone: @hyphens-zone;
+  -webkit-hyphenate-limit-zone: @hyphens-zone;
+  hyphenate-limit-zone: @hyphens-zone;
 }
 
 .hyphens-limit(@hyphens-last: always) {
-    -ms-hyphenate-limit-last: @hyphens-last;
-    -moz-hyphenate-limit-last: @hyphens-last;
-    -webkit-hyphenate-limit-last: @hyphens-last;
-    hyphenate-limit-last: @hyphens-last;
+  -ms-hyphenate-limit-last: @hyphens-last;
+  -moz-hyphenate-limit-last: @hyphens-last;
+  -webkit-hyphenate-limit-last: @hyphens-last;
+  hyphenate-limit-last: @hyphens-last;
 }
 
 // CSS Output
@@ -62,7 +62,7 @@ happens to be displayed at the end of the line (2 + 1 = 3) */
   -moz-hyphens: none;
   -webkit-hyphens: none;
   -epub-hyphens: none;
-  hyphens: none; 
+  hyphens: none;
 }
 
 /* To use in combination with &#173; (soft-hyphen) */
@@ -72,7 +72,7 @@ happens to be displayed at the end of the line (2 + 1 = 3) */
   -moz-hyphens: manual;
   -webkit-hyphens: manual;
   -epub-hyphens: manual;
-  hyphens: manual; 
+  hyphens: manual;
 }
 
 .hyphenate {
