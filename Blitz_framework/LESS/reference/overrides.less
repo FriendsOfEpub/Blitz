@@ -2,11 +2,11 @@
 
 
 .override-italic {
-    font-style: normal;   
+  font-style: normal;
 }
 
 .override-iBooks-links(@overrideColor: inherit) {
-    -webkit-text-fill-color: @overrideColor;   /* iBooks override (iOS 9 + El Capitan in night mode) */
+  -webkit-text-fill-color: @overrideColor;   /* iBooks override (iOS 9 + El Capitan in night mode) */
 }
 
 // Ideally, you should not use that 
@@ -27,13 +27,13 @@
 
 .override-ul-type(@ulType: ~"\2014") {    // ISO value between quotes please, because Google Play Books
   ul li:nth-child(n+1) {
-	list-style-type: none;      /* won’t disable in RS which don’t support :nth-child */
+    list-style-type: none;      /* won’t disable in RS which don’t support :nth-child */
   }
   ul li:nth-child(n+1):before {
     /* Extra-cautious selector in case some epub2 RS supports :before but not :nth-child */
-	content: "@{ulType}";
-	position: relative;
-	left: -0.35em;
+    content: "@{ulType}";
+    position: relative;
+    left: -0.35em;
   }   
 }
 
@@ -42,12 +42,12 @@
     counter-reset: increment-list;   
   }
   ol li:nth-child(n+1) {
-	list-style-type: none;
+    list-style-type: none;
   }
   ol li:nth-child(n+1):before {
-	content: counter(increment-list, @ol-type);
-	counter-increment: increment-list;
-	position: relative;
-	left: -0.35em;
+    content: counter(increment-list, @ol-type);
+    counter-increment: increment-list;
+    position: relative;
+    left: -0.35em;
   }   
 }

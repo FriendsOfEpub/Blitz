@@ -35,13 +35,13 @@ h1, h2, h3, h4, h5, h6, dt, pre {
 
 /* Following EPUB 3 spec by the letter (applies to RS but let’s make sure it is respected because we never know) */
 nav[epub|type~="toc"] ol {
-    list-style: none !important;
+  list-style: none !important;
 }
 
 /* [Opinionated] Default to prevent bloat in case linear="no" is rendered as linear="yes" */
 nav[epub|type~="landmarks"],
 nav[epub|type~="page-list"] {
-    display: none;   
+  display: none;
 }
 
 a, abbr, b, bdi, bdo, cite, code, data, del, dfn, em, i, ins, kbd, mark, q, rp, rt, rtc, ruby, s, samp, small, span, strong, sub, sup, time, var {
