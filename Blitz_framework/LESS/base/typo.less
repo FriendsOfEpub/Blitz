@@ -10,16 +10,16 @@ table, caption, th, td,
   .disable-hyphens;
 }
 
-h1, h2, h3, h4, h5, h6, dt, hr {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, dt, hr {
   .no-break-inside;
   .no-break-after;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: @header-font-family;
 }
 
-h1 {
+h1, .h1 {
   .rhythm(3, 0, 2);
 
   @media @kf8 {
@@ -32,7 +32,7 @@ h1 {
   }
 }
 
-h2 {
+h2, .h2 {
   .rhythm(2, 2, 1);
 
   @media @kf8 {
@@ -45,7 +45,7 @@ h2 {
   }
 }
 
-h3 {
+h3, .h3 {
   .rhythm(1, 1, 1);
 
   @media @mobi7 {
@@ -54,7 +54,7 @@ h3 {
   }
 }
 
-h4 {
+h4, .h4 {
   .rhythm(0, 1, 0);
 
   @media @mobi7 {
@@ -63,11 +63,11 @@ h4 {
   }
 }
 
-h5 {
+h5, .h5 {
 /* Styles */    
 }
 
-h6 {
+h6, .h6 {
 /* Styles */    
 }
 
