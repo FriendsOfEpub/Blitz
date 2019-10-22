@@ -107,3 +107,16 @@
   @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
   @{prop}: calc(~"@{val1} @{operator} @{val2}");
 };
+
+// i18n
+
+.text-emphasis(@emphasis-style : filled sesame) {
+  // Available arguments: filled dot, open dot, filled circle, open circle,
+  // filled double circle, open double-circle, filled triangle, open triangle,
+  // filled sesame, open sesame
+  text-emphasis: @emphasis-style;
+  text-emphasis-style: @emphasis-style;
+  -webkit-text-emphasis-style: @emphasis-style;
+  font-style: normal !important; // Need to override italics/bold because this is an alternative emphasis.
+  font-weight: normal !important;
+}
