@@ -8,12 +8,12 @@
 // < 2
 .rhythm(@font-scale, @margin-top, @margin-bottom)
 when (@font-scale < 2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
-	margin-top: (@new-line-height * @margin-top) + 0em;
-	margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
+  margin-top: (@new-line-height * @margin-top) + 0em;
+  margin-bottom: (@new-line-height * @margin-bottom) + 0em;
 }
 
 // 2 or 3 if factor =< 1.2
@@ -21,12 +21,12 @@ when (@font-scale < 2) {
 when (@font-scale >= 2)
 and (@font-scale < 3)
 and (@scale-factor =< 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
-	margin-top: (@new-line-height * @margin-top) + 0em;
-	margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
+  margin-top: (@new-line-height * @margin-top) + 0em;
+  margin-bottom: (@new-line-height * @margin-bottom) + 0em;
 }
 
 // 2 or 3 if factor > 1.2
@@ -34,36 +34,36 @@ and (@scale-factor =< 1.2) {
 when (@font-scale >= 2)
 and (@font-scale < 3)
 and (@scale-factor > 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size) * 2;
-	line-height: @new-line-height;
-	margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
-	margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size) * 2;
+  line-height: @new-line-height;
+  margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
+  margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
 }
 
 // > 3 if factor < 1.2
 .rhythm(@font-scale, @margin-top, @margin-bottom)
 when (@font-scale >= 3)
 and (@scale-factor < 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
-	margin-top: (@new-line-height * @margin-top) + 0em;
-	margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
+  margin-top: (@new-line-height * @margin-top) + 0em;
+  margin-bottom: (@new-line-height * @margin-bottom) + 0em;
 }
 
 // >= 3 if scale >= 1.2
 .rhythm(@font-scale, @margin-top, @margin-bottom)
 when (@font-scale >= 3)
 and (@scale-factor >= 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size) * 2;
-	line-height: @new-line-height;
-	margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
-	margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size) * 2;
+  line-height: @new-line-height;
+  margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
+  margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
 }
 
 // Utilities – Quick and dirty (refacto rhythm)
@@ -71,10 +71,10 @@ and (@scale-factor >= 1.2) {
 // < 2
 .fs(@font-scale)
 when (@font-scale < 2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
 }
 
 // 2 or 3 if factor =< 1.2
@@ -82,10 +82,10 @@ when (@font-scale < 2) {
 when (@font-scale >= 2)
 and (@font-scale < 3)
 and (@scale-factor =< 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
 }
 
 // 2 or 3 if factor > 1.2
@@ -93,28 +93,28 @@ and (@scale-factor =< 1.2) {
 when (@font-scale >= 2)
 and (@font-scale < 3)
 and (@scale-factor > 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size) * 2;
-	line-height: @new-line-height;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size) * 2;
+  line-height: @new-line-height;
 }
 
 // > 3 if factor < 1.2
 .fs(@font-scale)
 when (@font-scale >= 3)
 and (@scale-factor < 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size);
-	line-height: @new-line-height;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size);
+  line-height: @new-line-height;
 }
 
 // >= 3 if scale >= 1.2
 .fs(@font-scale)
 when (@font-scale >= 3)
 and (@scale-factor >= 1.2) {
-	@new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
-	font-size: @new-font-size + 0em;
-	@new-line-height: (@body-line-height / @new-font-size) * 2;
-	line-height: @new-line-height;
+  @new-font-size: (ceil(@body-font-size * pow(@scale-factor, @font-scale)) / @body-font-size);
+  font-size: @new-font-size + 0em;
+  @new-line-height: (@body-line-height / @new-font-size) * 2;
+  line-height: @new-line-height;
 }
