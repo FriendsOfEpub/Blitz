@@ -38,6 +38,11 @@ nav[epub|type~="toc"] ol {
   list-style: none !important;
 }
 
+/* Kindle does not follow the EPUB 3 spec. */
+nav ol {
+  list-style-type: none !important;
+}
+
 /* [Opinionated] Default to prevent bloat in case linear="no" is rendered as linear="yes" */
 nav[epub|type~="landmarks"],
 nav[epub|type~="page-list"] {
