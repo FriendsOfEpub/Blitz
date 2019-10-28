@@ -120,3 +120,13 @@
   font-style: normal !important; // Need to override italics/bold because this is an alternative emphasis.
   font-weight: normal !important;
 }
+
+// Utils
+
+.apply-header-font()
+  when not (@header-font-selector = undefined) 
+  and not (@header-font-family = undefined) {
+  @{header-font-selector} {
+    font-family: @header-font-family;
+  }
+}
