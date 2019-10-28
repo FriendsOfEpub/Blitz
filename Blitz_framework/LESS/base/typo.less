@@ -19,7 +19,7 @@ h1 {
   .rhythm(3, 0, 2);
 
   @media @kf8 {
-    line-height: 1.2;     /* Minimum value Kindle supports */
+    line-height: @kindle-line-height;     /* Minimum value Kindle supports */
   }
 
   @media @mobi7 {
@@ -32,7 +32,7 @@ h2 {
   .rhythm(2, 2, 1);
 
   @media @kf8 {
-    line-height: 1.2;     /* Minimum value Kindle supports */
+    line-height: @kindle-line-height;     /* Minimum value Kindle supports */
   }
 
   @media @mobi7 {
@@ -157,7 +157,7 @@ small {
 /* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
-  line-height: 1.2;
+  line-height: @kindle-line-height;
   vertical-align: sub;        /* Fallback */
   vertical-align: -20%;
 
@@ -169,7 +169,7 @@ sub {
 /* Styling is improved to prevent sup from affecting line-height */
 sup {
   font-size: 75%;
-  line-height: 1.2;
+  line-height: @kindle-line-height;
   vertical-align: super;      /* Fallback */
   vertical-align: 33%;
 
