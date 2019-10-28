@@ -7,8 +7,10 @@ pre {
   white-space: pre-wrap;
   .override-tab-size(2); 
 
-  @media @mobi7 {
-    margin: floor(@base-margin) 0;
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin: floor(@base-margin) 0;
+    }
   }
 }
 

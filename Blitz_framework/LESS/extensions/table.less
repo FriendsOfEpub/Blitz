@@ -10,8 +10,10 @@ table {
   font-feature-settings: "tnum" 1;
   font-variant-numeric: tabular-nums;
 
-  @media @mobi7 {
-    margin: floor(@base-margin) 0;
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin: floor(@base-margin) 0;
+    }
   }
 }
 

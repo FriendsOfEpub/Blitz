@@ -33,7 +33,9 @@
   page-break-inside: avoid;
   break-inside: avoid;
 
-  @media @kf8 {
-    .break-inside;    /* Fix blank bug because of page-break-inside: avoid… */
+  & when (@handle-kindle) {
+    @media @kf8 {
+      .break-inside;    /* Fix blank bug because of page-break-inside: avoid… */
+    }
   }
 }
