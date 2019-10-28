@@ -130,3 +130,11 @@
     font-family: @header-font-family;
   }
 }
+
+.protect-kindle-line-height(@line-height)
+  when (isnumber(@min-line-height)) and (@line-height < @min-line-height) {
+    @media @kf8 {
+      line-height: @min-line-height;
+      /* Minimum value Kindle supports */
+    }
+}

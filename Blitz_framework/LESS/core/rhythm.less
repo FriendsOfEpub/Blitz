@@ -14,6 +14,8 @@ when (@font-scale < 2) {
   line-height: @new-line-height;
   margin-top: (@new-line-height * @margin-top) + 0em;
   margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // 2 or 3 if factor =< 1.2
@@ -27,6 +29,8 @@ and (@scale-factor =< 1.2) {
   line-height: @new-line-height;
   margin-top: (@new-line-height * @margin-top) + 0em;
   margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // 2 or 3 if factor > 1.2
@@ -40,6 +44,8 @@ and (@scale-factor > 1.2) {
   line-height: @new-line-height;
   margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
   margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // > 3 if factor < 1.2
@@ -52,6 +58,8 @@ and (@scale-factor < 1.2) {
   line-height: @new-line-height;
   margin-top: (@new-line-height * @margin-top) + 0em;
   margin-bottom: (@new-line-height * @margin-bottom) + 0em;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // >= 3 if scale >= 1.2
@@ -64,6 +72,8 @@ and (@scale-factor >= 1.2) {
   line-height: @new-line-height;
   margin-top: ((@new-line-height * @margin-top) / 2) + 0em;
   margin-bottom: ((@new-line-height * @margin-bottom) / 2) + 0em;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // Utilities – Quick and dirty (refacto rhythm)
@@ -75,6 +85,8 @@ when (@font-scale < 2) {
   font-size: @new-font-size + 0em;
   @new-line-height: (@body-line-height / @new-font-size);
   line-height: @new-line-height;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // 2 or 3 if factor =< 1.2
@@ -86,6 +98,8 @@ and (@scale-factor =< 1.2) {
   font-size: @new-font-size + 0em;
   @new-line-height: (@body-line-height / @new-font-size);
   line-height: @new-line-height;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // 2 or 3 if factor > 1.2
@@ -97,6 +111,8 @@ and (@scale-factor > 1.2) {
   font-size: @new-font-size + 0em;
   @new-line-height: (@body-line-height / @new-font-size) * 2;
   line-height: @new-line-height;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // > 3 if factor < 1.2
@@ -107,6 +123,8 @@ and (@scale-factor < 1.2) {
   font-size: @new-font-size + 0em;
   @new-line-height: (@body-line-height / @new-font-size);
   line-height: @new-line-height;
+
+  .protect-kindle-line-height(@new-line-height);
 }
 
 // >= 3 if scale >= 1.2
@@ -117,4 +135,6 @@ and (@scale-factor >= 1.2) {
   font-size: @new-font-size + 0em;
   @new-line-height: (@body-line-height / @new-font-size) * 2;
   line-height: @new-line-height;
+
+  .protect-kindle-line-height(@new-line-height);
 }

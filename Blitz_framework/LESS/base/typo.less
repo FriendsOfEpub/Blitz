@@ -20,10 +20,6 @@ h1, h2, h3, h4, h5, h6, dt, hr {
 h1 {
   .rhythm(3, 0, 2);
 
-  @media @kf8 {
-    line-height: @kindle-line-height;     /* Minimum value Kindle supports */
-  }
-
   @media @mobi7 {
     font-size: xx-large;    /* Keywords offer more precision for mobi 7*/
     margin: 0 0 3em 0;      /* mobi7 doesn’t support decimal values */
@@ -32,10 +28,6 @@ h1 {
 
 h2 {
   .rhythm(2, 2, 1);
-
-  @media @kf8 {
-    line-height: @kindle-line-height;     /* Minimum value Kindle supports */
-  }
 
   @media @mobi7 {
     font-size: x-large;
@@ -159,7 +151,7 @@ small {
 /* Styling is improved to prevent sub from affecting line-height */
 sub {
   font-size: 75%;
-  line-height: @kindle-line-height;
+  line-height: @min-line-height;
   vertical-align: sub;        /* Fallback */
   vertical-align: -20%;
 
@@ -171,7 +163,7 @@ sub {
 /* Styling is improved to prevent sup from affecting line-height */
 sup {
   font-size: 75%;
-  line-height: @kindle-line-height;
+  line-height: @min-line-height;
   vertical-align: super;      /* Fallback */
   vertical-align: 33%;
 
