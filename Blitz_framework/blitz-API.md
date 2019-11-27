@@ -2,13 +2,27 @@
 
 ## Variables
 
+### Flags
+
+- `@handle-kindle` (boolean, for outputting Kindle adjustments)
+
 ### Typography
 
 - `@body-font-size` (px)
 - `@base-fs` (`@body-font-size` in em)
 - `@body-line-height` (ratio)
+- `@min-line-height` (ratio)
 - `@base-margin` (`@body-line-height` in em)
 - `@scale-factor` (typographic scale)
+
+### Headings
+
+- `@header-font-family` (font-stack)
+- `@header-font-selector` (CSS selector)
+
+### Paths
+
+- `@asterism-path` (string/relative path)
 
 ### Horizontal margins (grid)
 
@@ -18,6 +32,7 @@
 
 - `@primary-color`
 - `@secondary-color`
+- `@link-color`
 
 ### Decorations
 
@@ -163,8 +178,16 @@
 - `.word-break-all`
 - `.word-keep-all`
 - `.hanging-punc`
-- `.emphasis-sesame`
-- `.emphasis-dot`
+- `.emphasis-filled-sesame`
+- `.emphasis-open-sesame`
+- `.emphasis-filled-dot`
+- `.emphasis-open-dot`
+- `.emphasis-filled-triangle`
+- `.emphasis-open-triangle`
+- `.emphasis-filled-circle`
+- `.emphasis-open-circle`
+- `.emphasis-filled-double-circle`
+- `.emphasis-open-double-circle`
 - `.tate-chu-yoko`
 - `.full-width-transform`
 - `.full-size-kana-transform`

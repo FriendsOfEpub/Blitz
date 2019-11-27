@@ -43,10 +43,11 @@ The reference folder contains files you don’t want to be compiled to CSS. Thos
 By default, you’ll find 5 files in this folder: 
 
 1. `enhancements` (static mixins for progressive enhancement);
-2. `hyphens` (parametric and static mixins for hyphenations);
-3. `i18n` (static mixins for internationalisation);
-4. `mixins` (stuff we don’t use but which could be of use e.g. generators);
-5. `overrides` (both self-contained and RS’ overrides).
+2. `font-stacks` (variables that can be re-used for `font-family`)
+3. `hyphens` (parametric and static mixins for hyphenations);
+4. `i18n` (static mixins for internationalisation);
+5. `mixins` (stuff we don’t use but which could be of use e.g. generators);
+6. `overrides` (both self-contained and RS’ overrides).
 
 Should you not want to output utilities and pagebreaks, this is the folder in which you want to put those two files.
 
@@ -100,6 +101,7 @@ By default, it imports every other part of the framework.
 
 ```
 // Reference > won’t be output, utils can be imported as reference if you want
+@import (reference) 'reference/font-stacks';
 @import (reference) 'reference/hyphens';
 @import (reference) 'reference/overrides';
 @import (reference) 'reference/mixins';
@@ -160,13 +162,27 @@ The idea is that you can think of this as a “CSS API” which facilitates the 
 
 Blitz ships with a handful of global variables which allows for the creation of templates.
 
+#### Flags
+
+- `@handle-kindle` (boolean)
+
 #### Typography
 
 - `@body-font-size` (in pixels)
 - `@base-fs` (`@body-font-size` computed in em)
 - `@body-line-height` (ratio)
+- `@min-line-height` (ratio)
 - `@base-margin` (`@body-line-height` computed in em)
 - `@scale-factor` (typographic scale)
+
+#### Headings
+
+- `@header-font-family` (font-stack)
+- `@header-font-selector` (CSS selector)
+
+#### Paths
+
+- `@asterism-path` (string/relative path)
 
 #### Horizontal margins (grid)
 
@@ -176,6 +192,7 @@ Blitz ships with a handful of global variables which allows for the creation of 
 
 - `@primary-color`
 - `@secondary-color`
+- `@link-color`
 
 #### Decorations
 
@@ -337,8 +354,16 @@ Blitz offers a large amount of mixins which can be used in various places. Since
 - `.word-break-all`
 - `.word-keep-all`
 - `.hanging-punc`
-- `.emphasis-sesame`
-- `.emphasis-dot`
+- `.emphasis-filled-sesame`
+- `.emphasis-open-sesame`
+- `.emphasis-filled-dot`
+- `.emphasis-open-dot`
+- `.emphasis-filled-triangle`
+- `.emphasis-open-triangle`
+- `.emphasis-filled-circle`
+- `.emphasis-open-circle`
+- `.emphasis-filled-double-circle`
+- `.emphasis-open-double-circle`
 - `.tate-chu-yoko`
 - `.full-width-transform`
 - `.full-size-kana-transform`
@@ -403,22 +428,61 @@ Blitz ships with bookish stuff that works well. Need an asterism? Got you covere
 
 Blitz ships with a handful of variables in variables.less: 
 
+- flags;
 - basic typography;
+- headings;
+- paths;
 - rhythm;
 - colors;
 - decorations;
 - horizontal margins i.e. horizontal grid.
+
+
+#### Flags
+
+Blits provides the `@handle-kindle` variable as a flag to output Kindle-specific adjustments.
+
+It expects a boolean (default is `true`). When set to `false`, Blitz won’t output Kindle-specific styles and work-arounds.
 
 #### Basic typography
 
 Blitz provides the following variables:
 
 - `@body-font-size` in pixels (default is `16`);
-- `@body-line-height` as a ratio (default is `1.5`).
+- `@body-line-height` as a ratio (default is `1.5`);
+- `@min-line-height` as a ratio (default is `1.2`).
 
 While we advised against setting another value than `16` for `@body-font-size`, this variable may be useful if a font with a large x-height is embedded in your ePub file. 
 
 The ratio specified for `@body-line-height` will be used to achieve vertical rhythm. Please make sure `@body-font-size` × `@body-line-height` results in an integer as we’re rounding up.
+
+The ratio specific for `@min-line-height` will be used for Kindle, superscript and subscript. Historically, Kindle couldn’t handle a `line-height` inferior to `1.2`, which is the default value for this variable.
+
+#### Headings
+
+Blitz provides the following variables: 
+
+- `@header-font-family` (font-stack)
+- `@header-font-selector` (CSS selector)
+
+When both values aren’t set to `undefined`, Blitz will apply the font-stack to your CSS selector. In other words, if: 
+
+```
+@header-font-family: "Open Sans", Helvetica, sans-serif;
+@header-font-selector: h1, h2
+```
+
+Then Blitz will apply `font-family: "Open Sans", Helvetica, sans-serif"` to `h1` and `h2`.
+
+This is disabled by default, and is meant as commodity to set a default for a large amount of files.
+
+#### Paths
+
+Blitz provides the following variable:
+
+- `@asterism-path` (relative path)
+
+to set the path to the `asterism.svg` file for your EPUBs.
 
 #### Rhythm
 
@@ -430,7 +494,7 @@ To sum things up, Blitz will compute font sizes based on the scale you specify i
 
 You can specify a primary and secondary color, the default is `inherit`, which usually translates to black or white, depending on the reading mode selected e.g. night mode.
 
-By default, those variables are used for links.
+By default, links are using the primary color – but are handled with a specific variable you can set.
 
 #### Decorations
 
@@ -573,8 +637,16 @@ Typography:
 - `.word-break-all`
 - `.word-keep-all`
 - `.hanging-punc`
-- `.emphasis-sesame`
-- `.emphasis-dot`
+- `.emphasis-filled-sesame`
+- `.emphasis-open-sesame`
+- `.emphasis-filled-dot`
+- `.emphasis-open-dot`
+- `.emphasis-filled-triangle`
+- `.emphasis-open-triangle`
+- `.emphasis-filled-circle`
+- `.emphasis-open-circle`
+- `.emphasis-filled-double-circle`
+- `.emphasis-open-double-circle`
 - `.tate-chu-yoko`
 - `.full-width-transform`
 - `.full-size-kana-transform`
@@ -612,6 +684,8 @@ Font stacks, where the mixin name is the code of the language:
 - `.zh-Hant`
 - `.zh-TW`
 - `.zh-HK`
+
+These mixins are variables you can set in `reference/font-stacks` if you want to customize them.
 
 ### Overrides
 
