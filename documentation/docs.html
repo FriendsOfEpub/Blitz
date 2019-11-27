@@ -454,12 +454,28 @@ inline-elements {
 <p>Variables can be found in <code>core/variables.less</code>. They allow you to customize your template.</p>
 
 <dl>
+<dt><dfn>@handle-kindle</dfn></dt>
+
+<dd>
+<p>A flag (boolean) to instruct Blitz whether it should output Kindle-specific adjustments using Kindle’s proprietary Media Queries or not.</p>
+
+<p>Default is <code>true</code>.</p>
+</dd>
+
 <dt><dfn>@body-font-size</dfn></dt>
 
 <dd>
 <p>The <code>font-size</code>, in pixels, which will be used as a reference for the typographic scale.</p>
 
 <p>Default is <code>16</code>.</p>
+</dd>
+
+<dt><dfn>@min-line-height</dfn></dt>
+
+<dd>
+<p>The minimum <code>line-height</code>, as a ratio, which will be used as a reference for Kindle, superscript and subscript</p>
+
+<p>Default is <code>1.2</code>, which was the minimum value Kindle has historically supported.</p>
 </dd>
 
 <dt><dfn>@body-line-height</dfn></dt>
@@ -476,6 +492,28 @@ inline-elements {
 <p>The typographic scale which will be used for computing font sizes.</p>
 
 <p>Five presets have been carefully chosen for eBooks: <code>@unison</code>, <code>@minor-second</code>, <code>@major-second</code> (default), <code>@minor-third</code> and <code>@major-second</code>.</p>
+</dd>
+
+<dt><dfn>@header-font-family</dfn></dt>
+
+<dd>
+<p>The font-stack which will be used for the selector set for <code>@header-font-selector</code>.</p>
+
+<p>Default is <code>inherit</code> but will be ignored if <code>@header-font-selector</code> is set to <code>undefined</code>.</p>
+</dd>
+
+<dt><dfn>@header-font-selector</dfn></dt>
+
+<dd>
+<p>The CSS selector to which <code>@header-font-family</code> should be applied.</p>
+
+<p>Default is <code>undefined</code>.</p>
+</dd>
+
+<dt><dfn>@asterism-path</dfn></dt>
+
+<dd>
+<p>The relative path to <code>asterism.svg</code> in your EPUB file.</p>
 </dd>
 
 <dt><dfn>@step</dfn></dt>
@@ -498,6 +536,14 @@ inline-elements {
 <p>The second accentuation color.</p>
 
 <p>By default, it is not used.</p>
+</dd>
+
+<dt><dfn>@link-color</dfn></dt>
+
+<dd>
+<p>The first accentuation color. </p>
+
+<p>By default, it is used for links.</p>
 </dd>
 
 <dt><dfn>@border-width</dfn></dt>
@@ -804,16 +850,64 @@ inline-elements {
     <p>Hangs a stop or comma at the end of a line if it does not otherwise fit prior to justification.</p>
     </dd>
 
-    <dt><dfn>.emphasis-sesame</dfn></dt>
+    <dt><dfn>.emphasis-filled-sesame</dfn></dt>
     
     <dd>
     <p>Uses filled sesame as the emphasis mark.</p>
     </dd>
 
-    <dt><dfn>.emphasis-dots</dfn></dt>
+    <dt><dfn>.emphasis-open-sesame</dfn></dt>
+    
+    <dd>
+    <p>Uses open sesame as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-filled-dot</dfn></dt>
     
     <dd>
     <p>Uses filled dot as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-open-dot</dfn></dt>
+    
+    <dd>
+    <p>Uses open dot as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-filled-triangle</dfn></dt>
+    
+    <dd>
+    <p>Uses filled triangle as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-open-triangle</dfn></dt>
+    
+    <dd>
+    <p>Uses open triangle as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-filled-circle</dfn></dt>
+    
+    <dd>
+    <p>Uses filled circle as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-open-circle</dfn></dt>
+    
+    <dd>
+    <p>Uses open circle as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-filled-double-circle</dfn></dt>
+    
+    <dd>
+    <p>Uses filled double circle as the emphasis mark.</p>
+    </dd>
+
+    <dt><dfn>.emphasis-open-double-circle</dfn></dt>
+    
+    <dd>
+    <p>Uses open double circle as the emphasis mark.</p>
     </dd>
 
     <dt><dfn>.tate-chu-yoko</dfn></dt>
