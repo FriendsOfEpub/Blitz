@@ -68,6 +68,12 @@ pre {
 nav[epub|type~=toc] ol {
   list-style: none!important
 }
+@media amzn-kf8,
+amzn-mobi {
+  nav ol {
+    list-style-type: none!important
+  }
+}
 nav[epub|type~=landmarks],
 nav[epub|type~=page-list] {
   display: none
@@ -338,6 +344,10 @@ sup {
   sup {
     font-size: x-small
   }
+}
+rt {
+  font-size: 50%;
+  text-transform: full-size-kana
 }
 figure {
   page-break-inside: avoid;
@@ -935,13 +945,28 @@ svg {
   font-size: 1.3125em;
   line-height: 1.14285714
 }
+@media amzn-kf8 {
+  .fs-xl {
+    line-height: 1.2
+  }
+}
 .fs-xxl {
   font-size: 1.4375em;
   line-height: 1.04347826
 }
+@media amzn-kf8 {
+  .fs-xxl {
+    line-height: 1.2
+  }
+}
 .fs-jumbo {
   font-size: 1.625em;
   line-height: .92307692
+}
+@media amzn-kf8 {
+  .fs-jumbo {
+    line-height: 1.2
+  }
 }
 .bold {
   font-weight: 700

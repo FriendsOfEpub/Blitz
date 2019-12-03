@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks
-    Version 1.4.1 by Jiminy Panoz
-    Codename: Armagideon Time
+    Version 1.5.0 by Jiminy Panoz
+    Codename: The Beautiful People Are Ugly, Too
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -94,6 +94,12 @@ pre {
 /* Following EPUB 3 spec by the letter (applies to RS but let’s make sure it is respected because we never know) */
 nav[epub|type~="toc"] ol {
   list-style: none !important;
+}
+/* Kindle does not follow the EPUB 3 spec. */
+@media amzn-kf8, amzn-mobi {
+  nav ol {
+    list-style-type: none !important;
+  }
 }
 /* [Opinionated] Default to prevent bloat in case linear="no" is rendered as linear="yes" */
 nav[epub|type~="landmarks"],
@@ -404,6 +410,14 @@ sup {
   sup {
     font-size: x-small;
   }
+}
+/* i18n */
+/* Ruby text */
+rt {
+  font-size: 50%;
+  /* Line-height may need to be adjusted to fit ruby text. */
+  text-transform: full-size-kana;
+  /* Increases the legibility of Japanese ruby characters. */
 }
 /* FIGURES + IMAGES  */
 figure {
@@ -1003,19 +1017,15 @@ render page on eInk devices)                                    */
 .monospace {
   font-family: monospace;
 }
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .humanist {
   font-family: "Myriad Pro", Seravek, Ember, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
 }
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .geometric {
   font-family: Futura, "Century Gothic", "Apple SD Gothic Neo", AppleGothic, sans-serif;
 }
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .oldstyle {
   font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
 }
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .modern {
   font-family: Athelas, Literata, Bookerly, "Merriweather Serif", Malabar, "BN Malabar", Georgia, "Droid Serif", serif;
 }
@@ -1108,13 +1118,31 @@ render page on eInk devices)                                    */
   font-size: 1.3125em;
   line-height: 1.14285714;
 }
+@media amzn-kf8 {
+  .fs-xl {
+    line-height: 1.2;
+    /* Minimum value Kindle supports */
+  }
+}
 .fs-xxl {
   font-size: 1.4375em;
   line-height: 1.04347826;
 }
+@media amzn-kf8 {
+  .fs-xxl {
+    line-height: 1.2;
+    /* Minimum value Kindle supports */
+  }
+}
 .fs-jumbo {
   font-size: 1.625em;
   line-height: 0.92307692;
+}
+@media amzn-kf8 {
+  .fs-jumbo {
+    line-height: 1.2;
+    /* Minimum value Kindle supports */
+  }
 }
 /* Font styles */
 .bold {

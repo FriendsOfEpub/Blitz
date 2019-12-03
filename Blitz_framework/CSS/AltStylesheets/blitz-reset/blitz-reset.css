@@ -63,6 +63,12 @@ pre {
 nav[epub|type~=toc] ol {
   list-style: none!important
 }
+@media amzn-kf8,
+amzn-mobi {
+  nav ol {
+    list-style-type: none!important
+  }
+}
 nav[epub|type~=landmarks],
 nav[epub|type~=page-list] {
   display: none
