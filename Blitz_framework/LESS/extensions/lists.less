@@ -5,8 +5,10 @@ ol {
   margin: @base-margin 0;
   padding-left: ((@body-font-size * 2) / @body-font-size) + 0em;
 
-  @media @mobi7 {
-    margin: floor(@base-margin) 0;
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin: floor(@base-margin) 0;
+    }
   }
 }
 

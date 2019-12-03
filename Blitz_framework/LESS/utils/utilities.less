@@ -71,80 +71,100 @@
 .margin-top-s {
   margin-top: (@base-margin / 2);
   
-  @media @mobi7 {
-    margin-top: round(@base-margin / 2);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-top: round(@base-margin / 2);
+    }
   }
 }
 
 .margin-top-m {
   margin-top: @base-margin;
 
-  @media @mobi7 {
-    margin-top: round(@base-margin);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-top: round(@base-margin);
+    }
   }
 }
 
 .margin-top-l {
   margin-top: (@base-margin * 2);
 
-  @media @mobi7 {
-    margin-top: round(@base-margin * 2);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-top: round(@base-margin * 2);
+    }
   }
 }
 
 .margin-top-xl {
   margin-top: (@base-margin * 3);
 
-  @media @mobi7 {
-    margin-top: round(@base-margin * 3);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-top: round(@base-margin * 3);
+    }
   }
 }
 
 .margin-top-xxl {
   margin-top: (@base-margin * 4);
 
-  @media @mobi7 {
-    margin-top: round(@base-margin * 4);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-top: round(@base-margin * 4);
+    }
   }
 }
 
 .margin-bottom-s {
   margin-bottom: (@base-margin / 2);
 
-  @media @mobi7 {
-    margin-bottom: round(@base-margin / 2);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-bottom: round(@base-margin / 2);
+    }
   }
 }
 
 .margin-bottom-m {
   margin-bottom: @base-margin;
 
-  @media @mobi7 {
-    margin-bottom: round(@base-margin);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-bottom: round(@base-margin);
+    }
   }
 }
 
 .margin-bottom-l {
   margin-bottom: (@base-margin * 2);
 
-  @media @mobi7 {
-    margin-bottom: round(@base-margin * 2);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-bottom: round(@base-margin * 2);
+    }
   }
 }
 
 .margin-bottom-xl {
   margin-bottom: (@base-margin * 3);
 
-  @media @mobi7 {
-    margin-bottom: round(@base-margin * 3);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-bottom: round(@base-margin * 3);
+    }
   }
 }
 
 .margin-bottom-xxl {
   margin-bottom: (@base-margin * 4);
 
-  @media @mobi7 {
-    margin-bottom: round(@base-margin * 4);
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-bottom: round(@base-margin * 4);
+    }
   }
 }
 
@@ -191,35 +211,31 @@
 /* Font-stacks */
 
 .sans {                     /* Typical usage: headings */
-  font-family: sans-serif;
+  font-family: @sans-serif;
 }
 
 .serif {
-  font-family: serif;
+  font-family: @serif;
 }
 
 .monospace {
-  font-family: monospace;
+  font-family: @monospace;
 }
 
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .humanist {
-  font-family: "Myriad Pro", Seravek, Ember, "Trebuchet MS", "BN Trebuchet MS", "PT Sans", "Frutiger Neue", Roboto, sans-serif;
+  font-family: @humanist;
 }
 
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .geometric {
-  font-family: Futura, "Century Gothic", "Apple SD Gothic Neo", AppleGothic, sans-serif;
+  font-family: @geometric;
 }
 
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .oldstyle {
-  font-family: "Minion Pro", "Iowan Old Style", Palatino, "Palatino Linotype", "Palatino Nova", "BN Amasis", Cambria, FreeSerif, "Times New Roman", serif;
+  font-family: @oldstyle;
 }
 
-/* We try to rely on RS’ typefaces, hence the huge font-stack */
 .modern {
-  font-family: Athelas, Literata, Bookerly, "Merriweather Serif", Malabar, "BN Malabar", Georgia, "Droid Serif", serif;
+  font-family: @modern;
 }
 
 /* Text align */
@@ -257,8 +273,10 @@
   text-indent: -@step;
   margin-left: @step;      /* Since em will reflow with font-size user setting, we’re using % */
 
-  @media @mobi7 {
-    margin-left: 0;         /* hack for negative text-indent */
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin-left: 0;         /* hack for negative text-indent */
+    }
   }
 }
 
@@ -322,8 +340,10 @@
   text-transform: lowercase;    /* Don't rely on this property, text should be typed in uppercase (legacy RMSDK) */
   .small-caps;
 
-  @media @mobi7 {
-    font-size: small;
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      font-size: small;
+    }
   }
 }
 

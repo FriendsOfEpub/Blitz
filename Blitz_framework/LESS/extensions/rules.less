@@ -10,8 +10,10 @@ hr {
   border-top: (((@border-width * 2) / @body-font-size) + 0em) solid @border-color;    /* currentColor = color of text (getting around night mode) */
   opacity: 0.5;   /* Opacity -> grayscale. If opacity is declared for too many elements in a XHTML file, performance of legacy RMSDK takes a hit */
 
-  @media @mobi7 {
-    margin: floor(@base-margin) 0;
+  & when (@handle-kindle) {
+    @media @mobi7 {
+      margin: floor(@base-margin) 0;
+    }
   }
 }
 
@@ -34,7 +36,7 @@ hr.asterism {
   height: @base-margin;
   text-indent: 0;
   text-align: center;
-  background: transparent url("../Images/asterism.svg") no-repeat center;   /* Change url if you put asterism in a folder */
+  background: transparent url(@asterism-path) no-repeat center;   /* Change url if you put asterism in a folder */
   background-size: 2.5em 1.25em;    /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */
   overflow: hidden;   /* Fixes legacy RMSDK bug when contents before hr are invisible */
   opacity: 0.7;   /* Better border color match in night mode (less disruptive) */

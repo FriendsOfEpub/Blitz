@@ -3,9 +3,17 @@
 // Configuration //
 // ------------- //
 
+// Options
+@handle-kindle: true;   // Set to false if you don’t need Kindle support
+
 // Typo
-@body-font-size : 16;           // PX | default = 16 //
-@body-line-height : 1.5;        // Ratio //
+@body-font-size: 16;           // PX | default = 16 //
+@body-line-height: 1.5;        // Ratio //
+@min-line-height: 1.2;         // Kindle requires a minimum line height of 1.2, this will also be used for sup and sub.
+
+// Headings
+@header-font-family: inherit;     // Set to give the headers a different look from the main text.
+@header-font-selector: undefined; // e.g. h1, h2, h3 – undefined disables in output
 
 // Rhythm
 @major-third: 1.25;
@@ -13,19 +21,23 @@
 @major-second: 1.125;
 @minor-second: 1.067;
 @unison: 1;
-@scale-factor : @major-second;  // The idea is that you can redefine it for media queries if needed
+@scale-factor: @major-second;  // The idea is that you can redefine it for media queries if needed
+
+// Paths
+@asterism-path: "../Images/asterism.svg"; // Must be set correctly if using extensions/rules.less
 
 // Horizontal grid
 @step : 5%;         // Should be used for horizontal margins (won’t reflow like em)
 
 // Colors
-@primary-color : inherit;
-@secondary-color : inherit;     // inherit = text-color (comes handy when trying to get around night modes)
+@primary-color: inherit;
+@secondary-color: inherit;     // inherit = text-color (comes handy when trying to get around night modes)
+@link-color: @primary-color;
 
 // Decorations
-@border-width : 1;
-@border-style : solid;
-@border-color : currentColor;   // currentColor = text-color (comes handy when trying to get around night modes)
+@border-width: 1;
+@border-style: solid;
+@border-color: currentColor;   // currentColor = text-color (comes handy when trying to get around night modes)
 
 // Lists
 @ul-type: disc;

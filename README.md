@@ -212,6 +212,20 @@ A library of custom elements almost happened after successful initial testing, b
 
 ## Log
 
+### 1.5.0
+
+With massive props to [@ptmkenny](https://github.com/ptmkenny) for internationalization improvements.
+
+- Improved and completed `text-emphasis` for Japanese
+- Implemented ruby text in default for Japanese
+- Implemented `min-light-height` as a variable (for Kindle)
+- Implemented a font-family variable for a custom headings selector
+- Fixed list style type for Kindle
+- Made asterism path a global variable
+- Made link color a separate variable
+- Made font stacks global variables so that they can be reused in the codebase
+- Made Kindle output a flag users can enable/disable (`@handle-kindle`)
+
 ### 1.4.1
 
 - Fixed `padding-left` for lists (switched to relative `ems`) so that markers can’t be cropped

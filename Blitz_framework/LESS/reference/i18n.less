@@ -96,16 +96,44 @@
   hanging-punctuation: last allow-end;
 }
 
-.emphasis-sesame {
-  -webkit-text-emphasis-style: sesame;
-  -epub-text-emphasis-style: sesame;
-  text-emphasis-style: sesame;
+.emphasis-filled-sesame {
+  .text-emphasis(filled sesame);
 }
 
-.emphasis-dots {
-  -webkit-text-emphasis-style: dot;
-  -epub-text-emphasis-style: dot;
-  text-emphasis-style: dot;
+.emphasis-open-sesame {
+  .text-emphasis(open sesame);
+}
+
+.emphasis-filled-dot {
+  .text-emphasis(filled dot);
+}
+
+.emphasis-open-dot {
+  .text-emphasis(open dot);
+}
+
+.emphasis-filled-triangle {
+  .text-emphasis(filled triangle);
+}
+
+.emphasis-open-triangle {
+  .text-emphasis(open triangle);
+}
+
+.emphasis-filled-circle {
+  .text-emphasis(filled circle);
+}
+
+.emphasis-open-circle {
+  .text-emphasis(open circle);
+}
+
+.emphasis-filled-double-circle {
+  .text-emphasis(filled double circle);
+}
+
+.emphasis-open-double-circle {
+  .text-emphasis(open double circle);
 }
 
 .tate-chu-yoko {
@@ -121,129 +149,125 @@
   text-transform: full-width;
 }
 
-.full-size-kana-transform {
-  text-transform: full-size-kana;
+/* Font Families (class = language code or body/p with lang attribute set) */
+
+.am, body:lang(am), p:lang(am), span:lang(am) {
+  font-family: @am;
 }
 
-/* Font Families (class = language code) */
-
-.am {
-  font-family: Kefa, Nyala, Roboto, Noto, "Noto Sans Ethiopic", serif;
+.ar, body:lang(ar), p:lang(ar), span:lang(ar) {
+  font-family: @ar;
 }
 
-.ar {
-  font-family: "Geeza Pro", "Arabic Typesetting", Roboto, Noto, "Noto Naskh Arabic", "Times New Roman", serif;
+.bn, body:lang(bn), p:lang(bn), span:lang(bn) {
+  font-family: @bn;
 }
 
-.bn {
-  font-family: "Kohinoor Bangla", "Bangla Sangam MN", Vrinda, Roboto, Noto, "Noto Sans Bengali", sans-serif;
+.bo, body:lang(bo), p:lang(bo), span:lang(bo) {
+  font-family: @bo;
 }
 
-.bo {
-  font-family: Kailasa, "Microsoft Himalaya", Roboto, Noto, "Noto Sans Tibetan", sans-serif;
+.chr, body:lang(chr), p:lang(chr), span:lang(chr) {
+  font-family: @chr;
 }
 
-.chr {
-  font-family: "Plantagenet Cherokee", Roboto, Noto, "Noto Sans Cherokee";
+.fa, body:lang(fa), p:lang(fa), span:lang(fa) {
+  font-family: @fa;
 }
 
-.fa {
-  font-family: "Geeza Pro", "Arabic Typesetting", Roboto, Noto, "Noto Naskh Arabic", "Times New Roman", serif;
+.gu, body:lang(gu), p:lang(gu), span:lang(gu) {
+  font-family: @gu;
 }
 
-.gu {
-  font-family: "Gujarati Sangam MN", "Nirmala UI", Shruti, Roboto, Noto, "Noto Sans Gujarati", sans-serif;
+.he, body:lang(he), p:lang(he), span:lang(he) {
+  font-family: @he;
 }
 
-.he {
-  font-family: "New Peninim MT", "Arial Hebrew", Gisha, "Times New Roman", Roboto, Noto, "Noto Sans Hebrew" sans-serif;
+.hi, body:lang(hi), p:lang(hi), span:lang(hi) {
+  font-family: @hi;
 }
 
-.hi {
-  font-family: "Kohinoor Devanagari", "Devanagari Sangam MN", Kokila, "Nirmala UI", Roboto, Noto, "Noto Sans Devanagari", sans-serif;
+.hy, body:lang(hy), p:lang(hy), span:lang(hy) {
+  font-family: @hy;
 }
 
-.hy {
-  font-family: Mshtakan, Sylfaen, Roboto, Noto, "Noto Serif Armenian", serif;
+.iu, body:lang(iu), p:lang(iu), span:lang(iu) {
+  font-family: @iu;
 }
 
-.iu {
-  font-family: "Euphemia UCAS", Euphemia, Roboto, Noto, "Noto Sans Canadian Aboriginal", sans-serif;
-}
-
-.ja {
-  font-family: "游ゴシック体", YuGothic, "ヒラギノ丸ゴ", "Hiragino Sans", "Yu Gothic UI", "Meiryo UI", "MS Gothic", Roboto, Noto, "Noto Sans CJK JP", sans-serif;  
+.ja, body:lang(ja), p:lang(ja), span:lang(ja) {
+  font-family: @ja; 
 }
 
 .ja-serif-horizontal {
-  font-family: "ＭＳ Ｐ明朝", "MS PMincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "游明朝", "YuMincho", "ＭＳ 明朝", "MS Mincho", "Hiragino Mincho ProN", serif;
+  font-family: @ja-serif-horizontal;
 }
 
 .ja-sans-serif-horizontal { 
-  font-family: "ＭＳ Ｐゴシック", "MS PGothic", "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro W3", "Hiragino Sans GB", "ヒラギノ角ゴシック W3", "游ゴシック", "YuGothic", "ＭＳ ゴシック", "MS Gothic", "Hiragino Sans", sans-serif;
+  font-family: @ja-sans-serif-horizontal;
 }
 
 .ja-serif-vertical { 
-  font-family: "ＭＳ 明朝", "MS Mincho", "Hiragino Mincho Pro", "ヒラギノ明朝 Pro W3", "游明朝", "YuMincho", "ＭＳ Ｐ明朝", "MS PMincho", "Hiragino Mincho ProN", serif;
+  font-family: @ja-serif-vertical;
 }
 
 .ja-sans-serif-vertical {
-  font-family: "ＭＳ ゴシック", "MS Gothic", "Hiragino Kaku Gothic Pro W3", "ヒラギノ角ゴ Pro W3", "Hiragino Sans GB", "ヒラギノ角ゴシック W3", "游ゴシック", "YuGothic", "ＭＳ Ｐゴシック", "MS PGothic", "Hiragino Sans", sans-serif;
+  font-family: @ja-sans-serif-vertical;
 }
 
-.km {
-  font-family: "Khmer Sangam MN", "Leelawadee UI", "Khmer UI", Roboto, Noto, "Noto Sans Khmer", sans-serif;
+.km, body:lang(km), p:lang(km), span:lang(km) {
+  font-family: @km;
 }
 
-.kn {
-  font-family: "Kannada Sangam MN", "Nirmala UI", Tunga, Roboto, Noto, "Noto Sans Kannada", sans-serif;
+.kn, body:lang(kn), p:lang(kn), span:lang(kn) {
+  font-family: @kn;
 }
 
-.ko {
-  font-family: "Nanum Gothic", "Apple SD Gothic Neo", "Malgun Gothic", Roboto, Noto, "Noto Sans CJK KR", sans-serif;  
+.ko, body:lang(ko), p:lang(ko), span:lang(ko) {
+  font-family: @ko;
 }
 
-.lo {
-  font-family: "Lao Sangam MN", "Leelawadee UI", "Lao UI", Roboto, Noto, "Noto Sans Lao", sans-serif;
+.lo, body:lang(lo), p:lang(lo), span:lang(lo) {
+  font-family: @lo;
 }
 
-.ml {
-  font-family: "Malayalam Sangam MN", "Nirmala UI", Kartika, Roboto, Noto, "Noto Sans Malayalam", sans-serif;
+.ml, body:lang(ml), p:lang(ml), span:lang(ml) {
+  font-family: @ml;
 }
 
-.or {
-  font-family: "Oriya Sangam MN", "Nirmala UI", Kalinga, Roboto, Noto, "Noto Sans Oriya", sans-serif;
+.or, body:lang(or), p:lang(or), span:lang(or) {
+  font-family: @or;
 }
 
-.pa {
-  font-family: "Gurmukhi MN", "Nirmala UI", Kartika, Roboto, Noto, "Noto Sans Gurmukhi", sans-serif;
+.pa, body:lang(pa), p:lang(pa), span:lang(pa) {
+  font-family: @pa;
 }
 
-.si {
-  font-family: "Sinhala Sangam MN", "Nirmala UI", "Iskoola Pota", Roboto, Noto, "Noto Sans Sinhala", sans-serif;
+.si, body:lang(si), p:lang(si), span:lang(si) {
+  font-family: @si;
 }
 
-.ta {
-  font-family: "Tamil Sangam MN", "Nirmala UI", Latha, Roboto, Noto, "Noto Sans Tamil", sans-serif;
+.ta, body:lang(ta), p:lang(ta), span:lang(ta) {
+  font-family: @ta;
 }
 
-.te {
-  font-family: "Kohinoor Telugu", "Telugu Sangam MN", "Nirmala UI", Gautami, Roboto, Noto, "Noto Sans Telugu", sans-serif;
+.te, body:lang(te), p:lang(te), span:lang(te) {
+  font-family: @te;
 }
 
-.th {
-  font-family: "Thonburi", "Leelawadee UI", "Cordia New", Roboto, Noto, "Noto Sans Thai", sans-serif;
+.th, body:lang(th), p:lang(th), span:lang(th) {
+  font-family: @th;
 }
 
-.zh {
-  font-family: "方体", "PingFang SC", "黑体", "Heiti SC", "Microsoft JhengHei UI", "Microsoft JhengHei", Roboto, Noto, "Noto Sans CJK SC", sans-serif;
+.zh, body:lang(zh), p:lang(zh), span:lang(zh) {
+  font-family: @zh;
 }
 
 .zh-Hant,
-.zh-TW {
-  font-family: "方體", "PingFang TC", "黑體", "Heiti TC", "Microsoft JhengHei UI", "Microsoft JhengHei", Roboto, Noto, "Noto Sans CJK TC", sans-serif;
+.zh-TW, body:lang(zh-TW), p:lang(zh-TW), span:lang(zh-TW) {
+  font-family: @zh-Hant;
 }
 
-.zh-HK {
-  font-family: "方體", "PingFang HK", "方體", "PingFang TC", "黑體", "Heiti TC", "Microsoft JhengHei UI", "Microsoft JhengHei", Roboto, Noto, "Noto Sans CJK TC", sans-serif;
+.zh-HK, body:lang(zh-HK), p:lang(zh-HK), span:lang(zh-HK) {
+  font-family: @zh-HK;
 }

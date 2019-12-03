@@ -107,3 +107,34 @@
   @{prop}: -webkit-calc(~"@{val1} @{operator} @{val2}");
   @{prop}: calc(~"@{val1} @{operator} @{val2}");
 };
+
+// i18n
+
+.text-emphasis(@emphasis-style : filled sesame) {
+  // Available arguments: filled dot, open dot, filled circle, open circle,
+  // filled double circle, open double-circle, filled triangle, open triangle,
+  // filled sesame, open sesame
+  font-style: normal !important; // Need to override italics/bold because this is an alternative emphasis.
+  font-weight: normal !important;
+  -webkit-text-emphasis-style: @emphasis-style;
+  -epub-text-emphasis-style: @emphasis-style;
+  text-emphasis-style: @emphasis-style;
+}
+
+// Utils
+
+.apply-header-font()
+  when not (@header-font-selector = undefined) 
+  and not (@header-font-family = undefined) {
+  @{header-font-selector} {
+    font-family: @header-font-family;
+  }
+}
+
+.protect-kindle-line-height(@line-height)
+  when (@handle-kindle) and (isnumber(@min-line-height)) and (@line-height < @min-line-height) {
+    @media @kf8 {
+      line-height: @min-line-height;
+      /* Minimum value Kindle supports */
+    }
+}
