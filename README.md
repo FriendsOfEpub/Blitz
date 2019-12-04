@@ -214,7 +214,7 @@ A library of custom elements almost happened after successful initial testing, b
 
 ### 1.5.0
 
-With massive props to [@ptmkenny](https://github.com/ptmkenny) for internationalization improvements.
+With massive props to [@ptmkenny](https://github.com/ptmkenny) for internationalization and config improvements.
 
 - Improved and completed `text-emphasis` for Japanese
 - Implemented ruby text in default for Japanese
