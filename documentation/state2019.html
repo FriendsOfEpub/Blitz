@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  <title>Blitz eBook Framework — State of Blitz in 2019</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <!-- Google -->
+  <meta name="theme-color" content="#DF0101">
+</head>
+<body>
+  <nav class="menu">
+    <ol>
+      <li><a href="#" title="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M9 7l.986-6L4 9h3l-1 6 6-8" /></svg></a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/">Home</a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/documentation/docs.html">Docs</a></li>
+      <li><a href="https://github.com/FriendsOfEpub/Blitz/releases/latest">Download</a></li>
+    </ol>
+  </nav>
+
+  <main class="docs">
+    <h1>The State of Blitz in 2019</h1>
+
+    <section class="intro" id="doc-intro">
+      <div class="wrapper">
+          <p>Published by Jiminy Panoz on December 7, 2019.</p>
+
+          <p>There has been quite a lot of activity in <a href="https://github.com/FriendsOfEpub">the Blitz workspace</a> in the last 12 months. With 2020 around the corner, it is time to pause and reflect on the important things that happened, look back on all the progress that has been made, and prepare for the things ahead.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Abandoned Projects</h2>
+      </div>
+  
+      <div class="wrapper">
+          <p>It’s important to highlight the core maintainers are no longer actively doing ebook production. This means <a href="https://github.com/FriendsOfEpub/Blitz_Labs">Blitz Labs</a> had to be archived. This repository was meant as a space for Research &amp; Development, and experiments. But truth is that we don’t have any time available for hacking things and breaking Reading Systems these days.</p>
+
+          <p>Similarly, <a href="https://github.com/FriendsOfEpub/WillThatBeOverriden">Will That Be Overridden</a> was archived as well. This repository aimed to collect the CSS injected by all the Reading Systems in your ebooks, which was awfully high maintenance and super low efficiency. The idea was to build something similar to <a href="https://browserdefaultstyles.com">the Browser Default Styles website</a> but it was simply too much effort.</p>
+          
+          <p>Finally, a few features were abandoned for the Blitz Framework:</p>
+          
+          <ol>
+          <li>embeddable dev tools e.g. console, applied styles, etc., especially as <a href="http://www.thephilgray.com/blog/2019/01/10/epub-dev-testing-and-debugging">Phil Gray made some and released them</a> at the beginning of 2019, and we would have ended with something similar to <a href="https://github.com/thephilgray/epub-debugger">epub-debugger</a>;</li>
+          <li>a library of interactive widgets almost happened after successful initial testing, but JavaScript has quite a bad reputation in publishing – because Kindle and eReaders relying on Adobe’s RMSDK don’t support it – so it was clear most people wouldn’t even bother trying such a library in the first place.</li>
+          </ol>
+          
+          <p>Those 2 features weren’t hills to die on, especially as there was absolutely no demand from authors.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Companion Apps Bumped to Version 1</h2>
+      </div>
+    
+      <div class="wrapper">
+          <p>Blitz’ <a href="https://friendsofepub.github.io/eBookDesignChecklist/">ebook design checklist</a> and <a href="https://friendsofepub.github.io/eBookPerfChecklist/">ebook performance checklist</a> were bumped to version 1, with minor bug fixes and improvements.</p>
+
+          <p>The three companion apps are now considered stable, and still offer the possibility to be installed and used offline as Progressive Web apps on your system/devices. In addition, the checklists can be printed if you need to share them with coworkers.</p>
+          
+          <p>Improvements to HTML/CSS/JS will however be warmly welcome, as some parts may be subpar at the moment.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>A Minor blitzck CLI Update</h2>
+      </div>
+      
+      <div class="wrapper">
+          <p><a href="https://github.com/FriendsOfEpub/blitzck-cli">blitzck-cli</a> is a small command-line tool for checking Reading Apps’ support, mimetypes, namespaces and ARIA mappings.</p>
+
+          <p>In 2018, this was by far the most fun Blitz’ project to work on – in typical Blitz’ fashion, it was started to learn something new, then released to the community as it could be useful to some of you.</p>
+          
+          <p>In 2019, it was improved a little bit, and bumped to version 1.</p>
+          
+          <p>Mainly <code>origin</code> was added to the support matrix, as this impacts APIs such as <code>localStorage</code>. It’s now also possible to export the data to XML and YAML, in addition to the existing JSON – Twitter has been fighting over languages way too much in 2019, but won’t understand it can be super toxic as it ends up hurting people who try make things to help others, and only those people.</p>     
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>A New Toolbox For Modifying Files</h2>
+      </div>
+        
+      <div class="wrapper">
+          <p>Which brings us to <a href="https://github.com/FriendsOfEpub/blitz-tasks">Blitz Tasks</a>, the most fun Blitz’ project to work on in 2019. </p>
+
+          <p>As a disclaimer, it almost did not happen because of the language fights mentioned above, since it is using NodeJS instead of something XML-related.</p>
+          
+          <p>Blitz Tasks is a toolbox for modifying (X)HTML markup with a “search &amp; replace” affordance, it is the result of redesigning old personal tools into a whole, from scratch.</p>
+          
+          <p>Basically, the idea is that you search in documents using CSS selectors, then replace in a variety of ways e.g. changing the tag, removing the element, adding classes and ids, etc. It works best with a large amount of files with a “common pattern” e.g. collections, DTP outputs, etc. In addition, it provides a few options to optimize your EPUB files.</p>
+          
+          <p>I guess all ebook producers have been using regex to modify the markup of an EPUB file at some point in their life, but it doesn’t really scale and <a href="https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454">is generally a bad idea</a>, so I decided to open source my scripts as there was some visible interest in alternatives.</p>
+          
+          <p>It is available as a <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">Github template</a> so that you can automate your collections, self-published production, etc. from the start, but will still require some effort to write the config file. If you are searching for “lean back and relax” automation, then <a href="https://bookalope.net/index.html">Bookalope is your best option</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Blitz’ Improvements</h2>
+      </div>
+          
+      <div class="wrapper">
+          <p>The <a href="https://github.com/FriendsOfEpub/Blitz">Blitz Framework</a> has become a low-maintenance high-efficiency repository in the sense most work done results in improvements instead of bug fixes.</p>
+
+          <p>We are very thankful to <a href="https://github.com/pkra">Peter Krautzberger</a>, <a href="https://github.com/momoha2">Annabelle Viau</a>, and <a href="https://github.com/spajak">Sebastian Pająk</a> for reporting issues that could be fixed quickly. And let’s not forget the people who improved the Framework single-handedly:</p>
+          
+          <ul>
+          <li><a href="https://github.com/garconvacher">Ludovic Oger</a> who improved the accessibility of the EPUB template, and helped make sure it validated the newest versions of EPUBCheck and Daisy Ace;</li>
+          <li><a href="https://github.com/ptmkenny">ptmkenny</a> who significantly improved internationalization and developer experience (LESS CSS).</li>
+          </ul>
+          
+          <p>2019 releases would have not been possible without these people, who committed to making Blitz better for the entire community.</p>        
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>What Comes Next</h2>
+      </div>
+            
+      <div class="wrapper">
+          <p>If you want to take over the archived projects, mainly “Will That Be Overridden,” go ahead and fork the repository if it is of any use to you. And do not hesitate to let us know so that we can (gladly) link to it from the Blitz repo!</p>
+
+          <p>The Blitz framework is still active but is considered feature-complete so it’s all about maintenance i.e. bug fixes and improvements. There won’t be any new feature added to the framework nor a complete rewrite as a version 2. We are now focusing on improving accessibility, internationalization, and developer experience.</p>
+          
+          <p>The same applies to other active projects, except Blitz Tasks. Chances are features/tasks will be added if you Pull Request them though – <a href="https://github.com/FriendsOfEpub/blitz-tasks#can-i-have-a-script-for-x">see project’s FAQ for more details</a>.</p>
+          
+          <p>As stated earlier, the core maintainers are no longer actively doing ebook production, which means the work being done on Blitz happens in our spare time. In that regard, 2019 was an awesome year, as we saw the community step in, provide invaluable feedback, and commit to improving Blitz for everyone.</p>
+          
+          <p>We can’t overstate how grateful we are for this community pushing us in the right direction, and encourage everyone to participate, as the smallest issue you report can go a very long way.</p> 
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="secondary">© 2017, Jiminy Panoz.</p>
+  
+    <p class="secondary">Blitz Framework is released under the MIT&nbsp;License.</p>
+  </footer>
+</body>
+</html>
