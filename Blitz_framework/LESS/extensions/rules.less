@@ -20,7 +20,7 @@ hr {
 /* Blank-line context change */
 hr.transition {
   width: 100%;
-  margin: 0;
+  .no-margin;
   height: @base-margin;
   border: none;
   background: none;   /* Note: overridden in night mode excepted when using linear-gradient */
@@ -34,7 +34,7 @@ hr.asterism {
   border: none;
   margin: @base-margin 0;
   height: @base-margin;
-  text-indent: 0;
+  .no-indent;
   text-align: center;
   background: transparent url(@asterism-path) no-repeat center;   /* Change url if you put asterism in a folder */
   background-size: 2.5em 1.25em;    /* RMSDK doesn't support -> won't scale but SVG viewport is OK for a wide range of font-sizes */

@@ -27,7 +27,7 @@
 
 .override-ul-type(@ulType: ~"\2014") {    // ISO value between quotes please, because Google Play Books
   ul li:nth-child(n+1) {
-    list-style-type: none;      /* won’t disable in RS which don’t support :nth-child */
+    .no-list-type;      /* won’t disable in RS which don’t support :nth-child */
   }
   ul li:nth-child(n+1):before {
     /* Extra-cautious selector in case some epub2 RS supports :before but not :nth-child */
@@ -42,7 +42,7 @@
     counter-reset: increment-list;   
   }
   ol li:nth-child(n+1) {
-    list-style-type: none;
+    .no-list-type;
   }
   ol li:nth-child(n+1):before {
     content: counter(increment-list, @ol-type);
