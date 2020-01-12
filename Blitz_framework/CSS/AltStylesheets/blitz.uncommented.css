@@ -491,6 +491,13 @@ table {
 }
 caption {
   caption-side: top;
+  adobe-hyphenate: none;
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none;
+  text-indent: 0;
   text-align: center;
   font-weight: 700
 }
@@ -994,6 +1001,9 @@ svg {
 }
 .underline {
   text-decoration: underline
+}
+.line-through {
+  text-decoration: line-through
 }
 .no-list-type {
   list-style-type: none

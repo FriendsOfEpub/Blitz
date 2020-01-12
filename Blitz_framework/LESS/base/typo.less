@@ -95,8 +95,8 @@ blockquote {
 }
 
 blockquote p {
-  text-indent: 0;
-  font-style: italic;
+  .no-indent;
+  .italic;
 }
 
 blockquote p i,
@@ -114,7 +114,7 @@ address {
 
 a {
   .underline;           /* Note: KF8 will force this value unless you use "el.class a" */
-  font-weight: bold;
+  .bold;
   color: @link-color;
   .override-iBooks-links(@link-color);   /* inherit = text color */
 }
@@ -124,7 +124,7 @@ abbr {
 }
 
 i, cite, dfn, em {
-  font-style: italic;
+  .italic;
 }
 
 /* Get back to normal when italic nested in italic */
@@ -136,11 +136,11 @@ em i, em cite, em dfn, em em {
 }
 
 b, strong {
-  font-weight: bold;
+  .bold;
 }
 
 del, s {
-  text-decoration: line-through;
+  .line-through;
 }
 
 mark {

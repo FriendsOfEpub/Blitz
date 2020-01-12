@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /*  blitz — CSS framework for reflowable eBooks
-    Version 1.5.0 by Jiminy Panoz
-    Codename: The Beautiful People Are Ugly, Too
+    Version 1.5.1 by Jiminy Panoz
+    Codename: The Equaliser
     License: MIT (https://opensource.org/licenses/MIT)   */
 /* NAMESPACES */
 @namespace h "http://www.w3.org/1999/xhtml/";
@@ -591,6 +591,15 @@ table {
 caption {
   caption-side: top;
   /* Note: only value legacy RMSDK supports */
+  adobe-hyphenate: none;
+  /* proprietary for Legacy RMSDK */
+  -ms-hyphens: none;
+  -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -epub-hyphens: none;
+  hyphens: none;
+  text-indent: 0;
+  /* Necessary as RS may define text-indent for p */
   text-align: center;
   font-weight: bold;
 }
@@ -1145,12 +1154,12 @@ render page on eInk devices)                                    */
   }
 }
 /* Font styles */
+/* Don't use that with span if b or strong can be used */
 .bold {
-  /* Don't use that with span if b or strong can be used */
   font-weight: bold;
 }
+/* Don't use that with span if i, cite, dfn or em can be used */
 .italic {
-  /* Don't use that with span if i, cite, dfn or em can be used */
   font-style: italic;
 }
 .bold-italic {
@@ -1176,6 +1185,9 @@ render page on eInk devices)                                    */
 }
 .underline {
   text-decoration: underline;
+}
+.line-through {
+  text-decoration: line-through;
 }
 /* Misc */
 .no-list-type {

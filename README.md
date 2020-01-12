@@ -212,6 +212,11 @@ A library of custom elements almost happened after successful initial testing, b
 
 ## Log
 
+### 1.5.1
+
+- Created a `.line-through` static mixin in utilities
+- Improved consistency of mixin usage in LESS
+
 ### 1.5.0
 
 With massive props to [@ptmkenny](https://github.com/ptmkenny) for internationalization and config improvements.
