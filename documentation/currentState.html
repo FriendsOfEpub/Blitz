@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  <title>Blitz eBook Framework — State of Blitz in 2019</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
+  <!-- Google -->
+  <meta name="theme-color" content="#DF0101">
+</head>
+<body>
+  <nav class="menu">
+    <ol>
+      <li><a href="#" title="Back to top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M9 7l.986-6L4 9h3l-1 6 6-8" /></svg></a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/">Home</a></li>
+      <li><a href="https://friendsofepub.github.io/Blitz/documentation/docs.html">Docs</a></li>
+      <li><a href="https://github.com/FriendsOfEpub/Blitz/releases/latest">Download</a></li>
+    </ol>
+  </nav>
+
+  <main class="docs">
+    <h1>The Current State of Blitz</h1>
+
+    <section class="intro" id="doc-intro">
+      <div class="wrapper">
+          <p>Published by Jiminy Panoz on February 8, 2020.</p>
+
+          <p>This page sums up what has been happening in Blitz recently. Please note it may not be up to date though.</p>
+
+          <p>For a global overview, please check <a href="state2019.html">The State of Blitz in 2019.</a></p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>A Checklist Template</h2>
+      </div>
+  
+      <div class="wrapper">
+          <p>The companion apps have been sharing a lot of code, and it was high time to address this issue.</p>
+
+          <p><a href="https://github.com/FriendsOfEpub/blitz-checklist">Blitz Checklist</a> has been created to facilitate maintenance and updates in the existing Blitz Checklists, and was designed as a boilerplate anyone can use to create such web apps – with interactions, offline support, etc.</p>
+          
+          <p>Blitz Checklist is using <a href="http://mustache.github.io">the Mustache logic-less template</a>, which means data is now separated from markup, and should be easier to use in a non-web context as well.</p>
+
+          <p>And it has already proven very useful as it helped implement new features and bug fixes more quickly.</p>
+          
+          <p>Every precaution has been taken in the migration to make sure this breaking change is workable for people who cloned or forked The <a href="https://friendsofepub.github.io/eBookPerfChecklist/">ebook performance</a> and <a href="https://friendsofepub.github.io/eBookDesignChecklist/">ebook design</a> checklists.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>Design and Optim Apps Bumped to Version&#160;2</h2>
+      </div>
+    
+      <div class="wrapper">
+          <p>The <a href="https://friendsofepub.github.io/eBookPerfChecklist/">ebook performance</a> and <a href="https://friendsofepub.github.io/eBookDesignChecklist/">ebook design</a> checklists have been bumped to version&#160;2 following the creation of Blitz Checklist.</p>
+
+          <p>The following improvements have been rolled out:</p>
+
+          <ul>
+            <li>Service Workers handle all critical files explictly;</li>
+
+            <li>checked boxes are handled when printing the checklist;</li>
+
+            <li>help instructions are a proper modal;</li>
+
+            <li>it’s possible to expand/collapse all details;</li>
+
+            <li>homescreen icon and splash screen are handled correctly on Android&#160;8+.</li>
+          </ul>
+
+          <p>We’ve designed this template in a way that makes Mustache (hence JSON) entirely optional. As long as you follow the templating rules in <code>index.html</code>, everything should be fine.</p>
+          
+          <p>If you don’t want to migrate to Mustache and are more comfortable with the idea of manually maintaining the checklist, then you can use the v.1.0.4 tag in your fork – note you’ll have to backport fixes and improvements though, as there won’t be any further development for version&#160;1.</p>
+
+          <p>We’ll be more than happy to help you create checklists for InDesign, Quark, and whatnot.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="cat-header">
+        <h2>CSS Tricks App Bumped to Version&#160;1</h2>
+      </div>
+      
+      <div class="wrapper">
+          <p>Finally, <a href="https://github.com/FriendsOfEpub/eBookTricks">ebook Tricks</a> should now be on par with the other companion apps. Unfortunately, Blitz ebook Tricks can’t leverage the Blitz Checklist template, but it’s been updated and bumped to version&#160;1 nevertheless.</p>
+
+          <p>This new version brings:</p>
+
+          <ul>
+            <li>copy CSS snippet to clipboard in one click;</li>
+
+            <li>smooth scroll for nav menu;</li>
+
+            <li>print CSS improvements;</li>
+
+            <li>better handling of homescreen icon and splash screen on Android&#160;8+.</li>
+          </ul>
+
+        <p>In the end, it doesn’t necessarily sound like much, but should make it a lot easier to use Blitz ebook Tricks in production.</p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p class="secondary">© 2017, Jiminy Panoz.</p>
+  
+    <p class="secondary">Blitz Framework is released under the MIT&nbsp;License.</p>
+  </footer>
+</body>
+</html>
