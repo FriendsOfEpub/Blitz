@@ -4,6 +4,10 @@
 
 An eBook framework (CSS + template) whose mantra is “finding simple solutions to complex issues.”
 
+## Important Note
+
+We’re sunsetting Blitz. Go check the [Public Service Announcement.](https://github.com/FriendsOfEpub/Blitz/issues/66)
+
 ## Licence 
 
 Blitz is released under [MIT Licence](https://github.com/FriendsOfEpub/Blitz/blob/master/LICENSE) © 2016, Jiminy Panoz.
