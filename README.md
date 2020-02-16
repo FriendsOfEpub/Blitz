@@ -94,6 +94,7 @@ lessc Blitz_framework/LESS/blitz-reset.less Blitz_framework/CSS/AltStylesheets/b
 
 - [Blitz Tasks](https://github.com/FriendsOfEpub/blitz-tasks) – a set of gulp scripts to automate (X)HTML markup changes and apply some useful optimizations
 - [blitzck-cli](https://github.com/FriendsOfEpub/blitzck-cli) – EPUB Reading Systems’ support, mimetypes, namespaces, and ARIA mappings from the command line interface
+- [Blitz Checklist](https://github.com/FriendsOfEpub/blitz-checklist) – A template repository to make checklist web apps (it’s the tiny little engine that powers the BlitzOptim and BlitzPerf web apps)
 - [The eBook Design Checklist](https://friendsofepub.github.io/eBookDesignChecklist/) – a progressive web app to help you design eBooks
 - [The eBook Performance Checklist](https://friendsofepub.github.io/eBookPerfChecklist/) – a progressive web app to help you boost eBook performance
 - [Blitz eBook Tricks](https://friendsofepub.github.io/eBookTricks/) – a collection of CSS snippets to help you do progressive enhancement in eBooks
