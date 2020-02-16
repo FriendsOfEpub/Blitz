@@ -170,15 +170,17 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 ### Is this project still active?
 
-Yes. 
+Nope.
 
-But we deemed Blitz feature-complete so it’s all about maintenance, there won’t be any new feature added to the framework.
+We sunset Blitz in 2020. See [the meta issue in Blitz](https://github.com/FriendsOfEpub/Blitz/issues/66) for further details
+
+We deemed Blitz feature-complete though, and it should consequently be still useful for a couple of years.
 
 ### Has anyone funded this project?
 
 Nope. 
 
-It has grown organically out of the desire to learn CSS preprocessors, then improve at JavaScript and make Progressive Web Apps, etc. It just seemed that side projects sharing knowledge that would be useful to the ebook production community was the best way to achieve those goals.
+It grew organically out of the desire to learn CSS preprocessors, then improve at JavaScript and make Progressive Web Apps, etc. It just seemed that side projects sharing knowledge that would be useful to the ebook production community was the best way to achieve those goals.
 
 At some point, sponsoring was considered but quickly dismissed due to the relatively small size of the ebook production community: it was simply too much to ask.
 
@@ -195,12 +197,6 @@ Quite a lot, actually.
 - etc.
 
 But maybe *you* could successfully build a business out of that list…
-
-### Will there be a version 2?
-
-Probably not as we are not expecting any breaking change.
-
-A migration from LESS to PostCSS was considered but dismissed as it would have brought no visible improvement, and isolated users from the GUI apps supporting LESS. Moreover, the vast majority of users are using the precompiled stylesheets anyway.
 
 ### What is missing in version 1?
 
