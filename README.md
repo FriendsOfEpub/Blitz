@@ -172,7 +172,7 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 Nope.
 
-We sunset Blitz in 2020. See [the meta issue in Blitz](https://github.com/FriendsOfEpub/Blitz/issues/66) for further details
+We sunset Blitz in 2020. See [the meta issue in Blitz](https://github.com/FriendsOfEpub/Blitz/issues/66) for further details.
 
 We deemed Blitz feature-complete though, and it should consequently be still useful for a couple of years.
 
