@@ -217,6 +217,10 @@ A library of custom elements almost happened after successful initial testing, b
 
 ## Log
 
+### 1.5.2
+
+- Guarded header comment so that it’s output in all stylesheets (to make it a little bit easier for [DAISY WordToEPUB](https://daisy.org/activities/software/wordtoepub/))
+
 ### 1.5.1
 
 - Created a `.line-through` static mixin in utilities
