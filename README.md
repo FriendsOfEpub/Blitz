@@ -169,7 +169,7 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 Nope.
 
-Blitz was sunset in 2020. As of July 1, 2020 the entire project is no longer maintained and its repositories read-only. You can still fork them though.
+Blitz was sunset in 2020. As of July 1, 2020 the entire project is no longer maintained and its repositories read-only. You can still fork them.
 
 We deemed Blitz feature-complete though, and it should consequently be still useful for a couple of years.
 
