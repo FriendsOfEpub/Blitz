@@ -245,9 +245,20 @@ p {}
 	font-weight: 500;
 }
 
+#status {
+  background-color: #DF0101;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+#status a {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
 .lead-section {
 	text-align: center;
-	font-weight: 500;
+  font-weight: 500;
 }
 
 .secondary {
