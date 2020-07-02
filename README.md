@@ -6,9 +6,7 @@ An eBook framework (CSS + template) whose mantra is “finding simple solutions 
 
 ## Important Note
 
-We’re in the process of sunsetting the entire Blitz Project, which means this repository will reach End of Life and be archived as read-only on July 1, 2020. Don’t worry, all current and future forks will continue to work after this date.
-
-If you are interested in the sunsetting roadmap, or taking over this repository’s maintenance and development, please [check the related meta issue in Blitz](https://github.com/FriendsOfEpub/Blitz/issues/66).
+All the Blitz repositories reached End Of Life on July 1, 2020. The entire project is no longer maintained and its repositories are read-only. You can still fork them if they can be useful to you.
 
 ## Licence 
 
@@ -171,7 +169,7 @@ When checking for support, you can simply click “Apply Filters” in order to 
 
 Nope.
 
-We sunset Blitz in 2020. See [the meta issue in Blitz](https://github.com/FriendsOfEpub/Blitz/issues/66) for further details.
+Blitz was sunset in 2020. As of July 1, 2020 the entire project is no longer maintained and its repositories read-only. You can still fork them.
 
 We deemed Blitz feature-complete though, and it should consequently be still useful for a couple of years.
 
